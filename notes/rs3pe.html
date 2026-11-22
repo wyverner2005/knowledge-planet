@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>緩解性血清陰性對稱型滑膜炎併凹陷性水腫症候群 (RS3PE)｜圖文醫學筆記</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/*
+  Utilitarian · Clinical Rheumatology Reference · Split hero (headline left, 7%-31% paraneoplastic alert right)
+  Section order: Split Hero → Fig 1 (Clinical Hand Edema Photo) → Lab & Table 1 (Imaging) → Differential & Table 2 (RS3PE vs EORA vs PMR) → Malignancy Red Flags Band → Treatment & Prognosis → References
+  Fonts: Noto Sans TC (crisp clinical display & body) + Noto Serif TC (clinical callout) + JetBrains Mono (data/metrics)
+  Palette: Cool Architectural Slate Mist (#F3F5F8) + Deep Clinical Cobalt (#1B4D89 / text #133A68) + Alert Crimson (#9E1F24)
+  Image radius: 0px · Emphasis moment: 7%–31% Malignancy association · Signature element: Original Fig 1 clinical photo + Table 2 14-row diagnostic matrix
+*/
+:root {
+  --paper: #FDF9E7;
+  --ink: #191610;
+  --ink2: #322D21;
+  --mute: #5B5340;
+  --hair: #DCD4B8;
+  --accent: #1B4D89;
+  --accent-text: #123764;
+  --accent-2: #B02328;
+  --accent-2-text: #8B171B;
+  --band: #F4EDD0;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.78;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  padding: 58px clamp(24px, 8vw, 108px) 88px;
+  max-width: 1340px;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
+h1 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 900;
+  font-size: clamp(34px, 4.3vw, 54px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+h2 {
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  font-size: clamp(23px, 2.6vw, 31px);
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+h3 {
+  font-weight: 700;
+  font-size: 17.5px;
+  color: var(--accent-text);
+  margin: 0 0 8px;
+}
+h3.alert {
+  color: var(--accent-2-text);
+}
+p {
+  margin: 0 0 15px;
+  color: var(--ink2);
+  max-width: 68ch;
+}
+.hero-left { grid-column: 1 / 9; }
+.hero-right {
+  grid-column: 9 / 13;
+  border-left: 2px solid var(--accent-2);
+  padding-left: 24px;
+  align-self: end;
+}
+.hero-stat {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 500;
+  font-size: clamp(38px, 4.5vw, 56px);
+  line-height: 1.05;
+  color: var(--accent-2-text);
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.hero-stat-cap {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink2);
+}
+.deck {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink2);
+  max-width: 62ch;
+}
+.source-meta {
+  font-size: 13.5px;
+  color: var(--mute);
+  border-top: 1px solid var(--hair);
+  padding-top: 12px;
+  margin-top: 24px;
+}
+.sec {
+  margin-top: 68px;
+  padding-top: 28px;
+  border-top: 1px solid var(--hair);
+}
+.triad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin: 28px 0 36px;
+  padding: 20px 0;
+  border-top: 2px solid var(--accent);
+  border-bottom: 1px solid var(--hair);
+}
+.triad-label {
+  font-family: "JetBrains Mono", "Noto Sans TC", monospace;
+  font-size: 13px;
+  color: var(--accent-text);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.triad-val {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.45;
+}
+figure {
+  margin: 28px 0 36px;
+}
+.fig-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  border: 1px solid var(--hair);
+}
+figcaption {
+  font-size: 13px;
+  color: var(--mute);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 12px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+th {
+  font-family: "JetBrains Mono", "Noto Sans TC", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--ink);
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 11px 12px 11px 0;
+  vertical-align: bottom;
+}
+td {
+  padding: 11px 12px 11px 0;
+  border-bottom: 1px solid var(--hair);
+  vertical-align: top;
+  color: var(--ink2);
+}
+td.key-col {
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+td.hl {
+  color: var(--accent-text);
+  font-weight: 700;
+}
+td.hl-warn {
+  color: var(--accent-2-text);
+  font-weight: 700;
+}
+.col-6-a { grid-column: 1 / 7; }
+.col-6-b { grid-column: 7 / 13; }
+.col-4-a { grid-column: 1 / 5; }
+.col-4-b { grid-column: 5 / 9; }
+.col-4-c { grid-column: 9 / 13; }
+.full-band {
+  background: var(--band);
+  margin: 64px calc(-1 * clamp(24px, 8vw, 108px)) 0;
+  padding: 48px clamp(24px, 8vw, 108px);
+  border-top: 2px solid var(--accent-2);
+  border-bottom: 1px solid var(--hair);
+}
+ul.clean-list {
+  margin: 0 0 14px;
+  padding-left: 20px;
+  color: var(--ink2);
+}
+ul.clean-list li {
+  margin-bottom: 8px;
+}
+.quote {
+  font-family: "Noto Serif TC", Georgia, serif;
+  font-size: clamp(20px, 2.3vw, 26px);
+  line-height: 1.55;
+  color: var(--ink);
+  border-left: 3px solid var(--accent);
+  padding-left: 22px;
+  margin: 32px 0;
+  max-width: 56ch;
+}
+ol.ref-list {
+  padding-left: 22px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--mute);
+  column-count: 2;
+  column-gap: 32px;
+}
+ol.ref-list li {
+  margin-bottom: 7px;
+  break-inside: avoid;
+}
+@media (max-width: 900px) {
+  .hero-left, .hero-right, .col-6-a, .col-6-b, .col-4-a, .col-4-b, .col-4-c {
+    grid-column: 1 / 13;
+  }
+  .hero-right {
+    border-left: none;
+    border-top: 2px solid var(--accent-2);
+    padding-left: 0;
+    padding-top: 16px;
+  }
+  .triad { grid-template-columns: repeat(2, 1fr); }
+  ol.ref-list { column-count: 1; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header>
+    <div class="grid">
+      <div class="hero-left">
+        <h1>高齡急性雙手凹陷性水腫合併滑膜炎：快速辨識 RS3PE 並警覺潛在惡性腫瘤</h1>
+        <p class="deck">
+          緩解性血清陰性對稱型滑膜炎併凹陷性水腫症候群（RS3PE）最早由 McCarty 於 1985 年提出，多見於 60 歲以上男性（男女比約 2:1）。其對低劑量類固醇反應極快，但臨床最重要任務在於排除心腎肝水腫、區分 PMR/EORA，並及早篩檢副腫瘤症候群。
+        </p>
+      </div>
+      <div class="hero-right">
+        <div class="hero-stat">7%–31%</div>
+        <div class="hero-stat-cap">
+          文獻報告約 7%–31% 的 RS3PE 病人最終被診斷為<strong>惡性腫瘤（副腫瘤症候群）</strong>，對類固醇反應不佳者更須高度警覺。
+        </div>
+      </div>
+    </div>
+    <div class="source-meta">
+      文獻出處：《家庭醫學與基層醫療》2026 年，第 41 卷 第 10 期，pp. 303–309 ｜ 作者：楊長記、徐子翔、呂學政（聯新國際醫院社區醫學部家庭醫學科）
+    </div>
+  </header>
+
+  <section class="triad" aria-label="RS3PE 四大臨床特徵">
+    <div>
+      <div class="triad-label">發病模式</div>
+      <div class="triad-val">數小時至數週內急性發作</div>
+    </div>
+    <div>
+      <div class="triad-label">受累特徵</div>
+      <div class="triad-val">雙側手足對稱性明顯凹陷性水腫</div>
+    </div>
+    <div>
+      <div class="triad-label">血清學表現</div>
+      <div class="triad-val">RF 與 Anti-CCP 抗體皆陰性</div>
+    </div>
+    <div>
+      <div class="triad-label">治療反應</div>
+      <div class="triad-val">低劑量類固醇 24–72 小時迅速緩解</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>典型臨床表現：伸肌腱腱鞘炎導致手背劇烈水腫與無法握拳</h2>
+    <p>
+      RS3PE 的核心表現為急性、對稱性周邊關節發炎合併顯著凹陷性水腫，最常侵犯雙側手背與足背（偶延伸至腳踝、膝關節或四肢近端）。此類水腫與<strong>伸肌腱腱鞘炎（extensor tenosynovitis）</strong>高度相關；滑膜炎好發於手腕、掌指關節（MCP）與近端指間關節（PIP）。患者常主訴握力明顯下降、嚴重晨間僵硬甚至無法握拳，亦可能伴隨倦怠、輕度發炎性發熱或偶發蕁麻疹樣皮疹。
+    </p>
+    <figure>
+      <div class="fig-title">圖 1：手部凹陷性水腫、滑膜炎，以及無法握緊</div>
+      <img src="rs3pe-illustration.webp" alt="RS3PE 患者臨床照片：左側顯示手背明顯腫脹與凹陷性水腫，右側顯示手指無法完全握緊成拳">
+      <figcaption>原文圖 1（p. 304，資料來源：參考資料 12 Lakhmalla et al., J Investig Med 2021）。疼痛程度通常較類風濕性關節炎（RA）輕，但活動受限極為明顯。</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec">
+    <h2>實驗室檢驗與影像學檢查：確認發炎反應、排除侵蝕性病變</h2>
+    <div class="grid">
+      <div class="col-6-a">
+        <h3>實驗室數據線索</h3>
+        <ul class="clean-list">
+          <li><strong>血清陰性</strong>：類風濕因子（RF）與抗 CCP 抗體多為陰性，有助與 RA 區分。</li>
+          <li><strong>發炎指標上升</strong>：ESR 與 CRP 多呈上升（CRP 上升最一致，越高可能代表病程較不易控制）。</li>
+          <li><strong>MMP-3 與 VEGF</strong>：MMP-3 異常顯著升高須提高惡性腫瘤警覺；VEGF 偏高支持血管通透性增加機轉，合併腫瘤者升幅更明顯。</li>
+          <li><strong>血球變化</strong>：可見輕度慢性病貧血，白血球與血小板通常正常或輕度上升。</li>
+        </ul>
+      </div>
+      <div class="col-6-b">
+        <h3>影像學診斷角色</h3>
+        <p>
+          影像學目的在於強化臨床判斷並排除其他風濕疾病。在所有工具中，<strong>超音波（含彩色都卜勒）最具臨床價值</strong>，可清楚顯示伸肌與屈肌腱之腱鞘滑膜炎、滑膜增厚與活躍發炎的高血流（hypervascularity），且具成本低、可重複性高與門診可近性佳等優勢。X 光則用於確認無骨侵蝕，並排除焦磷酸鈣沉積疾病（CPPD）或退化性關節炎。
+        </p>
+      </div>
+    </div>
+
+    <figure>
+      <div class="fig-title">表 1：RS3PE 影像檢查方式差別</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>影像檢查方式</th>
+              <th>有助於診斷 RS3PE 的特徵</th>
+              <th>備註</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="key-col">X 光 (X-ray)</td>
+              <td>傳統上無骨侵蝕</td>
+              <td>最常使用、容易取得、成本低</td>
+            </tr>
+            <tr>
+              <td class="key-col">超音波 (ultrasonography)</td>
+              <td>腱鞘炎（伸肌 &gt; 屈肌）</td>
+              <td>容易取得、成本低</td>
+            </tr>
+            <tr>
+              <td class="key-col">對比增強彩色都卜勒超音波</td>
+              <td>肌腱與關節的高血流；可偵測發炎性水腫、滑膜炎與積液</td>
+              <td>可靠、容易取得、成本效益佳</td>
+            </tr>
+            <tr>
+              <td class="key-col">MRI</td>
+              <td>偵測少量積液的最佳方法</td>
+              <td>可近性與成本可能限制使用</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <figcaption>原文表 1（p. 306，資料來源：參考資料 12）。</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec">
+    <h2>系統性鑑別診斷：Olivé 準則與 RS3PE、EORA、PMR 完整對照</h2>
+    <p>
+      臨床常引用 <strong>Olivé（1997）診斷準則</strong>：50 歲以上發病、急性起病、雙側手部明顯凹陷性水腫、對稱性滑膜炎、RF 陰性、影像學無關節侵蝕。評估高齡水腫時，需先排除心衰竭、腎臟病、肝硬化（全身性或下肢重力位水腫，常伴頸靜脈怒張、蛋白尿或低白蛋白血症，且缺乏手背發炎劇烈腫脹與明顯 ESR/CRP 上升）、深層靜脈栓塞、蜂窩性組織炎、結晶性關節炎及藥物（CCB、NSAIDs、類固醇）水腫。
+    </p>
+    <p>
+      在風濕免疫鑑別中，區分 <strong>PMR</strong> 的關鍵在於受累部位（PMR 以肩部、臀部、大腿等近端肢體僵痛為主，缺乏遠端凹陷性水腫）；區分 <strong>EORA</strong> 則仰賴 RF / Anti-CCP 抗體、X 光有無骨侵蝕，以及對低劑量類固醇的反應速度。
+    </p>
+
+    <figure>
+      <div class="fig-title">表 2：RS3PE、EORA、PMR 臨床特徵完整差別</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>臨床特徵</th>
+              <th>緩解性血清陰性對稱型滑膜炎併凹陷性水腫症候群 (RS3PE)</th>
+              <th>老年發作型類風濕關節炎 (EORA)</th>
+              <th>風濕性多發性肌痛症 (PMR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="key-col">發病年齡（歲）</td>
+              <td>&gt;60</td>
+              <td>&gt;60</td>
+              <td>&gt;60</td>
+            </tr>
+            <tr>
+              <td class="key-col">性別</td>
+              <td class="hl">男 &gt; 女</td>
+              <td>女 ≈ 男</td>
+              <td>女 &gt; 男</td>
+            </tr>
+            <tr>
+              <td class="key-col">發病方式</td>
+              <td class="hl">數小時內突然發作</td>
+              <td>常見</td>
+              <td>快速（數天到數週）</td>
+            </tr>
+            <tr>
+              <td class="key-col">小關節滑膜炎</td>
+              <td>輕微</td>
+              <td>明顯</td>
+              <td>輕微</td>
+            </tr>
+            <tr>
+              <td class="key-col">凹陷性水腫</td>
+              <td class="hl">100%，非常明顯</td>
+              <td>不常見</td>
+              <td>無</td>
+            </tr>
+            <tr>
+              <td class="key-col">骨盆帶/大腿部疼痛僵硬(%)</td>
+              <td>39.3%</td>
+              <td>罕見</td>
+              <td>74%</td>
+            </tr>
+            <tr>
+              <td class="key-col">發燒(%)</td>
+              <td>35.7%</td>
+              <td>較少</td>
+              <td>19.5%</td>
+            </tr>
+            <tr>
+              <td class="key-col">X 光侵蝕</td>
+              <td class="hl">無</td>
+              <td>有</td>
+              <td>無</td>
+            </tr>
+            <tr>
+              <td class="key-col">MRI 或超音波顯示的滑膜炎或贅生組織</td>
+              <td class="hl">不常見、輕微，但腱鞘炎明顯</td>
+              <td>明顯</td>
+              <td>不常見、輕微</td>
+            </tr>
+            <tr>
+              <td class="key-col">抗 CCP 抗體(%)</td>
+              <td class="hl">0</td>
+              <td>常見</td>
+              <td>較少</td>
+            </tr>
+            <tr>
+              <td class="key-col">類風濕因子 (RF)</td>
+              <td class="hl">陰性</td>
+              <td>陽性 (39%–57%)</td>
+              <td>陽性 (16.5%)</td>
+            </tr>
+            <tr>
+              <td class="key-col">低劑量類固醇反應</td>
+              <td class="hl">顯著改善</td>
+              <td>通常不顯著</td>
+              <td>顯著改善</td>
+            </tr>
+            <tr>
+              <td class="key-col">惡性腫瘤相關率(%)</td>
+              <td class="hl-warn">20</td>
+              <td>0.44</td>
+              <td>0.56</td>
+            </tr>
+            <tr>
+              <td class="key-col">是否可達痊癒</td>
+              <td>可以</td>
+              <td>可以（多需 DMARDs）</td>
+              <td>可以，通常需 2–3 年</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <figcaption>原文表 2（p. 307，資料來源：參考資料 13 Li H, Altman RD, Yao Q, Curr Rheumatol Rep 2015）。</figcaption>
+    </figure>
+  </section>
+
+  <section class="full-band">
+    <h2>惡性腫瘤警訊：將 RS3PE 視為潛在副腫瘤症候群進行分層篩檢</h2>
+    <div class="grid">
+      <div class="col-6-a">
+        <h3 class="alert">高度懷疑副腫瘤病因的六大紅旗</h3>
+        <ul class="clean-list">
+          <li>對低劑量類固醇反應不典型，或需高劑量方能控制。</li>
+          <li>伴隨 <strong>B symptoms</strong>（體重減輕、發燒、夜間盜汗）。</li>
+          <li>實驗室指標 <strong>MMP-3</strong> 或 <strong>VEGF</strong> 顯著上升。</li>
+          <li>發病年齡較大（<strong>&gt;70 歲</strong>）。</li>
+          <li>症狀分布呈現<strong>不對稱</strong>。</li>
+          <li>病程反覆復發或無法順利減量。</li>
+        </ul>
+      </div>
+      <div class="col-6-b">
+        <h3 class="alert">常見相關惡性腫瘤類型</h3>
+        <ul class="clean-list">
+          <li><strong>實體腫瘤</strong>：攝護腺癌、肺癌、胃腸道癌。</li>
+          <li><strong>血液腫瘤</strong>：淋巴瘤、白血病、骨髓異常增生症（MDS）。</li>
+          <li><strong>女性特別注意</strong>：卵巢癌、乳癌、子宮內膜癌。</li>
+        </ul>
+        <p style="margin-top: 12px;">
+          副腫瘤症候群相關 RS3PE 往往對類固醇反應有限，但在<strong>原發腫瘤獲得治療控制後，關節水腫與症狀常可顯著改善或消失</strong>。臨床應依年齡、性別與危險因子安排適當癌症篩檢。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>治療策略、減量療程與基層照護核心</h2>
+    <div class="grid">
+      <div class="col-4-a">
+        <h3>一線治療：低劑量類固醇</h3>
+        <p>
+          <strong>Prednisolone 10–15 mg/day</strong> 起始，多數病人可於 <strong>24–72 小時</strong>內顯著改善。之後於數週至數月內逐步減量，總療程多為 <strong>12–18 個月</strong>。NSAIDs 效果有限，不建議作為主要治療。
+        </p>
+      </div>
+      <div class="col-4-b">
+        <h3>二線與難治型調整</h3>
+        <p>
+          若反覆復發、無法順利減量、懷疑合併其他風濕免疫疾病或類固醇副作用明顯，可考慮加入傳統 <strong>DMARDs</strong>（如 methotrexate 或 hydroxychloroquine）以減少類固醇用量。
+        </p>
+      </div>
+      <div class="col-4-c">
+        <h3>藥物誘發型與次發性病因</h3>
+        <p>
+          若為藥物誘發，如糖尿病用藥 <strong>DPP-4 抑制劑</strong>或免疫檢查點抑制劑（如 <strong>nivolumab</strong>），停藥後多可改善。副腫瘤型則以治療腫瘤本身為優先。
+        </p>
+      </div>
+    </div>
+    <blockquote class="quote">
+      基層醫師在 RS3PE 照護中的關鍵價值：以低劑量類固醇啟動治療並規劃安全減量、及早辨識不典型病程與副腫瘤警訊適時轉介專科，並透過衛教強化病人對復發與警訊症狀的認知。
+    </blockquote>
+  </section>
+
+  <section class="sec">
+    <h2>主要參考資料</h2>
+    <ol class="ref-list">
+      <li>McCarty DJ, et al. Remitting seronegative symmetrical synovitis with pitting edema. RS3PE syndrome. JAMA 1985; 254: 2763-7.</li>
+      <li>Docken WP. Clinical manifestations and diagnosis of polymyalgia rheumatica. UpToDate, 2025.</li>
+      <li>Origuchi T, et al. Clinical outcomes in the first year of RS3PE syndrome. Mod Rheumatol 2017; 27: 150-4.</li>
+      <li>Olivé A, et al. The clinical spectrum of RS3PE. J Rheumatol 1997; 24: 333-6.</li>
+      <li>Smith CC. Clinical manifestations and evaluation of edema in adults. UpToDate, 2025.</li>
+      <li>Karmacharya P, et al. RS3PE revisited: systematic review and meta-analysis of 331 cases. Clin Exp Rheumatol 2016; 34: 404-15.</li>
+      <li>Kawano T, et al. RS3PE syndrome as a manifestation of recurrent ovarian cancer. Intern Med 2023; 62: 629-32.</li>
+      <li>Ohta R, et al. Paraneoplastic RS3PE: systematic review. Cureus 2025; 17: e94098.</li>
+      <li>Chandra DS, et al. Managing RS3PE: initial steroid response and long-term management with DMARDs. Rom J Rheumatol 2024; 33: 146-50.</li>
+      <li>Law J, et al. RS3PE associated with DPP4 inhibitor. Am J Med 2021; 134: e412-e414.</li>
+      <li>Gauci ML, et al. RS3PE syndrome induced by nivolumab. Semin Arthritis Rheum 2017; 47: 281-7.</li>
+      <li>Lakhmalla M, et al. RS3PE: a review. J Investig Med 2021; 68: 1336-40.</li>
+      <li>Li H, Altman RD, Yao Q. RS3PE: Clinical and research development. Curr Rheumatol Rep 2015; 17: 49.</li>
+    </ol>
+  </section>
+
+</main>
+</body>
+</html>

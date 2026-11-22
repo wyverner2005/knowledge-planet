@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>知識星球｜醫學筆記</title>
+<style>
+:root { color-scheme: light; font: 100%/1.55 system-ui, sans-serif; color: #162940; background: #f3f6fa; }
+* { box-sizing: border-box }
+body { margin: 0 }
+main { max-width: 64rem; margin: auto; padding: clamp(1.15rem, 5vw, 4rem) }
+header { background: radial-gradient(ellipse at 96% 0%, #295a74, transparent 66%), #152844; color: #fff; border-radius: 1.35rem; padding: clamp(1.5rem, 5vw, 3.25rem); }
+header p { margin: 0; color: #cae9ec; letter-spacing: .12em }
+h1 { font-size: clamp(2rem, 7vw, 3.5rem); margin: .25rem 0 1.25rem; line-height: 1.14 }
+label { display: block; font-weight: 650; margin-bottom: .4rem }
+input { appearance: none; color: #162940; background: #fff; border: 1px solid #d4dfe9; border-radius: .65rem; padding: .75rem .95rem; width: 100%; max-width: 34rem; font: inherit }
+:focus-visible { outline: 3px solid #19a099; outline-offset: 4px }
+#status { color: #46596d; margin: 1.5rem 0 .75rem }
+#notes { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 1rem }
+.card { display: block; height: 100%; padding: 1.2rem; color: inherit; border: 1px solid #d8e1ea; border-radius: .9rem; background: #fff; text-decoration: none }
+.card:is(:hover, :focus-visible) { border-color: #1b807b }
+.card:hover h2 { text-decoration: underline }
+.tag { color: #18635f; font-size: .85rem; font-weight: 700 }
+h2 { margin: .35rem 0 .45rem; font-size: 1.2rem; line-height: 1.4 }
+.summary { margin: 0; color: #46596d }
+</style>
+<script defer src="search-index.js"></script>
+<script defer src="search.js"></script>
+</head>
+<body>
+<main>
+  <header>
+    <p>醫學筆記</p>
+    <h1>知識星球</h1>
+    <label for="query">搜尋全文</label>
+    <input id="query" type="search" placeholder="例如 HbA1c、凹陷性水腫、Mini-Cog" autocomplete="off">
+  </header>
+  <p id="status" role="status">4 篇筆記</p>
+  <ul id="notes">
+    <li><a class="card" href="notes/sweeteners-and-type-2-diabetes.html"><span class="tag">營養與代謝</span><h2>甜味劑與第二型糖尿病</h2><p class="summary">甜味劑分類、每日可接受攝取量、長期研究與門診衛教。</p></a></li>
+    <li><a class="card" href="notes/rs3pe.html"><span class="tag">風濕免疫</span><h2>RS3PE 症候群</h2><p class="summary">高齡雙手凹陷性水腫、滑膜炎、鑑別診斷與副腫瘤警訊。</p></a></li>
+    <li><a class="card" href="notes/hba1c-and-glucose-variability.html"><span class="tag">糖尿病照護</span><h2>從 HbA1c 到血糖變異係數</h2><p class="summary">血糖波動、變異係數、監測工具與非藥物策略。</p></a></li>
+    <li><a class="card" href="notes/dementia-prevention-and-care.html"><span class="tag">高齡照護</span><h2>失智症防治</h2><p class="summary">風險因子、門診篩檢、生物標記與照護實務。</p></a></li>
+  </ul>
+</main>
+</body>
+</html>
