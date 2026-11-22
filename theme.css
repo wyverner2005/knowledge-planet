@@ -57,3 +57,23 @@ html.kp-note[data-theme="dark"] {
   --accent-2: #eeaa81;
   --accent-2-text: #ffc6a3;
 }
+
+.kp-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin: .9rem 0;
+}
+.kp-category {
+  display: inline-flex;
+  align-items: center;
+  padding: .2rem .6rem;
+  border: 1px solid var(--kp-control-border, #c4ccd5);
+  border-radius: 1rem;
+  background: var(--kp-control-bg, #fff);
+  color: var(--kp-control-ink, #182a3c);
+  font: 600 .8rem/1.45 system-ui, sans-serif;
+  text-decoration: none;
+}
+a.kp-category { min-height: 44px; }
+a.kp-category:hover { text-decoration: underline; }
