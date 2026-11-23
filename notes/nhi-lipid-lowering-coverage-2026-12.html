@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="kp-note">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>健保新規：6 項降血脂藥品 12 月 1 日起擴增給付與調價完整圖文解說</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* Utilitarian + Medical Policy Brief · Answer-first hero with emphasis numeral · 6-drug verdict → price SVG chart → dual-pathway mechanism diagram → 2.6.1 Table 1 vs Table 2 + ASCVD SVG chart → 2.6.3 6-8 wk vs 3 mo table → policy mechanism & evidence audit band → clinical checklist → original infographic & sources · Noto Serif TC + Noto Sans TC + JetBrains Mono · Pale yellow (#FDF9E7) user-specified canvas + deep teal (#0F5C5C) & terracotta (#B84A27) · 0px image radius · Emphasis numeral (6 項) · Inline SVG paired bar & 6-tier step chart */
+
+:root {
+  --paper: #FDF9E7;
+  --band: #F4ECD1;
+  --ink: #17202A;
+  --ink2: #2C3A47;
+  --mute: #4A5560;
+  --hair: #DDD4B6;
+  --accent: #0F5C5C;
+  --accent-text: #0B4A4A;
+  --accent-2: #B84A27;
+  --accent-2-text: #8F3418;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 16.5px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a:hover { color: var(--accent-2-text); }
+
+.page {
+  padding: 64px clamp(24px, 9vw, 112px) 92px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: end;
+  padding-bottom: 44px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.hero-main {
+  grid-column: 1 / 9;
+}
+
+.hero-num {
+  grid-column: 9 / 13;
+  text-align: right;
+  padding-bottom: 6px;
+}
+
+.big-num {
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(64px, 8vw, 108px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-text);
+  letter-spacing: -0.02em;
+  display: block;
+}
+
+.big-num-cap {
+  font-size: 14px;
+  color: var(--mute);
+  margin-top: 8px;
+  display: block;
+}
+
+h1 {
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 700;
+  line-height: 1.24;
+  letter-spacing: -0.015em;
+  margin: 0 0 18px 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.deck {
+  font-size: 18px;
+  line-height: 1.72;
+  color: var(--ink2);
+  margin: 0;
+  max-width: 62ch;
+}
+
+.meta-line {
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--mute);
+}
+
+/* Sections */
+.sec {
+  margin-top: 68px;
+}
+
+h2 {
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 700;
+  line-height: 1.32;
+  color: var(--ink);
+  margin: 0 0 18px 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--hair);
+  text-wrap: balance;
+}
+
+h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--accent-text);
+  margin: 28px 0 10px 0;
+}
+
+p {
+  margin: 0 0 16px 0;
+  max-width: 68ch;
+  color: var(--ink2);
+}
+
+/* Multi-column open strips */
+.strip-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin: 28px 0 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hair);
+}
+
+.strip-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  margin: 24px 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.split-left { grid-column: 1 / 5; }
+.split-right { grid-column: 5 / 13; }
+
+.metric-val {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-text);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.metric-val.warm { color: var(--accent-2-text); }
+
+.metric-desc {
+  font-size: 14.5px;
+  color: var(--mute);
+  line-height: 1.6;
+}
+
+/* Open tables (no zebra stripes, crisp hairlines, nowrap numbers) */
+.tbl-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 24px 0 28px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+
+th {
+  text-align: left;
+  padding: 12px 10px;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--hair);
+  vertical-align: top;
+  color: var(--ink2);
+}
+
+td.num, th.num {
+  font-family: "JetBrains Mono", monospace;
+  text-align: right;
+  white-space: nowrap;
+}
+
+td.code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13.5px;
+  color: var(--mute);
+  white-space: nowrap;
+}
+
+.drop-txt {
+  color: var(--accent-2-text);
+  font-weight: 700;
+}
+
+.tag-inline {
+  font-weight: 700;
+  color: var(--accent-text);
+}
+
+.tag-warm {
+  font-weight: 700;
+  color: var(--accent-2-text);
+}
+
+/* Figures */
+figure {
+  margin: 34px 0 38px;
+  padding: 0;
+}
+
+.fig-title {
+  font-family: "Noto Serif TC", serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  border: 1px solid var(--hair);
+}
+
+figcaption {
+  font-size: 13.5px;
+  color: var(--mute);
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+/* Full-bleed band (max 1) */
+.band {
+  background-color: var(--band);
+  margin: 68px calc(-1 * clamp(24px, 9vw, 112px));
+  padding: 48px clamp(24px, 9vw, 112px);
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+
+.band h2 {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Lists */
+ul, ol {
+  margin: 12px 0 20px;
+  padding-left: 22px;
+  max-width: 68ch;
+  color: var(--ink2);
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+li strong {
+  color: var(--ink);
+}
+
+/* Pull quote */
+blockquote {
+  margin: 44px 0;
+  padding: 6px 0 6px 24px;
+  border-left: 4px solid var(--accent);
+  font-family: "Noto Serif TC", serif;
+  font-size: clamp(21px, 2.3vw, 27px);
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 44ch;
+}
+
+/* Sources */
+.sources ol {
+  font-size: 14.5px;
+  line-height: 1.7;
+  max-width: 78ch;
+}
+
+@media (max-width: 820px) {
+  .hero-main, .hero-num, .split-left, .split-right { grid-column: 1 / -1; text-align: left; }
+  .strip-3, .strip-2 { grid-template-columns: 1fr; gap: 20px; }
+  .band { margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
+}
+.kp-controls { flex-wrap: wrap; }
+.kp-categories { margin-block: .65rem 1.5rem; }
+.tbl-wrap:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+</style>
+<link rel="stylesheet" href="../theme.css">
+<script defer src="../theme.js"></script>
+</head>
+<body>
+<main class="page">
+<nav class="kp-controls" aria-label="閱讀導覽">
+  <a class="kp-control" href="../">← 回知識星球</a>
+  <button class="kp-control kp-theme-toggle" type="button" aria-pressed="false" hidden>深色模式</button>
+  <a class="kp-control" href="nhi-lipid-lowering-coverage-2026-12.yaml" download>下載 YAML 中繼資料</a>
+</nav>
+<nav class="kp-categories" aria-label="專科分類"><a class="kp-category" href="../?category=cardiology">心臟血管 · Cardiology</a><a class="kp-category" href="../?category=endocrinology">內分泌／新陳代謝 · Endocrinology</a><a class="kp-category" href="../?category=clinical-pharmacology">臨床藥理 · Clinical Pharmacology</a></nav>
+
+  <header class="hero">
+    <div class="hero-main">
+      <h1>6 項降血脂藥品 12 月 1 日起放寬給付並調降藥價，移出舊制排除清單</h1>
+      <p class="deck">衛生福利部中央健康保險署於 2026 年 10 月 29 日發布健保審字第 1150672925 號公告，自 2026 年 12 月 1 日起，3 項 statin 單方改適用六級 ASCVD 風險「表一」新制，3 項 ezetimibe 複方等待期由 3 個月縮短至 6–8 週，同時支付價格調降 5.7% 至 6.6%。</p>
+      <p class="meta-line">資料查核基準日：2026 年 11 月 23 日 · 依據 <a href="https://www.nhi.gov.tw/ch/cp-20681-3808b-3258-1.html" target="_blank" rel="noopener noreferrer">健保署公告（健保審字第 1150672925 號）</a></p>
+    </div>
+    <div class="hero-num">
+      <span class="big-num">6 項</span>
+      <span class="big-num-cap">2026/12/1 生效擴增給付品項<br>2.6.1 占 3 項 · 2.6.3 占 3 項</span>
+    </div>
+  </header>
+
+  <section class="sec">
+    <div class="strip-3">
+      <div>
+        <div class="metric-val">116 → 113 項</div>
+        <div class="metric-desc"><strong>2.6.1 排除名單縮減</strong>：Atova 10mg、Livalo 2mg 與 Livalo OD 2mg 移出「僅適用表二」清單，改走六級風險表一新制。</div>
+      </div>
+      <div>
+        <div class="metric-val warm">10 → 7 項</div>
+        <div class="metric-desc"><strong>2.6.3 複方等待期縮短</strong>：Zovastin 10/10、10/20mg 與 Livazebe HD 移出 3 個月清單，單用 statin 6–8 週未達標即可換藥。</div>
+      </div>
+      <div>
+        <div class="metric-val">-5.7% ~ -6.6%</div>
+        <div class="metric-desc"><strong>以價換量協議調價</strong>：6 品項每錠調降 0.4 至 1.0 元，落實第 82 次藥物共擬會議「廠商同意協議價始修訂給付」決議。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 id="drug-prices">六項異動藥品的健保代碼、成分與支付價格一次對照</h2>
+    <p>健保降血脂新制採用「健保代碼逐項認定」原則，同成分但不同廠牌或劑量，可能適用不同條文。以下整理本次 <a href="https://www.nhi.gov.tw/ch/dl-103684-34c75c0c1cb74758921b52f1bc0ec1c6-1.pdf" target="_blank" rel="noopener noreferrer">已收載項目異動明細表</a> 與 <a href="https://www.nhi.gov.tw/ch/dl-103688-cb3cda4e3dad4851a3c186dfa11bf113-1.pdf" target="_blank" rel="noopener noreferrer">藥品給付規定修訂對照表</a> 之全部 6 項藥品，並補齊原圖卡未列的健保代碼、中文商品名與複方成分。</p>
+
+    <div class="tbl-wrap" tabindex="0" role="region" aria-label="可橫向捲動的表格">
+      <table>
+        <thead>
+          <tr>
+            <th>條文節次</th>
+            <th>藥品名稱（中文名）</th>
+            <th>健保代碼</th>
+            <th>學名成分與含量</th>
+            <th class="num">原價</th>
+            <th class="num">12/1 新價</th>
+            <th class="num">降幅</th>
+            <th>12/1 起給付變化</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag-inline">2.6.1</span></td>
+            <td><strong>Atova F.C. tablets 10mg "Yu Sheng"</strong><br>優生雅脂妥膜衣錠 10 毫克</td>
+            <td class="code">AC57930100</td>
+            <td>Atorvastatin 10mg</td>
+            <td class="num">6.6</td>
+            <td class="num">6.2</td>
+            <td class="num"><span class="drop-txt">-6.06%</span></td>
+            <td>自表二排除清單刪除，改適用<strong>表一新制</strong></td>
+          </tr>
+          <tr>
+            <td><span class="tag-inline">2.6.1</span></td>
+            <td><strong>Livalo tablets 2mg</strong><br>力清之膜衣錠 2 毫克</td>
+            <td class="code">BC25350100</td>
+            <td>Pitavastatin 2mg</td>
+            <td class="num">10.2</td>
+            <td class="num">9.6</td>
+            <td class="num"><span class="drop-txt">-5.88%</span></td>
+            <td>自表二排除清單刪除，改適用<strong>表一新制</strong></td>
+          </tr>
+          <tr>
+            <td><span class="tag-inline">2.6.1</span></td>
+            <td><strong>Livalo OD tablets 2mg</strong><br>力清之口溶錠 2 毫克</td>
+            <td class="code">BC27002100</td>
+            <td>Pitavastatin 2mg（口溶錠）</td>
+            <td class="num">10.2</td>
+            <td class="num">9.6</td>
+            <td class="num"><span class="drop-txt">-5.88%</span></td>
+            <td>自表二排除清單刪除，改適用<strong>表一新制</strong></td>
+          </tr>
+          <tr>
+            <td><span class="tag-warm">2.6.3</span></td>
+            <td><strong>Zovastin tablets 10/10mg</strong><br>脂優解錠 10/10 毫克</td>
+            <td class="code">AC62140100</td>
+            <td>Ezetimibe 10mg + Atorvastatin 10mg</td>
+            <td class="num">15.2</td>
+            <td class="num">14.2</td>
+            <td class="num"><span class="drop-txt">-6.58%</span></td>
+            <td>等待期由 3 個月縮短為 <strong>6–8 週</strong></td>
+          </tr>
+          <tr>
+            <td><span class="tag-warm">2.6.3</span></td>
+            <td><strong>Zovastin tablets 10/20mg</strong><br>脂優解錠 10/20 毫克</td>
+            <td class="code">AC62139100</td>
+            <td>Ezetimibe 10mg + Atorvastatin 20mg</td>
+            <td class="num">15.9</td>
+            <td class="num">14.9</td>
+            <td class="num"><span class="drop-txt">-6.29%</span></td>
+            <td>等待期由 3 個月縮短為 <strong>6–8 週</strong></td>
+          </tr>
+          <tr>
+            <td><span class="tag-warm">2.6.3</span></td>
+            <td><strong>Livazebe combination tablets HD (for 4mg)</strong><br>力沛加複方錠 4/10 毫克</td>
+            <td class="code">BC28884100</td>
+            <td>Pitavastatin 4mg + Ezetimibe 10mg</td>
+            <td class="num">12.2</td>
+            <td class="num">11.5</td>
+            <td class="num"><span class="drop-txt">-5.74%</span></td>
+            <td>等待期由 3 個月縮短為 <strong>6–8 週</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure>
+      <div class="fig-title">六項藥品全數以約 6% 價差換取放寬給付，Zovastin 10/10mg 降幅最高（-6.6%）</div>
+      <svg viewBox="0 0 700 420" width="100%" role="img" aria-label="六項降血脂藥品健保支付價格調降對比圖" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .t-lbl { font-family: "Noto Sans TC", sans-serif; font-size: 14px; fill: #17202A; font-weight: 500; }
+    .t-sub { font-family: "Noto Sans TC", sans-serif; font-size: 12.5px; fill: #4A5560; }
+    .t-val { font-family: "JetBrains Mono", monospace; font-size: 13px; fill: #17202A; font-weight: 600; }
+    .t-drop { font-family: "JetBrains Mono", monospace; font-size: 13px; fill: #8F3418; font-weight: 700; }
+    .t-axis { font-family: "JetBrains Mono", monospace; font-size: 12.5px; fill: #4A5560; }
+  </style>
+  <rect width="700" height="420" fill="#FDF9E7"/>
+  <!-- Legend -->
+  <rect x="200" y="14" width="14" height="10" rx="2" fill="#C9C0A3"/>
+  <text x="220" y="24" class="t-sub">原支付價（元）</text>
+  <rect x="340" y="14" width="14" height="10" rx="2" fill="#0F5C5C"/>
+  <text x="360" y="24" class="t-sub">12/1 初核價（元）</text>
+  <text x="580" y="24" class="t-sub" text-anchor="end">降幅</text>
+
+  <!-- Gridlines (x=200 is 0, x=560 is 18元 => 20px per 1元) -->
+  <line x1="200" y1="42" x2="200" y2="376" stroke="#B8AE90" stroke-width="1"/>
+  <line x1="280" y1="42" x2="280" y2="376" stroke="#DDD4B6" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="360" y1="42" x2="360" y2="376" stroke="#DDD4B6" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="440" y1="42" x2="440" y2="376" stroke="#DDD4B6" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="520" y1="42" x2="520" y2="376" stroke="#DDD4B6" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Row 1: Atova 10mg (6.6 -> 6.2, -6.06%) -->
+  <text x="190" y="68" class="t-lbl" text-anchor="end">Atova 10mg</text>
+  <text x="190" y="85" class="t-sub" text-anchor="end">2.6.1 表一</text>
+  <rect x="200" y="54" width="132" height="13" rx="2" fill="#C9C0A3"/>
+  <rect x="200" y="71" width="124" height="15" rx="2" fill="#0F5C5C"/>
+  <text x="340" y="65" class="t-sub">6.6</text>
+  <text x="332" y="83" class="t-val">6.2</text>
+  <text x="684" y="76" class="t-drop" text-anchor="end">-6.1% (-0.4)</text>
+
+  <!-- Row 2: Livalo 2mg (10.2 -> 9.6, -5.88%) -->
+  <text x="190" y="123" class="t-lbl" text-anchor="end">Livalo 2mg</text>
+  <text x="190" y="140" class="t-sub" text-anchor="end">2.6.1 表一</text>
+  <rect x="200" y="109" width="204" height="13" rx="2" fill="#C9C0A3"/>
+  <rect x="200" y="126" width="192" height="15" rx="2" fill="#0F5C5C"/>
+  <text x="412" y="120" class="t-sub">10.2</text>
+  <text x="400" y="138" class="t-val">9.6</text>
+  <text x="684" y="131" class="t-drop" text-anchor="end">-5.9% (-0.6)</text>
+
+  <!-- Row 3: Livalo OD 2mg (10.2 -> 9.6, -5.88%) -->
+  <text x="190" y="178" class="t-lbl" text-anchor="end">Livalo OD 2mg</text>
+  <text x="190" y="195" class="t-sub" text-anchor="end">2.6.1 表一</text>
+  <rect x="200" y="164" width="204" height="13" rx="2" fill="#C9C0A3"/>
+  <rect x="200" y="181" width="192" height="15" rx="2" fill="#0F5C5C"/>
+  <text x="412" y="175" class="t-sub">10.2</text>
+  <text x="400" y="193" class="t-val">9.6</text>
+  <text x="684" y="186" class="t-drop" text-anchor="end">-5.9% (-0.6)</text>
+
+  <!-- Divider between 2.6.1 and 2.6.3 -->
+  <line x1="16" y1="210" x2="684" y2="210" stroke="#DDD4B6" stroke-width="1"/>
+
+  <!-- Row 4: Livazebe HD 4mg (12.2 -> 11.5, -5.74%) -->
+  <text x="190" y="236" class="t-lbl" text-anchor="end">Livazebe HD 4mg</text>
+  <text x="190" y="253" class="t-sub" text-anchor="end">2.6.3 縮至6–8週</text>
+  <rect x="200" y="222" width="244" height="13" rx="2" fill="#C9C0A3"/>
+  <rect x="200" y="239" width="230" height="15" rx="2" fill="#B84A27"/>
+  <text x="452" y="233" class="t-sub">12.2</text>
+  <text x="438" y="251" class="t-val">11.5</text>
+  <text x="684" y="244" class="t-drop" text-anchor="end">-5.7% (-0.7)</text>
+
+  <!-- Row 5: Zovastin 10/10mg (15.2 -> 14.2, -6.58%) -->
+  <text x="190" y="291" class="t-lbl" text-anchor="end">Zovastin 10/10mg</text>
+  <text x="190" y="308" class="t-sub" text-anchor="end">2.6.3 縮至6–8週</text>
+  <rect x="200" y="277" width="304" height="13" rx="2" fill="#C9C0A3"/>
+  <rect x="200" y="294" width="284" height="15" rx="2" fill="#B84A27"/>
+  <text x="512" y="288" class="t-sub">15.2</text>
+  <text x="492" y="306" class="t-val">14.2</text>
+  <text x="684" y="299" class="t-drop" text-anchor="end">-6.6% (-1.0)</text>
+
+  <!-- Row 6: Zovastin 10/20mg (15.9 -> 14.9, -6.29%) -->
+  <text x="190" y="346" class="t-lbl" text-anchor="end">Zovastin 10/20mg</text>
+  <text x="190" y="363" class="t-sub" text-anchor="end">2.6.3 縮至6–8週</text>
+  <rect x="200" y="332" width="318" height="13" rx="2" fill="#C9C0A3"/>
+  <rect x="200" y="349" width="298" height="15" rx="2" fill="#B84A27"/>
+  <text x="526" y="343" class="t-sub">15.9</text>
+  <text x="506" y="361" class="t-val">14.9</text>
+  <text x="684" y="354" class="t-drop" text-anchor="end">-6.3% (-1.0)</text>
+
+  <!-- X-axis ticks -->
+  <text x="200" y="396" class="t-axis" text-anchor="middle">0</text>
+  <text x="280" y="396" class="t-axis" text-anchor="middle">4</text>
+  <text x="360" y="396" class="t-axis" text-anchor="middle">8</text>
+  <text x="440" y="396" class="t-axis" text-anchor="middle">12</text>
+  <text x="520" y="396" class="t-axis" text-anchor="middle">16</text>
+  <text x="370" y="414" class="t-sub" text-anchor="middle">健保支付價格（新台幣元／錠）</text>
+</svg>
+      <figcaption>單位：新台幣元／錠。資料來源：<a href="https://www.nhi.gov.tw/ch/dl-103684-34c75c0c1cb74758921b52f1bc0ec1c6-1.pdf" target="_blank" rel="noopener noreferrer">健保署 115-10-29 全民健康保險藥品已收載項目異動明細表</a>。</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec">
+    <h2 id="dual-mechanism">雙重降血脂路徑為何讓 2.6.3 等待期縮短具臨床意義</h2>
+    <p>Statin 類藥物抑制肝臟 HMG-CoA 還原酶以減少內生性膽固醇合成，而 ezetimibe 則選擇性阻斷小腸刷狀緣 NPC1L1 轉運蛋白，減少飲食與膽汁中膽固醇的腸道吸收。臨床上若單用 statin 達 6–8 週仍未達 LDL-C 目標，其降幅多已進入平台期；及早合併或切換為 statin＋ezetimibe 固定劑量複方，能透過雙重機轉互補，加速高風險族群達標並提升服藥順從性。</p>
+
+  </section>
+
+  <section class="sec">
+    <h2 id="ascvd-risk">補齊原卡未列核心條文：2.6.1「表一」六級 ASCVD 風險分層</h2>
+    <p>2.6.1 本文結構為「原則＋但書」：降膽固醇藥物原則上適用 2026 年 9 月 1 日建立的<strong>表一（新制）</strong>，僅下表點名品項不適用表一、改適用<strong>表二</strong>（承接自 108/2/1 舊制沿革）。本次 Atova 10mg、Livalo 2mg 與 Livalo OD 2mg 自下表刪除後，自 12 月 1 日起即可依下表一的六級風險標準申報（<a href="https://www.nhi.gov.tw/ch/dl-100842-f34d34af17374f04ae02e87f1ea8ac56-1.pdf" target="_blank" rel="noopener noreferrer">健保署 115/9/1 修訂對照表</a>、<a href="https://www.bc-huang.com/statin-nhi-2026/" target="_blank" rel="noopener noreferrer">黃柏誠醫師整理</a>、<a href="https://leotalkhealth.com/lipid-nhi-coverage-2026/" target="_blank" rel="noopener noreferrer">洪暐傑醫師整理</a>）。</p>
+
+    <figure>
+      <div class="fig-title">表一依心血管風險切出六道防線，極高風險 LDL-C 門檻與目標壓低至 55 mg/dL</div>
+      <svg viewBox="0 0 700 390" width="100%" role="img" aria-label="健保表一六級 ASCVD 風險分層 LDL-C 治療目標圖" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .a-lbl { font-family: "Noto Sans TC", sans-serif; font-size: 14px; fill: #17202A; font-weight: 600; }
+    .a-sub { font-family: "Noto Sans TC", sans-serif; font-size: 12.5px; fill: #4A5560; }
+    .a-val { font-family: "JetBrains Mono", monospace; font-size: 13.5px; fill: #17202A; font-weight: 700; }
+    .a-sec { font-family: "JetBrains Mono", monospace; font-size: 12.5px; fill: #0B4A4A; }
+    .a-axis { font-family: "JetBrains Mono", monospace; font-size: 12.5px; fill: #4A5560; }
+  </style>
+  <rect width="700" height="390" fill="#FDF9E7"/>
+  <!-- Legend -->
+  <rect x="175" y="12" width="14" height="10" rx="2" fill="#B84A27"/>
+  <text x="195" y="22" class="a-sub">高風險以上（藥物與生活調整並行）</text>
+  <rect x="445" y="12" width="14" height="10" rx="2" fill="#0F5C5C"/>
+  <text x="465" y="22" class="a-sub">中低風險（先3–6個月生活調整）</text>
+
+  <!-- Gridlines: x=175 is 0, scale 2.25px per mg/dL (180 mg/dL = 405px -> x=580) -->
+  <line x1="175" y1="38" x2="175" y2="345" stroke="#B8AE90" stroke-width="1"/>
+  <line x1="287.5" y1="38" x2="287.5" y2="345" stroke="#DDD4B6" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="400" y1="38" x2="400" y2="345" stroke="#DDD4B6" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="512.5" y1="38" x2="512.5" y2="345" stroke="#DDD4B6" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Tier 1: 極高風險 55 -->
+  <text x="165" y="68" class="a-lbl" text-anchor="end">極高風險</text>
+  <rect x="175" y="50" width="123.75" height="24" rx="3" fill="#8F3418"/>
+  <text x="309" y="67" class="a-val">&lt; 55</text>
+  <text x="372" y="67" class="a-sec">non-HDL-C &lt; 85</text>
+
+  <!-- Tier 2: 非常高風險 70 -->
+  <text x="165" y="118" class="a-lbl" text-anchor="end">非常高風險</text>
+  <rect x="175" y="100" width="157.5" height="24" rx="3" fill="#B84A27"/>
+  <text x="342" y="117" class="a-val">&lt; 70</text>
+  <text x="405" y="117" class="a-sec">non-HDL-C &lt; 100</text>
+
+  <!-- Tier 3: 高風險 100 -->
+  <text x="165" y="168" class="a-lbl" text-anchor="end">高風險</text>
+  <rect x="175" y="150" width="225" height="24" rx="3" fill="#D16A47"/>
+  <text x="410" y="167" class="a-val">&lt; 100</text>
+  <text x="478" y="167" class="a-sec">non-HDL-C &lt; 130</text>
+
+  <!-- Tier 4: 中風險 115 -->
+  <text x="165" y="218" class="a-lbl" text-anchor="end">中風險（≥2因子）</text>
+  <rect x="175" y="200" width="258.75" height="24" rx="3" fill="#0F5C5C"/>
+  <text x="444" y="217" class="a-val">&lt; 115</text>
+  <text x="512" y="217" class="a-sec">non-HDL-C &lt; 145</text>
+
+  <!-- Tier 5: 低風險 130 -->
+  <text x="165" y="268" class="a-lbl" text-anchor="end">低風險（1因子）</text>
+  <rect x="175" y="250" width="292.5" height="24" rx="3" fill="#2A7B7B"/>
+  <text x="477" y="267" class="a-val">&lt; 130</text>
+  <text x="545" y="267" class="a-sec">non-HDL-C &lt; 160</text>
+
+  <!-- Tier 6: 0 項風險因子 160 -->
+  <text x="165" y="318" class="a-lbl" text-anchor="end">0 項風險因子</text>
+  <rect x="175" y="300" width="360" height="24" rx="3" fill="#5D9E9E"/>
+  <text x="545" y="317" class="a-val">&lt; 160</text>
+  <text x="612" y="317" class="a-sub">未另列次要</text>
+
+  <!-- X-axis ticks -->
+  <text x="175" y="365" class="a-axis" text-anchor="middle">0</text>
+  <text x="287.5" y="365" class="a-axis" text-anchor="middle">50</text>
+  <text x="400" y="365" class="a-axis" text-anchor="middle">100</text>
+  <text x="512.5" y="365" class="a-axis" text-anchor="middle">150</text>
+  <text x="370" y="384" class="a-sub" text-anchor="middle">LDL-C 起始治療門檻（≧）與主要治療目標（&lt;），單位：mg/dL</text>
+</svg>
+      <figcaption>單位：mg/dL。表一中每一級的「起始藥物治療血脂值（≧）」與「主要血脂目標值（&lt;）」採同一切點數值；達標後再檢視次要目標 non-HDL-C（總膽固醇 − HDL-C）。資料來源：<a href="https://www.nhi.gov.tw/ch/dl-100842-f34d34af17374f04ae02e87f1ea8ac56-1.pdf" target="_blank" rel="noopener noreferrer">健保署 115/9/1 藥品給付規定修訂對照表</a>。</figcaption>
+    </figure>
+
+    <div class="tbl-wrap" tabindex="0" role="region" aria-label="可橫向捲動的表格">
+      <table>
+        <thead>
+          <tr>
+            <th>ASCVD 風險等級</th>
+            <th>核心臨床定義（摘要）</th>
+            <th>非藥物治療規定</th>
+            <th class="num">LDL-C 起始／目標</th>
+            <th class="num">次要 non-HDL-C</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>極高風險</strong></td>
+            <td>冠狀動脈疾病合併：1 年內心肌梗塞、≧2 次心肌梗塞、多支血管阻塞、急性冠心症併糖尿病、周邊動脈疾病或頸動脈狹窄；或周邊動脈疾病合併冠心病／頸動脈狹窄。</td>
+            <td>處置可改善風險因子與藥物<strong>並行</strong></td>
+            <td class="num">≧55 / &lt;55</td>
+            <td class="num">&lt;85</td>
+          </tr>
+          <tr>
+            <td><strong>非常高風險</strong></td>
+            <td>臨床確診 ASCVD（急性冠心症、心導管或繞道手術、缺血性中風／TIA 併動脈硬化、曾接受血管再通術或有肢體缺血症狀或截肢的周邊動脈疾病）；或影像檢查確認顯著斑塊（≧50% 狹窄）。</td>
+            <td>處置可改善風險因子與藥物<strong>並行</strong></td>
+            <td class="num">≧70 / &lt;70</td>
+            <td class="num">&lt;100</td>
+          </tr>
+          <tr>
+            <td><strong>高風險</strong></td>
+            <td>糖尿病；未洗腎之慢性腎臟病（UACR ≧30 mg/g 或 eGFR &lt;60 mL/min/1.73 m² 持續至少 3 個月）；LDL-C ≧190 mg/dL；冠狀動脈鈣化分數 CAC ≧400。</td>
+            <td>生活型態改變與藥物<strong>並行</strong></td>
+            <td class="num">≧100 / &lt;100</td>
+            <td class="num">&lt;130</td>
+          </tr>
+          <tr>
+            <td><strong>中風險</strong></td>
+            <td>未符合上述高風險以上條件，且具 <strong>2 項（含）以上</strong>心血管風險因子（高血壓、男≧45／女≧55 歲、早發冠心病家族史、HDL-C 男&lt;40／女&lt;50、抽菸、代謝症候群）。</td>
+            <td>給藥前應先有 <strong>3–6 個月</strong>生活調整</td>
+            <td class="num">≧115 / &lt;115</td>
+            <td class="num">&lt;145</td>
+          </tr>
+          <tr>
+            <td><strong>低風險</strong></td>
+            <td>未符合上述條件，具 <strong>1 項</strong>心血管風險因子。</td>
+            <td>給藥前應先有 <strong>3–6 個月</strong>生活調整</td>
+            <td class="num">≧130 / &lt;130</td>
+            <td class="num">&lt;160</td>
+          </tr>
+          <tr>
+            <td><strong>0 項風險因子</strong></td>
+            <td>六項心血管風險因子皆不符合。</td>
+            <td>給藥前應先有 <strong>3–6 個月</strong>生活調整</td>
+            <td class="num">≧160 / &lt;160</td>
+            <td class="num">未另列</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>2.6.1 仍列於排除清單（僅適用表二）的 113 項品項</strong>：成分欄仍涵蓋 simvastatin、lovastatin、pravastatin、fluvastatin、atorvastatin、rosuvastatin、pitavastatin、pravastatin＋fenofibrate 複方，以及 atorvastatin＋amlodipine 複方（詳見 <a href="https://www.nhi.gov.tw/ch/dl-103688-cb3cda4e3dad4851a3c186dfa11bf113-1.pdf" target="_blank" rel="noopener noreferrer">115/12/1 修訂對照表附件</a>）。</p>
+  </section>
+
+  <section class="sec">
+    <h2 id="combination-coverage">2.6.3 含 ezetimibe 與 statin 複方製劑：6–8 週與 3 個月清單對照</h2>
+    <p>依 <a href="https://www.nhi.gov.tw/ch/dl-100842-f34d34af17374f04ae02e87f1ea8ac56-1.pdf" target="_blank" rel="noopener noreferrer">藥品給付規定 2.6.3</a> 完整條文（原圖卡以「(略)」帶過之第 1 點一併補齊）：</p>
+    <ul>
+      <li><strong>第 1 點（適應症）</strong>：限用於原發性高膽固醇血症、同型接合子家族性高膽固醇血症（HoFH）病患。</li>
+      <li><strong>第 2 點（前置治療等待期）</strong>：經使用 statin 類藥品單一治療 <strong>6–8 週</strong>未達治療目標者，得使用本類藥品；但下表所列例外項目仍需單一治療 <strong>3 個月</strong>未達標始得使用。</li>
+      <li><strong>第 3 點（併用禁忌，未修訂）</strong>：本品不得與 gemfibrozil 併用（106/8/1）。</li>
+    </ul>
+
+    <div class="tbl-wrap" tabindex="0" role="region" aria-label="可橫向捲動的表格">
+      <table>
+        <thead>
+          <tr>
+            <th>分類狀態（12/1 起）</th>
+            <th>前置 Statin 等待期</th>
+            <th>品項清單（含健保代碼）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag-inline">本次移出名單（3 項）</span></td>
+            <td><strong>6–8 週</strong>（放寬）</td>
+            <td>Zovastin tablets 10/10mg（AC62140100）、Zovastin tablets 10/20mg（AC62139100）、Livazebe combination tablets HD for 4mg（BC28884100）</td>
+          </tr>
+          <tr>
+            <td><span class="tag-warm">仍列於排除名單（7 項）</span></td>
+            <td><strong>3 個月</strong>（維持）</td>
+            <td>Agitin tablets 10/20mg（AC59251100）、Sacure tablets 10/20mg（AC60402100）、Ezta-SM 10+20（BC28502100）、Zoliton tablets 10/20mg（AC62052100）、Zoliton tablets 10/10mg（AC62053100）、Cretrol Tab. 10/10mg（BC28181100）、Cretrol Tab. 10/20mg（BC28182100）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="band">
+    <h2 id="coverage-policy">政策脈絡與證據獨立查核：為何採「分批放寬」？</h2>
+    <div class="strip-2">
+      <div>
+        <h3>共擬會議第 82 次會議「以價換量」機制</h3>
+        <p>2026 年 6 月 18 日藥物共擬會議藥品部分第 82 次會議第 8 案明定：為促進我國血脂治療標準與臨床實務（九大醫學會《2025 台灣血脂管理臨床路徑共識》）接軌，<strong>倘廠商同意健保署協議之價格，始修訂藥品給付規定</strong>。因此 9 月 1 日首波放寬 57 項，12 月 1 日第二波再將後續達成價量協議的 6 項移出排除名單（累計 63 項擴增給付），而未同意調價的 124 項（2.6.1 餘 113 項、2.6.2 餘 4 項、2.6.3 餘 7 項）則維持原規定（<a href="https://hanwenliu.blogspot.com/2019/01/Lipid-NHI-regulation.html" target="_blank" rel="noopener noreferrer">劉漢文醫師整理</a>）。</p>
+      </div>
+      <div>
+        <h3>原始貼文與圖卡獨立查核結論</h3>
+        <p>經交叉核對 <a href="https://www.nhi.gov.tw/ch/cp-20681-3808b-3258-1.html" target="_blank" rel="noopener noreferrer">健保署 115-10-29 公告</a> 與兩份官方附件，原貼文所載發文字號（健保審字第 1150672925 號）、生效日（2026-12-01）、6 項藥名與原價／初核價、2.6.1／2.6.3 條文日期註記新增「115/12/1」、以及本次修訂對照表未列 2.6.2 等敘述與公告一致。另需留意：2.6.2（Ezetimibe 單方）雖列於第 82 次共擬會議結論範圍，但本公告未列 ezetimibe 單方品項，對照表修訂範圍為 2.6.1 與 2.6.3。</p>
+      </div>
+    </div>
+  </section>
+
+  <blockquote>「健保認定的是健保代碼，不是學名成分；同一品牌的不同劑量，可能一個走新制表一、另一個仍卡在表二。」</blockquote>
+
+  <section class="sec">
+    <div class="split">
+      <div class="split-left">
+        <h2 id="prescribing">臨床處方與申報查核四步驟</h2>
+      </div>
+      <div class="split-right">
+        <ol>
+          <li><strong>先分級、再看 LDL-C</strong>：開立前依病史、影像（≧50% 狹窄或 CAC ≧400）、糖尿病／CKD 與六項風險因子（注意代謝症候群 5 項中滿 3 項才算「1 項」風險因子）定位六級風險，並於病歷載明分級依據。</li>
+          <li><strong>處方以健保代碼核對</strong>：12 月 1 日起開立 <code>AC57930100</code>（Atova 10mg）、<code>BC25350100</code>（Livalo 2mg）或 <code>BC27002100</code>（Livalo OD 2mg）即可適用表一；但 Livalo 以外之其他 pitavastatin 學名藥若仍在 113 項清單內，仍僅適用表二。</li>
+          <li><strong>善用 6–8 週抽血與換藥節奏</strong>：高風險以上病人建議於起始治療後 6–8 週追蹤血脂。自 12 月 1 日起，符合 2.6.3 適應症且單用 statin 6–8 週仍未達標者，可依規定使用這三項複方。</li>
+          <li><strong>留意併用禁忌與穩定用藥溝通</strong>：所有 2.6.3 複方皆不得與 gemfibrozil 併用；已穩定達標的病人切勿僅因給付分表而自行停藥或更換品牌。</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2 id="original-card">健保署公告附件速查</h2>
+    <ul>
+      <li><a href="https://www.nhi.gov.tw/ch/dl-103684-34c75c0c1cb74758921b52f1bc0ec1c6-1.pdf">附件 1｜六項健保代碼、原支付價與初核價格</a></li>
+      <li><a href="https://www.nhi.gov.tw/ch/dl-103688-cb3cda4e3dad4851a3c186dfa11bf113-1.pdf">附件 2｜2.6.1 與 2.6.3 新舊條文對照</a></li>
+    </ul>
+  </section>
+
+  <section class="sec sources">
+    <h2 id="sources">Sources</h2>
+    <ol>
+      <li>衛生福利部中央健康保險署（2026-10-29）。<a href="https://www.nhi.gov.tw/ch/cp-20681-3808b-3258-1.html" target="_blank" rel="noopener noreferrer">公告異動降血脂藥品支付價格及修訂其藥品給付規定（健保審字第 1150672925 號）</a>。</li>
+      <li>衛生福利部中央健康保險署（2026-10-29）。<a href="https://www.nhi.gov.tw/ch/dl-103684-34c75c0c1cb74758921b52f1bc0ec1c6-1.pdf" target="_blank" rel="noopener noreferrer">附件 1：全民健康保險藥品已收載項目異動明細表（115/12/1 生效）</a>。</li>
+      <li>衛生福利部中央健康保險署（2026-10-29）。<a href="https://www.nhi.gov.tw/ch/dl-103688-cb3cda4e3dad4851a3c186dfa11bf113-1.pdf" target="_blank" rel="noopener noreferrer">附件 2：藥品給付規定修訂對照表（第 2 節 2.6.1 與 2.6.3，115/12/1 生效）</a>。</li>
+      <li>衛生福利部中央健康保險署（2026-07-28）。<a href="https://www.nhi.gov.tw/ch/dl-100842-f34d34af17374f04ae02e87f1ea8ac56-1.pdf" target="_blank" rel="noopener noreferrer">藥品給付規定修訂對照表（第 2 節 2.6.1 表一、2.6.2、2.6.3，115/9/1 生效）</a>。</li>
+      <li>黃柏誠醫師（2026-10-30 更新）。<a href="https://www.bc-huang.com/statin-nhi-2026/" target="_blank" rel="noopener noreferrer">降血脂藥健保新制：2026 LDL 門檻與目標（含 12/1 移出 6 品項更新）</a>。</li>
+      <li>洪暐傑醫師（2026-09-07 更新）。<a href="https://leotalkhealth.com/lipid-nhi-coverage-2026/" target="_blank" rel="noopener noreferrer">降血脂藥健保給付新制 2026：6 級風險目標值完整對照與條文解析</a>。</li>
+      <li>劉漢文醫師。<a href="https://hanwenliu.blogspot.com/2019/01/Lipid-NHI-regulation.html" target="_blank" rel="noopener noreferrer">健保降血脂藥物給付規定（含 115/12/1 版 63 項擴增與 124 項維持原規定統計）</a>。</li>
+    </ol>
+  </section>
+
+<section class="sec">
+    <h2 id="related-articles">相關文章</h2>
+    <ul><li><a href="inclisiran-nhi-coverage.html">降膽固醇新選擇：Inclisiran 納入健保給付全解析</a>。同日生效的 PCSK9 血脂調節劑健保規定，另有事前審查條件。</li></ul>
+  </section>
+</main>
+</body>
+</html>
