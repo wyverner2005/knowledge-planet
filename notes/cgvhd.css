@@ -1,9 +1,34 @@
-.kp-cgvhd .kp-article-controls { max-width: 1180px; margin: 0 auto; padding: 12px 20px; }
+.kp-cgvhd :is(.kp-article-controls, .hero-inner, .layout) { max-width: 1480px; }
+.kp-cgvhd .kp-article-controls { margin: 0 auto; padding: 12px 20px; }
 .kp-cgvhd .layout > *, .kp-cgvhd .content { min-width: 0; }
 .kp-cgvhd .kp-table-scroll { overflow-x: auto; max-width: 100%; margin: 16px 0; }
-.kp-cgvhd .kp-table-scroll table { min-width: 640px; margin: 0; }
+.kp-cgvhd .kp-table-scroll table { min-width: 720px; margin: 0; }
 .kp-cgvhd .kp-related a { color: var(--navy); }
 .kp-cgvhd .hero .kp-categories { margin: 0 0 16px; }
+.kp-cgvhd .hero h1 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); overflow-wrap: anywhere; }
+.kp-cgvhd .content h2 { font-size: clamp(1.35rem, 2.1vw, 1.65rem); }
+
+@media (min-width: 961px) {
+  .kp-cgvhd .layout { grid-template-columns: 225px minmax(0, 1fr); }
+}
+
+html.kp-cgvhd:not([data-theme="dark"]) {
+  --card: var(--kp-light-panel);
+  --border: var(--kp-light-edge);
+}
+.kp-cgvhd:not([data-theme="dark"]) .hero {
+  background: var(--kp-light-paper);
+  color: var(--navy);
+}
+.kp-cgvhd:not([data-theme="dark"]) .hero p { color: var(--muted); }
+.kp-cgvhd:not([data-theme="dark"]) .badge {
+  background: var(--kp-light-panel);
+  border-color: var(--kp-light-edge);
+}
+.kp-cgvhd:not([data-theme="dark"]) :is(.kpi, .figure-cap, details, tr:nth-child(even) td) {
+  background: var(--kp-light-paper);
+}
+
 html.kp-cgvhd[data-theme="dark"] {
   --navy: #a8caff; --teal: #69d4cd; --coral: #ffa8a8;
   --amber: #f6d48b; --green: #91dfb2; --bg: #101722;
@@ -25,8 +50,7 @@ html.kp-cgvhd[data-theme="dark"] {
 .kp-cgvhd[data-theme="dark"] .callout.gi .callout-title { color: #b5d3ff; }
 @media (max-width: 600px) {
   .kp-cgvhd .hero { padding: 28px 18px; }
-  .kp-cgvhd .hero h1 { font-size: 1.65rem; overflow-wrap: anywhere; }
-  .kp-cgvhd .layout { padding: 0 12px; gap: 18px; }
-  .kp-cgvhd .content section { padding: 20px 16px; }
-  .kp-cgvhd .content h2 { font-size: 1.25rem; }
+  .kp-cgvhd .layout { padding: 0 10px; gap: 18px; }
+  .kp-cgvhd .content section { padding: 20px 14px; }
+  .kp-cgvhd .figure-box { margin-inline: -8px; }
 }
