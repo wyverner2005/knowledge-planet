@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="kp-note kp-cgvhd">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>慢性移植物抗宿主疾病 (cGVHD) 臨床治療與標靶實證｜完整圖文解說與證據查核</title>
+<style>
+  :root {
+    --navy: #1B365D;
+    --teal: #008080;
+    --coral: #C53030;
+    --amber: #B7791F;
+    --green: #276749;
+    --bg: #F7FAFC;
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --text: #1A202C;
+    --muted: #4A5568;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    margin: 0;
+    padding: 0;
+  }
+  .hero {
+    background: linear-gradient(135deg, #1B365D 0%, #2A4365 60%, #006666 100%);
+    color: white;
+    padding: 42px 28px 34px;
+    border-bottom: 5px solid #00A3A3;
+  }
+  .hero.tx {
+    background: linear-gradient(135deg, #1A365D 0%, #2C5282 55%, #742A2A 100%);
+    border-bottom: 5px solid #D69E2E;
+  }
+  .hero-inner { max-width: 1180px; margin: 0 auto; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .badge {
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .hero h1 { margin: 0 0 10px; font-size: 2rem; line-height: 1.3; }
+  .hero p { margin: 0; color: #E2E8F0; font-size: 1rem; max-width: 920px; }
+  .layout {
+    max-width: 1180px;
+    margin: 28px auto 60px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 245px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 960px) {
+    .layout { grid-template-columns: 1fr; }
+    .toc { position: static !important; }
+  }
+  .toc {
+    position: sticky;
+    top: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .toc h3 {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    color: var(--navy);
+    border-bottom: 2px solid var(--teal);
+    padding-bottom: 6px;
+  }
+  .toc ul { list-style: none; padding: 0; margin: 0; }
+  .toc li { margin: 6px 0; }
+  .toc a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.88rem;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .toc a:hover { background: #EDF2F7; color: var(--navy); font-weight: 600; }
+  .content section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  }
+  h2 {
+    color: var(--navy);
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #E2E8F0;
+    font-size: 1.4rem;
+  }
+  h3 { color: #2A4365; margin-top: 22px; margin-bottom: 10px; font-size: 1.12rem; }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+    margin: 18px 0;
+  }
+  .kpi {
+    background: #F8FAFC;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi.warn { border-left-color: var(--coral); }
+  .kpi.navy { border-left-color: var(--navy); }
+  .kpi .num { font-size: 1.55rem; font-weight: 800; color: var(--navy); line-height: 1.2; }
+  .kpi .lbl { font-size: 0.84rem; color: var(--muted); margin-top: 4px; }
+  .figure-box {
+    margin: 22px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+  }
+  .figure-box img { width: 100%; height: auto; display: block; }
+  .figure-cap {
+    background: #F8FAFC;
+    padding: 10px 16px;
+    font-size: 0.86rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.91rem; }
+  th { background: var(--navy); color: white; text-align: left; padding: 10px 12px; font-weight: 600; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: #F8FAFC; }
+  .callout {
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 18px 0;
+    border-left: 5px solid var(--teal);
+    background: #E6FFFA;
+  }
+  .callout.audit { border-left-color: #C53030; background: #FFF5F5; }
+  .callout.pearl { border-left-color: #B7791F; background: #FFFFF0; }
+  .callout.gi { border-left-color: #2B6CB0; background: #EBF8FF; }
+  .callout-title { font-weight: 800; margin-bottom: 6px; color: var(--navy); font-size: 0.98rem; }
+  .callout.audit .callout-title { color: #9B2C2C; }
+  .callout.pearl .callout-title { color: #975A16; }
+  .callout.gi .callout-title { color: #2C5282; }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .tag-diag { background: #FED7D7; color: #9B2C2C; }
+  .tag-dist { background: #FEFCBF; color: #975A16; }
+  .tag-comm { background: #BEE3F8; color: #2B6CB0; }
+  .tag-fda { background: #C6F6D5; color: #22543D; }
+  .tag-off { background: #EDF2F7; color: #4A5568; }
+  details {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 12px 0;
+    background: #FAFBFD;
+  }
+  summary { cursor: pointer; font-weight: 700; color: var(--navy); }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+</style>
+<link rel="stylesheet" href="../theme.css">
+<link rel="stylesheet" href="cgvhd.css">
+<script src="../theme.js"></script>
+</head>
+<body>
+<nav class="kp-controls kp-article-controls" aria-label="文章導覽"><a class="kp-control" href="../">← 返回知識星球</a><button class="kp-control kp-theme-toggle" type="button" aria-pressed="false" hidden>深色模式</button></nav>
+
+<div class="hero tx">
+  <div class="hero-inner">
+<div class="kp-categories"><a class="kp-category" href="../?category=hematology">血液科 · Hematology</a><a class="kp-category" href="../?category=gastroenterology">腸胃肝膽 · Gastroenterology</a><a class="kp-category" href="../?category=clinical-pharmacology">臨床藥理 · Clinical Pharmacology</a></div>
+    <div class="badge-row">
+      <span class="badge">UpToDate 2026（Oct 06, 2026 更新）</span>
+      <span class="badge">系列二：臨床治療與標靶實證篇</span>
+      <span class="badge">一線類固醇減量 + 四大 FDA 標靶</span>
+      <span class="badge">實證文獻獨立查核 (含原文勘誤)</span>
+    </div>
+    <h1>慢性移植物抗宿主疾病 (cGVHD)：分級治療、類固醇難治型標靶與支持照護完整圖文解說</h1>
+    <p>依據 UpToDate 原文 <em>Treatment of chronic graft-versus-host disease</em>（Robert Zeiser, MD；Topic 3550 v62.0）深度整理，完整涵蓋修正版 NIH 分級、Prednisone 減量策略、四大 FDA 核准標靶藥物（Ruxolitinib、Belumosudil、Axatilimab、Ibrutinib）比較、GI/器官局部照護、CYP3A4 交互作用與獨立證據查核。</p>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc">
+    <h3>治療篇目錄</h3>
+    <ul>
+      <li><a href="#eval-grade">1. 治療前評估與修正版 NIH 分級</a></li>
+      <li><a href="#initial">2. 初始治療策略 (輕/中/重度 &amp; Overlap)</a></li>
+      <li><a href="#prednisone">3. Prednisone 劑量、減量與復發處置</a></li>
+      <li><a href="#sr-cgvhd">4. 類固醇難治型 (SR-cGVHD) 四大標靶比較</a></li>
+      <li><a href="#other-tx">5. 非藥物 (ECP/PUVA) 與其他後線藥物</a></li>
+      <li><a href="#organ-care">6. 肝膽腸胃與各器官局部支持照護</a></li>
+      <li><a href="#infection-cyp">7. 感染預防、疫苗禁忌與 CYP3A4 紅旗</a></li>
+      <li><a href="#audit">8. 獨立證據查核與原文勘誤報告</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section id="eval-grade">
+      <h2>1. 治療前評估與修正版 NIH 嚴重度分級</h2>
+      <p>cGVHD 的治療目標在於<strong>持續減輕或消除症狀負擔、失能與疾病活性</strong>，同時將長期免疫抑制副作用降至最低，最終達成安全停藥且不復發，並兼顧保留移植物抗腫瘤效應（GVT）。超過三分之一接受異體 HCT 的患者需要全身性治療。</p>
+
+      <h3>治療前標準基線檢查</h3>
+      <ul>
+        <li><strong>臨床與體能評分</strong>：完整 8 大器官系統評分（NIH 0–3 分表單）、紀錄既往 GVHD 預防／治療藥物與共病；評估 ECOG 或 Karnofsky 體能狀態（PS）。</li>
+        <li><strong>實驗室與影像</strong>：CBC/DC（特別關注血小板）、電解質、血糖、肝腎功能（ALP、Bilirubin、ALT/AST）；胸部 X 光；有咳嗽或喘促者必做肺功能檢查（PFT）。</li>
+      </ul>
+
+      <h3>UpToDate 修正版 NIH 嚴重度分級（指導一線決策）</h3>
+      <div class="kp-table-scroll" role="region" aria-label="可左右捲動的表格" tabindex="0"><table>
+        <thead>
+          <tr>
+            <th style="width:16%;">嚴重度分級</th>
+            <th style="width:52%;">修正版 NIH 判定條件（8大器官各評 0–3 分）</th>
+            <th style="width:16%;">初始治療建議</th>
+            <th style="width:16%;">實證等級</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:#276749;">輕度 Mild</strong></td>
+            <td>1–2 個器官（分數皆 <strong>≤1 分</strong>）且<strong>肺部 = 0 分</strong>，無顯著功能障礙（ECOG ≤2）</td>
+            <td>局部／外用治療</td>
+            <td>Grade 2C</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#B7791F;">中度 Moderate</strong></td>
+            <td>符合任一：≥3 個器官（≤1 分）；或<strong>肺部 1 分</strong>；或任一非肺器官 <strong>2 分</strong>；或功能障礙（ECOG ≥3）</td>
+            <td>全身 Prednisone</td>
+            <td>Grade 2C</td>
+          </tr>
+          <tr>
+            <td><strong style="color:#C53030;">重度 Severe</strong></td>
+            <td>符合任一：<strong>肺部 ≥2 分</strong>；或任一非肺器官 <strong>3 分</strong>；或<strong>血小板 &lt;100,000/µL</strong>（UpToDate 增列）</td>
+            <td>Prednisone + Ruxolitinib</td>
+            <td>Grade 2C</td>
+          </tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="initial">
+      <h2>2. 初始治療策略（依嚴重度與 Overlap Syndrome 分層）</h2>
+      <div class="figure-box">
+        <img loading="lazy" decoding="async" src="cgvhd-treatment-algorithm.webp" alt="cGVHD 嚴重度分級與一線二線治療決策流程圖">
+        <div class="figure-cap"><strong>圖 1：</strong>依據 UpToDate 2026（Robert Zeiser, MD）與 ASTCT/EBMT 共識整理之 cGVHD 分級、一線治療、SR-cGVHD 標靶選擇與肝膽腸胃關鍵處置流程。</div>
+      </div>
+
+      <ul>
+        <li><strong>輕度 cGVHD</strong>：建議<strong>局部／外用治療</strong>而非全身治療，以避免全身類固醇毒性；唯若皮膚受累非常廣泛（如 &gt;50% BSA），可與病人討論啟用全身治療。</li>
+        <li><strong>中度 cGVHD</strong>：建議單用<strong>全身性 Prednisone（1 mg/kg/day）</strong>，可併用局部治療緩解局部症狀。多項隨機試驗證實一線併用 Azathioprine、MMF、Cyclosporine、Thalidomide 或 Hydroxychloroquine 均未提升緩解率或縮短療程。</li>
+        <li><strong>重度 cGVHD</strong>：UpToDate 作者群建議初始即給予 <strong>Prednisone + Ruxolitinib</strong>（基於專家共識與 SR-cGVHD 療效；註：Ruxolitinib 尚未獲 FDA/EMA 核准一線，部分專家仍偏好單用 Prednisone）。若血小板 &lt;10,000/µL、無法取得或不耐受，優先選用<strong>體外光分離術（ECP）</strong>。</li>
+        <li><strong>一線陰性實證提醒（iNTEGRATE, <em>JCO</em> 2023）</strong>：第三期雙盲試驗（n=193）證實一線 Prednisone + Ibrutinib 與 Prednisone + 安慰劑之 48 週 ORR（41% vs 37%）與 96 週 ORR（27% vs 22%）無顯著差異，故<strong>不建議一線使用 Ibrutinib</strong>。</li>
+        <li><strong>Overlap Syndrome 處置</strong>：依 cGVHD 嚴重度決定；若因既有 aGVHD 已在服用類固醇但劑量不足，先調整至全劑量或加第二線藥；若已在「類固醇 + 第二線藥」下仍出現中重度 cGVHD，直接比照 SR-cGVHD 處置。</li>
+      </ul>
+    </section>
+
+    <section id="prednisone">
+      <h2>3. Prednisone 起始劑量、減量排程與療效評估</h2>
+      <div class="kpi-grid">
+        <div class="kpi navy">
+          <div class="num">1 mg/kg/d</div>
+          <div class="lbl">標準起始劑量（更高劑量無額外獲益）</div>
+        </div>
+        <div class="kpi">
+          <div class="num">~50%</div>
+          <div class="lbl">全身 Prednisone 可達緩解並最終停藥之比例</div>
+        </div>
+        <div class="kpi warn">
+          <div class="num">第 2 週</div>
+          <div class="lbl">首次療效評估點，決定減量或提早加藥</div>
+        </div>
+        <div class="kpi">
+          <div class="num">每 3 個月</div>
+          <div class="lbl">依 NIH 標準之常規追蹤評估頻率</div>
+        </div>
+      </div>
+
+      <div class="callout pearl">
+        <div class="callout-title">Prednisone 實戰減量與復發處理流程</div>
+        <ol style="margin:6px 0 0; padding-left:20px;">
+          <li><strong>第 2 週評估改善（CR 或良好 PR）</strong>：開始<strong>每週減量 25%</strong>，一路減至 <strong>0.10 mg/kg 隔日一次（QOD）</strong>，於該劑量穩定維持 <strong>≥4 週</strong>後可嘗試停藥（部分反覆發作者需極低劑量維持 ≥1 年）。</li>
+          <li><strong>減量期惡化或復發</strong>：立即<strong>上調 2 個階梯</strong>或恢復至全劑量（1 mg/kg/day）治療 2–4 週，再轉為隔日給藥並維持至少 <strong>3 個月</strong>，方能重啟減量。</li>
+          <li><strong>第 2 週穩定無改善或惡化</strong>：判定反應不佳，直接加上第二線藥物（比照 SR-cGVHD）。</li>
+          <li><strong>長期副作用監測</strong>：感染、類固醇肌病、骨質疏鬆與缺血性骨壞死、高血糖、高血壓、白內障、皮膚萎縮、情緒波動與兒童生長遲緩。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="sr-cgvhd">
+      <h2>4. 類固醇難治型 (SR-cGVHD) 定義與四大 FDA 標靶比較</h2>
+      <p>約 <strong>50%</strong> 患者會進展為 SR-cGVHD，定義為符合下列任一項：<strong>(1) Prednisone 1 mg/kg/day 治療 2 週仍惡化</strong>；<strong>(2) Prednisone ≥0.5 mg/kg/day 治療 4–6 週維持穩定無改善</strong>；<strong>(3) 無法減量至 &lt;0.5 mg/kg/day</strong>；或<strong>(4) 出現無法接受之類固醇毒性</strong>（註：皮膚硬化改善速度較慢）。若患者原本正服用 Cyclosporine 或 Tacrolimus，<strong>首要步驟是先確認並優化 CNI 血中治療濃度</strong>。</p>
+
+      <div class="figure-box">
+        <img loading="lazy" decoding="async" src="cgvhd-trials-comparison.webp" alt="SR-cGVHD 五大關鍵臨床試驗比較圖">
+        <div class="figure-cap"><strong>圖 2：</strong>(A) cGVHD 五大關鍵臨床試驗（REACH3、ROCKstar、AGAVE-201、PCYC-1129 與一線陰性試驗 iNTEGRATE）之 ORR 與 CR 比較（各試驗收案線數不同，不宜直接跨試驗比較）；(B) REACH3 第三期試驗中 Ruxolitinib 與最佳可用療法（BAT）之頭對頭比較（已更正 FFS 單位為「個月」）。</div>
+      </div>
+
+      <div class="kp-table-scroll" role="region" aria-label="可左右捲動的表格" tabindex="0"><table>
+        <thead>
+          <tr>
+            <th>藥物 / 機轉</th>
+            <th>FDA 核准適應症與劑量</th>
+            <th>關鍵試驗與核心療效</th>
+            <th>器官特色與臨床優勢</th>
+            <th>重要毒性與交互作用</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Ruxolitinib</strong><br>JAK1/2 抑制劑<br><span class="tag tag-fda">二線首選 Grade 2B</span></td>
+            <td>≥12 歲，≥1 線失敗。<br>UpToDate 起始：<strong>IR 5 mg BID</strong>（或 XR 11 mg QD）；FDA 仿單為 10 mg BID。</td>
+            <td><strong>REACH3 (Phase III, n=329)</strong><br>24週 ORR <strong>50% vs 26%</strong><br>CR 7% vs 3%；mLSS 24% vs 11%<br>中位 FFS <strong>19 vs 6 個月</strong>（3年追蹤確認）</td>
+            <td>唯一具備第三期 RCT 優於 BAT 之實證；兒科（REACH5, 2026）亦證實有效；57% 成功減量類固醇。</td>
+            <td>血球低下（血小板 15%、嗜中性球 13%）、病毒/真菌感染；<strong>PLT &lt;10,000/µL 禁用</strong>；停藥須漸減防<strong>戒斷症候群 (SIRS-like)</strong>；併用強 CYP3A4 抑制劑或 Fluconazole 須調降劑量。</td>
+          </tr>
+          <tr>
+            <td><strong>Belumosudil</strong><br>ROCK2 抑制劑<br><span class="tag tag-fda">三線首選替代</span></td>
+            <td>≥12 歲，≥2 線失敗。<br><strong>200 mg PO QD 隨餐</strong>。</td>
+            <td><strong>ROCKstar (Phase II, n=132)</strong><br>ORR <strong>76%</strong> (CR 2%)<br>LSS 症狀改善 (≥7分) <strong>70%</strong></td>
+            <td>下調 STAT3（抑 Th17/Tfh）、上調 STAT5（增 Treg），兼具抗發炎與抗纖維化。</td>
+            <td>疲倦、腹瀉、肝酵素升、肺炎 (7%)、高血壓 (6%)、胎兒毒性；<strong>併用強 CYP3A 誘導劑或 PPI 須增至 200 mg BID</strong>。</td>
+          </tr>
+          <tr>
+            <td><strong>Axatilimab</strong><br>抗 CSF1-R 單抗<br><span class="tag tag-fda">2024/08 FDA 核准</span></td>
+            <td>體重 ≥40 kg，≥2 線失敗。<br><strong>0.3 mg/kg (上限 35 mg) IV Q2W</strong>（輸注 30 分鐘）。</td>
+            <td><strong>AGAVE-201 (Phase II, n=80)</strong><br>ORR <strong>74%</strong> (CR 5%)<br>LSS 改善 (&gt;5分) 60%<br>中位 FFS &gt;11 個月；起效 &lt;2 個月</td>
+            <td>阻斷促纖維化 M2 巨噬細胞分化！<strong>皮膚硬化反應 &gt;90%</strong>、跨器官皆具顯著療效。</td>
+            <td>輸注反應 (8%，復發者先給抗組織胺+退燒藥)、輕微 ALT/AST/CK/澱粉酶/脂肪酶上升（全為 Grade ≤2）、胚胎毒性。</td>
+          </tr>
+          <tr>
+            <td><strong>Ibrutinib</strong><br>BTK 抑制劑<br><span class="tag tag-fda">2L+ 可選</span></td>
+            <td>≥1 歲，≥1 線失敗。<br><strong>420 mg PO QD</strong>。</td>
+            <td><strong>PCYC-1129 (Phase II, n=42)</strong><br>ORR <strong>67%</strong> (CR 21%)；近 2/3 可減類固醇至 ≤0.15 mg/kg/d。</td>
+            <td>多器官（皮膚、口腔、GI、肝）有效；惟一線 iNTEGRATE 陰性，僅用於二線以後。</td>
+            <td>出血、瘀青、感染、<strong>心房顫動</strong>、高血壓、口腔炎、血球低下。</td>
+          </tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="other-tx">
+      <h2>5. 非藥物療法 (ECP / PUVA) 與其他後線選項</h2>
+      <ul>
+        <li><strong>體外光分離術（ECP）</strong>：分離自體淋巴球經 8-MOP + UVA 照射後回輸。文獻回顧（n=735）ORR <strong>50–65%</strong>（CR 30–35%），25–35% 成功減量類固醇；最大優勢為不額外增加感染風險，但<strong>嚴重心血管或腎衰竭者禁用</strong>。</li>
+        <li><strong>PUVA 光化學療法</strong>：適用於早期侷限於皮膚之 cGVHD（約 1/3 達 CR），起始劑量須降至常規 25% 防灼傷。</li>
+        <li><strong>Calcineurin 抑制劑（CsA / Tacrolimus）</strong>：可與 Prednisone 隔日併用減少缺血性骨壞死（13% vs 22%），須監測血中濃度並警惕腎毒性、低血鎂、高血鉀、高血壓與 TMA。</li>
+        <li><strong>其他後線藥物（無直接頭對頭比較）</strong>：
+          <ul>
+            <li><strong>Rituximab</strong>（375 mg/m² IV QW×4）：對皮膚、口腔、肌肉骨骼反應佳（ORR 可達 86%），<strong>務必先篩檢防 HBV 再活化</strong>。</li>
+            <li><strong>Imatinib（TKI）</strong>：具抗纖維化潛力，約 1/3 改善皮膚硬化或關節活動度。</li>
+            <li><strong>Sirolimus</strong>：目標血中濃度 10 ng/mL，注意高血脂、TMA 與<strong>肝靜脈閉塞症（SOS/VOD，尤見於 Busulfan 預處理者）</strong>。</li>
+            <li><strong>MMF</strong>（1–1.5 g BID，注意嗜中性球低下與腸胃不適）、<strong>Bortezomib</strong>（注意周邊神經病變）、<strong>低劑量 IL-2</strong>（擴增 Treg，仍待更多研究）。</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="organ-care">
+      <h2>6. 肝膽腸胃與各器官局部支持照護</h2>
+      <div class="callout gi">
+        <div class="callout-title">消化內科處置重點（GI cGVHD）</div>
+        所有疑似 GI cGVHD 患者皆應會診<strong>腸胃科醫師</strong>與<strong>營養師</strong>：
+        <ul style="margin:6px 0 0; padding-left:20px;">
+          <li><strong>腹瀉標準查核</strong>：必做糞便培養、<strong><em>C. difficile</em> 毒素</strong>與 <strong>CMV</strong>；無皮疹或黃疸佐證之腹瀉應行上消化道內視鏡（含十二指腸抽吸與切片）及乙狀結腸鏡／大腸鏡切片。</li>
+          <li><strong>食道狹窄</strong>：可行<strong>內視鏡機械擴張術（Bougienage）</strong>解除狹窄。</li>
+          <li><strong>外分泌胰臟功能不全</strong>：持續性脂肪瀉給予<strong>胰臟酵素補充（PERT）</strong>及營養支持防體重減輕。</li>
+        </ul>
+      </div>
+
+      <div class="kp-table-scroll" role="region" aria-label="可左右捲動的表格" tabindex="0"><table>
+        <thead>
+          <tr>
+            <th style="width:16%;">受累器官</th>
+            <th style="width:44%;">局部症狀緩解處置</th>
+            <th style="width:40%;">長期監測與預防要點</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>皮膚</strong></td><td>潤膚膏、第一線外用類固醇或外用 CNI；廣泛（&gt;50% BSA）考慮 ECP；硬化性病變配合物理治療防攣縮。</td><td>防傷口次發感染；長期免疫抑制者<strong>每年皮膚科篩檢皮膚癌</strong>；未癒合／增長病灶 2–4 週內轉診。</td></tr>
+          <tr><td><strong>口腔</strong></td><td>頻繁飲水、人工唾液、類固醇漱口水（<strong>使用前必先排除 HSV、HPV 與念珠菌感染</strong>）；難治者考慮 ECP。</td><td>良好口腔衛生＋局部塗氟防蛀；張口伸展防硬化受限；移植 &gt;3 個月持續病灶須排除<strong>次發性口腔癌</strong>。</td></tr>
+          <tr><td><strong>眼睛</strong></td><td>無防腐劑人工淚液、類固醇眼藥水、外用 Tacrolimus；畏光戴太陽眼鏡；重度採鞏膜鏡（Scleral lens）或淚管塞。</td><td>由具移植經驗之眼科醫師追蹤；高度警覺<strong>感染性角膜炎</strong>；長期全身類固醇須定期追蹤白內障。</td></tr>
+          <tr><td><strong>陰道／生殖道</strong></td><td>局部雌激素（每日 2 週 → 每週 2 次）、Clobetasol 0.05%（BID 6–12 週 → 每週 2–3 次）、外用 CNI 或 Clindamycin 2% 凝膠；必要時用陰道擴張器。</td><td>早會診婦科；避免肥皂與緊身衣物；前 2 年每 3–6 個月婦科追蹤（可拍照紀錄客觀療效）。</td></tr>
+          <tr><td><strong>肺／骨骼／內分泌</strong></td><td>肺部：氧氣、支氣管擴張劑、吸入類固醇、肺復健；骨骼肌肉：物理／職能治療。</td><td>篩檢類固醇肌病與加速性骨質疏鬆；定期篩檢糖尿病、甲狀腺低下、性腺低下與腎上腺功能不全。</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="infection-cyp">
+      <h2>7. 感染預防、疫苗禁忌與 CYP3A4 交互作用紅旗</h2>
+      <ul>
+        <li><strong>感染預防</strong>：依血球低下程度、免疫缺損與類固醇劑量給予抗菌、抗病毒、抗真菌預防及必要時免疫球蛋白（IVIG）補充。</li>
+        <li><strong>疫苗原則</strong>：所有患者應接種肺炎鏈球菌、流感與 b 型嗜血桿菌（Hib）疫苗；<strong>所有 cGVHD 患者嚴禁施打減毒活疫苗（Live vaccines）</strong>。</li>
+        <li><strong>CYP3A4 藥物交互作用紅旗（UpToDate Table 4 精要）</strong>：
+          <ul>
+            <li><strong>強抑制劑（併用 Ruxolitinib / CNI 須大幅減量）</strong>：<strong>Posaconazole、Voriconazole、Itraconazole</strong>、Ketoconazole、Clarithromycin、Ritonavir（含 <strong>Nirmatrelvir-ritonavir / Paxlovid</strong>）。</li>
+            <li><strong>中度抑制劑（併用 Ruxolitinib 須注意調整）</strong>：<strong>Fluconazole</strong>、Isavuconazole、<strong>Letermovir</strong>、Erythromycin、Diltiazem、Verapamil、Amiodarone、葡萄柚汁。</li>
+            <li><strong>強誘導劑（併用 Belumosudil 須加倍至 200 mg BID）</strong>：Rifampin、Carbamazepine、Phenytoin、Enzalutamide、聖約翰草（St. John's wort）。</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="audit">
+      <h2>8. 獨立證據查核與原文勘誤報告 (Evidence Audit)</h2>
+      <div class="callout audit">
+        <div class="callout-title">治療篇查核結論：發現 UpToDate 原文 1 處單位筆誤，並核實 3 項臨床實務重要細節</div>
+        <ol style="margin:8px 0 0; padding-left:20px;">
+          <li><strong>【原文勘誤】REACH3 試驗之中位 FFS 單位</strong>：UpToDate 治療篇第 15 頁誤植為 <code>median failure-free survival (FFS; 19 versus 6 percent)</code>。經核對原始 <em>NEJM</em> 2021（Zeiser et al.）與 <em>JCO</em> 2025 三年最終追蹤報告，正確數值為<strong>中位無失敗存活期 &gt;18.6 個月（約 19 個月）vs 5.7 個月（約 6 個月）</strong>，單位應為<strong>「個月（months）」</strong>而非「百分比（percent）」。本筆記與圖表已全數更正。</li>
+          <li><strong>【起始劑量差異】Ruxolitinib 起始劑量</strong>：REACH3 試驗與 FDA 仿單核准之 cGVHD 起始劑量為 <strong>10 mg BID</strong>；UpToDate 2026 建議以 <strong>IR 5 mg BID（或 XR 11 mg QD）</strong>起步再依耐受性調整。實務上因移植後常合併血球低下或併用 Azole 類抗真菌藥，從 5 mg BID 起步較安全，但若耐受良好且無交互作用應適時上調。</li>
+          <li><strong>【2024–2026 最新核准狀態核實】</strong>：
+            <ul>
+              <li><strong>Axatilimab（Niktimvo）</strong>已於 <strong>2024 年 8 月</strong>獲美國 FDA 正式核准用於 ≥2 線失敗且體重 ≥40 kg 患者（AGAVE-201, <em>NEJM</em> 2024）。</li>
+              <li><strong>Ruxolitinib 用於一線重度 cGVHD</strong> 仍屬 Off-label（專家意見 Grade 2C），尚未獲 FDA/EMA 核准一線適應症。</li>
+              <li><strong>兒科 REACH5 最終分析（<em>Haematologica</em> 2026）</strong>已進一步確立 Ruxolitinib 於 ≥2 至 &lt;18 歲兒童之療效與安全性。</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+<section class="kp-related" aria-label="相關文章"><h2>相關文章</h2><ul><li><a href="cgvhd-manifestations-and-diagnosis.html">慢性移植物抗宿主疾病（cGVHD）：臨床表現與診斷</a> · 從器官表現與診斷證據，銜接嚴重度評估及治療。</li><li><a href="systemic-corticosteroids.html">全身性類固醇臨床選藥與劑量換算圖文解說</a> · 補充 Prednisone／Prednisolone 等效劑量、HPA 軸抑制與減藥原則。</li></ul></section>
+<p><a class="kp-control" href="cgvhd-treatment-and-targeted-evidence.yaml" download>下載 YAML 中繼資料</a></p>
+    <div class="footer">
+      資料來源：UpToDate 2026 — <em>Treatment of chronic graft-versus-host disease</em> (Topic 3550 v62.0, Updated Oct 06, 2026, Robert Zeiser, MD)<br>
+      交叉查核：REACH3 (NEJM 2021 / JCO 2025)、REACH5 (Haematologica 2026)、ROCKstar (Blood 2021)、AGAVE-201 (NEJM 2024)、iNTEGRATE (JCO 2023)、EBMT 2024 (Lancet Haematol 2024)。
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

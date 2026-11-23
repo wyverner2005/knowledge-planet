@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="kp-note kp-cgvhd">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>慢性移植物抗宿主疾病 (cGVHD) 臨床表現與診斷｜完整圖文解說與證據查核</title>
+<style>
+  :root {
+    --navy: #1B365D;
+    --teal: #008080;
+    --coral: #C53030;
+    --amber: #B7791F;
+    --green: #276749;
+    --bg: #F7FAFC;
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --text: #1A202C;
+    --muted: #4A5568;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    margin: 0;
+    padding: 0;
+  }
+  .hero {
+    background: linear-gradient(135deg, #1B365D 0%, #2A4365 60%, #006666 100%);
+    color: white;
+    padding: 42px 28px 34px;
+    border-bottom: 5px solid #00A3A3;
+  }
+  .hero.tx {
+    background: linear-gradient(135deg, #1A365D 0%, #2C5282 55%, #742A2A 100%);
+    border-bottom: 5px solid #D69E2E;
+  }
+  .hero-inner { max-width: 1180px; margin: 0 auto; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .badge {
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .hero h1 { margin: 0 0 10px; font-size: 2rem; line-height: 1.3; }
+  .hero p { margin: 0; color: #E2E8F0; font-size: 1rem; max-width: 920px; }
+  .layout {
+    max-width: 1180px;
+    margin: 28px auto 60px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 245px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 960px) {
+    .layout { grid-template-columns: 1fr; }
+    .toc { position: static !important; }
+  }
+  .toc {
+    position: sticky;
+    top: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .toc h3 {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    color: var(--navy);
+    border-bottom: 2px solid var(--teal);
+    padding-bottom: 6px;
+  }
+  .toc ul { list-style: none; padding: 0; margin: 0; }
+  .toc li { margin: 6px 0; }
+  .toc a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.88rem;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .toc a:hover { background: #EDF2F7; color: var(--navy); font-weight: 600; }
+  .content section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  }
+  h2 {
+    color: var(--navy);
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #E2E8F0;
+    font-size: 1.4rem;
+  }
+  h3 { color: #2A4365; margin-top: 22px; margin-bottom: 10px; font-size: 1.12rem; }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+    margin: 18px 0;
+  }
+  .kpi {
+    background: #F8FAFC;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi.warn { border-left-color: var(--coral); }
+  .kpi.navy { border-left-color: var(--navy); }
+  .kpi .num { font-size: 1.55rem; font-weight: 800; color: var(--navy); line-height: 1.2; }
+  .kpi .lbl { font-size: 0.84rem; color: var(--muted); margin-top: 4px; }
+  .figure-box {
+    margin: 22px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+  }
+  .figure-box img { width: 100%; height: auto; display: block; }
+  .figure-cap {
+    background: #F8FAFC;
+    padding: 10px 16px;
+    font-size: 0.86rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.91rem; }
+  th { background: var(--navy); color: white; text-align: left; padding: 10px 12px; font-weight: 600; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: #F8FAFC; }
+  .callout {
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 18px 0;
+    border-left: 5px solid var(--teal);
+    background: #E6FFFA;
+  }
+  .callout.audit { border-left-color: #C53030; background: #FFF5F5; }
+  .callout.pearl { border-left-color: #B7791F; background: #FFFFF0; }
+  .callout.gi { border-left-color: #2B6CB0; background: #EBF8FF; }
+  .callout-title { font-weight: 800; margin-bottom: 6px; color: var(--navy); font-size: 0.98rem; }
+  .callout.audit .callout-title { color: #9B2C2C; }
+  .callout.pearl .callout-title { color: #975A16; }
+  .callout.gi .callout-title { color: #2C5282; }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .tag-diag { background: #FED7D7; color: #9B2C2C; }
+  .tag-dist { background: #FEFCBF; color: #975A16; }
+  .tag-comm { background: #BEE3F8; color: #2B6CB0; }
+  .tag-fda { background: #C6F6D5; color: #22543D; }
+  .tag-off { background: #EDF2F7; color: #4A5568; }
+  details {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 12px 0;
+    background: #FAFBFD;
+  }
+  summary { cursor: pointer; font-weight: 700; color: var(--navy); }
+  .footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+</style>
+<link rel="stylesheet" href="../theme.css">
+<link rel="stylesheet" href="cgvhd.css">
+<script src="../theme.js"></script>
+</head>
+<body>
+<nav class="kp-controls kp-article-controls" aria-label="文章導覽"><a class="kp-control" href="../">← 返回知識星球</a><button class="kp-control kp-theme-toggle" type="button" aria-pressed="false" hidden>深色模式</button></nav>
+
+<div class="hero">
+  <div class="hero-inner">
+<div class="kp-categories"><a class="kp-category" href="../?category=hematology">血液科 · Hematology</a><a class="kp-category" href="../?category=gastroenterology">腸胃肝膽 · Gastroenterology</a></div>
+    <div class="badge-row">
+      <span class="badge">UpToDate 2026（Jun 11, 2026 更新）</span>
+      <span class="badge">系列一：臨床表現與診斷篇</span>
+      <span class="badge">NIH 2014 共識標準</span>
+      <span class="badge">GI / 肝膽腸胃視角強化</span>
+    </div>
+    <h1>慢性移植物抗宿主疾病 (cGVHD)：臨床表現、診斷與預後完整圖文解說</h1>
+    <p>依據 UpToDate 原文 <em>Clinical manifestations and diagnosis of chronic graft-versus-host disease</em>（Robert Zeiser, MD；Topic 3548 v38.0）深度整理，並結合 NIH 2014 共識與 2023–2026 最新一級文獻進行證據查核。</p>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc">
+    <h3>診斷篇目錄</h3>
+    <ul>
+      <li><a href="#epi">1. 疾病定義、流行病學與危險因子</a></li>
+      <li><a href="#gi-liver">2. 肝膽腸胃系統 (GI &amp; Liver) 專題</a></li>
+      <li><a href="#nih">3. NIH 診斷三大分類與全身器官表現</a></li>
+      <li><a href="#biopsy">4. 病理切片時機與亞型分類</a></li>
+      <li><a href="#ddx">5. 各器官鑑別診斷與排除流程</a></li>
+      <li><a href="#prognosis">6. NIH / CIBMTR 預後模型與高風險指標</a></li>
+      <li><a href="#audit">7. 獨立證據查核報告 (Audit)</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section id="epi">
+      <h2>1. 疾病定義、流行病學與危險因子</h2>
+      <p><strong>慢性移植物抗宿主疾病（cGVHD）</strong>發生於異體造血幹細胞移植（Allogeneic HCT）後，由捐贈者免疫細胞攻擊宿主組織所致。現行 <strong>NIH 共識標準已廢除以「移植後 100 天」作為急／慢性之絕對分界</strong>，改為完全依據<strong>臨床與病理特徵</strong>區分急性（aGVHD）、典型慢性（Classic cGVHD）與重疊症候群（Overlap Syndrome）。cGVHD 並非單純由 aGVHD 演變而來，典型發病時間為移植後 ≥3 個月（多數於第 1 年內，但亦可能數年後才發病），表現高度類似自體免疫疾病（硬皮症、乾燥症、原發性膽汁性膽管炎、閉塞性細支氣管炎）。</p>
+
+      <div class="kpi-grid">
+        <div class="kpi navy">
+          <div class="num">~40%</div>
+          <div class="lbl">異體 HCT 後平均發生率（文獻範圍 6–80%）</div>
+        </div>
+        <div class="kpi warn">
+          <div class="num">52% / 30%</div>
+          <div class="lbl">肝臟 (52%) 與腸胃道 (30%) 受累盛行率</div>
+        </div>
+        <div class="kpi">
+          <div class="num">RR 1.56 / 2.43</div>
+          <div class="lbl">相較無 GVHD 者之總死亡率 (RR 1.56) 與治療相關死亡率 (RR 2.43)</div>
+        </div>
+        <div class="kpi warn">
+          <div class="num">HR 6.6</div>
+          <div class="lbl">血小板 &lt;100,000/µL 之總死亡風險比</div>
+        </div>
+      </div>
+
+      <h3>核心危險因子（具顯著累積效應）</h3>
+      <ul>
+        <li><strong>免疫與捐贈者因素</strong>：HLA 不合程度越高、捐贈者或受贈者高齡、<strong>女性捐贈者 → 男性受贈者</strong>、捐贈者既往懷孕或輸血史（異體免疫化）。</li>
+        <li><strong>移植物與預處理</strong>：<strong>周邊血幹細胞（PBPC）</strong>風險高於骨髓或臍帶血；含全身放射線照射（TBI）之預處理；傳統 Tacrolimus-MTX 預防（相較於移植後環磷醯胺 PTCy 方案，<em>NEJM</em> 2023 證實 PTCy 顯著降低 cGVHD 發生率）。</li>
+        <li><strong>移植後事件與感染</strong>：既往 aGVHD（HR 1.67）、未經照射之捐贈者淋巴球輸注（DLI）、脾臟切除、捐／受贈者 CMV 血清陽性、捐贈者 EBV 陽性。</li>
+      </ul>
+
+      <div class="figure-box">
+        <img loading="lazy" decoding="async" src="cgvhd-organ-involvement.webp" alt="cGVHD 器官受累盛行率、NIH 嚴重度存活率與危險因子累積圖">
+        <div class="figure-cap"><strong>圖 1：</strong>(A) 前瞻性世代研究（Jacobsohn et al., <em>Blood</em> 2012, n=458）之各器官受累盛行率；(B) NIH 整體嚴重度與 2 年總存活率（Arai et al., <em>Blood</em> 2011, n=298）；(C) 危險因子累積（高齡、既往 aGVHD、女捐男、CML）與 5 年累積發生率（Carlens et al., <em>BMT</em> 1998, n=551）。</div>
+      </div>
+    </section>
+
+    <section id="gi-liver">
+      <h2>2. 肝膽腸胃系統 (GI &amp; Liver) 專題深度解析</h2>
+      <div class="callout gi">
+        <div class="callout-title">消化內科核心診斷定位</div>
+        依據 2014 NIH 標準，<strong>腸胃道僅有「食道蹼（Esophageal web）」與「食道上至中段狹窄」屬於診斷性表現（Diagnostic）</strong>；所有其餘腸胃道症狀（噁心、嘔吐、慢性腹瀉、吸收不良、體重減輕）及<strong>所有肝臟異常</strong>皆歸類為<strong>共通表現（Common，見於 aGVHD 與 cGVHD）</strong>，單獨出現時不可直接確診 cGVHD，必須結合其他器官證據或組織切片，並嚴格排除感染與藥物毒性。
+      </div>
+
+      <h3>A. 肝臟受累（盛行率 52%）</h3>
+      <p>常伴隨食慾不振、噁心或嘔吐，典型呈現兩種臨床型態：</p>
+      <ol>
+        <li><strong>急性肝炎型（Acute hepatitis pattern）</strong>：血清 ALT 急劇上升（伴或不伴黃疸），常發生於<strong>免疫抑制劑減量後</strong>或 <strong>DLI 輸注後</strong>。此型須立即診斷與介入；若無其他器官 GVHD 證據，常需肝臟切片確診。</li>
+        <li><strong>漸進性膽汁鬱積型（Slowly progressive cholestatic pattern）</strong>：ALP 與 GGT 緩慢上升（常 &gt;2× ULN），隨後出現高膽紅素血症與黃疸。</li>
+      </ol>
+      <p><strong>孤立性肝臟異常（Liver-only）</strong>：無其他器官診斷性特徵時，建議施行<strong>經頸靜脈肝切片（Transjugular liver biopsy, TJLB）</strong>以降低出血風險並排除其他病因。</p>
+
+      <h3>B. 腸胃道受累（盛行率 30%）</h3>
+      <ul>
+        <li><strong>食道（診斷性表現）</strong>：吞嚥困難、痛性潰瘍、體重減輕，內視鏡或鋇劑攝影見<strong>食道蹼</strong>或<strong>上中段食道狹窄／環狀狹窄</strong>。</li>
+        <li><strong>小腸與結腸（共通表現）</strong>：厭食、噁心嘔吐、慢性腹瀉、吸收不良、體重減輕、兒童生長遲緩。<strong>高膽紅素血症與小腸／結腸受累皆與死亡率上升顯著相關</strong>。</li>
+        <li><strong>外分泌胰臟功能不全</strong>：cGVHD 可造成外分泌胰臟功能不全，臨床表現為持續性脂肪瀉與體重減輕，易被誤診為單純腸道發炎。</li>
+      </ul>
+
+      <h3>C. 內視鏡與組織病理學分級（Cruz-Correa 2002 / Snover 1985）</h3>
+      <div class="kp-table-scroll" role="region" aria-label="可左右捲動的表格" tabindex="0"><table>
+        <thead>
+          <tr>
+            <th style="width:12%;">分級</th>
+            <th style="width:44%;">內視鏡所見（十二指腸 / 結腸）</th>
+            <th style="width:44%;">組織病理學特徵（H&amp;E 切片）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Grade 1</strong></td><td>黏膜血管紋理消失及／或局部輕微紅斑</td><td>隱窩上皮細胞凋亡增加（Increased crypt apoptosis）</td></tr>
+          <tr><td><strong>Grade 2</strong></td><td>中度黏膜水腫及／或紅斑</td><td>隱窩凋亡合併隱窩膿瘍（Crypt abscesses）</td></tr>
+          <tr><td><strong>Grade 3</strong></td><td>水腫、紅斑合併糜爛及／或出血</td><td>個別隱窩壞死（Individual crypt necrosis）</td></tr>
+          <tr><td><strong>Grade 4</strong></td><td>潰瘍、滲出物與明顯出血</td><td>大面積黏膜完全剝脫（Total denudation）</td></tr>
+        </tbody>
+      </table></div>
+
+      <div class="figure-box">
+        <img loading="lazy" decoding="async" src="cgvhd-nih-diagnosis.webp" alt="cGVHD NIH 診斷架構與肝膽腸胃病理評估圖解">
+        <div class="figure-cap"><strong>圖 2：</strong>NIH 2014 診斷三大路徑（Diagnostic、Distinctive、Common）總覽，以及腸胃道內視鏡／組織病理 4 級分級與肝臟兩大表現型之臨床評估架構。</div>
+      </div>
+    </section>
+
+    <section id="nih">
+      <h2>3. NIH 診斷三大分類與全身器官表現總表</h2>
+      <p>確診 cGVHD 須排除感染、藥物與惡性腫瘤，並符合以下條件之一：<strong>(1) ≥1 項「診斷性表現（Diagnostic）」</strong>；<strong>(2) ≥1 項「特徵性表現（Distinctive）」＋ 切片／客觀檢驗（如 Schirmer test、PFT/HRCT）／專科醫師確認</strong>；或<strong>(3) 肺切片證實閉塞性細支氣管炎（BO）</strong>。</p>
+
+      <div class="kp-table-scroll" role="region" aria-label="可左右捲動的表格" tabindex="0"><table>
+        <thead>
+          <tr>
+            <th style="width:14%;">器官系統</th>
+            <th style="width:31%;"><span class="tag tag-diag">Diagnostic</span> 診斷性表現（單項確診）</th>
+            <th style="width:31%;"><span class="tag tag-dist">Distinctive</span> 特徵性表現（須佐證）</th>
+            <th style="width:24%;"><span class="tag tag-comm">Common</span> 共通表現（急／慢性皆見）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>皮膚 (67%)</strong></td>
+            <td>皮膚異色症 (Poikiloderma)、扁平苔癬樣、硬化性 (Sclerotic / Groove sign)、硬斑病樣 (Morphea-like)、硬化性苔癬樣</td>
+            <td>色素脫失 (Depigmentation)、丘疹鱗屑病變</td>
+            <td>紅斑、斑丘疹、搔癢</td>
+          </tr>
+          <tr>
+            <td><strong>指甲／毛髮</strong></td>
+            <td>無</td>
+            <td>指甲營養不良、縱脊/脆裂、甲剝離、甲翼狀胬肉、對稱掉甲；新發瘢痕/非瘢痕禿髮、體毛脫落、頭皮脫屑</td>
+            <td>無</td>
+          </tr>
+          <tr>
+            <td><strong>口腔 (60%)</strong></td>
+            <td>扁平苔癬樣變化 (Lichen planus-type)</td>
+            <td>口乾 (Xerostomia)、黏液囊腫、黏膜萎縮、偽膜、潰瘍</td>
+            <td>牙齦炎、黏膜炎、紅斑、疼痛</td>
+          </tr>
+          <tr>
+            <td><strong>眼睛 (48%)</strong></td>
+            <td>無</td>
+            <td>新發乾眼/異物感/眼痛、瘢痕性結膜炎、乾燥性角結膜炎 (KCS)、融合性點狀角膜病變（Schirmer ≤5 mm）</td>
+            <td>無</td>
+          </tr>
+          <tr>
+            <td><strong>生殖器 (12%)</strong></td>
+            <td>扁平苔癬樣／硬化性苔癬樣；<strong>女</strong>：陰道瘢痕、陰唇/陰蒂沾黏；<strong>男</strong>：包莖、尿道口瘢痕/狹窄</td>
+            <td>糜爛、裂隙、潰瘍</td>
+            <td>無</td>
+          </tr>
+          <tr>
+            <td><strong>腸胃道 (30%)</strong></td>
+            <td><strong>食道蹼、食道上中段狹窄</strong>（內視鏡或鋇劑證實）</td>
+            <td>無</td>
+            <td>厭食、噁心嘔吐、慢性腹瀉、吸收不良、體重減輕、生長遲緩</td>
+          </tr>
+          <tr>
+            <td><strong>肝臟 (52%)</strong></td>
+            <td>無</td>
+            <td>無</td>
+            <td>急性肝炎型或漸進膽汁鬱積型（Bil/ALP/ALT &gt;2× ULN）</td>
+          </tr>
+          <tr>
+            <td><strong>肺臟 (50%)</strong></td>
+            <td>肺切片證實之<strong>閉塞性細支氣管炎 (BO)</strong></td>
+            <td><strong>BOS</strong>：FEV1/FVC &lt;0.7 且 FEV1 &lt;75%（2年降 ≥10%）、無感染、HRCT 空氣滯留/支氣管擴張或 RV &gt;120%</td>
+            <td>機化性肺炎 (COP/BOOP) 歸於其他／重疊特徵</td>
+          </tr>
+          <tr>
+            <td><strong>肌肉關節 (48%)</strong></td>
+            <td><strong>筋膜炎</strong>（橘皮樣硬化、Prayer sign）、繼發關節僵硬／攣縮</td>
+            <td>肌炎／多發性肌炎（需切片確認，CK 可達 5–50× ULN，EMG 呈發炎性肌病）</td>
+            <td>無</td>
+          </tr>
+        </tbody>
+      </table></div>
+
+      <details>
+        <summary>展開查看：非典型表現（Atypical Presentations）與肺功能常規篩檢時程</summary>
+        <ul>
+          <li><strong>血液</strong>：免疫性血球減少、嗜酸性球增多、低／高丙種球蛋白血症（<strong>血小板 &lt;100,000/µL 提示重度預後不良</strong>）。</li>
+          <li><strong>神經系統</strong>：周邊神經病變、重症肌無力、免疫性腦炎、認知障礙、癲癇、失語症（2026 年已有中樞神經 cGVHD 診斷標準提案，<em>Transplant Cell Ther</em> 2026）。</li>
+          <li><strong>心腎與免疫</strong>：心傳導異常、心肌病變、心包／肋膜積液、多發性漿膜炎、腎病症候群（膜性腎病或微小變化病）、雷諾氏現象、自體抗體（約 62% 陽性）。</li>
+          <li><strong>BOS 肺功能（PFT）篩檢時程</strong>：移植後第 100 天、確診 cGVHD 時、移植後 1 年、確診後前 2 年每 6 個月；已確診 BOS 或肺容積顯著下降者改為第 60、100、160、220 天及 1 年追蹤。</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="biopsy">
+      <h2>4. 病理切片時機、亞型分類與 NIH 嚴重度分級</h2>
+      <h3>切片原則（並非所有個案皆需切片）</h3>
+      <ul>
+        <li>已有<strong>診斷性表現（Diagnostic）</strong>者，通常不需切片即可確診。</li>
+        <li>僅有<strong>特徵性表現（Distinctive）</strong>或<strong>孤立性單一器官異常（尤其是肝臟）</strong>時，病理切片具關鍵價值：皮膚採 <strong>4 mm 全層穿刺切片（含皮下脂肪）</strong>；口腔切片可證實口乾／潰瘍；肝臟採<strong>經頸靜脈肝切片（TJLB）</strong>；肌肉切片因傷口癒合風險常採保守評估。</li>
+      </ul>
+
+      <h3>亞型分類與整體分級</h3>
+      <ul>
+        <li><strong>Classic cGVHD</strong>：僅具 cGVHD 特徵，無任何 aGVHD 表現。</li>
+        <li><strong>Overlap Syndrome（重疊症候群）</strong>：同時存在 cGVHD 與 aGVHD 特徵（如斑丘疹、腹瀉、肝功能異常合併口腔苔癬樣病變），多數研究顯示其存活率與生活品質劣於 Classic cGVHD。</li>
+        <li><strong>NIH 整體嚴重度</strong>：輕度（≤2 器官無顯著功能障礙）、中度（3 器官無顯著障礙，或 ≤1 器官有顯著障礙但無重大失能）、重度（造成重大失能；註：治療篇 UpToDate 修正版另將 PLT &lt;100,000/µL 列為重度）。</li>
+      </ul>
+    </section>
+
+    <section id="ddx">
+      <h2>5. 各器官鑑別診斷（排除性診斷核心）</h2>
+      <div class="kp-table-scroll" role="region" aria-label="可左右捲動的表格" tabindex="0"><table>
+        <thead>
+          <tr>
+            <th style="width:18%;">器官系統</th>
+            <th style="width:82%;">必須排除之主要鑑別診斷</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>肝臟 (&gt;100 天膽汁鬱積)</strong></td><td>病毒性肝炎（HBV/HCV/CMV）、膽道阻塞（結石/狹窄/腫瘤）、藥物性肝損傷（DILI）、脂肪性肝炎（MASLD/NASH）、肝靜脈閉塞症（SOS/VOD）、浸潤性病變（淋巴瘤/澱粉樣變/結核/肉芽腫）、敗血症相關膽汁鬱積。</td></tr>
+          <tr><td><strong>腸胃道</strong></td><td>感染（<strong><em>C. difficile</em>、CMV 再活化</strong>）、藥物毒性、化放療延遲損傷、發炎性腹瀉、短腸症、消化性潰瘍、腫瘤、全身性疾病（如糖尿病胃輕癱）。</td></tr>
+          <tr><td><strong>皮膚</strong></td><td>特發性扁平苔癬、硬化性苔癬、硬斑病、系統性硬化症、嗜酸性筋膜炎、其他原因之皮膚異色症。</td></tr>
+          <tr><td><strong>肺臟</strong></td><td>呼吸道感染（CMV、弓漿蟲、真菌）、間質性肺病、肉芽腫性疾病（結節病）、瀰漫性肺泡出血。</td></tr>
+          <tr><td><strong>肌肉關節</strong></td><td>皮肌炎、包涵體肌炎、橫紋肌溶解症、類固醇誘發肌病。</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="prognosis">
+      <h2>6. 預後模型與高風險特徵</h2>
+      <ul>
+        <li><strong>NIH 嚴重度分級（已獲多項研究驗證）</strong>：診斷時輕／中／重度佔比約 10% / 59% / 31%，對應 <strong>2 年總存活率為 97% / 86% / 62%</strong>。</li>
+        <li><strong>CIBMTR 風險評分（n=5,343）</strong>：整合 10 項診斷時變數（年齡、既往 aGVHD、體能狀態、發病時間、捐贈者配對程度等），可預測 5 年 OS 與非復發死亡率（NRM），但尚未與 NIH 分級直接頭對頭比較。</li>
+        <li><strong>關鍵獨立不良預後指標</strong>：
+          <ul>
+            <li><strong>血小板低下（&lt;100,000/µL）</strong>：總死亡率 HR <strong>6.6</strong>（95% CI 3.5–12.4）、治療失敗 HR <strong>5.2</strong>。</li>
+            <li><strong>Overlap Syndrome</strong>：多數世代研究顯示存活率低於 Classic cGVHD。</li>
+            <li><strong>皮膚複合分數（NIH Skin Score）</strong>：0/1/2/3 分之 2 年 OS 為 86%/83%/81%/69%；6 個月內惡化者死亡 HR 4.7、NRM HR 7.2。</li>
+            <li><strong>肝腸受累</strong>：高膽紅素血症與小腸／結腸受累均顯著增加死亡風險。</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="audit">
+      <h2>7. 獨立證據查核報告 (Evidence Verification Audit)</h2>
+      <div class="callout audit">
+        <div class="callout-title">診斷篇查核結論：整體與 NIH 2014 共識及 EBMT 2024 指引高度一致，以下 3 點為臨床應用須留意之細節</div>
+        <ol style="margin:8px 0 0; padding-left:20px;">
+          <li><strong>NIH 2014 原版 vs UpToDate 修正版之「重度」定義差異</strong>：本診斷篇介紹的 2014 NIH 原版（Jagasia et al., <em>BBMT</em> 2015）僅依據 8 大器官分數評定嚴重度；而姊妹篇（治療篇）為了指導臨床用藥，額外將<strong>血小板 &lt;100,000/µL</strong> 納入重度（Severe）條件。臨床評估預後時應同步採納血小板指標，但參與臨床試驗收案分層時需留意試驗採用的是 2014 NIH 原版。</li>
+          <li><strong>PTCy 預防方案之最新一級證據</strong>：原文已納入 <em>NEJM</em> 2023（Bolaños-Meade et al., BMT CTN 1703）隨機試驗，證實移植後環磷醯胺（PTCy + Tacrolimus + MMF）相較傳統 Tacrolimus + MTX 顯著降低 cGVHD 發生率，已改變 2024–2026 全球移植預防標準。</li>
+          <li><strong>非典型與中樞神經（CNS）cGVHD 最新進展</strong>：原文已引用 2020 NIH 非典型表現共識（<em>Transplant Cell Ther</em> 2022）及 2026 年中樞神經 cGVHD 診斷標準提案（Denk et al., <em>Transplant Cell Ther</em> 2026），反映 2026 年最新學術共識；唯 CNS cGVHD 仍屬高度排除性診斷，實務上須先徹底排除感染（如 PML、HHV-6、EBV）與 CNI 神經毒性。</li>
+        </ol>
+      </div>
+    </section>
+
+<section class="kp-related" aria-label="相關文章"><h2>相關文章</h2><ul><li><a href="cgvhd-treatment-and-targeted-evidence.html">慢性移植物抗宿主疾病（cGVHD）：臨床治療與標靶實證</a> · 從確診與器官受累，銜接分級治療及標靶選擇。</li></ul></section>
+<p><a class="kp-control" href="cgvhd-manifestations-and-diagnosis.yaml" download>下載 YAML 中繼資料</a></p>
+    <div class="footer">
+      資料來源：UpToDate 2026 — <em>Clinical manifestations and diagnosis of chronic graft-versus-host disease</em> (Topic 3548 v38.0, Updated Jun 11, 2026, Robert Zeiser, MD)<br>
+      交叉查核：NIH 2014 Consensus (BBMT 2015)、EBMT 2024 Consensus (Lancet Haematol 2024)、BMT CTN 1703 (NEJM 2023)、Jacobsohn et al. (Blood 2012)、Arai et al. (Blood 2011)。
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
