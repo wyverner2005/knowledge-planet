@@ -17,7 +17,7 @@ def plain(text):
 
 
 def article_index(path):
-    page = html.fromstring(path.read_text(encoding="utf-8"))
+    page = html.document_fromstring(path.read_text(encoding="utf-8"))
     body = page.find("body")
     for node in body.xpath(".//nav | .//script | .//style | .//dialog"):
         node.drop_tree()
