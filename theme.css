@@ -244,3 +244,35 @@ html.kp-note[data-theme="dark"] {
 }
 a.kp-category { min-height: 44px; }
 a.kp-category:hover { text-decoration: underline; }
+
+.kp-home .kp-home-nav { justify-content: space-between; }
+.kp-home #notes[hidden], .kp-section-results[hidden] { display: none; }
+.kp-section-results { display: grid; gap: .7rem; list-style: none; padding: 0; }
+.kp-section-results .summary { overflow-wrap: anywhere; }
+.kp-article-toc {
+  margin-block: 1.2rem;
+  padding: .75rem 1rem;
+  background: var(--kp-light-panel);
+  border: 1px solid var(--kp-light-edge);
+  border-radius: .65rem;
+}
+.kp-article-toc summary { cursor: pointer; font-weight: 750; }
+.kp-article-toc ul { margin-block: .6rem 0; padding-inline-start: 1.35rem; }
+.kp-article-toc a { display: inline-block; padding-block: .2rem; color: inherit; }
+.kp-cgvhd .kp-article-toc { display: none; }
+html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); border-color: var(--kp-dark-edge); }
+.kp-note :is(h2[id], section[id]) { scroll-margin-top: 1rem; }
+
+.kp-tool-page { width: min(100% - 2rem, 56rem); margin: 1.5rem auto 4rem; font: 1rem/1.6 system-ui, sans-serif; }
+.kp-tool-page h1 { font-family: var(--kp-heading-font); }
+.kp-tool-nav { display: flex; flex-wrap: wrap; gap: .45rem 1.25rem; }
+.kp-tool { margin-block: 1.2rem; padding: clamp(1rem, 3vw, 1.7rem); border: 1px solid var(--kp-light-edge); border-radius: .7rem; }
+.kp-tool-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: .75rem; margin-block: .75rem; }
+.kp-tool-fields :is(input, select) {
+  display: block; box-sizing: border-box; width: 100%; margin-top: .25rem;
+  min-height: 44px; padding: .45rem; font: inherit; color: inherit;
+  background: var(--kp-control-bg); border: 1px solid var(--kp-control-border); border-radius: .4rem;
+}
+.kp-tool output { display: block; margin-top: .65rem; font-weight: 750; }
+.kp-tools a:not(.kp-control) { color: #764315; }
+.kp-tools[data-theme="dark"] a:not(.kp-control) { color: var(--kp-brass); }

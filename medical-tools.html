@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant" class="kp-home kp-tools">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>醫學工具｜知識星球</title>
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js"></script>
+<script defer src="medical-tools.js"></script>
+</head>
+<body>
+<main class="kp-tool-page">
+  <nav class="kp-controls kp-home-nav" aria-label="頁面導覽">
+    <a class="kp-control" href="./">← 知識星球</a>
+    <button class="kp-control kp-theme-toggle" type="button" hidden>深色模式</button>
+  </nav>
+  <h1>醫學工具</h1>
+  <nav class="kp-tool-nav" aria-label="工具目錄">
+    <a href="#steroids">類固醇換算</a>
+    <a href="#a1c">HbA1c → eAG</a>
+    <a href="#cv">血糖 CV</a>
+  </nav>
+  <section class="card kp-tool" id="steroids">
+    <h2>全身性類固醇劑量換算</h2>
+    <p>估算全身性糖皮質素的抗發炎等效劑量。</p>
+    <form id="steroid-form">
+      <div class="kp-tool-fields">
+        <label>原藥物 <select name="from" required></select></label>
+        <label>原劑量（mg） <input name="dose" type="number" min="0" step="any" inputmode="decimal" required placeholder="例如 5"></label>
+        <label>換算為 <select name="to" required></select></label>
+      </div>
+      <button class="kp-control" type="submit">換算劑量</button>
+      <output aria-live="polite">輸入原劑量並選擇藥物。</output>
+    </form>
+    <p>換算值＝原劑量 × 目標藥等效基準 ÷ 原藥等效基準。僅供抗發炎效價比較，不能直接決定給藥途徑、頻率、減藥或腎上腺替代療程。</p>
+    <p><a href="https://www.ncbi.nlm.nih.gov/sites/books/NBK279156/table/adrenal_glucocorticoid-therapy-and-adrenal-suppression.T./">Endotext 等效劑量表</a> · <a href="notes/systemic-corticosteroids.html">全身性類固醇筆記</a></p>
+  </section>
+  <section class="card kp-tool" id="a1c">
+    <h2>HbA1c → 估算平均血糖（eAG）</h2>
+    <form id="a1c-form">
+      <div class="kp-tool-fields">
+        <label>HbA1c（%） <input name="a1c" type="number" min="2" max="30" step="any" inputmode="decimal" required placeholder="例如 7"></label>
+      </div>
+      <button class="kp-control" type="submit">估算 eAG</button>
+      <output aria-live="polite">輸入 HbA1c 百分比。</output>
+    </form>
+    <p>eAG（mg/dL）＝28.7 × HbA1c（%）− 46.7。eAG 是從 HbA1c 推估的平均值；血糖波動需另外用血糖測量資料計算。</p>
+    <p><a href="https://professional.diabetes.org/glucose_calc">ADA／ADAG 公式與來源</a></p>
+  </section>
+  <section class="card kp-tool" id="cv">
+    <h2>血糖變異係數（CV）</h2>
+    <form id="cv-form">
+      <div class="kp-tool-fields">
+        <label>平均血糖 <input name="mean" type="number" min="0" step="any" inputmode="decimal" required placeholder="例如 150"></label>
+        <label>標準差（SD） <input name="sd" type="number" min="0" step="any" inputmode="decimal" required placeholder="例如 45"></label>
+        <label>兩者共用單位 <select name="units"><option>mg/dL</option><option>mmol/L</option></select></label>
+      </div>
+      <button class="kp-control" type="submit">計算 CV</button>
+      <output aria-live="polite">輸入同一份血糖資料的平均值和標準差。</output>
+    </form>
+    <p>CV（%）＝標準差 ÷ 平均血糖 × 100。平均值與 SD 需使用同一資料區間與單位，不能只用 HbA1c 推算 CV。</p>
+    <p><a href="https://doi.org/10.2337/dci19-0028">CGM 國際共識</a> · <a href="notes/hba1c-and-glucose-variability.html">HbA1c 與血糖變異筆記</a></p>
+  </section>
+</main>
+</body>
+</html>

@@ -138,8 +138,56 @@
   });
   systemTheme.addEventListener("change", applyTheme);
 
+  function addArticleContents() {
+    const main = document.querySelector(".kp-note main");
+    if (!main) return;
+    const headings = [...main.querySelectorAll("h2")].filter(heading => !heading.closest("nav, figure"));
+    if (!headings.length) return;
+    const ids = new Set([...document.querySelectorAll("[id]")].map(node => node.id));
+    const assigned = new Set();
+    const hashes = headings.map((heading, index) => {
+      let id = heading.id || (heading.parentElement.matches("section") && heading.parentElement.id);
+      if (!id || assigned.has(id)) {
+        id = "kp-heading-" + (index + 1);
+        while (ids.has(id) || assigned.has(id)) id += "-";
+        heading.id = id;
+      }
+      assigned.add(id);
+      return id;
+    });
+    const existing = document.querySelector(".toc");
+    if (existing) existing.setAttribute("aria-label", "文章目錄");
+    const contents = document.createElement("details");
+    contents.className = "kp-article-toc";
+    const summary = document.createElement("summary");
+    summary.textContent = "文章目錄";
+    const nav = document.createElement("nav");
+    nav.setAttribute("aria-label", "文章目錄");
+    const list = document.createElement("ul");
+    headings.forEach((heading, index) => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = "#" + encodeURIComponent(hashes[index]);
+      link.textContent = heading.textContent.trim();
+      item.append(link);
+      list.append(item);
+    });
+    nav.append(list);
+    contents.append(summary, nav);
+    const first = headings[0].closest("section") || headings[0];
+    first.before(contents);
+
+    // Generated anchors are added after parsing. Resolve direct search links now.
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      const target = hashes.find(hash => encodeURIComponent(hash) === id);
+      if (target) document.getElementById(target)?.scrollIntoView();
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     const button = document.querySelector(".kp-theme-toggle");
+    addArticleContents();
     enableImageViewer();
     if (!button) return;
     button.hidden = false;

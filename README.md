@@ -12,3 +12,9 @@
 
 - 新增或更新 HTML 筆記時，使用 `<html lang="zh-Hant" class="kp-note">`，並在筆記原有樣式之後載入 `../theme.css`，搭配 `../theme.js` 與 `.kp-theme-toggle`。共用樣式提供炭灰與銅金色的深色模式、低亮度暖紙黃的淺色模式，以及圖片和向量圖表的放大檢視。
 - 文章專用樣式用 `theme.css` 的共用色彩變數設定頁面、卡片與控制項。深色模式使用 `--kp-dark-paper`、`--kp-dark-panel`、`--kp-dark-ink` 和 `--kp-brass`。淺色模式使用 `--kp-light-paper` 與 `--kp-light-panel`。保留臨床圖例的原始色彩與含義。
+
+## 段落搜尋、文章目錄與醫學工具
+
+- 所有文章以 `<main>` 包住正文，並用有意義的 `h2` 標題分節。建議用唯一且固定的 `id` 放在標題或上一層的 `section`，更新既有文章時保留已發布的錨點。共用 `theme.js` 會補齊可展開的文章目錄與缺少的錨點，既有的文章目錄繼續使用。
+- 新增或更新 HTML／YAML 後，執行 `python3 scripts/build-search-index.py`（需 `lxml`、`PyYAML`），將更新的 `search-index.js` 與文章一起發布。驗證首頁的搜尋結果會顯示命中段落和摘要，並可直接跳到正確章節。
+- 共用計算器集中在 `medical-tools.html`。新文章與工具有關時可以連到對應段落，並保留公式來源、單位與適用範圍。
