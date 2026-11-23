@@ -249,18 +249,52 @@ a.kp-category:hover { text-decoration: underline; }
 .kp-home #notes[hidden], .kp-section-results[hidden] { display: none; }
 .kp-section-results { display: grid; gap: .7rem; list-style: none; padding: 0; }
 .kp-section-results .summary { overflow-wrap: anywhere; }
+.kp-article-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: start;
+  margin-block-start: 28px;
+}
+.kp-article-columns > :last-child { min-width: 0; }
+.kp-article-columns > :last-child > :first-child { margin-block-start: 0; }
 .kp-article-toc {
-  margin-block: 1.2rem;
-  padding: .75rem 1rem;
+  padding: 1rem .9rem;
   background: var(--kp-light-panel);
   border: 1px solid var(--kp-light-edge);
   border-radius: .65rem;
 }
-.kp-article-toc summary { cursor: pointer; font-weight: 750; }
-.kp-article-toc ul { margin-block: .6rem 0; padding-inline-start: 1.35rem; }
-.kp-article-toc a { display: inline-block; padding-block: .2rem; color: inherit; }
-.kp-cgvhd .kp-article-toc { display: none; }
+.kp-article-toc-title {
+  padding-bottom: .35rem;
+  border-bottom: 2px solid var(--kp-control-border);
+  font-weight: 750;
+}
+.kp-article-toc ul { list-style: none; margin: .45rem 0 0; padding: 0; }
+.kp-note .kp-article-toc li { margin: .25rem 0; font-size: .9rem; }
+.kp-article-toc a {
+  display: block;
+  padding: .3rem .4rem;
+  color: inherit;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+.kp-article-toc a:hover { text-decoration: underline; }
 html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); border-color: var(--kp-dark-edge); }
+
+@media (min-width: 961px) {
+  .kp-article-columns { grid-template-columns: 225px minmax(0, 1fr); gap: 28px; }
+  .kp-article-toc {
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .kp-article-columns :is(.full-band, .band) {
+    margin-inline: 0;
+    padding-inline: clamp(1rem, 3vw, 2rem);
+  }
+}
 .kp-note :is(h2[id], section[id]) { scroll-margin-top: 1rem; }
 
 .kp-tool-page { width: min(100% - 2rem, 56rem); margin: 1.5rem auto 4rem; font: 1rem/1.6 system-ui, sans-serif; }

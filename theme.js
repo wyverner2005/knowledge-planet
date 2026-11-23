@@ -155,27 +155,43 @@
       assigned.add(id);
       return id;
     });
-    const existing = document.querySelector(".toc");
-    if (existing) existing.setAttribute("aria-label", "文章目錄");
-    const contents = document.createElement("details");
-    contents.className = "kp-article-toc";
-    const summary = document.createElement("summary");
-    summary.textContent = "文章目錄";
-    const nav = document.createElement("nav");
-    nav.setAttribute("aria-label", "文章目錄");
-    const list = document.createElement("ul");
-    headings.forEach((heading, index) => {
-      const item = document.createElement("li");
-      const link = document.createElement("a");
-      link.href = "#" + encodeURIComponent(hashes[index]);
-      link.textContent = heading.textContent.trim();
-      item.append(link);
-      list.append(item);
-    });
-    nav.append(list);
-    contents.append(summary, nav);
-    const first = headings[0].closest("section") || headings[0];
-    first.before(contents);
+    const existing = document.querySelector(".kp-note .toc");
+    if (existing) {
+      existing.setAttribute("aria-label", "文章目錄");
+    } else {
+      const columns = document.createElement("div");
+      columns.className = "kp-article-columns";
+      const contents = document.createElement("nav");
+      contents.className = "kp-article-toc";
+      contents.setAttribute("aria-label", "文章目錄");
+      const title = document.createElement("div");
+      title.className = "kp-article-toc-title";
+      title.textContent = "文章目錄";
+      const list = document.createElement("ul");
+      headings.forEach((heading, index) => {
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = "#" + encodeURIComponent(hashes[index]);
+        link.textContent = heading.textContent.trim();
+        item.append(link);
+        list.append(item);
+      });
+      contents.append(title, list);
+      columns.append(contents);
+
+      // Keep the introduction across the full width, above both columns.
+      const header = main.querySelector(":scope > header");
+      if (header) {
+        const articleBody = document.createElement("div");
+        const bodyNodes = [...main.childNodes];
+        articleBody.append(...bodyNodes.slice(bodyNodes.indexOf(header) + 1));
+        columns.append(articleBody);
+        main.append(columns);
+      } else {
+        main.before(columns);
+        columns.append(main);
+      }
+    }
 
     // Generated anchors are added after parsing. Resolve direct search links now.
     if (location.hash) {
