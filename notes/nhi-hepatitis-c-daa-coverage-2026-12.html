@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="kp-note kp-hcv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>健保 C 型肝炎全口服新藥（DAAs）給付新規完整圖文解說｜2026/12/01 生效</title>
+<meta name="keywords" content="C 型肝炎, C肝, HCV, DAA, 健保給付, 1150058504, 再治療, 再感染, SVR12, Zepatier, Harvoni, Sovaldi, Maviret, Epclusa, Vosevi, SToP-C, POLARIS, TasP">
+<style>
+  :root {
+    --bg: #FDF9E7;
+    --surface: var(--kp-light-panel);
+    --surface-soft: #FAF3D8;
+    --navy: #1B365D;
+    --teal: #0F766E;
+    --teal-soft: #E6F4F1;
+    --red: #B91C1C;
+    --red-soft: #FEF2F2;
+    --green: #15803D;
+    --green-soft: #F0FDF4;
+    --amber: #B45309;
+    --amber-soft: #FEF3C7;
+    --text: #1E293B;
+    --muted: #475569;
+    --border: var(--kp-light-edge);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: #0F5E9C;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  a:hover { color: var(--teal); }
+
+  /* Hero Header */
+  .hero {
+    background: linear-gradient(135deg, #1B365D 0%, #234978 58%, #0F5C58 100%);
+    color: #FFFFFF;
+    padding: 42px 24px 36px;
+    border-bottom: 5px solid #D97706;
+  }
+  .hero-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .badge {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 600;
+  }
+  .badge.highlight {
+    background: #D97706;
+    border-color: #F59E0B;
+    color: #FFFFFF;
+  }
+  .hero h1 {
+    margin: 0 0 10px;
+    font-size: 2.0rem;
+    line-height: 1.32;
+    letter-spacing: 0.3px;
+  }
+  .hero .subtitle {
+    margin: 0;
+    color: #E2E8F0;
+    font-size: 1.02rem;
+    max-width: 920px;
+  }
+
+  /* Layout with Sticky TOC */
+  .layout {
+    max-width: 1180px;
+    margin: 28px auto 64px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 255px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 960px) {
+    .layout { grid-template-columns: minmax(0, 1fr); }
+    .toc { position: static !important; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 16px;
+    box-shadow: 0 3px 12px rgba(27, 54, 93, 0.06);
+  }
+  .toc h3 {
+    margin: 0 0 10px;
+    font-size: 0.98rem;
+    color: var(--navy);
+    border-bottom: 2px solid var(--teal);
+    padding-bottom: 7px;
+  }
+  .toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .toc li { margin: 5px 0; }
+  .toc a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.89rem;
+    display: block;
+    padding: 5px 9px;
+    border-radius: 7px;
+    transition: all 0.15s ease;
+  }
+  .toc a:hover {
+    background: var(--surface-soft);
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  /* Main Sections */
+  .content section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(27, 54, 93, 0.04);
+  }
+  h2 {
+    color: var(--navy);
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    font-size: 1.42rem;
+  }
+  h3 {
+    color: #1E40AF;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    font-size: 1.12rem;
+  }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  /* KPI Grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 14px;
+    margin: 18px 0 20px;
+  }
+  .kpi {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi.navy { border-left-color: var(--navy); }
+  .kpi.amber { border-left-color: var(--amber); }
+  .kpi.red { border-left-color: var(--red); }
+  .kpi .num {
+    font-size: 1.48rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .kpi .lbl {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* Figures */
+  .figure-box {
+    margin: 22px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .figure-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .figure-cap {
+    background: var(--surface-soft);
+    padding: 11px 16px;
+    font-size: 0.88rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 42rem;
+    font-size: 0.92rem;
+    background: var(--surface);
+  }
+  th {
+    background: var(--navy);
+    color: #FFFFFF;
+    text-align: left;
+    padding: 11px 13px;
+    font-weight: 600;
+  }
+  td {
+    padding: 10px 13px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #FFFDF7; }
+
+  /* Diff pills */
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .tag-del { background: #FEE2E2; color: #991B1B; }
+  .tag-add { background: #DCFCE7; color: #166534; }
+  .tag-keep { background: #FEF3C7; color: #92400E; }
+  .tag-info { background: #DBEAFE; color: #1E40AF; }
+
+  /* Callouts */
+  .callout {
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 18px 0;
+    border-left: 5px solid var(--teal);
+    background: var(--teal-soft);
+  }
+  .callout.warn {
+    border-left-color: var(--amber);
+    background: var(--amber-soft);
+  }
+  .callout.audit {
+    border-left-color: var(--red);
+    background: var(--red-soft);
+  }
+  .callout.green {
+    border-left-color: var(--green);
+    background: var(--green-soft);
+  }
+  .callout-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 1.0rem;
+    color: var(--navy);
+  }
+  .callout.warn .callout-title { color: #92400E; }
+  .callout.audit .callout-title { color: #991B1B; }
+  .callout.green .callout-title { color: #166534; }
+
+  /* Footer */
+  .footer-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border);
+  }
+  .figure-box summary { cursor: pointer; padding: .65rem .9rem; font-weight: 650; }
+  .figure-cap p:last-child { margin-bottom: 0; }
+  :root.kp-hcv[data-theme="dark"] {
+    --bg: var(--kp-dark-paper);
+    --surface: var(--kp-dark-panel);
+    --surface-soft: var(--kp-dark-raised);
+    --navy: var(--kp-brass);
+    --teal: #7ed3c1;
+    --teal-soft: #243d39;
+    --red: #f19c91;
+    --red-soft: #442d30;
+    --green: #9cdbad;
+    --green-soft: #263b30;
+    --amber: #f0bb7e;
+    --amber-soft: var(--kp-brass-wash);
+    --text: var(--kp-dark-ink);
+    --muted: var(--kp-dark-muted);
+    --border: var(--kp-dark-edge);
+  }
+  .kp-hcv[data-theme="dark"] .hero {
+    background: var(--kp-dark-panel);
+    color: var(--kp-dark-ink);
+    border-color: var(--kp-brass);
+  }
+  .kp-hcv[data-theme="dark"] :is(.hero .subtitle, .toc a) { color: var(--kp-dark-muted); }
+  .kp-hcv[data-theme="dark"] .toc a:hover { color: var(--kp-brass); }
+  .kp-hcv[data-theme="dark"] h3 { color: var(--kp-brass); }
+  .kp-hcv[data-theme="dark"] th { background: var(--kp-dark-raised); color: var(--kp-dark-ink); }
+  .kp-hcv[data-theme="dark"] tr:nth-child(even) td { background: var(--kp-dark-raised); }
+  .kp-hcv[data-theme="dark"] .callout.warn .callout-title { color: var(--amber); }
+  .kp-hcv[data-theme="dark"] .callout.audit .callout-title { color: var(--red); }
+  .kp-hcv[data-theme="dark"] .callout.green .callout-title { color: var(--green); }
+</style>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js"></script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kp-controls">
+      <a class="kp-control" href="../">返回知識星球</a>
+      <button class="kp-control kp-theme-toggle" type="button">深色模式</button>
+    </div>
+    <div class="kp-categories">
+      <a class="kp-category" href="../?category=gastroenterology">腸胃肝膽 · Gastroenterology</a>
+      <a class="kp-category" href="../?category=infectious-diseases">感染症 · Infectious Diseases</a>
+      <a class="kp-category" href="../?category=clinical-pharmacology">臨床藥理 · Clinical Pharmacology</a>
+    </div>
+    <div class="badge-row">
+      <span class="badge highlight">2026/12/01 生效</span>
+      <span class="badge">健保審字第 1150058504 號</span>
+      <span class="badge">藥物共擬會議第 84 次第 9 案</span>
+    </div>
+    <h1>健保 C 型肝炎全口服新藥（DAAs）給付新規完整圖文解說</h1>
+    <p class="subtitle">全面刪除「可再治療一次」「以治療三次為限」療程上限、刪除 10.7.7 Zepatier 給付規定、同步修訂執行計畫與同意書——逐條解析、臨床選藥流程與實證查核筆記。</p>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="文章目錄">
+    <h3>文章目錄</h3>
+    <ul>
+      <li><a href="#sec-overview">1. 新規重點總覽與關鍵數字</a></li>
+      <li><a href="#sec-clauses">2. 藥品給付規定逐條修訂對照</a></li>
+      <li><a href="#sec-plan">3. 執行計畫、同意書與「未變紅線」</a></li>
+      <li><a href="#sec-policy">4. 政策背景與 TasP 國際實證</a></li>
+      <li><a href="#sec-clinical">5. 臨床選藥與再治療決策流程</a></li>
+      <li><a href="#sec-audit">6. 獨立證據查核與條文勘誤提醒</a></li>
+      <li><a href="#sec-original">7. 原始整理圖卡留存與參考文獻</a></li>
+      <li><a href="#related-articles">相關文章</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <!-- Section 1 -->
+    <section id="sec-overview">
+      <h2>1. 新規重點總覽與關鍵數字</h2>
+      <p>衛生福利部中央健康保險署於 <strong>2026 年 11 月 13 日（民國 115 年 11 月 13 日）</strong>發布<a href="https://www.nhi.gov.tw/ch/cp-20729-79e93-3258-1.html" target="_blank" rel="noopener">健保審字第 1150058504 號公告</a>（亦見<a href="https://www.sc-dr.com.tw/content-detail.php?type=3&id=8780" target="_blank" rel="noopener">醫聖診療系統轉載公告</a>），並自 <strong>2026 年 12 月 1 日</strong>起正式生效。本次修訂係依循 2026 年 10 月 15 日「全民健康保險藥物給付項目及支付標準共同擬訂會議藥品部分第 84 次會議」第 9 案決議，核心在於<strong>徹底解除 C 肝全口服直接抗病毒藥物（DAAs）之再治療次數上限</strong>，以鞏固台灣消除 C 型肝炎之公共衛生防線。</p>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="num">2026/12/01</div>
+          <div class="lbl">新制生效日（2026/11/13 公告）</div>
+        </div>
+        <div class="kpi navy">
+          <div class="num">取消上限</div>
+          <div class="lbl">刪除一般「2 次」與高風險「3 次」限制</div>
+        </div>
+        <div class="kpi red">
+          <div class="num">10.7.7 刪除</div>
+          <div class="lbl">Zepatier 許可證註銷，條文全數刪去</div>
+        </div>
+        <div class="kpi amber">
+          <div class="num">療程中斷</div>
+          <div class="lbl">同意書第 6 點與執行計畫六（十）續用例外</div>
+        </div>
+      </div>
+
+      <div class="figure-box">
+        <img src="nhi-hepatitis-c-daa-policy-comparison.png" width="2800" height="1900" loading="lazy" decoding="async" alt="2026 年 12 月 1 日健保 C 肝全口服新藥給付修訂核心對照圖">
+        <div class="figure-cap"><strong>圖 1｜2026/12/01 健保 C 肝全口服新藥（DAAs）新舊制核心條文對照。</strong>中斷超過 1 週後能否接續原療程，請見<a href="#sec-plan">執行計畫六（十）的例外</a>。Zepatier 退場後依個別肝功能及用藥史選藥。</div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="sec-clauses">
+      <h2>2. 藥品給付規定逐條修訂對照</h2>
+      <p>本次修訂涵蓋藥品給付規定第 10 節抗微生物劑中之 <strong>10.7.7、10.7.8、10.7.9、10.7.10、10.7.11、10.7.13</strong> 共六條規定（詳見第 6 節查核說明）。以下依條文項目拆解具體變動：</p>
+
+      <div class="table-wrap" role="region" aria-label="可左右捲動的表格" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:17%">條文 / 藥品</th>
+              <th style="width:13%">修訂點次</th>
+              <th style="width:33%">原給付規定（舊制）</th>
+              <th style="width:37%">2026/12/01 起（新制）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>10.7.7</strong><br>Elbasvir / grazoprevir<br>（如 Zepatier）</td>
+              <td>全條（第 1–4 點）</td>
+              <td>限 GT1 或 GT4、無肝功能代償不全成人；GT1a 須測 NS5A 抗藥性多形性（<a href="https://www.ktgh.com.tw/Medicament_tbDrug_Look.asp?CatID=65&ModuleType=Y&NewsID=1939&Ordid=20904" target="_blank" rel="noopener">原藥典條文</a>）。</td>
+              <td><span class="tag tag-del">刪除</span>修訂後欄標「（刪除）」，原條文第 1 至 4 點全數刪去（配合藥品許可證已註銷）。</td>
+            </tr>
+            <tr>
+              <td><strong>10.7.8（Harvoni）<br>10.7.10（Maviret）<br>10.7.11（Epclusa）<br>10.7.13（Vosevi）</strong></td>
+              <td>第 3 點（療程措辭）</td>
+              <td>「給付療程如下」、各款載「給付 ○ 週」。</td>
+              <td><span class="tag tag-info">文字統整</span>改為「<strong>本藥品療程如下</strong>」，各款「給付」改為「<strong>每療程</strong>」。已展開內容之對象、週數與「醫師每次開藥以 4 週為限」均未變。<br><em>註：10.7.8 第 3 點 (2) Ⅰ～Ⅲ 對照表兩欄均標「略」，未展開全文。</em></td>
+            </tr>
+            <tr>
+              <td><strong>10.7.9</strong><br>Sofosbuvir<br>（如 Sovaldi）</td>
+              <td>第 3、4 點</td>
+              <td>第 3 點：「每人給付療程 12 週」（需合併 ribavirin）。<br>第 4 點：「限未曾申請給付其他同類 DAAs，且不得併用其他 DAAs」。</td>
+              <td><span class="tag tag-info">文字統整</span>第 3 點改為「<strong>每療程 12 週</strong>」，仍載「<strong>需合併 ribavirin 治療</strong>」。<br><span class="tag tag-add">放寬</span>第 4 點改為「不得併用其他全口服直接抗病毒藥物（direct-acting anti-viral, DAAs）。」</td>
+            </tr>
+            <tr>
+              <td><strong>10.7.8、10.7.10、<br>10.7.11</strong></td>
+              <td>第 4 點（再治療上限）</td>
+              <td>限未曾申請給付其他同類 DAAs，且不得併用其他 DAAs；另列「符合下列情形之一者，<strong>可再治療一次（一個療程）</strong>」。</td>
+              <td><span class="tag tag-add">解除限制</span>全面刪去「未曾申請給付」與「可再治療一次」，僅保留：「<strong>不得併用其他全口服直接抗病毒藥物（direct-acting anti-viral, DAAs）。</strong>」</td>
+            </tr>
+            <tr>
+              <td><strong>10.7.8、10.7.10、<br>10.7.11、10.7.13</strong></td>
+              <td>第 5 點（高風險次數）</td>
+              <td>「高風險族群（監獄受刑人、注射藥癮者、愛滋病毒帶原者/愛滋病人、發生危險性行為者）病人，若符合前述規定即可接受治療，<strong>以治療三次為限</strong>。」</td>
+              <td><span class="tag tag-del">全數刪除</span>不再設三次上限；所有族群一致解除治療次數天花板。</td>
+            </tr>
+            <tr>
+              <td><strong>10.7.13</strong><br>Sofosbuvir / velpatasvir / voxilaprevir<br>（如 Vosevi）</td>
+              <td>第 1、3、4 點</td>
+              <td>第 1 點：限用於成人慢性病毒性 C 型肝炎患者，並依執行計畫辦理。<br>第 4 點：限「未曾申請給付本藥品」且曾接受其他 DAAs「第一次治療」並符合兩款情形之一者。</td>
+              <td><span class="tag tag-add">結構精簡</span>第 1 點明訂：「限用於<strong>曾接受其他全口服直接抗病毒藥物（DAAs）</strong>之成人慢性病毒性 C 型肝炎患者，並依據『C 型肝炎全口服新藥健保給付執行計畫』辦理。」<br>第 4 點改為：「<strong>不得併用其他全口服直接抗病毒藥物（DAAs）</strong>」。<br><span class="tag tag-keep">未變</span>第 3 點兩款救援對象維持不變：(1) 基因型 1–6 且曾接受含 NS5A 抑制劑治療失敗者；(2) 基因型 1a 或 3 且曾接受含 sofosbuvir 但無 NS5A 抑制劑治療失敗者；均為<strong>每療程 12 週</strong>。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>原卡未展開之其餘條文說明：</strong>10.7.8、10.7.10 第 1、2 點（對照表標「略」）；10.7.9、10.7.11 第 1、2 點與 10.7.13 第 2 點（條文本文相同）；10.7.8、10.7.10、10.7.11 第 3 點各款細項；各條原第 4 點各款情形；以及執行計畫六（十）與其餘各點，實際處方時均須回歸<a href="https://www.nhi.gov.tw/ch/cp-20729-79e93-3258-1.html" target="_blank" rel="noopener">健保署公告附件（修訂對照表與執行計畫全文）</a>為準。</p>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="sec-plan">
+      <h2>3. 執行計畫、同意書與「未變紅線」</h2>
+      <p>為與藥品給付規定同步，健保署同時修訂「C 型肝炎全口服新藥健保給付執行計畫」及其附件同意書範本：</p>
+      <ul>
+        <li><strong>執行計畫六（九）刪除療程總數上限：</strong>原條文規定「高風險族群（監獄受刑人、注射藥癮者、愛滋病毒帶原者/愛滋病人、發生危險性行為者）病人每位至多給付三個療程，其他個案至多給付二個療程為限，並須符合藥品給付規定，除非有特殊情況，每次療程僅能選用一種治療組合」。修訂後刪除前半段次數限制，僅保留：「<strong>每位個案須符合藥品給付規定，除非有特殊情況，每次療程僅能選用一種治療組合</strong>」。</li>
+        <li><strong>執行計畫同意書範本刪除第 8 點：</strong>原第 8 點「每人至多給付二個療程為限，並須符合藥品給付規定」全數刪去；第 1 至 7 點於修訂對照表中標為「略」。</li>
+      </ul>
+
+      <div class="callout warn">
+        <div class="callout-title">⚠️ 臨床實務最重要紅線：同意書範本第 6 點仍完整保留！</div>
+        <p style="margin-bottom:8px;">修訂對照表中第 1 至 7 點雖標示為「略」，但在修訂後的<strong>執行計畫全文</strong>中，同意書範本第 6 點仍然明載：</p>
+        <p style="margin-bottom:8px; padding:10px 14px; background:var(--surface); border-radius:8px; border:1px solid var(--amber);"><strong>「若中途放棄或中斷治療超過 1 週，不得再申請以健保給付 C 型肝炎全口服新藥」</strong></p>
+        <p><strong>執行計畫六（十）的續用例外</strong>：中途放棄或中斷超過 1 週原則上須停止後續治療並通報結案。若經臨床評估可接續原療程剩餘用藥，且中斷未超過 4 週，可依條文例外續用。因其他因素經專業醫療評估必須停藥，也須停止治療並通報結案。</p>
+        <p>同意書第 6 點處理重新申請，六（十）的例外處理接續原療程。請對照<a href="https://www.nhi.gov.tw/ch/dl-104024-bae82dda050d49f5a57407af936664c8-1.pdf" target="_blank" rel="noopener">附件 2 執行計畫第 5 頁及同意書第 9 頁</a>。</p>
+      </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="sec-policy">
+      <h2>4. 政策背景與「以治療引領預防 (TasP)」國際實證</h2>
+      <p>依藥物共擬會議藥品部分第 84 次會議（2026-10-15）第 9 案紀錄，健保署通過本次修訂有三大核心考量：<strong>(1) 消除 C 型肝炎為國家重大公共衛生政策</strong>；<strong>(2) 採納醫學會建議「以治療引領預防（Treatment as Prevention, TasP）」並減少醫療行為產生之傳染風險</strong>（同時請藥商重新簽訂藥品給付協議）；<strong>(3) 10.7.7 Zepatier 許可證已註銷</strong>，順勢清理條文。</p>
+
+
+
+      <h3>一、台灣已提前達標，解除次數上限是「守成與微消除」最後一哩路</h3>
+      <ul>
+        <li>根據<a href="https://www.mohw.gov.tw/cp-7404-88169-1.html" target="_blank" rel="noopener">衛生福利部《The Lancet》刊登成果新聞稿</a>與<a href="https://www.mohw.gov.tw/cp-7171-84842-1.html" target="_blank" rel="noopener">消除 C 肝達標公告</a>，台灣於 2025 年 8 月將公費篩檢放寬至 39–79 歲，截至 2025 年 12 月累計逾 <strong>786 萬人</strong>接受篩檢。</li>
+        <li>慢性 C 肝感染者<strong>診斷率達 92.4%</strong>、其中<strong>已診斷者的治療率達 92.7%</strong>，雙雙超越 WHO 2030 消除門檻（診斷率 ≥90%、治療率 ≥80%）；透析病人、美沙冬替代治療者及 HIV 感染者等高風險族群微消除治療率更達 <strong>95%</strong>。</li>
+      </ul>
+
+      <h3>二、國際實證支持：為何高風險族群不能設「治療次數天花板」？</h3>
+      <ul>
+        <li><strong>SToP-C 監獄前瞻研究</strong>：擴大 DAA 治療後，整體 HCV 發生率從 <strong>8.31 降至 4.35</strong>／百人年（IRR 0.52，95% CI 0.36–0.78）。初次感染率從 <strong>6.64 降至 2.85</strong>／百人年，再感染率從 <strong>12.36 降至 7.27</strong>／百人年。<a href="https://pubmed.ncbi.nlm.nih.gov/33965006/" target="_blank" rel="noopener">SToP-C 原始研究</a></li>
+        <li><strong>冰島 TraP Hep C 全國計畫</strong>：整體研究世代的再感染率為 <strong>7.7／百人年</strong>，中位再感染時間為 232 天。<a href="https://academic.oup.com/cid/article/75/10/1732/6570478" target="_blank" rel="noopener">TraP Hep C 原始研究</a></li>
+        <li><strong>治癒後追蹤</strong>：持續有 HCV 再暴露風險者，例如仍有注射用藥者，應提供減害服務並至少每年檢測一次 HCV RNA。確認再感染後，依初治章節評估再治療。<a href="https://www.hcvguidelines.org/guidance/key-populations-identification-and-management-of-hcv-in-people-who-inject-drugs/" target="_blank" rel="noopener">AASLD/IDSA HCV Guidance</a></li>
+      </ul>
+
+      <details class="figure-box">
+        <summary>展開原圖 2｜台灣消除 C 肝與 SToP-C 研究</summary>
+        <div class="figure-cap"><strong>讀圖勘誤</strong>。右圖將整體發生率 8.31 → 4.35 誤標為初次感染率。初次感染率是 6.64 → 2.85／百人年。監獄世代研究評估擴大治療後的發生率變化。</div>
+        <img src="nhi-hepatitis-c-daa-tasp-evidence.png" width="2800" height="1320" loading="lazy" decoding="async" alt="原始 SToP-C 研究圖卡，初次感染率請依圖上方勘誤">
+      </details>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="sec-clinical">
+      <h2>5. 臨床選藥與再治療決策流程</h2>
+      <p>先區分初治、確認 SVR12 後再感染，以及既往 DAA 治療失敗。選藥前確認肝硬化代償狀態與既往療程，並核對台灣個別藥品給付條件及藥品交互作用。</p>
+      <div class="table-wrap" role="region" aria-label="可左右捲動的表格" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:22%">臨床情境</th>
+              <th style="width:36%">建議策略與健保對應條文</th>
+              <th style="width:42%">實證依據與安全警示</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>初治 / 治癒後再感染</strong><br>（無肝硬化或代償性）</td>
+              <td>優先選用全基因型 DAA：<strong>Epclusa（10.7.11，12 週）</strong>或 <strong>Maviret（10.7.10，8–12 週）</strong>；新制不再受限於既往治療次數。</td>
+              <td>兩種方案皆涵蓋 GT1–6。依 AASLD/IDSA 簡化治療流程，初治且有代償性肝硬化者，若選 sofosbuvir/velpatasvir，須先定基因型。GT3 需驗 NS5A Y93H，再依結果選藥。<a href="https://www.hcvguidelines.org/guidance/simplified-hcv-treatment-algorithm-for-treatment-naive-adults-with-compensated-cirrhosis/" target="_blank" rel="noopener">代償性肝硬化簡化治療指引</a></td>
+            </tr>
+            <tr>
+              <td><strong>既往 DAA 治療失敗</strong><br>（無肝硬化或 Child-Pugh A）</td>
+              <td>既往含 sofosbuvir 療程失敗時，國際指引通常建議 <strong>Vosevi 12 週</strong>。台灣健保給付須符合 <a href="#sec-clauses">10.7.13 第 1–3 點</a>，並查核其他 DAA 方案的失敗史。</td>
+              <td>Vosevi 治療組在 <strong>POLARIS-1</strong>、<strong>POLARIS-4</strong> 的 SVR12 分別是 <strong>96%</strong>、<strong>98%</strong>。既往含 sofosbuvir 療程失敗且為 GT3 合併代償性肝硬化，無禁忌時依國際指引加用體重調整劑量的 ribavirin。<a href="https://www.nejm.org/doi/full/10.1056/NEJMoa1613512" target="_blank" rel="noopener">POLARIS-1／4</a>、<a href="https://www.hcvguidelines.org/guidance/sofosbuvir-based-and-elbasvir-grazoprevir-treatment-failures/" target="_blank" rel="noopener">AASLD/IDSA 再治療指引</a></td>
+            </tr>
+            <tr>
+              <td><strong>失代償性肝硬化</strong><br>（Child-Pugh B / C）</td>
+              <td><strong>絕對禁用所有含 NS3/4A 蛋白酶抑制劑之藥品</strong>（禁用 Vosevi、Maviret，亦同已刪除之 Zepatier）。</td>
+              <td>轉介肝膽專科。依 AASLD/IDSA，曾接受含 sofosbuvir 或 NS5A 抑制劑療程而失敗者，GT1–6 可評估 <strong>sofosbuvir/velpatasvir + ribavirin 24 週</strong>。<strong>Ledipasvir/sofosbuvir + ribavirin 24 週</strong>限既往含 sofosbuvir 療程失敗且為 GT1、4、5 或 6。療程仍須核對台灣給付條件。<a href="https://www.hcvguidelines.org/guidance/patients-with-decompensated-cirrhosis/" target="_blank" rel="noopener">失代償性肝硬化指引</a></td>
+            </tr>
+            <tr>
+              <td><strong>原 10.7.7 Zepatier 刪除後銜接</strong></td>
+              <td>2026/12/01 起不再給付 10.7.7；GT1/GT4 個案依既往療程、肝功能及交互作用評估其他 DAA 選項。</td>
+              <td>Zepatier（衛部藥輸字第 026972 號）原即禁用於 Child-Pugh B/C 且 GT1a 須先測 NS5A 多形性。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <details class="figure-box">
+        <summary>展開原圖 3｜C 肝 DAA 臨床選藥流程</summary>
+        <div class="figure-cap"><strong>讀圖勘誤</strong>。選藥請依上表。原圖簡化了使用 Epclusa 前的基因型與抗藥性評估、失代償性肝硬化再治療的適用條件，以及中斷療程後的<a href="#sec-plan">續用例外</a>。</div>
+        <img src="nhi-hepatitis-c-daa-clinical-flow.png" width="2800" height="1900" loading="lazy" decoding="async" alt="原始 DAA 選藥流程圖，臨床選藥條件請以上表為準">
+      </details>
+    </section>
+
+    <!-- Section 6 -->
+    <section id="sec-audit">
+      <h2>6. 獨立證據查核與條文勘誤提醒</h2>
+      <p>針對原始文字摘要與圖卡內容，我們逐一比對健保署官方公告、第 84 次共擬會議資料、衛福部統計數據及國際臨床指引，結果如下：</p>
+
+      <div class="callout green">
+        <div class="callout-title">公告與執行計畫查核</div>
+        <ul style="margin-bottom:0;">
+          <li><strong>發文字號與日期完全正確：</strong>健保署確實於 115 年 11 月 13 日（2026-11-13）發布<a href="https://www.nhi.gov.tw/ch/cp-20729-79e93-3258-1.html" target="_blank" rel="noopener">健保審字第 1150058504 號</a>，並附有三份官方附件（附件 1 藥品給付規定修訂對照表、附件 2 執行計畫全文、附件 3 計畫內容修正對照）。</li>
+          <li><strong>政策脈絡與 Zepatier 退場吻合：</strong>台灣提前達標 WHO 2030 消除 C 肝門檻、推動「以治療引領預防（TasP）」及 Zepatier（elbasvir/grazoprevir）原屬舊世代窄譜 DAA 之臨床事實均與公開官方及醫學文獻相符。</li>
+          <li><strong>同意書第 6 點與接續療程：</strong>修訂後全文保留同意書第 6 點。中斷超過 1 週時，另依<a href="#sec-plan">執行計畫六（十）</a>評估能否接續剩餘療程。</li>
+        </ul>
+      </div>
+
+      <div class="callout audit">
+        <div class="callout-title">🔍 獨立查核發現之細微差異：公告主文 vs. 附件 1 對照表之「10.7.9（Sovaldi）」</div>
+        <p style="margin-bottom:8px;">比對<a href="https://www.nhi.gov.tw/ch/cp-20729-79e93-3258-1.html" target="_blank" rel="noopener">健保署公告頁面</a>與<a href="https://www.sc-dr.com.tw/content-detail.php?type=3&id=8780" target="_blank" rel="noopener">醫聖診療系統轉載全文</a>發現：公告事項一主文列舉修訂條文為 <code>10.7.7、10.7.8、10.7.10、10.7.11、10.7.13</code>，<strong>並未在公告主文標題中列出 <code>10.7.9</code>（Sofosbuvir，如 Sovaldi）</strong>。</p>
+        <p style="margin-bottom:0;">然而，依原始筆記所引第 84 次共擬會議紀錄範圍及附件 1 修訂對照表，<code>10.7.9</code> 第 3 點（「每人給付療程 12 週」改為「每療程 12 週」，仍需合併 ribavirin）與第 4 點（「不得併用其他 DAAs」）亦包含在修訂對照表內。建議臨床藥師與開方醫師若遇須使用 <strong>10.7.9 Sovaldi</strong> 之個案，務必直接下載健保署頁面之<strong>「附件 1. 藥品給付規定修訂對照表」PDF</strong> 核對最終生效條文，以杜絕申報爭議。</p>
+      </div>
+    </section>
+
+    <!-- Section 7 -->
+    <section id="sec-original">
+      <h2>7. 原始整理圖卡留存與參考文獻</h2>
+      <p>以下完整保留原始參考圖卡，供快速回顧與對照：</p>
+      <div class="figure-box">
+        <img src="nhi-hepatitis-c-daa-original-summary.png" width="512" height="640" loading="lazy" decoding="async" alt="原始健保 C 型肝炎全口服新藥修訂給付規定整理圖卡">
+        <div class="figure-cap"><strong>圖 4｜原始參考圖卡留存（健保審字第 1150058504 號修訂重點摘錄）。</strong></div>
+      </div>
+
+      <h3>參考資料與查核來源</h3>
+      <ol>
+        <li>衛生福利部中央健康保險署（2026-11-13）。<a href="https://www.nhi.gov.tw/ch/cp-20729-79e93-3258-1.html" target="_blank" rel="noopener">健保審字第 1150058504 號：公告修訂 C 型肝炎全口服新藥之給付規定及 C 型肝炎全口服新藥健保給付執行計畫</a>（<a href="https://www.nhi.gov.tw/ch/dl-104021-a0ec1e935d8a408da5a742e6d7b6d08f-1.pdf" target="_blank" rel="noopener">附件 1 給付規定修訂對照表</a>、<a href="https://www.nhi.gov.tw/ch/dl-104024-bae82dda050d49f5a57407af936664c8-1.pdf" target="_blank" rel="noopener">附件 2 執行計畫</a>、<a href="https://www.nhi.gov.tw/ch/dl-104026-6d62ba6e3c73402eb1cc72b36748a0ea-1.pdf" target="_blank" rel="noopener">附件 3 計畫內容修正對照</a>）。</li>
+        <li>醫聖診療系統（2026-11-17 轉載）。<a href="https://www.sc-dr.com.tw/content-detail.php?type=3&id=8780" target="_blank" rel="noopener">健保審字第 1150058504 號公告全文與附件清單</a>。</li>
+        <li>衛生福利部中央健康保險署。<a href="https://www.nhi.gov.tw/ch/cp-20682-ad774-4141-1.html" target="_blank" rel="noopener">全民健康保險藥物給付項目及支付標準共同擬訂會議藥品部分第 84 次會議資料</a>。</li>
+        <li>衛生福利部（2026）。<a href="https://www.mohw.gov.tw/cp-7404-88169-1.html" target="_blank" rel="noopener">臺灣消除 C 肝之路獲全球頂尖權威醫學期刊《The Lancet》刊登肯定</a>；及<a href="https://www.mohw.gov.tw/cp-7171-84842-1.html" target="_blank" rel="noopener">消除 C 肝新里程碑 臺灣提前達成 WHO 目標</a>。</li>
+        <li>光田綜合醫院西藥品查詢。<a href="https://www.ktgh.com.tw/Medicament_tbDrug_Look.asp?CatID=65&ModuleType=Y&NewsID=1939&Ordid=20904" target="_blank" rel="noopener">Zepatier（Elbasvir/Grazoprevir，衛部藥輸字第 026972 號）原 10.7.7 給付規定與仿單資料</a>。</li>
+        <li>衛生福利部桃園醫院肝膽腸胃科。<a href="https://www.tygh.mohw.gov.tw/?aid=504&pid=128&page_name=detail&iid=1011" target="_blank" rel="noopener">C 型肝炎全口服新藥健保給付執行計畫衛教與結案規範</a>。</li>
+        <li>PMC Review (2023). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11895618/" target="_blank" rel="noopener">Hepatitis C virus micro-elimination in people who inject drugs (SToP-C &amp; TraP Hep C evidence)</a>.</li>
+        <li>AASLD/IDSA (2023). <a href="https://www.idsociety.org/practice-guideline/hcv-guidance/" target="_blank" rel="noopener">HCV Guidance: Recommendations for Testing, Managing, and Treating Hepatitis C</a>.</li>
+        <li>University of Washington Hepatitis C Online (2026). <a href="https://www.hepatitisc.uw.edu/go/treatment-infection/retreatment-patients-prior-treatment-experience/core-concept/all" target="_blank" rel="noopener">Retreatment of Persons with Prior HCV Treatment Experience</a>.</li>
+        <li>Bourlière M, et al. (2017). <a href="https://pubmed.ncbi.nlm.nih.gov/28564569/" target="_blank" rel="noopener">Sofosbuvir, Velpatasvir, and Voxilaprevir for Previously Treated HCV Infection (POLARIS-1 &amp; POLARIS-4)</a>; <a href="https://www.ncbi.nlm.nih.gov/books/NBK534025/" target="_blank" rel="noopener">CADTH Clinical Review Report (NBK534025)</a>.</li>
+      </ol>
+
+      <div class="footer-note">
+        本筆記僅供醫療專業人員學習與政策整理參考，實際處方與健保申報請一律以衛生福利部中央健康保險署最新公告條文與執行計畫全文為準。
+      </div>
+    </section>
+
+    <section id="related-articles" class="kp-related" aria-label="相關文章">
+      <h2>相關文章</h2>
+      <ul>
+        <li><a href="cgvhd-manifestations-and-diagnosis.html#ddx">慢性移植物抗宿主疾病（cGVHD）：臨床表現與診斷</a>。在移植後肝功能異常的鑑別中，病毒性肝炎（含 HCV）是需排除的病因。</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>
