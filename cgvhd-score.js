@@ -90,17 +90,34 @@ const cgvhdOrgans = [
 ];
 
 function gradeCgvhd(scores) {
-  const assessed = Object.values(scores).filter(score => score !== "");
-  const values = assessed.filter(score => score !== "excluded").map(Number);
-  const lung = Number(scores.lungs);
-  if (values.includes(3) || lung >= 2) {
-    return assessed.length === 8 ? "重度" : "已達重度門檻，仍有器官未評估";
+  const unassessed = cgvhdOrgans.filter(([id]) => !scores[id]).map(([, name]) => name);
+  const included = cgvhdOrgans.flatMap(([id, name]) => {
+    const score = scores[id];
+    return /^[0-3]$/.test(score ?? "") ? [{ id, name, score: Number(score) }] : [];
+  });
+  const involved = included.filter(({ score }) => score > 0);
+  const severe = included.filter(({ id, score }) => id === "lungs" ? score >= 2 : score === 3);
+  const moderate = included.filter(({ id, score }) => id === "lungs" ? score === 1 : score === 2);
+  const reasons = (organs) => organs.map(({ name, score }) => name + " " + score + " 分").join("、");
+  if (severe.length) return { level: "severe", reason: reasons(severe), unassessed };
+  if (moderate.length || involved.length >= 3) {
+    const reason = moderate.length ? reasons(moderate) :
+      involved.length + " 個受累器官各 1 分（" + reasons(involved) + "）";
+    return { level: unassessed.length ? "at-least-moderate" : "moderate", reason, unassessed };
   }
-  if (assessed.length < 8) return "尚無法判定整體分級";
-  const involved = values.filter(score => score > 0).length;
-  if (values.includes(2) || lung === 1 || involved >= 3) return "中度";
-  return involved ? "輕度" : "目前無計分器官受累";
+  if (unassessed.length) return { level: "pending", reason: "", unassessed };
+  if (!involved.length) return { level: "none", reason: "沒有計入 1–3 分的器官", unassessed };
+  return { level: "mild", reason: reasons(involved) + "；肺未計入受累", unassessed };
 }
+
+const gvhdGuidance = {
+  pending: ["尚未完成", "先補齊未評估器官，並確認異常是否可歸因於慢性 GVHD。"],
+  none: ["目前無計分器官受累", "依移植團隊安排追蹤。這次分數不能用來排除慢性 GVHD 或決定停藥。"],
+  mild: ["輕度", "多以器官局部治療和支持照護為主，例如眼部潤滑、口腔或皮膚局部治療。若症狀持續、進展或嚴重影響功能，請團隊重新評估。"],
+  moderate: ["中度", "由移植團隊評估是否開始全身治療。若需要全身一線治療，通常以全身性類固醇為主，並搭配器官局部與支持照護。若主要為口腔、眼睛或生殖道受累，可依功能影響與風險評估加強局部治療。"],
+  "at-least-moderate": ["至少中度，尚未完成", "先請移植團隊評估已達門檻的器官，並補齊其餘評估。完整分級可能上修，治療強度須綜合器官風險與病情進展決定。"],
+  severe: ["重度", "儘快由移植團隊評估受累器官及全身治療。需要全身一線治療時，通常以全身性類固醇為主，並依器官風險加強專科和支持照護。"],
+};
 
 const gvhdForm = document.querySelector("#cgvhd-form");
 const gvhdGrid = document.querySelector("#cgvhd-organs");
@@ -142,10 +159,18 @@ for (const [id, name, criteria, tip] of cgvhdOrgans) {
 function showCgvhdGrade() {
   const data = new FormData(gvhdForm);
   const scores = Object.fromEntries(cgvhdOrgans.map(([id]) => [id, data.get(id) ?? ""]));
-  const checked = Object.values(scores).filter(score => score !== "").length;
+  const { level, reason, unassessed } = gradeCgvhd(scores);
   const excluded = Object.values(scores).filter(score => score === "excluded").length;
-  gvhdResult.textContent = "已評估 " + checked + "／8 項" +
-    (excluded ? "（排除 " + excluded + " 項）" : "") + "。整體：" + gradeCgvhd(scores) + "。";
+  const [label, guidance] = gvhdGuidance[level];
+  gvhdResult.textContent = "NIH 整體分級：" + label;
+  document.querySelector("#cgvhd-result-panel").dataset.grade = level;
+  document.querySelector("#cgvhd-progress").textContent =
+    "已評估 " + (cgvhdOrgans.length - unassessed.length) + "／" + cgvhdOrgans.length +
+    " 項" + (excluded ? "（排除 " + excluded + " 項）" : "") + "。";
+  document.querySelector("#cgvhd-reason").textContent = reason ? "分級依據： " + reason : "";
+  document.querySelector("#cgvhd-missing").textContent = unassessed.length
+    ? "未評估： " + unassessed.join("、") : "";
+  document.querySelector("#cgvhd-guidance").textContent = guidance;
 }
 gvhdForm.addEventListener("change", showCgvhdGrade);
 gvhdForm.addEventListener("reset", () => queueMicrotask(showCgvhdGrade));

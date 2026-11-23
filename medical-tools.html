@@ -69,10 +69,27 @@
     <p><a href="assets/nih-cgvhd-organ-score.webp">開啟八大器官評分圖（繁中）</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4329079/#F1">NIH 原始共識</a></p>
     <form id="cgvhd-form" autocomplete="off">
       <div class="kp-score-grid" id="cgvhd-organs"></div>
-      <div class="kp-score-result">
-        <output id="cgvhd-result" for="cgvhd-organs" aria-live="polite">已評估 0／8 項。尚無法判定整體分級。</output>
-        <button class="kp-control" type="reset">清除評分</button>
-      </div>
+      <section class="kp-score-panel" id="cgvhd-result-panel" aria-labelledby="cgvhd-result-label">
+        <div class="kp-score-result">
+          <h3 id="cgvhd-result-label"><output id="cgvhd-result" aria-live="polite">NIH 整體分級：尚未完成</output></h3>
+          <button class="kp-control" type="reset">清除評分</button>
+        </div>
+        <p id="cgvhd-progress"></p>
+        <p id="cgvhd-reason"></p>
+        <p id="cgvhd-missing"></p>
+        <h4>建議治療方向</h4>
+        <p id="cgvhd-guidance"></p>
+        <p>若已接受全身性類固醇但反應不足，或減量時反覆惡化，可與團隊討論後線選擇，例如 ruxolitinib。NIH 分級與治療反應需分別評估。</p>
+        <p><a href="notes/cgvhd-treatment-and-targeted-evidence.html#sr-cgvhd">查閱類固醇難治型治療</a> · <a href="https://www.ncbi.nlm.nih.gov/books/NBK608236/table/ch44.Tab1/">EBMT 一線治療表</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/38184001/">EBMT 更新共識</a></p>
+      </section>
+      <details class="kp-score-rules">
+        <summary>查看 NIH 整體分級門檻</summary>
+        <ul>
+          <li>輕度：1–2 個器官各 1 分，肺 0 分。</li>
+          <li>中度：≥3 個器官各 1 分、任一非肺器官 2 分，或肺 1 分。</li>
+          <li>重度：任一非肺器官 3 分，或肺 2–3 分。符合多級時取最高級。</li>
+        </ul>
+      </details>
     </form>
     <p>由其他病因完全解釋的異常可排除。有其他病因且 GVHD 仍為成因之一時，依當前器官狀況評分。</p>
     <p>延伸閱讀：<a href="notes/cgvhd-manifestations-and-diagnosis.html#nih">臨床表現與診斷</a> · <a href="notes/cgvhd-treatment-and-targeted-evidence.html#eval-grade">臨床治療與標靶實證</a></p>

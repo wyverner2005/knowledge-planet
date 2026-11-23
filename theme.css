@@ -322,3 +322,11 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
 .kp-score-number { display: inline-block; min-width: 2.4rem; }
 .kp-score-result { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem; margin-block: .8rem; }
 .kp-score-result output { margin: 0; }
+
+.kp-score-panel { margin-block: 1.1rem; padding: clamp(.8rem, 2vw, 1.3rem); border: 1px solid var(--kp-control-border, #a79982); border-inline-start: .3rem solid #795b34; border-radius: .65rem; background: var(--kp-control-bg); }
+.kp-score-panel[data-grade="mild"] { border-inline-start-color: #53734b; }
+.kp-score-panel:is([data-grade="moderate"], [data-grade="at-least-moderate"]) { border-inline-start-color: #a87221; }
+.kp-score-panel[data-grade="severe"] { border-inline-start-color: #b45246; }
+.kp-score-panel h3, .kp-score-panel h4 { margin: 0; }
+.kp-score-panel p:empty { display: none; }
+.kp-score-rules summary { cursor: pointer; font-weight: 650; }
