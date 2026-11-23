@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="kp-note">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>降膽固醇新選擇：Inclisiran 納入健保給付全解析</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* Balanced · Health & Clinical Reference · Headline above full-width hero illustration · Answer-first strip → Eligibility flowchart & comparison table → Dosing timeline → Renewal & restrictions → Official regulation summary · Noto Serif TC + Noto Sans TC + IBM Plex Mono · Soft Pale Yellow (#FDF9E7) per user preference with Deep Forest Teal (#1E6B52) & Terracotta (#B34A2B) · 40px image radius · Single emphasis metric strip · Signature element: 24-month dosing timeline SVG · Charts: Eligibility flowchart SVG, Dosing timeline SVG, LDL-C 30% threshold SVG */
+
+    :root {
+      --paper: #FDF9E7;
+      --ink: #1B2420;
+      --ink2: #334039;
+      --mute: #4A5750;
+      --hair: #DDD4B6;
+      --accent: #1E6B52;
+      --accent-text: #134E3B;
+      --accent-2: #B34A2B;
+      --accent-2-text: #8A3117;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 16.5px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 68px clamp(24px, 10.4vw, 112px) 92px;
+      background-color: var(--paper);
+      color: var(--ink);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: 24px;
+    }
+
+    .span-12 { grid-column: 1 / -1; }
+    .span-10 { grid-column: 1 / span 10; }
+    .span-8  { grid-column: 1 / span 8; }
+    .span-4  { grid-column: 1 / span 4; }
+    .col-5-12 { grid-column: 5 / -1; }
+
+    .measure {
+      max-width: 66ch;
+    }
+
+    /* Typography */
+    h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 900;
+      font-size: clamp(2.4rem, 5.2vw, 4.4rem);
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0 0 24px;
+      text-wrap: balance;
+    }
+
+    .deck {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: clamp(1.06rem, 1.4vw, 1.22rem);
+      line-height: 1.75;
+      color: var(--ink2);
+      max-width: 60ch;
+      margin: 0 0 44px;
+    }
+
+    h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 700;
+      font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+      line-height: 1.28;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin: 0 0 20px;
+      text-wrap: balance;
+    }
+
+    h3 {
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 700;
+      font-size: 1.22rem;
+      line-height: 1.4;
+      color: var(--accent-text);
+      margin: 0 0 10px;
+    }
+
+    p {
+      margin: 0 0 18px;
+      color: var(--ink2);
+    }
+
+    strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .mono {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.92em;
+      white-space: nowrap;
+    }
+
+    /* Hero illustration */
+    .hero-figure {
+      margin: 0 0 64px;
+    }
+
+    .hero-img-wrap {
+      border-radius: 40px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .hero-img-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 40px;
+    }
+
+    /* Section spacing */
+    .sec {
+      margin-top: 92px;
+      padding-top: 40px;
+      border-top: 1px solid var(--hair);
+    }
+
+    .sec-first {
+      margin-top: 0;
+      padding-top: 32px;
+      border-top: 1px solid var(--hair);
+    }
+
+    /* Open 3-column metric strip (0 cards) */
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+      padding: 28px 0 8px;
+    }
+
+    .metric-item {
+      border-left: 2px solid var(--accent);
+      padding-left: 20px;
+    }
+
+    .metric-item.alert {
+      border-left-color: var(--accent-2);
+    }
+
+    .metric-num {
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 900;
+      font-size: clamp(1.85rem, 3vw, 2.65rem);
+      line-height: 1.15;
+      color: var(--accent-text);
+      margin: 0 0 10px;
+      white-space: nowrap;
+    }
+
+    .metric-item.alert .metric-num {
+      color: var(--accent-2-text);
+    }
+
+    .metric-desc {
+      font-size: 0.94rem;
+      line-height: 1.65;
+      color: var(--ink2);
+      margin: 0;
+    }
+
+    /* Figures & SVGs */
+    figure {
+      margin: 40px 0 44px;
+      padding: 0;
+    }
+
+    .fig-title {
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 700;
+      font-size: 1.18rem;
+      line-height: 1.45;
+      color: var(--ink);
+      margin: 0 0 16px;
+    }
+
+    figure svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    figcaption {
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--mute);
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid var(--hair);
+    }
+
+    /* Open Tables (no zebra stripes, no cards) */
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 32px 0 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    thead th {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--accent-text);
+      padding: 12px 16px 14px 0;
+      border-bottom: 2px solid var(--ink);
+      vertical-align: bottom;
+    }
+
+    tbody td {
+      padding: 16px 16px 16px 0;
+      border-bottom: 1px solid var(--hair);
+      color: var(--ink2);
+      vertical-align: top;
+    }
+
+    tbody td:first-child {
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      width: 18%;
+    }
+
+    .num-nowrap {
+      white-space: nowrap;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* Open Multi-Column Rules */
+    .cols-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 36px;
+      margin-top: 28px;
+    }
+
+    .rule-col {
+      border-top: 1px solid var(--hair);
+      padding-top: 20px;
+    }
+
+    /* Lists */
+    ul.clean-list {
+      list-style: none;
+      margin: 12px 0 24px;
+      padding: 0;
+    }
+
+    ul.clean-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 12px;
+      color: var(--ink2);
+    }
+
+    ul.clean-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 8px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+
+    /* Pull Quote */
+    blockquote.pull-quote {
+      margin: 76px 0 0;
+      padding: 36px 0 36px 32px;
+      border-left: 3px solid var(--accent-2);
+      border-top: 1px solid var(--hair);
+      border-bottom: 1px solid var(--hair);
+    }
+
+    blockquote.pull-quote p {
+      font-family: 'Noto Serif TC', serif;
+      font-weight: 700;
+      font-size: clamp(1.35rem, 2.3vw, 1.85rem);
+      line-height: 1.55;
+      color: var(--ink);
+      margin: 0 0 12px;
+      max-width: 42ch;
+    }
+
+    blockquote.pull-quote footer {
+      font-size: 0.9rem;
+      color: var(--mute);
+    }
+
+    /* Footer / Source Note */
+    .source-footer {
+      margin-top: 84px;
+      padding-top: 28px;
+      border-top: 1px solid var(--hair);
+      font-size: 0.88rem;
+      color: var(--mute);
+      line-height: 1.75;
+    }
+
+    .source-footer h2 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    @media (max-width: 860px) {
+      .span-10, .span-8, .span-4, .col-5-12 {
+        grid-column: 1 / -1;
+      }
+      .metrics-strip, .cols-3 {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .sec {
+        margin-top: 68px;
+      }
+      tbody td:first-child {
+        white-space: normal;
+        width: auto;
+      }
+    }
+    html[data-theme="dark"] svg { background: #fdf9e7; }
+  </style>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js"></script>
+</head>
+<body>
+<nav class="kp-controls" aria-label="閱讀導覽">
+  <a class="kp-control" href="../">← 回知識星球</a>
+  <button class="kp-control kp-theme-toggle" type="button" aria-pressed="false" hidden>深色模式</button>
+</nav>
+<nav class="kp-categories" aria-label="專科分類"><a class="kp-category" href="../?category=cardiology">心臟血管 · Cardiology</a><a class="kp-category" href="../?category=endocrinology">內分泌／新陳代謝 · Endocrinology</a></nav>
+
+  <header class="grid">
+    <div class="span-10">
+      <h1>降膽固醇新選擇：Inclisiran 納入健保給付全解析</h1>
+      <p class="deck">
+        自 115 年（2026 年）12 月 1 日起，長效降血脂針劑 <strong>Inclisiran（如 Leqvio）</strong>正式納入健保給付。本藥採事前審查制，給付對象限於曾發生重大心血管事件且經標準降血脂治療後低密度脂蛋白膽固醇（LDL-C）仍未達標之成人病人。
+      </p>
+    </div>
+
+    <div class="span-12">
+      <figure class="hero-figure">
+        <div class="hero-img-wrap">
+          <img src="inclisiran-illustration.webp" alt="心血管健康與現代降膽固醇治療主題插圖">
+        </div>
+        <figcaption>長效降血脂針劑 Inclisiran 納入健保後，為高風險動脈粥狀硬化心血管疾病（ASCVD）病人提供每半年一次的維持治療新選項。</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <!-- Answer-First Metric Strip -->
+    <section class="sec-first grid" aria-label="核心給付重點">
+      <div class="span-12">
+        <div class="metrics-strip">
+          <div class="metric-item">
+            <p class="metric-num">115/12/1</p>
+            <p class="metric-desc"><strong>健保正式生效日</strong>：須檢附「附表二-D」申請事前審查，每次核准使用 12 個月。</p>
+          </div>
+          <div class="metric-item alert">
+            <p class="metric-num">&gt; 100 mg/dL</p>
+            <p class="metric-desc"><strong>LDL-C 給付門檻</strong>：發生重大心血管事件一年內，經規範療程治療後數值仍高於此標準。</p>
+          </div>
+          <div class="metric-item">
+            <p class="metric-num">每 6 個月 1 支</p>
+            <p class="metric-desc"><strong>維持期施打頻率</strong>：初次治療於第 0、第 3 個月各施打 1 支，之後每半年施打 1 支。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Eligibility -->
+    <section class="sec grid">
+      <div class="span-4">
+        <h2>符合重大心血管事件與用藥門檻，才具申請資格</h2>
+      </div>
+      <div class="col-5-12 measure">
+        <p>
+          並非所有膽固醇偏高的民眾都適用健保給付。依據新修訂之藥品給付規定（第 2.6.4.3 節），申請對象必須同時滿足<strong>「事件時效」</strong>與<strong>「前置用藥未達標」</strong>兩層把關。
+        </p>
+        <p>
+          首先，病人須為<strong>發生重大心血管事件之後一年內</strong>，且屬於動脈粥狀硬化心血管疾病（ASCVD）之成人病人，涵蓋範圍包括：
+        </p>
+        <ul class="clean-list">
+          <li><strong>心肌梗塞</strong>（Myocardial infarction）</li>
+          <li><strong>接受冠狀動脈或其他動脈血管再通術</strong>（Revascularization，如心導管支架置放或繞道手術等）</li>
+          <li><strong>動脈硬化相關之缺血性腦中風</strong></li>
+        </ul>
+        <p>
+          在滿足上述前提後，醫師會依病人對 statin 類藥物的耐受狀況，對照「條件（一）」或「條件（二）」檢視前置療程與抽血數值。
+        </p>
+      </div>
+
+      <!-- Visual 1: Eligibility Flowchart SVG -->
+      <div class="span-12">
+        <figure>
+          <div class="fig-title">兩條前置治療途徑皆須於重大心血管事件後一年內，且治療後 LDL-C 仍高於 100 mg/dL</div>
+          <svg viewBox="0 0 720 430" width="100%" role="img" aria-label="Inclisiran 健保給付資格審查流程圖">
+            <defs>
+              <marker id="arrow-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#1E6B52"/>
+              </marker>
+              <marker id="arrow-terra" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#B34A2B"/>
+              </marker>
+            </defs>
+
+            <!-- Step 1: Top Prerequisite -->
+            <rect x="110" y="10" width="500" height="72" rx="10" fill="none" stroke="#1E6B52" stroke-width="2"/>
+            <text x="360" y="36" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="16" font-weight="700" fill="#134E3B">前提：發生重大心血管事件後 1 年內之成人病人</text>
+            <text x="360" y="62" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="13.5" fill="#334039">心肌梗塞 ／ 冠狀動脈或其他動脈血管再通術 ／ 動脈硬化相關缺血性腦中風</text>
+
+            <!-- Branching Connectors -->
+            <path d="M 240 82 L 240 104 L 180 104 L 180 124" fill="none" stroke="#1E6B52" stroke-width="1.8" marker-end="url(#arrow-teal)"/>
+            <path d="M 480 82 L 480 104 L 540 104 L 540 124" fill="none" stroke="#B34A2B" stroke-width="1.8" marker-end="url(#arrow-terra)"/>
+
+            <!-- Left Path: Condition (1) -->
+            <rect x="20" y="130" width="320" height="156" rx="10" fill="none" stroke="#1E6B52" stroke-width="1.8"/>
+            <line x1="20" y1="168" x2="340" y2="168" stroke="#DDD4B6" stroke-width="1"/>
+            <text x="180" y="155" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#134E3B">條件（一）可耐受 Statin 族群</text>
+            <text x="38" y="194" font-family="Noto Sans TC, sans-serif" font-size="13.5" font-weight="700" fill="#1B2420">1. 高強度或最大耐受劑量 statin ≥ 3 個月</text>
+            <text x="52" y="216" font-family="Noto Sans TC, sans-serif" font-size="13" fill="#4A5750">如 rosuvastatin 20 mg 或 atorvastatin 40 mg(含)以上</text>
+            <text x="38" y="244" font-family="Noto Sans TC, sans-serif" font-size="13.5" font-weight="700" fill="#1B2420">2. 之後再合併 ezetimibe 10 mg ≥ 3 個月</text>
+            <text x="38" y="270" font-family="Noto Sans TC, sans-serif" font-size="13.5" font-weight="700" fill="#8A3117">3. 治療後 LDL-C 仍高於 100 mg/dL</text>
+
+            <!-- Right Path: Condition (2) -->
+            <rect x="380" y="130" width="320" height="156" rx="10" fill="none" stroke="#B34A2B" stroke-width="1.8"/>
+            <line x1="380" y1="168" x2="700" y2="168" stroke="#DDD4B6" stroke-width="1"/>
+            <text x="540" y="155" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#8A3117">條件（二）Statin 禁忌或不耐受族群</text>
+            <text x="398" y="194" font-family="Noto Sans TC, sans-serif" font-size="13.5" font-weight="700" fill="#1B2420">1. 具 statin 禁忌症或確診 statin 不耐受</text>
+            <text x="398" y="226" font-family="Noto Sans TC, sans-serif" font-size="13.5" font-weight="700" fill="#1B2420">2. 其他降血脂藥物持續治療 3 個月</text>
+            <text x="412" y="248" font-family="Noto Sans TC, sans-serif" font-size="13" fill="#4A5750">至少須包含 ezetimibe 10 mg</text>
+            <text x="398" y="274" font-family="Noto Sans TC, sans-serif" font-size="13.5" font-weight="700" fill="#8A3117">3. 治療後 LDL-C 仍高於 100 mg/dL</text>
+
+            <!-- Converging Connectors -->
+            <path d="M 180 286 L 180 314 L 330 314 L 330 334" fill="none" stroke="#1E6B52" stroke-width="1.8" marker-end="url(#arrow-teal)"/>
+            <path d="M 540 286 L 540 314 L 390 314 L 390 334" fill="none" stroke="#B34A2B" stroke-width="1.8" marker-end="url(#arrow-terra)"/>
+
+            <!-- Bottom Result -->
+            <rect x="130" y="340" width="460" height="74" rx="10" fill="#1E6B52"/>
+            <text x="360" y="368" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="16" font-weight="700" fill="#FDF9E7">檢附「附表二-D」申請健保事前審查</text>
+            <text x="360" y="394" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="13.5" fill="#FDF9E7">核准後每次給付 12 個月 ｜ 治療期間不得併用其他 PCSK9 血脂調節劑</text>
+          </svg>
+          <figcaption>資料整理自「藥品給付規定」修訂對照表第 2 節 2.6.4.3. Inclisiran（自 115 年 12 月 1 日生效）。</figcaption>
+        </figure>
+      </div>
+
+      <!-- Comparison Table 1 -->
+      <div class="span-12">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>比較項目</th>
+                <th>條件（一）：高強度 Statin 途徑</th>
+                <th>條件（二）：Statin 禁忌或不耐受途徑</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>適用族群</td>
+                <td>重大心血管事件後一年內，且使用最大耐受劑量 statin 之成人病人</td>
+                <td>重大心血管事件後一年內，對 statin 有禁忌症或確診為對 statin 不耐受之成人病人</td>
+              </tr>
+              <tr>
+                <td>前置藥物要求</td>
+                <td>高強度 statin（如 <span class="num-nowrap">rosuvastatin 20 mg</span> 或 <span class="num-nowrap">atorvastatin 40 mg</span>(含)以上）或最大耐受劑量 statin，之後合併 <span class="num-nowrap">ezetimibe 10 mg</span></td>
+                <td>其他降血脂藥物，且至少需包含 <span class="num-nowrap">ezetimibe 10 mg</span></td>
+              </tr>
+              <tr>
+                <td>前置治療時間</td>
+                <td>單獨使用 statin <span class="num-nowrap">≥ 3 個月</span>，且之後合併 ezetimibe 再治療 <span class="num-nowrap">≥ 3 個月</span></td>
+                <td>持續治療 <span class="num-nowrap">3 個月</span></td>
+              </tr>
+              <tr>
+                <td>LDL-C 門檻</td>
+                <td>治療後仍高於 <span class="num-nowrap">100 mg/dL</span></td>
+                <td>治療後仍高於 <span class="num-nowrap">100 mg/dL</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Dosing Schedule -->
+    <section class="sec grid">
+      <div class="span-10">
+        <h2>初次於第 0、3 個月施打，穩定後每半年僅需 1 支</h2>
+        <p class="measure">
+          與每日服用的口服降血脂藥物不同，Inclisiran 屬於長效型針劑。根據給付規定第 3 點，初次使用時於<strong>第 0 個月</strong>與<strong>第 3 個月</strong>各施打 1 支，其後進入維持期，<strong>每 6 個月施打 1 支</strong>（即第 9、15、21 個月依序施打）。由於每次事前審查核准效期為 12 個月，第一年共涵蓋第 0、3、9 個月共 3 支，期滿前須檢附抽血評估報告申請續用。
+        </p>
+      </div>
+
+      <!-- Signature Visual: 24-Month Dosing Timeline SVG -->
+      <div class="span-12">
+        <figure>
+          <div class="fig-title">第一年核准期內施打 3 支，續用核准後進入每 6 個月 1 支的規律維持期</div>
+          <svg viewBox="0 0 720 300" width="100%" role="img" aria-label="Inclisiran 24 個月施打與健保審查時程圖">
+            <!-- Approval Window Brackets -->
+            <rect x="44" y="28" width="336" height="36" rx="6" fill="#1E6B52" fill-opacity="0.12" stroke="#1E6B52" stroke-width="1.2"/>
+            <text x="212" y="51" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="13.5" font-weight="700" fill="#134E3B">第一次核准使用期（12 個月）</text>
+
+            <rect x="392" y="28" width="292" height="36" rx="6" fill="#B34A2B" fill-opacity="0.10" stroke="#B34A2B" stroke-width="1.2" stroke-dasharray="5 4"/>
+            <text x="538" y="51" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="13.5" font-weight="700" fill="#8A3117">續用核准期（須檢附評估報告）</text>
+
+            <!-- Month 12 Divider -->
+            <line x1="386" y1="22" x2="386" y2="254" stroke="#B34A2B" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <text x="386" y="274" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="13" font-weight="700" fill="#8A3117">第 12 個月續用評估點</text>
+            <text x="386" y="293" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="12.5" fill="#4A5750">LDL-C 降幅須達 30% 以上</text>
+
+            <!-- Main Timeline Axis -->
+            <line x1="48" y1="152" x2="676" y2="152" stroke="#1B2420" stroke-width="2.5"/>
+
+            <!-- Intervals Labels -->
+            <text x="115" y="136" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#4A5750">+3 個月</text>
+            <text x="249" y="136" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#4A5750">+6 個月</text>
+            <text x="415" y="136" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#4A5750">+6 個月</text>
+            <text x="581" y="136" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#4A5750">+6 個月</text>
+
+            <!-- Dose 1: Month 0 -->
+            <circle cx="72" cy="152" r="11" fill="#1E6B52"/>
+            <circle cx="72" cy="152" r="4.5" fill="#FDF9E7"/>
+            <text x="72" y="106" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#134E3B">第 1 支</text>
+            <text x="72" y="186" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#1B2420">第 0 月</text>
+            <text x="72" y="206" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="12.5" fill="#4A5750">初次啟用</text>
+
+            <!-- Dose 2: Month 3 -->
+            <circle cx="158" cy="152" r="11" fill="#1E6B52"/>
+            <circle cx="158" cy="152" r="4.5" fill="#FDF9E7"/>
+            <text x="158" y="106" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#134E3B">第 2 支</text>
+            <text x="158" y="186" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#1B2420">第 3 月</text>
+            <text x="158" y="206" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="12.5" fill="#4A5750">初次追加</text>
+
+            <!-- Dose 3: Month 9 -->
+            <circle cx="332" cy="152" r="11" fill="#1E6B52"/>
+            <circle cx="332" cy="152" r="4.5" fill="#FDF9E7"/>
+            <text x="332" y="106" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#134E3B">第 3 支</text>
+            <text x="332" y="186" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#1B2420">第 9 月</text>
+            <text x="332" y="206" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="12.5" fill="#4A5750">進入每半年期</text>
+
+            <!-- Dose 4: Month 15 -->
+            <circle cx="498" cy="152" r="11" fill="#B34A2B"/>
+            <circle cx="498" cy="152" r="4.5" fill="#FDF9E7"/>
+            <text x="498" y="106" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#8A3117">第 4 支</text>
+            <text x="498" y="186" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#1B2420">第 15 月</text>
+            <text x="498" y="206" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="12.5" fill="#4A5750">維持期施打</text>
+
+            <!-- Dose 5: Month 21 -->
+            <circle cx="654" cy="152" r="11" fill="#B34A2B"/>
+            <circle cx="654" cy="152" r="4.5" fill="#FDF9E7"/>
+            <text x="654" y="106" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="15" font-weight="700" fill="#8A3117">第 5 支</text>
+            <text x="654" y="186" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#1B2420">第 21 月</text>
+            <text x="654" y="206" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="12.5" fill="#4A5750">維持期施打</text>
+          </svg>
+          <figcaption>施打時程依據藥品給付規定第 2.6.4.3 節第 1 點與第 3 點繪製；實際回診與抽血追蹤時間請依主治醫師醫囑為準。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Section 3: Prior Auth, Renewal & Restrictions -->
+    <section class="sec grid">
+      <div class="span-10">
+        <h2>續用關鍵看 LDL-C 降幅是否達 30%，且不得併用同類針劑</h2>
+      </div>
+
+      <div class="span-12">
+        <div class="cols-3">
+          <div class="rule-col">
+            <h3>事前審查不可省</h3>
+            <p>
+              使用前須由醫師填具<strong>「附表二-D：使用健保給付 PCSK9 血脂調節劑事前審查申請表」</strong>送審核准，未經核准無法以健保給付開立，每次核准效期為 <strong>12 個月</strong>。
+            </p>
+          </div>
+          <div class="rule-col">
+            <h3>續用療效門檻 30%</h3>
+            <p>
+              12 個月期滿若需再次申請，必須檢附評估報告。若血中 <strong>LDL-C 較開始使用本藥前下降程度未達 30%</strong>，即判定為療效不佳，健保將不再給付。
+            </p>
+          </div>
+          <div class="rule-col">
+            <h3>禁止併用其他 PCSK9</h3>
+            <p>
+              於 Inclisiran 治療期間，<strong>不得併用其他 PCSK9 血脂調節劑</strong>（例如其他 PCSK9 單株抗體針劑），以避免重複給付與用藥重疊。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual 3: LDL-C 30% Renewal Threshold Bar SVG -->
+      <div class="span-12">
+        <figure>
+          <div class="fig-title">續用審查以「起始 LDL-C 下降 30%」為分水嶺，未達標即停止健保給付</div>
+          <svg viewBox="0 0 720 215" width="100%" role="img" aria-label="LDL-C 下降 30% 續用療效判定示意圖">
+            <!-- Baseline reference label -->
+            <text x="20" y="34" font-family="Noto Sans TC, sans-serif" font-size="14" font-weight="700" fill="#1B2420">較開始使用 Inclisiran 前之血中 LDL-C 下降幅度</text>
+
+            <!-- Bar Track -->
+            <!-- 0% to 30% zone (Fail) -->
+            <rect x="20" y="64" width="240" height="44" fill="#B34A2B" fill-opacity="0.18" stroke="#B34A2B" stroke-width="1.5"/>
+            <text x="140" y="92" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="14" font-weight="700" fill="#8A3117">下降未達 30%：療效不佳，不再給付</text>
+
+            <!-- 30% to 100% zone (Pass) -->
+            <rect x="260" y="64" width="440" height="44" fill="#1E6B52" fill-opacity="0.18" stroke="#1E6B52" stroke-width="1.5"/>
+            <text x="480" y="92" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="14" font-weight="700" fill="#134E3B">下降達 30%（含）以上：符合續用療效門檻</text>
+
+            <!-- Threshold Marker Line at 30% (x=260) -->
+            <line x1="260" y1="50" x2="260" y2="132" stroke="#1B2420" stroke-width="2.5"/>
+            <circle cx="260" cy="50" r="4.5" fill="#1B2420"/>
+
+            <!-- Axis ticks -->
+            <text x="20" y="132" font-family="IBM Plex Mono, monospace" font-size="13.5" fill="#4A5750">0%</text>
+            <text x="260" y="154" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="15" font-weight="600" fill="#1B2420">30% 續用門檻</text>
+            <text x="700" y="132" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="13.5" fill="#4A5750">降幅越高</text>
+
+            <!-- Example Callout -->
+            <line x1="20" y1="176" x2="700" y2="176" stroke="#DDD4B6" stroke-width="1"/>
+            <text x="20" y="200" font-family="Noto Sans TC, sans-serif" font-size="13.5" fill="#334039">舉例換算：若啟用前 LDL-C 為 120 mg/dL，續用評估時須降至 84 mg/dL（含）以下，方達 30% 降幅標準。</text>
+          </svg>
+          <figcaption>單位：百分比（%）。舉例數值僅供理解 30% 降幅計算方式，實際評估以健保審查與臨床檢驗報告為準。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Pull Quote -->
+    <div class="grid">
+      <div class="span-10">
+        <blockquote class="pull-quote">
+          <p>「降膽固醇治療多了一項健保給付新選擇，但每位病人的心血管病史、用藥耐受度與檢驗數據皆不相同，是否符合給付資格，仍須由醫師完整評估。」</p>
+          <footer>#心血管疾病 ｜ 臨床衛教提醒</footer>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Section 4: Official Regulation Summary Table -->
+    <section class="sec grid">
+      <div class="span-10">
+        <h2>健保藥品給付規定條文重點一覽</h2>
+        <p class="measure">
+          以下彙整「藥品給付規定」第 2 節心臟血管及腎臟藥物（2.6.4.3. Inclisiran）新修訂條文，原給付規定為「無」，本次為全新納入。
+        </p>
+      </div>
+      <div class="span-12">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>條文項目</th>
+                <th>修訂後給付規定（自 115 年 12 月 1 日生效）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>藥品與代碼</td>
+                <td><span class="num-nowrap">2.6.4.3. Inclisiran</span>（如 Leqvio），隸屬 <span class="num-nowrap">2.6.4. PCSK9</span> 血脂調節劑；搭配表單為「附表二-D：使用健保給付 PCSK9 血脂調節劑事前審查申請表」。</td>
+              </tr>
+              <tr>
+                <td>事前審查與續用</td>
+                <td>須經事前審查核准後使用，每次申請得核准使用 <span class="num-nowrap">12 個月</span>；再次申請須檢附評估報告，若血中 LDL-C 較開始使用前下降未達 <span class="num-nowrap">30%</span>，即屬療效不佳，不再給付。</td>
+              </tr>
+              <tr>
+                <td>適用對象前提</td>
+                <td>限給付於發生重大心血管事件之後一年內且使用最大耐受劑量 statin 之成人病人（如心肌梗塞、冠狀動脈或其他動脈血管再通術、動脈硬化相關之缺血性腦中風等 ASCVD）。</td>
+              </tr>
+              <tr>
+                <td>給付條件（一）</td>
+                <td>經使用高強度 statin（如 <span class="num-nowrap">rosuvastatin 20 mg</span> 或 <span class="num-nowrap">atorvastatin 40 mg</span>(含)以上）或最大耐受劑量 statin <span class="num-nowrap">3 個月</span>(含)以上，且之後再合併使用 <span class="num-nowrap">ezetimibe 10 mg</span> <span class="num-nowrap">3 個月</span>(含)以上，LDL-C 仍高於 <span class="num-nowrap">100 mg/dL</span> 者。</td>
+              </tr>
+              <tr>
+                <td>給付條件（二）</td>
+                <td>對 statin 有禁忌症或確診為對 statin 不耐受之病人，經其他降血脂藥物（至少需有 <span class="num-nowrap">ezetimibe 10 mg</span>）持續治療 <span class="num-nowrap">3 個月</span>，LDL-C 仍高於 <span class="num-nowrap">100 mg/dL</span> 者。</td>
+              </tr>
+              <tr>
+                <td>用法用量</td>
+                <td>初次使用為第 <span class="num-nowrap">0</span>、第 <span class="num-nowrap">3</span> 個月使用 1 支，其後每 <span class="num-nowrap">6</span> 個月使用 1 支。</td>
+              </tr>
+              <tr>
+                <td>併用限制</td>
+                <td>於本品治療期間不得併用其他 PCSK9 血脂調節劑。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="source-footer grid">
+    <div class="span-10">
+      <h2>資料來源</h2>
+      <p>
+        本圖文解說依據衛生福利部中央健康保險署<a href="https://www.nhi.gov.tw/ch/cp-20724-a266b-3258-1.html" target="_blank" rel="noopener noreferrer">「藥品給付規定」修訂公告與對照表</a>（第 2 節 心臟血管及腎臟藥物 Cardiovascular-renal drugs，2.6.4.3. Inclisiran，自 115 年 12 月 1 日生效）編製。本內容僅供衛教與資訊參考，實際診斷、事前審查申請與用藥調整請遵循主治醫師專業判斷。
+      </p>
+    </div>
+  </footer>
+
+<p><a class="kp-control" href="inclisiran-nhi-coverage.yaml" download>下載 YAML 中繼資料</a></p>
+</body>
+</html>

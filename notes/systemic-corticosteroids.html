@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="kp-note">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>全身性類固醇臨床選藥與劑量換算圖文解說</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /*
+      Design decisions:
+      Tier 2 Balanced (Curated Clinical Editorial Study Guide) ·
+      Hero: Answer-first typographic headline + deck + 3-lever mental model ·
+      Section order: Core Mental Model → Dual-Pathway Mechanism (image_gen) → Potency & Half-Life SVG Chart → Organ-System Map (image_gen) + Full Annotated Table + Drug-by-Drug Deep Dive → Dose Equivalence SVG Chart + Full-Bleed Conversion Band → Safety & Tapering Table → Original Reference Chart Appendix → Sources ·
+      Fonts: Noto Serif TC + Newsreader (display/callouts), Noto Sans TC + Plus Jakarta Sans (body), JetBrains Mono (table headers, dosages, chart ticks) ·
+      Palette: User-preferred soft pale yellow paper (#FDF9E7), deep charcoal-forest ink (#181C1A), clinical teal (#1A5E56 / #124841), warm terracotta (#B85A28 / #8C3D14) — all AAA >= 7:1 ·
+      Image radius: 0px (sharp clinical editorial framing) ·
+      Emphasis moment: Full-bleed conversion band ("20–5–5–4–0.75–0.6") ·
+      Signature element: Dual-axis corticosteroid pharmacology & organ-selection visual system ·
+      Chart types: Inline SVG biological half-life range + potency chart, inline SVG dose-equivalence scale
+    */
+
+    :root {
+      --paper: #FDF9E7;
+      --band: #F1ECCF;
+      --ink: #181C1A;
+      --ink2: #2E3632;
+      --mute: #46504A;
+      --hair: #D5CEB4;
+      --accent: #1A5E56;
+      --accent-text: #124841;
+      --accent-2: #B85A28;
+      --accent-2-text: #8C3D14;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16.5px;
+      line-height: 1.78;
+      font-weight: 400;
+    }
+
+    .page {
+      padding: 64px clamp(24px, 9.5vw, 112px) 92px;
+    }
+
+    .grid-12 {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .span-12 { grid-column: 1 / -1; }
+    .span-10 { grid-column: 1 / span 10; }
+    .span-8  { grid-column: 1 / span 8; }
+    .span-7  { grid-column: 6 / span 7; }
+    .span-5  { grid-column: 1 / span 5; }
+    .span-4  { grid-column: 1 / span 4; }
+    .span-6  { grid-column: span 6; }
+
+    .measure {
+      max-width: 68ch;
+    }
+
+    /* Typography */
+    h1 {
+      font-family: "Noto Serif TC", "Newsreader", Georgia, serif;
+      font-size: clamp(36px, 5vw, 68px);
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 22px;
+      text-wrap: balance;
+    }
+
+    .deck {
+      font-family: "Noto Sans TC", "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(18px, 1.8vw, 21px);
+      line-height: 1.65;
+      color: var(--ink2);
+      max-width: 60ch;
+      margin: 0 0 40px;
+      text-wrap: pretty;
+    }
+
+    h2 {
+      font-family: "Noto Serif TC", "Newsreader", Georgia, serif;
+      font-size: clamp(26px, 3.1vw, 38px);
+      line-height: 1.28;
+      letter-spacing: -0.015em;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 18px;
+      text-wrap: balance;
+    }
+
+    h3 {
+      font-family: "Noto Serif TC", "Newsreader", Georgia, serif;
+      font-size: clamp(19px, 1.8vw, 23px);
+      line-height: 1.35;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--ink2);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--accent-text);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--accent-2-text);
+    }
+
+    strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .mono {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
+
+    .sec {
+      margin-top: 84px;
+      padding-top: 32px;
+      border-top: 1px solid var(--hair);
+    }
+
+    .sec-first {
+      margin-top: 44px;
+      padding-top: 28px;
+      border-top: 1px solid var(--hair);
+    }
+
+    /* 3-column open strip for core mental model */
+    .tri-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+      margin-top: 28px;
+    }
+
+    .tri-item {
+      border-top: 2px solid var(--accent);
+      padding-top: 14px;
+    }
+
+    .tri-item.amber {
+      border-top-color: var(--accent-2);
+    }
+
+    .tri-item.dark {
+      border-top-color: var(--ink);
+    }
+
+    .tri-label {
+      font-family: "Noto Serif TC", "Newsreader", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .tri-item p {
+      font-size: 15.5px;
+      line-height: 1.7;
+    }
+
+    /* Figures & Images */
+    figure {
+      margin: 0;
+    }
+
+    .fig-title {
+      font-family: "Noto Serif TC", "Newsreader", Georgia, serif;
+      font-size: clamp(19px, 2vw, 24px);
+      line-height: 1.38;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 16px;
+      max-width: 58ch;
+      text-wrap: balance;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+    }
+
+    .orig-img-wrap {
+      border: 1px solid var(--hair);
+      background: #FFFFFF;
+      padding: 12px;
+    }
+
+    .orig-img-wrap img {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    figcaption {
+      margin-top: 12px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--mute);
+      max-width: 78ch;
+    }
+
+    .svg-wrap {
+      width: 100%;
+      margin: 8px 0 4px;
+    }
+
+    .svg-wrap svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Open Tables (max 3, zero zebra stripes, zero boxes) */
+    .table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    thead th {
+      font-family: "JetBrains Mono", "Noto Sans TC", sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--mute);
+      padding: 10px 14px 12px 0;
+      border-bottom: 2px solid var(--ink);
+      vertical-align: bottom;
+    }
+
+    tbody td {
+      padding: 14px 14px 14px 0;
+      border-bottom: 1px solid var(--hair);
+      vertical-align: top;
+      color: var(--ink2);
+    }
+
+    tbody tr.group-end td {
+      border-bottom: 1.5px solid #BFB798;
+    }
+
+    .drug-name {
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .drug-zh {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 400;
+      color: var(--mute);
+      margin-top: 2px;
+    }
+
+    .dose-cell {
+      font-family: "JetBrains Mono", "Noto Sans TC", monospace;
+      font-size: 13.5px;
+      color: var(--ink);
+      min-width: 185px;
+    }
+
+    .tag-teal {
+      color: var(--accent-text);
+      font-weight: 600;
+    }
+
+    .tag-amber {
+      color: var(--accent-2-text);
+      font-weight: 600;
+    }
+
+    /* 2-column open drug deep-dive (hairlines only, 0 cards) */
+    .drug-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px 48px;
+      margin-top: 32px;
+    }
+
+    .drug-entry {
+      border-top: 1px solid var(--hair);
+      padding-top: 18px;
+    }
+
+    .drug-entry h3 {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .drug-meta {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--accent-text);
+      white-space: nowrap;
+    }
+
+    .drug-meta.amber {
+      color: var(--accent-2-text);
+    }
+
+    /* Full-bleed emphasis band (at most 1 per report) */
+    .full-band {
+      background-color: var(--band);
+      margin: 76px calc(clamp(24px, 9.5vw, 112px) * -1) 0;
+      padding: 52px clamp(24px, 9.5vw, 112px);
+      border-top: 1px solid var(--hair);
+      border-bottom: 1px solid var(--hair);
+    }
+
+    .eq-formula {
+      font-family: "Newsreader", "Noto Serif TC", Georgia, serif;
+      font-size: clamp(26px, 3.6vw, 44px);
+      line-height: 1.3;
+      font-weight: 600;
+      color: var(--accent-text);
+      margin: 0 0 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .band-cols {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px;
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid var(--hair);
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      margin: 64px 0 0;
+      padding: 24px 0 24px 28px;
+      border-left: 3px solid var(--accent);
+      font-family: "Noto Serif TC", "Newsreader", Georgia, serif;
+      font-size: clamp(22px, 2.6vw, 30px);
+      line-height: 1.5;
+      color: var(--ink);
+      max-width: 44ch;
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 12px;
+      font-family: "Noto Sans TC", sans-serif;
+      font-style: normal;
+      font-size: 14px;
+      color: var(--mute);
+    }
+
+    /* Numbered lists (open, clean) */
+    ol.ref-list {
+      margin: 18px 0 0;
+      padding-left: 22px;
+      color: var(--ink2);
+      font-size: 14.5px;
+      line-height: 1.7;
+    }
+
+    ol.ref-list li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    ul.clean-list {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--ink2);
+    }
+
+    ul.clean-list li {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-12 {
+        display: block;
+      }
+      .span-5, .span-7, .span-8, .span-10, .span-4, .span-6 {
+        margin-bottom: 24px;
+      }
+      .tri-strip, .drug-grid, .band-cols {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .page {
+        padding: 40px 20px 64px;
+      }
+      .full-band {
+        margin: 56px -20px 0;
+        padding: 36px 20px;
+      }
+    }
+  </style>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js"></script>
+</head>
+<body>
+  <main class="page">
+<nav class="kp-controls" aria-label="閱讀導覽">
+  <a class="kp-control" href="../">← 回知識星球</a>
+  <button class="kp-control kp-theme-toggle" type="button" aria-pressed="false" hidden>深色模式</button>
+</nav>
+<nav class="kp-categories" aria-label="專科分類"><a class="kp-category" href="../?category=clinical-pharmacology">臨床藥理 · Clinical Pharmacology</a><a class="kp-category" href="../?category=endocrinology">內分泌／新陳代謝 · Endocrinology</a></nav>
+
+    <!-- HERO: Answer-First Editorial Opening -->
+    <header>
+      <h1>全身性類固醇臨床選藥與劑量換算圖文解說</h1>
+      <p class="deck">
+        全身性皮質類固醇（Systemic Corticosteroids）並非「越強越好」——臨床選藥取決於<strong>抗發炎效價（糖皮質素）</strong>、<strong>保鈉升壓活性（礦物皮質素）</strong>與<strong>作用時間及組織穿透力</strong>三項槓桿的精準配對。
+      </p>
+
+      <div class="tri-strip">
+        <div class="tri-item">
+          <div class="tri-label">抗發炎效價（GC）</div>
+          <p>決定免疫抑制與消腫強度。從基準值 <span class="mono">1×</span>（Hydrocortisone）一路躍升至 <span class="mono">30×</span>（Dexamethasone），效價越高，所需毫克數越低。</p>
+        </div>
+        <div class="tri-item amber">
+          <div class="tri-label">保鈉排鉀活性（MC）</div>
+          <p>決定水分滯留與血壓支持力。休克與腎上腺危象需要它（Hydrocortisone、Fludrocortisone）；腦水腫或高劑量脈衝治療則極力避開它（Dexamethasone、Methylprednisolone）。</p>
+        </div>
+        <div class="tri-item dark">
+          <div class="tri-label">作用時間與穿透力</div>
+          <p>短效（<span class="mono">8–12 h</span>）最接近人體節律；長效（<span class="mono">36–54 h</span>）對下視丘－腦下垂體－腎上腺（HPA）軸抑制最久，且含氟結構能避開胎盤酵素去活化。</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION 1: Dual Mechanism Visual + Synthesis -->
+    <section class="sec-first">
+      <figure>
+        <div class="fig-title">類固醇分子同時牽動抗發炎與保鈉保水兩條軸線，臨床選藥的核心就在調整兩者比例</div>
+        <img src="steroid-receptor-pathways.webp" alt="類固醇糖皮質素與礦物皮質素雙重作用路徑示意圖" />
+        <figcaption>
+          左側深青色路徑代表糖皮質素受體（GR）介導的抗發炎與免疫調節作用，作用於氣道、中樞神經與免疫細胞；右側暖琥珀色路徑代表礦物皮質素受體（MR）介導的腎小管保鈉排鉀與血管張力維持。
+        </figcaption>
+      </figure>
+
+      <div class="grid-12" style="margin-top: 40px;">
+        <div class="span-5">
+          <h2>為什麼結構微調會徹底改變臨床用途？</h2>
+        </div>
+        <div class="span-7 measure">
+          <p>
+            天然的皮質醇（Cortisol，即藥物 Hydrocortisone）同時具備糖皮質素與礦物皮質素活性。根據 <a href="https://www.ncbi.nlm.nih.gov/books/NBK279156/" target="_blank" rel="noopener noreferrer">NCBI Endotext 糖皮質素治療指引</a>，藥物化學家透過修飾類固醇四環骨架（例如引入雙鍵、甲基或 9α-氟原子），成功將「抗發炎」與「水鈉滯留」分離：例如在 Dexamethasone 與 Betamethasone 加上 16-甲基與 9α-氟原子後，抗發炎效價暴增 25 至 40 倍，卻幾乎完全消除保鈉副作用；相反地，Fludrocortisone 僅加 9α-氟原子，使礦物皮質素活性飆升至天然皮質醇的 <strong>250 倍</strong>。
+          </p>
+          <p>
+            此外，體內兩組關鍵酵素 <strong>11β-HSD1</strong> 與 <strong>11β-HSD2</strong> 扮演「開關」角色：口服的 <strong>Prednisone</strong> 本身無活性，必須經肝臟 11β-HSD1 還原成 <strong>Prednisolone</strong> 才具藥效，因此嚴重肝功能不全患者應直接選用 Prednisolone；而胎盤高表現的 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8833914/" target="_blank" rel="noopener noreferrer">11β-HSD2 酵素</a>會將母體皮質醇去活化以保護胎兒，但含氟的 <strong>Betamethasone</strong> 與 <strong>Dexamethasone</strong> 不易被此酵素破壞，因此成為促進早產胎兒肺部成熟的唯一首選。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: SVG Chart — Half-Life & Dual Potency -->
+    <section class="sec">
+      <figure>
+        <div class="fig-title">從短效 8 小時到長效 54 小時，抗發炎效價越強的藥物對 HPA 軸抑制越持久</div>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 700 415" width="100%" role="img" aria-label="六大全身性類固醇生物半衰期區間與糖皮質素、礦物皮質素相對效價比較圖">
+            <!-- Gridlines (0 to 60h mapped across x=185 to x=515; scale: 5.5px per hour) -->
+            <line x1="185" y1="44" x2="185" y2="348" stroke="#D5CEB4" stroke-width="1" />
+            <line x1="251" y1="44" x2="251" y2="348" stroke="#D5CEB4" stroke-width="1" stroke-dasharray="3,4" />
+            <line x1="317" y1="44" x2="317" y2="348" stroke="#D5CEB4" stroke-width="1" stroke-dasharray="3,4" />
+            <line x1="383" y1="44" x2="383" y2="348" stroke="#D5CEB4" stroke-width="1" stroke-dasharray="3,4" />
+            <line x1="449" y1="44" x2="449" y2="348" stroke="#D5CEB4" stroke-width="1" stroke-dasharray="3,4" />
+            <line x1="515" y1="44" x2="515" y2="348" stroke="#D5CEB4" stroke-width="1" stroke-dasharray="3,4" />
+
+            <!-- Column Headers -->
+            <text x="12" y="28" fill="#46504A" font-family="JetBrains Mono, Noto Sans TC, sans-serif" font-size="13" font-weight="600">藥物（分類）</text>
+            <text x="185" y="28" fill="#46504A" font-family="JetBrains Mono, Noto Sans TC, sans-serif" font-size="13" font-weight="600">生物半衰期區間（小時）</text>
+            <text x="542" y="28" fill="#124841" font-family="JetBrains Mono, Noto Sans TC, sans-serif" font-size="13" font-weight="600">GC 效價</text>
+            <text x="625" y="28" fill="#8C3D14" font-family="JetBrains Mono, Noto Sans TC, sans-serif" font-size="13" font-weight="600">MC 效價</text>
+
+            <!-- Row 1: Hydrocortisone (8-12h -> x=229 to 251) -->
+            <text x="12" y="76" fill="#181C1A" font-family="Plus Jakarta Sans, Noto Sans TC, sans-serif" font-size="14.5" font-weight="700">Hydrocortisone</text>
+            <text x="12" y="94" fill="#46504A" font-family="Noto Sans TC, sans-serif" font-size="12.5">短效・雙重活性</text>
+            <rect x="229" y="66" width="22" height="18" rx="3" fill="#1A5E56" />
+            <text x="261" y="80" fill="#181C1A" font-family="JetBrains Mono, sans-serif" font-size="13">8–12 h</text>
+            <text x="542" y="80" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="600">1×</text>
+            <text x="625" y="80" fill="#8C3D14" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="600">1×</text>
+            <line x1="12" y1="106" x2="690" y2="106" stroke="#E6E0C8" stroke-width="1" />
+
+            <!-- Row 2: Prednisolone (18-36h -> x=284 to 383) -->
+            <text x="12" y="128" fill="#181C1A" font-family="Plus Jakarta Sans, Noto Sans TC, sans-serif" font-size="14.5" font-weight="700">Prednisolone</text>
+            <text x="12" y="146" fill="#46504A" font-family="Noto Sans TC, sans-serif" font-size="12.5">中效・口服主力</text>
+            <rect x="284" y="118" width="99" height="18" rx="3" fill="#1A5E56" />
+            <text x="393" y="132" fill="#181C1A" font-family="JetBrains Mono, sans-serif" font-size="13">18–36 h</text>
+            <text x="542" y="132" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="600">4–5×</text>
+            <text x="625" y="132" fill="#8C3D14" font-family="JetBrains Mono, sans-serif" font-size="14">0.3×</text>
+            <line x1="12" y1="158" x2="690" y2="158" stroke="#E6E0C8" stroke-width="1" />
+
+            <!-- Row 3: Methylprednisolone (18-36h -> x=284 to 383) -->
+            <text x="12" y="180" fill="#181C1A" font-family="Plus Jakarta Sans, Noto Sans TC, sans-serif" font-size="14.5" font-weight="700">Methylprednisolone</text>
+            <text x="12" y="198" fill="#46504A" font-family="Noto Sans TC, sans-serif" font-size="12.5">中效・靜脈主力</text>
+            <rect x="284" y="170" width="99" height="18" rx="3" fill="#1A5E56" />
+            <text x="393" y="184" fill="#181C1A" font-family="JetBrains Mono, sans-serif" font-size="13">18–36 h</text>
+            <text x="542" y="184" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="600">5×</text>
+            <text x="625" y="184" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="14">0（極微）</text>
+            <line x1="12" y1="210" x2="690" y2="210" stroke="#E6E0C8" stroke-width="1" />
+
+            <!-- Row 4: Dexamethasone (36-54h -> x=383 to 482) -->
+            <text x="12" y="232" fill="#181C1A" font-family="Plus Jakarta Sans, Noto Sans TC, sans-serif" font-size="14.5" font-weight="700">Dexamethasone</text>
+            <text x="12" y="250" fill="#46504A" font-family="Noto Sans TC, sans-serif" font-size="12.5">長效・強效消腫</text>
+            <rect x="383" y="222" width="99" height="18" rx="3" fill="#124841" />
+            <text x="492" y="236" fill="#181C1A" font-family="JetBrains Mono, sans-serif" font-size="13">36–54 h</text>
+            <text x="542" y="236" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="700">30×</text>
+            <text x="625" y="236" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="14">0（極微）</text>
+            <line x1="12" y1="262" x2="690" y2="262" stroke="#E6E0C8" stroke-width="1" />
+
+            <!-- Row 5: Betamethasone (36-54h -> x=383 to 482) -->
+            <text x="12" y="284" fill="#181C1A" font-family="Plus Jakarta Sans, Noto Sans TC, sans-serif" font-size="14.5" font-weight="700">Betamethasone</text>
+            <text x="12" y="302" fill="#46504A" font-family="Noto Sans TC, sans-serif" font-size="12.5">長效・穿透胎盤</text>
+            <rect x="383" y="274" width="99" height="18" rx="3" fill="#124841" />
+            <text x="492" y="288" fill="#181C1A" font-family="JetBrains Mono, sans-serif" font-size="13">36–54 h</text>
+            <text x="542" y="288" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="700">25–40×</text>
+            <text x="625" y="288" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="14">0（極微）</text>
+            <line x1="12" y1="314" x2="690" y2="314" stroke="#E6E0C8" stroke-width="1" />
+
+            <!-- Row 6: Fludrocortisone (18-36h -> x=284 to 383, amber bar) -->
+            <text x="12" y="334" fill="#181C1A" font-family="Plus Jakarta Sans, Noto Sans TC, sans-serif" font-size="14.5" font-weight="700">Fludrocortisone</text>
+            <text x="12" y="352" fill="#8C3D14" font-family="Noto Sans TC, sans-serif" font-size="12.5">礦物皮質素為主</text>
+            <rect x="284" y="324" width="99" height="18" rx="3" fill="#B85A28" />
+            <text x="393" y="338" fill="#181C1A" font-family="JetBrains Mono, sans-serif" font-size="13">18–36 h</text>
+            <text x="542" y="338" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="14">10×</text>
+            <text x="625" y="338" fill="#8C3D14" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="700">250×</text>
+
+            <!-- X-axis ticks -->
+            <text x="185" y="374" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">0h</text>
+            <text x="251" y="374" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">12h</text>
+            <text x="317" y="374" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">24h</text>
+            <text x="383" y="374" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">36h</text>
+            <text x="449" y="374" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">48h</text>
+            <text x="515" y="374" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">60h</text>
+            <text x="350" y="400" fill="#46504A" font-family="Noto Sans TC, sans-serif" font-size="12.5" text-anchor="middle">單次給藥後抑制促腎上腺皮質素（ACTH）之生物半衰期（小時）</text>
+          </svg>
+        </div>
+        <figcaption>
+          單位：生物半衰期（小時）；GC（糖皮質素）與 MC（礦物皮質素）效價皆以 Hydrocortisone = 1 為基準。資料來源：<a href="https://www.ncbi.nlm.nih.gov/books/NBK279156/" target="_blank" rel="noopener noreferrer">Endotext: Glucocorticoid Therapy and Adrenal Suppression (Table 1)</a>。
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- SECTION 3: Organ-System Selection Visual + Complete Annotated Table -->
+    <section class="sec">
+      <figure style="margin-bottom: 44px;">
+        <div class="fig-title">五大靶器官對消腫、穿透力與血壓支持的不同需求，直接決定第一線類固醇人選</div>
+        <img src="steroid-target-organs.webp" alt="五大臨床靶器官插畫：中樞神經、肺與氣道、腎上腺與腎臟、子宮胎兒、血管循環" />
+        <figcaption>
+          由左至右對應五大臨床情境：腦部與腦膜（Dexamethasone 消水腫）、氣道與肺部（Prednisolone 控發炎）、腎上腺與腎臟（Hydrocortisone / Fludrocortisone 補荷爾蒙與電解質）、胎兒肺成熟（Betamethasone 穿胎盤）、全身血管循環（Hydrocortisone 助升壓）。
+        </figcaption>
+      </figure>
+
+      <h2>原表完整中英對照：六大全身性類固醇選藥總覽</h2>
+      <p class="measure">
+        下表完整保留原始英文速查表的每項藥物、核心優勢、適應症與劑量，並補充中文對照與臨床判讀重點，方便門診與病房快速查閱。
+      </p>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>藥物名稱 (Steroid)</th>
+              <th>核心臨床優勢</th>
+              <th>臨床適應症 (Clinical condition)</th>
+              <th>標準劑量 (Dose)</th>
+              <th>選藥邏輯速記</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Hydrocortisone -->
+            <tr>
+              <td rowspan="2">
+                <span class="drug-name">Hydrocortisone</span>
+                <span class="drug-zh">氫化可體松</span>
+              </td>
+              <td rowspan="2"><span class="tag-amber">短效（8–12 h）</span>；具顯著礦物皮質素活性（保鈉升壓）</td>
+              <td><strong>腎上腺危象</strong><br /><span style="color:var(--mute);font-size:13.5px;">Adrenal crisis</span></td>
+              <td class="dose-cell">首劑 100 mg IV/IM，續予 200 mg / 24h</td>
+              <td>同時救回糖皮質素與保鈉血壓，不需另補 Fludrocortisone</td>
+            </tr>
+            <tr class="group-end">
+              <td><strong>持續需升壓劑之敗血性休克</strong><br /><span style="color:var(--mute);font-size:13.5px;">Septic shock with ongoing vasopressor requirement</span></td>
+              <td class="dose-cell">200 mg/day IV</td>
+              <td>恢復血管對兒茶酚胺敏感度，改善頑固型休克</td>
+            </tr>
+
+            <!-- Prednisolone -->
+            <tr>
+              <td rowspan="3">
+                <span class="drug-name">Prednisolone</span>
+                <span class="drug-zh">去氫皮質醇</span>
+              </td>
+              <td rowspan="3"><span class="tag-teal">中效（18–36 h）</span>；口服抗發炎治療首選</td>
+              <td><strong>氣喘急性惡化</strong><br /><span style="color:var(--mute);font-size:13.5px;">Acute asthma exacerbation</span></td>
+              <td class="dose-cell">40–50 mg PO QD × 5–7 天</td>
+              <td>短療程免漸減，迅速降低氣道發炎</td>
+            </tr>
+            <tr>
+              <td><strong>COPD 急性惡化</strong><br /><span style="color:var(--mute);font-size:13.5px;">Acute COPD exacerbation</span></td>
+              <td class="dose-cell">40 mg PO QD × 5 天</td>
+              <td>5 天短療程即可縮短住院與減少復發</td>
+            </tr>
+            <tr class="group-end">
+              <td><strong>自體免疫／發炎性疾病</strong><br /><span style="color:var(--mute);font-size:13.5px;">Autoimmune / inflammatory diseases</span></td>
+              <td class="dose-cell">5–60 mg/day（依適應症）</td>
+              <td>劑量彈性大，適合長期維持與逐步減量</td>
+            </tr>
+
+            <!-- Methylprednisolone -->
+            <tr>
+              <td rowspan="2">
+                <span class="drug-name">Methylprednisolone</span>
+                <span class="drug-zh">甲基去氫皮質醇</span>
+              </td>
+              <td rowspan="2"><span class="tag-teal">中效（18–36 h）</span>；極低礦物皮質素活性，適合靜脈注射</td>
+              <td><strong>嚴重發炎狀況</strong><br /><span style="color:var(--mute);font-size:13.5px;">Severe inflammatory conditions</span></td>
+              <td class="dose-cell">40–125 mg IV（依適應症）</td>
+              <td>住院無法口服或重症發炎時之靜脈主力</td>
+            </tr>
+            <tr class="group-end">
+              <td><strong>多發性硬化症急性復發</strong><br /><span style="color:var(--mute);font-size:13.5px;">Acute multiple sclerosis relapse</span></td>
+              <td class="dose-cell">1 g IV QD × 3–5 天</td>
+              <td>高劑量脈衝治療不易引發嚴重水腫與高血壓</td>
+            </tr>
+
+            <!-- Dexamethasone -->
+            <tr>
+              <td rowspan="3">
+                <span class="drug-name">Dexamethasone</span>
+                <span class="drug-zh">地塞米松</span>
+              </td>
+              <td rowspan="3"><span class="tag-teal">長效（36–54 h）</span>；幾乎無礦物皮質素活性</td>
+              <td><strong>腦瘤引發之腦水腫</strong><br /><span style="color:var(--mute);font-size:13.5px;">Cerebral edema due to brain tumour</span></td>
+              <td class="dose-cell">4–16 mg/day</td>
+              <td>高脂溶性易穿透血腦障壁，零水鈉滯留不加重腦壓</td>
+            </tr>
+            <tr>
+              <td><strong>細菌性腦膜炎</strong><br /><span style="color:var(--mute);font-size:13.5px;">Bacterial meningitis</span></td>
+              <td class="dose-cell">10 mg IV Q6H × 4 天</td>
+              <td>須於首劑抗生素前或同時給予，降低聽力受損與神經後遺症</td>
+            </tr>
+            <tr class="group-end">
+              <td><strong>哮吼（Croup）</strong><br /><span style="color:var(--mute);font-size:13.5px;">Croup（主要為兒科急症）</span></td>
+              <td class="dose-cell">0.15–0.6 mg/kg PO/IM（上限 10 mg）</td>
+              <td>單劑即可涵蓋 2–3 天病程，免重複服藥</td>
+            </tr>
+
+            <!-- Betamethasone -->
+            <tr class="group-end">
+              <td>
+                <span class="drug-name">Betamethasone</span>
+                <span class="drug-zh">貝他米松</span>
+              </td>
+              <td><span class="tag-teal">長效（36–54 h）</span>；不易被胎盤酵素破壞</td>
+              <td><strong>胎兒肺部成熟</strong><br /><span style="color:var(--mute);font-size:13.5px;">Fetal lung maturation</span></td>
+              <td class="dose-cell">12 mg IM，24 小時後重複 1 次（共 2 劑）</td>
+              <td>有效穿透胎盤促進肺泡界面活性劑生成</td>
+            </tr>
+
+            <!-- Fludrocortisone -->
+            <tr>
+              <td>
+                <span class="drug-name">Fludrocortisone</span>
+                <span class="drug-zh">氟氫可體松</span>
+              </td>
+              <td><span class="tag-amber">礦物皮質素活性為主（250×）</span></td>
+              <td><strong>原發性腎上腺功能不全</strong><br /><span style="color:var(--mute);font-size:13.5px;">Primary adrenal insufficiency</span></td>
+              <td class="dose-cell">0.05–0.2 mg PO QD</td>
+              <td>補足醛固酮缺乏，維持血壓、血鈉與排鉀功能</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Drug-by-Drug Clinical Reasoning (2-Column Open Layout) -->
+    <section class="sec">
+      <h2>逐藥深入解析：為什麼這項病症非它不可？</h2>
+      <p class="measure">
+        背誦劑量表容易混淆，但只要抓住每個藥物最關鍵的藥理特性，就能在臨床現場直覺推導出正確選擇。
+      </p>
+
+      <div class="drug-grid">
+        <article class="drug-entry">
+          <h3><span>1. Hydrocortisone</span> <span class="drug-meta amber">短效・雙重補救</span></h3>
+          <p>
+            構造與人體天然皮質醇完全相同。在<strong>腎上腺危象</strong>中，患者同時缺乏糖皮質素與礦物皮質素，常合併低血壓、低血鈉與高血鉀。依 <a href="https://www.ncbi.nlm.nih.gov/books/NBK279083/" target="_blank" rel="noopener noreferrer">Endotext 腎上腺功能不全指引</a>，立即靜脈注射 100 mg 後接續每日 200 mg（連續輸注或每 6 小時 50 mg）並搭配生理食鹽水輸液；當 Hydrocortisone 劑量超過每日 50 mg 時，其本身的礦物皮質素活性已足夠替代醛固酮，急性期不需額外給予 Fludrocortisone。在<strong>頑固型敗血性休克</strong>（CIRCI）中，每日 200 mg IV 則有助恢復血管平滑肌對升壓劑的反應。
+          </p>
+        </article>
+
+        <article class="drug-entry">
+          <h3><span>2. Prednisolone</span> <span class="drug-meta">中效・門診口服主力</span></h3>
+          <p>
+            氣喘與 COPD 急性惡化的標準口服選擇，給藥方便且每日晨間一次即可模擬生理節律。臨床上常與 <strong>Prednisone</strong> 並提：兩者抗發炎等效劑量同為 5 mg，但 <a href="https://www.ncbi.nlm.nih.gov/books/NBK279156/" target="_blank" rel="noopener noreferrer">Prednisone 屬於無活性前驅藥</a>，需經肝臟 11β-HSD1 轉換為 Prednisolone 才有效。台灣臨床常備 Prednisolone 5 mg 錠劑，對於肝硬化或嚴重肝功能異常者更為可靠。氣喘（5–7 天）與 COPD（5 天）短療程通常不需逐步減藥即可停用。
+          </p>
+        </article>
+
+        <article class="drug-entry">
+          <h3><span>3. Methylprednisolone</span> <span class="drug-meta">中效・高劑量靜脈脈衝</span></h3>
+          <p>
+            當住院患者無法口服、或面對<strong>多發性硬化症急性復發</strong>、狼瘡腎炎、嚴重血管炎等需要「脈衝治療（Pulse therapy，每日 500–1000 mg IV 連續 3–5 天）」的情況時，若改用 Hydrocortisone 會因大量保鈉作用導致肺水腫、高血壓與低血鉀；Methylprednisolone 幾乎不具礦物皮質素活性，且靜脈製劑水溶性佳、起效快，因而成為住院靜脈抗發炎的標準配備。
+          </p>
+        </article>
+
+        <article class="drug-entry">
+          <h3><span>4. Dexamethasone</span> <span class="drug-meta">長效・中樞神經與哮吼首選</span></h3>
+          <p>
+            抗發炎力道極強（30×）且零水鈉滯留，是<strong>腦瘤引發血管源性腦水腫</strong>的絕對首選，能快速修復血腦障壁滲漏而不致加重顱內壓。在<strong>細菌性腦膜炎</strong>中，依 <a href="https://www.ncbi.nlm.nih.gov/books/NBK482130/" target="_blank" rel="noopener noreferrer">StatPearls 臨床綜述</a>，Dexamethasone 10 mg IV Q6H × 4 天應在第一劑抗生素之前或同時給予，以抑制細菌裂解引發的劇烈腦膜發炎反應，降低聽力喪失與神經損傷。至於原表列於成人劑量欄的<strong>哮吼（Croup）</strong>，實務上主要為兒科急症，單次給予 0.15–0.6 mg/kg（上限 10 mg）即可憑藉 36–54 小時的長效涵蓋整個急性期。
+          </p>
+        </article>
+
+        <article class="drug-entry">
+          <h3><span>5. Betamethasone</span> <span class="drug-meta">長效・產科促胎肺成熟</span></h3>
+          <p>
+            依 <a href="https://www.ncbi.nlm.nih.gov/books/NBK279156/" target="_blank" rel="noopener noreferrer">NIH 與 Endotext 產科共識</a>，懷孕 24 至 34 週有早產風險的孕婦，標準療程為肌肉注射 Betamethasone 12 mg，間隔 24 小時重複一次（共 2 劑；若缺藥可改用 Dexamethasone 6 mg IM 每 12 小時一次、共 4 劑）。它之所以不可被 Prednisolone 或 Hydrocortisone 取代，正是因為後兩者會被胎盤 11β-HSD2 大量代謝去活化，無法有效抵達胎兒肺部刺激肺泡界面活性劑（surfactant）合成。
+          </p>
+        </article>
+
+        <article class="drug-entry">
+          <h3><span>6. Fludrocortisone</span> <span class="drug-meta amber">純礦物皮質素替代</span></h3>
+          <p>
+            專門用於<strong>原發性腎上腺功能不全（Addison's disease）</strong>的長期維持治療（常搭配口服 Hydrocortisone）。<a href="https://www.ncbi.nlm.nih.gov/books/NBK564331/" target="_blank" rel="noopener noreferrer">StatPearls 藥理指引</a>指出，續發性（腦下垂體型）腎上腺功能不全因腎素－血管收縮素系統（RAAS）完整，通常不需要 Fludrocortisone；原發性患者則需每日口服 0.05–0.2 mg，並定期追蹤臥姿／立姿血壓、下肢水腫、血鉀與血漿腎素活性（PRA），若出現高血壓應下調至 0.05 mg/day。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Dose Equivalence Visual + Full-Bleed Conversion Band -->
+    <section class="sec">
+      <figure>
+        <div class="fig-title">0.6 mg Betamethasone 的抗發炎力道，等同於 20 mg Hydrocortisone</div>
+        <div class="svg-wrap">
+          <svg viewBox="0 0 700 355" width="100%" role="img" aria-label="六種全身性類固醇抗發炎等效劑量橫向長條圖">
+            <!-- Scale: 0 to 20 mg across x=185 to x=545 (18px per mg) -->
+            <line x1="185" y1="36" x2="185" y2="296" stroke="#181C1A" stroke-width="1.2" />
+            <line x1="275" y1="36" x2="275" y2="296" stroke="#D5CEB4" stroke-width="1" stroke-dasharray="3,4" />
+            <line x1="365" y1="36" x2="365" y2="296" stroke="#D5CEB4" stroke-width="1" stroke-dasharray="3,4" />
+            <line x1="455" y1="36" x2="455" y2="296" stroke="#D5CEB4" stroke-width="1" stroke-dasharray="3,4" />
+            <line x1="545" y1="36" x2="545" y2="296" stroke="#D5CEB4" stroke-width="1" stroke-dasharray="3,4" />
+
+            <!-- Header -->
+            <text x="12" y="24" fill="#46504A" font-family="JetBrains Mono, Noto Sans TC, sans-serif" font-size="13" font-weight="600">藥物名稱</text>
+            <text x="185" y="24" fill="#46504A" font-family="JetBrains Mono, Noto Sans TC, sans-serif" font-size="13" font-weight="600">達到相同抗發炎效果所需劑量（mg）</text>
+
+            <!-- Bar 1: Hydrocortisone 20 mg (width 360) -->
+            <text x="12" y="69" fill="#181C1A" font-family="Plus Jakarta Sans, sans-serif" font-size="14.5" font-weight="700">Hydrocortisone</text>
+            <rect x="185" y="52" width="360" height="24" rx="2" fill="#B85A28" />
+            <text x="556" y="69" fill="#8C3D14" font-family="JetBrains Mono, sans-serif" font-size="14.5" font-weight="700">20 mg（基準 1×）</text>
+
+            <!-- Bar 2: Prednisone 5 mg (width 90) -->
+            <text x="12" y="113" fill="#181C1A" font-family="Plus Jakarta Sans, sans-serif" font-size="14.5" font-weight="700">Prednisone</text>
+            <rect x="185" y="96" width="90" height="24" rx="2" fill="#1A5E56" />
+            <text x="286" y="113" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="600">5 mg（4×・需肝轉換）</text>
+
+            <!-- Bar 3: Prednisolone 5 mg (width 90) -->
+            <text x="12" y="157" fill="#181C1A" font-family="Plus Jakarta Sans, sans-serif" font-size="14.5" font-weight="700">Prednisolone</text>
+            <rect x="185" y="140" width="90" height="24" rx="2" fill="#1A5E56" />
+            <text x="286" y="157" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="600">5 mg（4×・活性型）</text>
+
+            <!-- Bar 4: Methylprednisolone 4 mg (width 72) -->
+            <text x="12" y="201" fill="#181C1A" font-family="Plus Jakarta Sans, sans-serif" font-size="14.5" font-weight="700">Methylprednisolone</text>
+            <rect x="185" y="184" width="72" height="24" rx="2" fill="#1A5E56" />
+            <text x="268" y="201" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14" font-weight="600">4 mg（5×）</text>
+
+            <!-- Bar 5: Dexamethasone 0.75 mg (width 13.5) -->
+            <text x="12" y="245" fill="#181C1A" font-family="Plus Jakarta Sans, sans-serif" font-size="14.5" font-weight="700">Dexamethasone</text>
+            <rect x="185" y="228" width="14" height="24" rx="2" fill="#124841" />
+            <text x="210" y="245" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14.5" font-weight="700">0.75 mg（約 27–30×）</text>
+
+            <!-- Bar 6: Betamethasone 0.6 mg (width 10.8) -->
+            <text x="12" y="289" fill="#181C1A" font-family="Plus Jakarta Sans, sans-serif" font-size="14.5" font-weight="700">Betamethasone</text>
+            <rect x="185" y="272" width="11" height="24" rx="2" fill="#124841" />
+            <text x="207" y="289" fill="#124841" font-family="JetBrains Mono, sans-serif" font-size="14.5" font-weight="700">0.6 mg（約 33×）</text>
+
+            <!-- X-axis ticks -->
+            <text x="185" y="322" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">0 mg</text>
+            <text x="275" y="322" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">5 mg</text>
+            <text x="365" y="322" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">10 mg</text>
+            <text x="455" y="322" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">15 mg</text>
+            <text x="545" y="322" fill="#46504A" font-family="JetBrains Mono, sans-serif" font-size="12.5" text-anchor="middle">20 mg</text>
+            <text x="365" y="346" fill="#46504A" font-family="Noto Sans TC, sans-serif" font-size="12.5" text-anchor="middle">長條越短代表每毫克抗發炎效價越高（僅反映糖皮質素效價，不含礦物皮質素活性）</text>
+          </svg>
+        </div>
+        <figcaption>
+          單位：毫克（mg）。數值依據原始速查表與 <a href="https://www.ncbi.nlm.nih.gov/books/NBK279156/" target="_blank" rel="noopener noreferrer">Endotext Table 1</a>。
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- FULL-BLEED EMPHASIS BAND (Only 1 per report) -->
+    <section class="full-band" aria-label="等效劑量速記與實戰換算">
+      <h2>床邊速記口訣與靜脈轉口服實戰</h2>
+      <div class="eq-formula">Hydrocortisone 20 ≈ Prednisone 5 ≈ Prednisolone 5 ≈ Methylpred 4 ≈ Dexa 0.75 ≈ Beta 0.6</div>
+      <p class="measure">
+        口訣直接背數字串 <strong>「20・5・5・4・0.75・0.6」</strong>，住院點滴轉門診口服時，照比例乘除即可快速完成銜接。
+      </p>
+
+      <div class="band-cols">
+        <div>
+          <h3>實戰例 1：點滴轉口服銜接</h3>
+          <p>
+            患者住院因氣喘或自體免疫發作使用 <strong>Methylprednisolone 40 mg IV QD</strong>，病情穩定準備出院改口服 <strong>Prednisolone</strong>。依 <span class="mono">4 mg : 5 mg</span> 換算：<span class="mono">40 ÷ 4 × 5 = 50 mg</span>，故出院可銜接 Prednisolone 50 mg PO QD（10 顆 5 mg 錠劑），再依病程逐步減量。
+          </p>
+        </div>
+        <div>
+          <h3>實戰例 2：切勿混淆礦物皮質素</h3>
+          <p>
+            抗發炎等效換算<strong>不能</strong>套用在保鈉功能上。對合併醛固酮缺乏的原發性腎上腺功能不全患者，應另依血壓、血鉀及腎素調整 Fludrocortisone 替代劑量。<a href="https://www.ncbi.nlm.nih.gov/books/NBK279083/" target="_blank" rel="noopener noreferrer">Endotext 腎上腺功能不全章節</a>建議，腎上腺危象初期使用高劑量 Hydrocortisone 時通常無需另加 Fludrocortisone，待急性期結束後再依醛固酮缺乏狀況補充。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Clinical Safety, Tapering & Interactions (Table 2 of 3) -->
+    <section class="sec">
+      <div class="grid-12">
+        <div class="span-5">
+          <h2>處方安全、減藥時機與交互作用速查</h2>
+          <p>
+            決定「用哪一支藥」之後，臨床第二個關鍵決定是「何時給藥、需不需要慢慢減量（Tapering）」。<a href="https://www.ncbi.nlm.nih.gov/books/NBK279156/" target="_blank" rel="noopener noreferrer">Endotext 指引</a>建議：中長效口服類固醇應盡量於<strong>早晨單次服用</strong>，順應人體上午皮質醇高峰，避免夜間給藥壓抑隔日清晨的 ACTH 分泌。
+          </p>
+        </div>
+        <div class="span-7">
+          <div class="table-scroll" style="margin-top: 0;">
+            <table>
+              <thead>
+                <tr>
+                  <th>臨床安全議題</th>
+                  <th>實務處置原則</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>短期療程（&lt; 3–4 週）</strong></td>
+                  <td>單次短療程通常可直接停藥，無需為評估 HPA 軸進行例行檢測。反覆療程或同時使用多種劑型時，需依累積暴露及個別風險判斷。</td>
+                </tr>
+                <tr>
+                  <td><strong>長期療程（≥ 3–4 週）</strong></td>
+                  <td>口服療程達 3–4 週以上，且劑量超過每日 Prednisone／Prednisolone 約 4–6 mg 的生理等效範圍時，須評估腎上腺功能不全風險。原疾病控制且可停用類固醇後，先降至生理等效劑量附近，再依症狀緩慢減量或檢測晨間血清皮質醇。</td>
+                </tr>
+                <tr>
+                  <td><strong>重要副作用監測</strong></td>
+                  <td>短期留意高血糖、失眠、情緒波動與消化道不適；長期使用（&ge; 3 個月）須評估骨質疏鬆風險（補充鈣質、維生素 D 與必要時雙磷酸鹽類）、白內障／青光眼，以及潛伏結核菌（TB）再活化。</td>
+                </tr>
+                <tr>
+                  <td><strong>CYP3A4 藥物交互作用</strong></td>
+                  <td>併用 CYP3A4 誘導劑（如 Rifampin、Phenytoin、Carbamazepine、Phenobarbital）會加速類固醇代謝導致療效下降；併用抑制劑（如 Itraconazole、Ritonavir、Erythromycin）則會提高血中濃度與庫欣氏症候群風險。</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="pull-quote">
+        「選對類固醇的第一步，是問自己：我現在需要的是純粹消腫抗發炎，還是連血壓和電解質都要一起救？」
+        <cite>— 臨床選藥核心心法（整合 Endotext 與 StatPearls 藥理指引）</cite>
+      </blockquote>
+    </section>
+
+    <!-- SECTION 7: Original Uploaded Chart Appendix -->
+    <section class="sec">
+      <figure>
+        <div class="fig-title">附錄：原始英文全身性類固醇臨床選藥速查表</div>
+        <div class="orig-img-wrap">
+          <img src="steroid-reference-chart.webp" alt="原始英文圖表：Systemic Corticosteroids - Clinical Selection Guide" />
+        </div>
+        <figcaption>
+          原始英文速查表供名詞對照。減藥與礦物皮質素替代請參照本文更新段落。
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- SECTION 8: References -->
+    <section class="sec">
+      <h2>參考文獻</h2>
+      <ol class="ref-list">
+        <li>
+          Nicolaides NC, Pavlaki AN, Maria Alexandra MA, Chrousos GP. <a href="https://www.ncbi.nlm.nih.gov/books/NBK279156/" target="_blank" rel="noopener noreferrer">Glucocorticoid Therapy and Adrenal Suppression</a>. Endotext, NCBI Bookshelf (Table 1: Glucocorticoid Equivalencies, HPA axis suppression, tapering, and fetal lung maturation).
+        </li>
+        <li>
+          Nicolaides NC, Chrousos GP, Charmandari E. <a href="https://www.ncbi.nlm.nih.gov/books/NBK279083/" target="_blank" rel="noopener noreferrer">Adrenal Insufficiency</a>. Endotext, NCBI Bookshelf (Adrenal crisis IV hydrocortisone protocol and mineralocorticoid replacement threshold).
+        </li>
+        <li>
+          European Society of Endocrinology and Endocrine Society. <a href="https://www.endocrine.org/clinical-practice-guidelines/glucocorticoid-induced-adrenal-insufficiency" target="_blank" rel="noopener noreferrer">Glucocorticoid-Induced Adrenal Insufficiency</a>. JCEM 2024;109(7):1657–1683（減藥與 HPA 軸評估）。
+        </li>
+        <li>
+          Johnson DB, Lopez MJ, Kelley B. <a href="https://www.ncbi.nlm.nih.gov/books/NBK482130/" target="_blank" rel="noopener noreferrer">Dexamethasone</a>. StatPearls, NCBI Bookshelf (Cerebral edema, bacterial meningitis timing, and clinical pharmacokinetics).
+        </li>
+        <li>
+          Rahman S, Anjum F. <a href="https://www.ncbi.nlm.nih.gov/books/NBK564331/" target="_blank" rel="noopener noreferrer">Fludrocortisone</a>. StatPearls, NCBI Bookshelf (Primary adrenal insufficiency dosing, monitoring, and precautions).
+        </li>
+        <li>
+          Ortega MA, et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8833914/" target="_blank" rel="noopener noreferrer">The Pivotal Role of the Placenta in Normal and Pathological Pregnancies</a>. PMC / National Library of Medicine (Placental 11β-HSD2 inactivation of maternal cortisol).
+        </li>
+      </ol>
+    </section>
+
+  <section class="kp-related" aria-label="相關文章">
+  <h2>相關文章</h2>
+  <ul><li><a href="rs3pe.html">RS3PE 症候群</a> · 低劑量 Prednisolone 在老年急性滑膜炎的應用。</li></ul>
+</section>
+<p><a class="kp-control" href="systemic-corticosteroids.yaml" download>下載 YAML 中繼資料</a></p>
+</main>
+</body>
+</html>
