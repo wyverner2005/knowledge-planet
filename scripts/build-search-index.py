@@ -1,12 +1,15 @@
-"""Rebuild the section index from public HTML and YAML."""
+"""Rebuild the section index from public article HTML."""
 import json
-import re
 from pathlib import Path
 
 from lxml import html
-import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+HOME = html.parse(str(ROOT / "index.html"), parser=html.HTMLParser(encoding="utf-8"))
+HOME_KEYWORDS = {
+    link.get("href"): link.get("data-keywords")
+    for link in HOME.xpath('//ul[@id="notes"]//a[@href and @data-keywords]')
+}
 
 
 def plain(text):
@@ -18,6 +21,8 @@ def article_index(path):
     body = page.find("body")
     for node in body.xpath(".//nav | .//script | .//style | .//dialog"):
         node.drop_tree()
+    for link in body.xpath('.//a[@download and contains(@href, ".yaml")]'):
+        link.drop_tree()
     main = body.xpath(".//main")[0]
     headings = main.xpath(".//h2[not(ancestor::figure)]")
     sections = []
@@ -60,8 +65,10 @@ def article_index(path):
     current = {"id": "", "title": "文章開頭"}
     visit(body)
     flush()
-    metadata = yaml.safe_load(path.with_suffix(".yaml").read_text(encoding="utf-8")) or {}
-    return {"tags": metadata.get("tags", []), "sections": sections}
+    keywords = page.xpath('string(./head/meta[@name="keywords"]/@content)')
+    keywords = keywords or HOME_KEYWORDS.get("notes/" + path.name, "")
+    tags = [tag.strip() for tag in keywords.split(",") if tag.strip()]
+    return {"tags": tags, "sections": sections}
 
 
 index = {"notes/" + path.name: article_index(path) for path in sorted((ROOT / "notes").glob("*.html"))}

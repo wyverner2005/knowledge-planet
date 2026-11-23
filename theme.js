@@ -203,6 +203,16 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     const button = document.querySelector(".kp-theme-toggle");
+    if (page.matches(".kp-note")) {
+      for (const link of document.querySelectorAll('a.kp-control[download][href$=".yaml"]')) {
+        const parent = link.parentElement;
+        if (parent.matches("p") && parent.textContent.trim() === link.textContent.trim()) {
+          parent.remove();
+        } else {
+          link.remove();
+        }
+      }
+    }
     addArticleContents();
     enableImageViewer();
     if (!button) return;

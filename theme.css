@@ -170,7 +170,8 @@ html.kp-note:not([data-theme="dark"]) {
   font: 650 .9rem/1.4 system-ui, sans-serif;
   text-decoration: none;
 }
-.kp-control[hidden] { display: none; }
+.kp-control[hidden],
+.kp-note a.kp-control[download][href$=".yaml"] { display: none; }
 .kp-control:hover { text-decoration: underline; }
 .kp-control:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 button.kp-control { cursor: pointer; }
