@@ -8,15 +8,38 @@
 :root { color-scheme: light; font: 100%/1.55 system-ui, sans-serif; color: #162940; background: #f3f6fa; }
 * { box-sizing: border-box }
 body { margin: 0 }
-main { max-width: 64rem; margin: auto; padding: clamp(1.15rem, 5vw, 4rem) }
-header { background: radial-gradient(ellipse at 96% 0%, #295a74, transparent 66%), #152844; color: #fff; border-radius: 1.35rem; padding: clamp(1.5rem, 5vw, 3.25rem); }
-header p { margin: 0; color: #cae9ec; letter-spacing: .12em }
-h1 { font-size: clamp(2rem, 7vw, 3.5rem); margin: .25rem 0 1.25rem; line-height: 1.14 }
+main { max-width: 76rem; margin: auto; padding: clamp(1rem, 4.2vw, 3.5rem) }
+.kp-cover {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: clamp(15rem, 32vw, 25rem);
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(1.25rem, 4.5vw, 3.4rem);
+  border: 1px solid #7b634d;
+  border-radius: .85rem;
+  background: #272628;
+  color: #f4ece0;
+}
+.kp-cover .kp-image-trigger, .kp-cover img, .kp-cover::after { position: absolute; inset: 0; width: 100%; height: 100% }
+.kp-cover .kp-image-trigger { z-index: -2 }
+.kp-cover img { z-index: -2; object-fit: cover; object-position: 62% center }
+.kp-cover::after {
+  content: "";
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(90deg, #1b1c20f5 0%, #1b1c20df 29%, #1b1c2068 64%, #1b1c2005 100%);
+}
+.kp-cover p { max-width: 30ch; margin: 0; color: #e2d4c5 }
+.kp-cover .kp-cover-label { color: #ebc693; font-size: .76rem; font-weight: 700; letter-spacing: .19em }
+h1 { font: 750 clamp(2.7rem, 7vw, 4.5rem)/1.15 var(--kp-heading-font); margin: .35rem 0 .55rem }
+.kp-find { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 1rem; margin-top: 1.35rem }
 label { display: block; font-weight: 650; margin-bottom: .4rem }
 input { appearance: none; color: #162940; background: #fff; border: 1px solid #d4dfe9; border-radius: .65rem; padding: .75rem .95rem; width: 100%; max-width: 34rem; font: inherit }
-:focus-visible { outline: 3px solid #19a099; outline-offset: 4px }
-.category-filter { margin-top: 1.25rem }
-.category-filter select { max-width: 100%; font-size: 1rem }
+input, .category-filter select { width: 100%; max-width: none; min-height: 3rem }
+:focus-visible { outline: 3px solid #946b3e; outline-offset: 4px }
+.category-filter select { font-size: 1rem }
 #notes li[hidden] { display: none }
 #status { color: #46596d; margin: 1.5rem 0 .75rem }
 #notes { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 1rem }
@@ -26,6 +49,12 @@ input { appearance: none; color: #162940; background: #fff; border: 1px solid #d
 .tag { color: #18635f; font-size: .85rem; font-weight: 700 }
 h2 { margin: .35rem 0 .45rem; font-size: 1.2rem; line-height: 1.4 }
 .summary { margin: 0; color: #46596d }
+@media (max-width: 600px) {
+  .kp-cover { align-items: end; }
+  .kp-cover img { object-position: 68% center; }
+  .kp-cover::after { background: linear-gradient(90deg, #1b1c20d9, #1b1c201f), linear-gradient(0deg, #1b1c20f5, transparent); }
+  .kp-find { grid-template-columns: minmax(0, 1fr); gap: .85rem; }
+}
 </style>
 <script defer src="search-index.js"></script>
 <script defer src="search.js"></script>
@@ -35,12 +64,19 @@ h2 { margin: .35rem 0 .45rem; font-size: 1.2rem; line-height: 1.4 }
 <body>
 <main>
 <div class="kp-controls"><button class="kp-control kp-theme-toggle" type="button" aria-pressed="false" hidden>深色模式</button></div>
-  <header>
-    <p>醫學筆記</p>
-    <h1>知識星球</h1>
+  <header class="kp-cover">
+    <img src="assets/knowledge-planet-cover.webp" alt="黃銅顯微鏡與天球儀旁的醫學藏書室" fetchpriority="high">
+    <div>
+      <p class="kp-cover-label">KNOWLEDGE PLANET</p>
+      <h1>知識星球</h1>
+      <p>臨床筆記、實證與圖表</p>
+    </div>
+  </header>
+  <div class="kp-find">
+  <div>
     <label for="query">搜尋全文</label>
     <input id="query" type="search" placeholder="例如 HbA1c、凹陷性水腫、Mini-Cog" autocomplete="off">
-  </header>
+  </div>
   <div class="category-filter" hidden>
     <label for="category">專科分類</label>
     <select class="kp-control" id="category">
@@ -55,6 +91,7 @@ h2 { margin: .35rem 0 .45rem; font-size: 1.2rem; line-height: 1.4 }
       <option value="hematology">血液科 · Hematology</option>
       <option value="gastroenterology">腸胃肝膽 · Gastroenterology</option>
     </select>
+  </div>
   </div>
   <p id="status" role="status">8 篇筆記</p>
   <ul id="notes">

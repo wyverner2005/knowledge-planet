@@ -7,3 +7,8 @@
 - 在 `notes/` 保留同檔名的 `.html` 與 `.yaml`。文章以相對連結提供 YAML 下載，首頁與搜尋索引同步收錄。
 - 公開 YAML 使用 `title`、`authors`、`source`、`year`、`volume`、`issue`、`pages`、`type`、`source_type`、`categories`、`tags` 等適用欄位。只發布公開書目與主題標籤。私人檔案連結、原檔 ID 與整理狀態留在 Notion。
 - `categories` 使用小寫英文的專科識別字，例如 `neurology`。文章標籤與首頁篩選使用同一分類，既有主題關鍵字放在 `tags`。
+
+## 網站閱讀樣式
+
+- 新增或更新 HTML 筆記時，使用 `<html lang="zh-Hant" class="kp-note">`，並在筆記原有樣式之後載入 `../theme.css`，搭配 `../theme.js` 與 `.kp-theme-toggle`。共用樣式提供炭灰與銅金色的深色模式、低亮度暖紙黃的淺色模式，以及圖片和向量圖表的放大檢視。
+- 文章專用樣式用 `theme.css` 的共用色彩變數設定頁面、卡片與控制項。深色模式使用 `--kp-dark-paper`、`--kp-dark-panel`、`--kp-dark-ink` 和 `--kp-brass`。淺色模式使用 `--kp-light-paper` 與 `--kp-light-panel`。保留臨床圖例的原始色彩與含義。

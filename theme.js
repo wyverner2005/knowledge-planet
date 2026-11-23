@@ -27,7 +27,7 @@
 
   function enableImageViewer() {
     const graphics = document.querySelectorAll(
-      ".kp-note img, .kp-note :is(main, header) svg[viewBox]:not(svg svg)"
+      ".kp-cover > img, .kp-note img, .kp-note :is(main, header) svg[viewBox]:not(svg svg)"
     );
     if (!graphics.length) return;
 
