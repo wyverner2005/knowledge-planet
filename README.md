@@ -21,3 +21,10 @@
 - 所有文章以 `<main>` 包住正文，並用有意義的 `h2` 標題分節。建議用唯一且固定的 `id` 放在標題或上一層的 `section`，更新既有文章時保留已發布的錨點。共用 `theme.js` 會補齊文章目錄與缺少的錨點，既有的文章目錄繼續使用。目錄沿用 cGVHD 臨床表現與診斷篇的位置：寬螢幕在標題與導讀下方、正文左側，並在捲動時固定；窄螢幕在正文上方，隨頁面捲動。文章開場使用 `<main>` 內的直屬 `<header>`，也支援緊接在 `<header>` 後的 `<main>`。
 - 新增或更新文章 HTML 後，執行 `python3 scripts/build-search-index.py`（需 `lxml`），將更新的 `search-index.js` 與文章一起發布。驗證首頁的搜尋結果會顯示命中段落和摘要，並可直接跳到正確章節。
 - 共用計算器集中在 `medical-tools.html`。新文章與工具有關時可以連到對應段落，並保留公式來源、單位與適用範圍。
+
+## 探索星球
+
+- 首頁「醫學工具」左側的 `explore.html` 是互動星圖。專科是星球、首頁的主題標籤是衛星、方點是文章。大小依收錄篇數，跨科連線只代表共同收錄同一篇文章；顏色與位置不代表醫學關係或證據強度。
+- 星圖可用目錄、點選、拖曳、縮放或清單瀏覽。手機預設星球卡片，可切換星圖。支援關鍵字篩選、主題篩選、文章摘要、原文入口與原文已建立的相關閱讀；不產生臆測的文獻關聯或閱讀狀態。
+- 唯一資料來源是首頁專科選項、`#notes` 卡片與各篇 `.kp-related`。`python3 scripts/build-search-index.py` 同時重建 `search-index.js` 與 `planet-data.js`；單獨更新星圖也可執行 `python3 scripts/build-planet-index.py`。發布新筆記時一併提交兩份索引。新增專科沿用首頁分類規則，星圖會自動納入。
+- 可分享 `explore.html?planet=hematology` 等網址，`topic`、`note`、`q`、`view` 保留探索位置。靈感來源為 [Bibliopolis 文獻城邦](https://github.com/copper0722/bibliopolis-open)，星圖實作使用本站資料。

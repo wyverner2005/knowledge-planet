@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-Hant" class="kp-explore">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把醫學筆記化為可漫遊的星圖。從專科星球、主題衛星到跨科文章，探索彼此相連的醫學知識。">
+  <title>探索星球｜知識星球</title>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="explore.css">
+  <script src="theme.js"></script>
+  <script defer src="planet-data.js"></script>
+  <script defer src="explore.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#reading-panel">跳至文章清單</a>
+  <header class="atlas-header">
+    <a class="brand" href="./"><span class="brand-orbit" aria-hidden="true">✦</span><span>知識星球<small>KNOWLEDGE PLANET</small></span></a>
+    <nav class="atlas-nav" aria-label="頁面導覽">
+      <a href="./">文章總覽</a>
+      <a href="explore.html" aria-current="page">探索星球</a>
+      <a href="medical-tools.html">醫學工具</a>
+      <button class="kp-control kp-theme-toggle" type="button" hidden>深色模式</button>
+    </nav>
+  </header>
+  <main class="atlas-main">
+    <div class="atlas-intro">
+      <div><p class="eyebrow">THE MEDICAL ATLAS</p><h1>探索星球<span>讓知識，彼此相遇。</span></h1><p class="intro-copy">選一顆專科星球，沿著主題衛星，找到下一篇想讀的筆記。</p></div>
+      <p class="atlas-census" id="atlas-census"></p>
+    </div>
+    <div class="atlas-layout">
+      <aside class="directory" aria-label="星球目錄">
+        <div class="directory-title"><h2>星球目錄</h2><span>DISCOVER</span></div>
+        <label class="search-label" for="atlas-query">找文章或主題</label>
+        <div class="search-field"><span aria-hidden="true">⌕</span><input id="atlas-query" type="search" placeholder="例如 cGVHD、血脂" autocomplete="off"></div>
+        <button class="all-planets" id="all-planets" type="button">全部星球<span id="all-count"></span></button>
+        <nav id="planet-directory" aria-label="專科星球"></nav>
+        <details class="atlas-key"><summary>星圖怎麼讀？</summary><p>星球是專科，衛星是文章主題，小方點是文章。星球之間的線代表收錄了同一篇跨科文章。</p><p>星球大小隨收錄篇數增加；顏色用來區分專科，位置與距離不代表醫學關係。</p><p>靈感來自 <a href="https://github.com/copper0722/bibliopolis-open" target="_blank" rel="noopener noreferrer">文獻城邦 Bibliopolis</a>。</p></details>
+      </aside>
+      <section class="star-chart" aria-labelledby="map-title">
+        <div class="chart-topbar"><nav id="breadcrumbs" aria-label="探索路徑"></nav><div class="view-switch" role="group" aria-label="瀏覽方式"><button type="button" id="map-view" aria-pressed="true">星圖</button><button type="button" id="list-view" aria-pressed="false">清單</button></div></div>
+        <h2 id="map-title" class="sr-only">醫學知識星圖</h2>
+        <div class="map-viewport" id="map-viewport" role="region" aria-label="可拖曳與縮放的星圖" tabindex="0" aria-describedby="map-help">
+          <div class="space-grain" aria-hidden="true"></div>
+          <p class="chart-coordinate" aria-hidden="true">KNOWLEDGE OBSERVATORY<br><span>專科 · 主題 · 筆記</span></p>
+          <div class="map-world" id="map-world"><svg id="map-lines" viewBox="0 0 1200 960" aria-hidden="true"></svg><div id="map-nodes"></div></div>
+          <div class="compass" aria-hidden="true">✧<span>N</span></div>
+          <p class="map-context" id="map-context"></p>
+        </div>
+        <div id="planet-grid" class="planet-grid" hidden></div>
+        <div class="chart-bottom"><label class="connections"><input id="show-connections" type="checkbox" checked>跨科連線</label><p id="map-help">拖曳移動 · 用按鈕縮放</p><div class="zoom-controls" role="group" aria-label="星圖縮放"><button type="button" id="zoom-out" aria-label="縮小星圖">−</button><button type="button" id="zoom-reset">全景</button><button type="button" id="zoom-in" aria-label="放大星圖">＋</button></div></div>
+      </section>
+      <aside class="reading-panel" id="reading-panel" aria-labelledby="reading-title" tabindex="-1">
+        <div class="reading-heading"><p class="eyebrow">FIELD NOTES</p><h2 id="reading-title">星際筆記</h2><p id="reading-status" role="status" aria-live="polite"></p></div>
+        <div id="topic-filters" class="topic-filters" aria-label="主題篩選"></div>
+        <div id="article-list" class="article-list"></div>
+      </aside>
+    </div>
+    <footer class="atlas-footer"><span>從一篇筆記，走向一片星空。</span><span>每篇文章只計一次，跨科收錄可同時出現在多顆星球。</span></footer>
+    <noscript><p class="no-script">星圖需要 JavaScript。你也可以到<a href="./">文章總覽</a>閱讀所有筆記。</p></noscript>
+  </main>
+</body>
+</html>

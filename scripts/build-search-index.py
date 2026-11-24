@@ -73,3 +73,7 @@ def article_index(path):
 
 index = {"notes/" + path.name: article_index(path) for path in sorted((ROOT / "notes").glob("*.html"))}
 (ROOT / "search-index.js").write_text("window.noteIndex = " + json.dumps(index, ensure_ascii=False, separators=(",", ":")) + ";\n", encoding="utf-8")
+
+# Keep the planet atlas in sync whenever the normal publication index is built.
+import runpy
+runpy.run_path(str(ROOT / "scripts/build-planet-index.py"), run_name="__main__")

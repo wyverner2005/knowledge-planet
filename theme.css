@@ -247,6 +247,7 @@ a.kp-category { min-height: 44px; }
 a.kp-category:hover { text-decoration: underline; }
 
 .kp-home .kp-home-nav { justify-content: space-between; }
+.kp-nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
 .kp-home #notes[hidden], .kp-section-results[hidden] { display: none; }
 .kp-section-results { display: grid; gap: .7rem; list-style: none; padding: 0; }
 .kp-section-results .summary { overflow-wrap: anywhere; }
