@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="zh-Hant" class="kp-note">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="成人失眠, 慢性失眠, 睡眠, CBT-I, BBT-I, BZD, Z-drugs, DORA, Daridorexant, Lemborexant, Suvorexant, Doxepin, Ramelteon, Zolpidem, 複雜睡眠行為, 安眠藥減量, Beers Criteria"><title>成人失眠藥物治療完整指南｜圖文解說與實證查核（UpToDate 2026）</title>
+<style>
+  :root {
+    --bg: #FDF9E7;
+    --card: #FFFDF6;
+    --card-pure: #FFFFFF;
+    --navy: #1B365D;
+    --teal: #0F766E;
+    --amber: #B45309;
+    --coral: #B91C1C;
+    --violet: #6D28D9;
+    --green: #15803D;
+    --text: #1E293B;
+    --muted: #475569;
+    --border: #E6DEC3;
+    --row-alt: #FAF5E4;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+  a { color: #0369A1; text-decoration: none; border-bottom: 1px dotted #0369A1; }
+  a:hover { color: var(--navy); border-bottom-style: solid; }
+
+  /* Hero Header */
+  .hero {
+    background: linear-gradient(135deg, #1B365D 0%, #24476E 58%, #0F766E 100%);
+    color: #FFFFFF;
+    padding: 44px 28px 36px;
+    border-bottom: 5px solid #D97706;
+  }
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .badge {
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.32);
+    padding: 3px 12px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .hero h1 {
+    margin: 0 0 10px;
+    font-size: 2.05rem;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+  }
+  .hero p {
+    margin: 0;
+    color: #E2E8F0;
+    font-size: 0.98rem;
+    max-width: 960px;
+  }
+
+  /* Main Sections */
+  .content section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 3px 12px rgba(27, 54, 93, 0.04);
+  }
+  @media (max-width: 640px) {
+    .content section { padding: 20px 18px; }
+  }
+  h2 {
+    color: var(--navy);
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+    font-size: 1.42rem;
+  }
+  h3 {
+    color: #0F4C5C;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-size: 1.14rem;
+  }
+  ul, ol {
+    padding-left: 22px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+
+  /* KPI Cards */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 18px 0 22px;
+  }
+  .kpi {
+    background: var(--card-pure);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--teal);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .kpi.warn { border-left-color: var(--coral); }
+  .kpi.amber { border-left-color: var(--amber); }
+  .kpi.navy { border-left-color: var(--navy); }
+  .kpi .num {
+    font-size: 1.38rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+  .kpi .lbl {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* Figures */
+  .figure-box {
+    margin: 22px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #FFFDF5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .figure-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .figure-cap {
+    background: #F7F0D9;
+    padding: 11px 16px;
+    font-size: 0.88rem;
+    color: #334155;
+    border-top: 1px solid var(--border);
+  }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.91rem;
+    background: var(--card-pure);
+  }
+  th {
+    background: var(--navy);
+    color: #FFFFFF;
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background: var(--row-alt);
+  }
+
+  /* Callouts */
+  .callout {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 18px 0;
+    border-left: 5px solid var(--teal);
+    background: #EDF8F6;
+  }
+  .callout.warn {
+    border-left-color: var(--coral);
+    background: #FEF2F2;
+  }
+  .callout.pearl {
+    border-left-color: var(--amber);
+    background: #FEF9E7;
+  }
+  .callout.audit {
+    border-left-color: var(--violet);
+    background: #F5F3FF;
+  }
+  .callout-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: var(--navy);
+    font-size: 0.98rem;
+  }
+  .callout.warn .callout-title { color: #991B1B; }
+  .callout.pearl .callout-title { color: #92400E; }
+  .callout.audit .callout-title { color: #5B21B6; }
+
+  /* Tag pills */
+  .pill {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .pill-green { background: #DCFCE7; color: #166534; }
+  .pill-amber { background: #FEF3C7; color: #92400E; }
+  .pill-red { background: #FEE2E2; color: #991B1B; }
+  .pill-blue { background: #E0F2FE; color: #075985; }
+
+  footer {
+    text-align: center;
+    padding: 24px 16px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+  }
+
+  .article-controls, .kp-note .kp-article-columns { max-width: 1200px; margin-inline: auto; padding-inline: clamp(12px, 3vw, 24px); }
+  .article-controls { margin-block: 1rem; }
+  .content section { min-width: 0; }
+  .clinical-figure { margin: 1rem 0; }
+  .clinical-figure h3 { margin-top: 0; }
+  .clinical-grid { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit,minmax(min(100%, 15rem),1fr)); }
+  .clinical-grid > div { padding: .8rem; border: 1px solid var(--border); border-radius: .6rem; background: var(--card-pure); }
+  .clinical-grid p:last-child { margin-bottom: 0; }
+  .clinical-figure .table-wrap { margin-bottom: .5rem; }
+  .clinical-figure figcaption { color: var(--muted); }
+  .table-wrap table { min-width: 34rem; }
+  html[data-theme="light"] { --bg: var(--kp-light-paper); --card: var(--kp-light-panel); --border: var(--kp-light-edge); }
+  html[data-theme="dark"] {
+    --bg: var(--kp-dark-paper); --card: var(--kp-dark-panel); --card-pure: var(--kp-dark-raised);
+    --text: var(--kp-dark-ink); --muted: var(--kp-dark-muted); --navy: var(--kp-brass);
+    --teal: #9bcdb9; --amber: #f2bd81; --coral: #f2aaba; --violet: #d4b8f8;
+    --green: #a0d7a7; --border: var(--kp-dark-edge); --row-alt: var(--kp-dark-raised);
+  }
+  html[data-theme="dark"] :is(h3, .kpi .num) { color: var(--kp-brass); }
+  html[data-theme="dark"] :is(.kpi, .callout, .figure-box, .figure-cap) { background: var(--kp-dark-raised); color: var(--text); }
+  html[data-theme="dark"] th { background: var(--kp-dark-raised); color: var(--text); }
+</style>
+<link rel="stylesheet" href="../theme.css?v=20261123-toc"><script defer src="../theme.js?v=20261123-toc"></script></head>
+<body>
+
+<main class="content">
+
+    <div class="article-controls"><nav class="kp-controls kp-article-controls" aria-label="文章導覽"><a class="kp-control" href="../">← 返回知識星球</a><button class="kp-control kp-theme-toggle" type="button" hidden>深色模式</button></nav><nav class="kp-categories" aria-label="專科分類"><a class="kp-category" href="../?category=sleep-medicine">睡眠醫學 · Sleep Medicine</a><a class="kp-category" href="../?category=clinical-pharmacology">臨床藥理 · Clinical Pharmacology</a><a class="kp-category" href="../?category=geriatrics">老年醫學 · Geriatrics</a></nav></div><header class="hero">
+  <div class="hero-inner">
+    <div class="badge-row">
+      <span class="badge">UpToDate 2026（更新至 2026/11/05）</span>
+      <span class="badge">家醫科／睡眠醫學核心指南</span>
+      <span class="badge">獨立一級文獻實證查核</span>
+      <span class="badge">護眼淺黃版面</span>
+    </div>
+    <h1>成人失眠藥物治療完整指南（Pharmacotherapy for Insomnia in Adults）</h1>
+    <p>深度整理自 David N. Neubauer, MD（UpToDate 2026）最新文獻，涵蓋 ICSD-3-TR 診斷標準、四大 FDA 核准藥物機轉與劑量、高齡與共病安全選藥、黑框警語、轉換與減藥策略，並逐項查核 2017–2026 年關鍵臨床試驗與國際指引。</p>
+  </div>
+</header>
+
+<!-- Section 1 -->
+    <section id="sec1">
+      <h2>1. 慢性失眠診斷與治療核心原則</h2>
+      <div class="kpi-grid">
+        <div class="kpi navy">
+          <div class="num">CBT-I 第一線</div>
+          <div class="lbl">優先提供 CBT-I，必要時再合併短期藥物</div>
+        </div>
+        <div class="kpi">
+          <div class="num">≥3 次/週 × ≥3 月</div>
+          <div class="lbl">ICSD-3-TR 慢性失眠診斷門檻（伴日間功能障礙且非因睡眠機會不足）</div>
+        </div>
+        <div class="kpi warn">
+          <div class="num">避開傳統 BZD</div>
+          <div class="lbl">除傳統苯二氮平類安眠藥外，其餘三大核准類別皆可考慮為一線藥物</div>
+        </div>
+        <div class="kpi amber">
+          <div class="num">&lt;50% 完全緩解</div>
+          <div class="lbl">長期單用 BZRA 者多數雖有改善，但不到一半達完全緩解，須併用非藥物策略</div>
+        </div>
+      </div>
+
+      <h3>ICSD-3-TR 慢性失眠障礙（Chronic Insomnia Disorder）診斷標準（Table 1）</h3>
+      <p>臨床試驗數據主要針對符合正式「失眠障礙」診斷標準之成人。必須同時符合下列 <strong>A 至 F 六項條件</strong>：</p>
+      <ul>
+        <li><strong>A（夜間睡眠困擾）</strong>：至少具備一項——入睡困難（成人常以 &gt;30 分鐘具臨床意義）、睡眠維持困難（半夜清醒 &gt;30 分鐘）、比預期提早醒來（&gt;30 分鐘且總睡眠時數減少）。</li>
+        <li><strong>B（日間症狀）</strong>：至少具備一項與失眠相關的日間功能受損——疲倦、注意力／記憶力下降、社交／職業表現受損、情緒煩躁、主觀日間嗜睡、動機下降、易出錯或意外、對睡眠過度擔憂。</li>
+        <li><strong>C（非機會不足）</strong>：無法單純由睡眠時間不足或睡眠環境不佳（安全、光線、噪音、舒適度）解釋。</li>
+        <li><strong>D（頻率）</strong>：每週至少發生 <strong>3 次</strong>。</li>
+        <li><strong>E（持續時間）</strong>：症狀持續至少 <strong>3 個月</strong>。</li>
+        <li><strong>F（排除標準）</strong>：無法單獨由其他睡眠障礙、內科疾病、精神疾病或藥物／物質使用完全解釋。</li>
+      </ul>
+
+      <div class="callout pearl">
+        <div class="callout-title">臨床核心原則（Shared Decision-Making）</div>
+        四大類美國 FDA 核准失眠藥物皆在短期隨機對照試驗中證實優於安慰劑，但彼此間的「頭對頭」直接比較試驗極少。依據 2022 年《Lancet》網路統合分析（納入 154 篇雙盲 RCT、近 4.5 萬人，僅 5 篇研究超過 4 週），<strong>Eszopiclone</strong> 與 <strong>Lemborexant</strong> 在綜合療效、可接受度與耐受性上表現最有利，但 Eszopiclone 受限於不良反應、Lemborexant 長期安全性證據仍須審慎解讀（<a href="https://pubmed.ncbi.nlm.nih.gov/35843245/" target="_blank" rel="noopener noreferrer">De Crescenzo et al., Lancet 2022</a>）。因此選藥必須依<strong>失眠亞型、年齡、共病、副作用、費用與醫病共享決策</strong>個別化調整。
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="sec2">
+      <h2>2. 臨床選藥決策流程（入睡困難 vs 睡眠維持／混合型）</h2>
+      <p>CBT-I 是慢性失眠第一線。需要短期藥物時，VA/DoD 2025 列出低劑量 doxepin、DORA 和部分 Z-drugs，選擇仍取決於失眠型態、共病與藥品仿單。<a href="https://www.healthquality.va.gov/guidelines/CD/insomnia/I-OSA-CPG_2025-Guideline_final_20250915.pdf">VA/DoD 2025</a></p><figure class="clinical-figure"><h3>圖 1｜開始藥物治療前的選擇</h3><p><strong>先做 CBT-I</strong>。評估睡眠機會、共病、呼吸障礙、日間嗜睡、跌倒與交互作用。確有短期用藥需求時，再依症狀選擇。</p>
+<div class="clinical-grid"><div><strong>主要是入睡困難</strong><p>按個別仿單考量 DORA 或特定 Z-drug。Ramelteon 可依 AASM 2017 的弱建議及可近性評估。</p></div>
+<div><strong>主要是睡眠維持或混合型</strong><p>可依仿單考量 DORA。低劑量 doxepin 主要用於睡眠維持。選用 Z-drug 須核對各劑型的適應症與隔日影響。</p></div>
+<div><strong>高齡、鴉片類併用或睡眠呼吸障礙</strong><p>優先處理可逆因素。避免將任何藥品視為可安全併用，處方前需評估中樞抑制、跌倒和呼吸風險。</p></div></div><figcaption>依原圖架構重製，參考 <a href="https://www.healthquality.va.gov/guidelines/CD/insomnia/I-OSA-CPG_2025-Guideline_final_20250915.pdf">VA/DoD 2025</a> 與 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5263087/">AASM 2017</a>。</figcaption></figure><h3>A. 孤立性入睡困難型（Isolated Sleep-Onset Insomnia，Grade 2C）</h3>
+      <ul>
+        <li><strong>推薦選項</strong>：非苯二氮平類 BZRA（Zaleplon、Zolpidem、Eszopiclone；zopiclone 未獲美國 FDA 核准）、雙重食慾素受體拮抗劑（DORA：Daridorexant、Lemborexant、Suvorexant）或褪黑激素受體促效劑（Ramelteon）。</li>
+        <li><strong>隔日殘餘嗜睡提醒</strong>：具雙重適應症之藥物（DORA、Zolpidem ER、Eszopiclone、Zopiclone）隔日早晨殘餘鎮靜風險較高，用於單純入睡困難者應謹慎。</li>
+        <li><strong>高齡或須避開 BZRA</strong>依仿單考慮 DORA 或依 AASM 建議評估 ramelteon。懷疑睡眠相位延遲時，先釐清晝夜節律問題，再決定是否採用定時介入。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5263087/">AASM 2017</a></li><li><strong>年輕且少共病者</strong>：若無鴉片類併用或物質使用障礙，非苯二氮平類 BZRA（如短效 Zaleplon 或 Zolpidem IR）為合理第一線選擇。</li>
+      </ul>
+
+      <h3>B. 睡眠維持困難或混合型失眠（Sleep-Maintenance or Mixed Insomnia，Grade 2C）</h3>
+      <ul>
+        <li><strong>推薦選項</strong>：具足夠作用時間之藥物——具睡眠維持適應症的 Z-drug、<strong>DORA 三藥</strong>，或<strong>低劑量 Doxepin（3–6 mg，僅針對睡眠維持）</strong>。</li>
+        <li><strong>半夜醒來</strong>可重新評估睡眠維持困難的原因。特定低劑量舌下 zolpidem 有此美國適應症，前提是至少還有 4 小時在床時間。一般睡前劑型不可逕行套用或自行補服。</li><li><strong>高齡或認知障礙</strong>可依適應症考量低劑量 doxepin 或 DORA，同步評估隔日嗜睡、跌倒、呼吸風險及交互作用。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12448428/">AGS Beers 替代治療建議</a></li><li><strong>共病焦慮</strong>應依焦慮症本身評估與治療。VA/DoD 2025 不建議將 BZD 常規用於慢性失眠。</li></ul>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="sec3">
+      <h2>3. 四大 FDA 核准藥物深度解析</h2>
+
+      <h3>類別一：苯二氮平類受體促效劑（BZRAs）</h3>
+      <p>皆透過異位調節 <strong>GABA-A 受體複合體</strong>，增加氯離子內流產生抑制性鎮靜作用。在美國皆屬 <strong>Schedule IV 管制藥品</strong>（濫用與依賴風險較鴉片類低，但仍須管控）。</p>
+      <ul>
+        <li><strong>非苯二氮平類 BZRAs（Z-drugs：Zolpidem、Eszopiclone、Zaleplon；zopiclone 未獲美國 FDA 核准）</strong>：對特定 GABA-A 次單元具較高選擇性（抗焦慮作用較弱、半衰期 1–7 小時較短，隔日宿醉風險低於傳統 BZD）。
+          <ul>
+            <li><strong>Zolpidem</strong>：美國 IR 仿單適用於短期入睡困難，ER 則涵蓋入睡與睡眠維持。IR 的女性起始量為 5 mg，男性 5 或 10 mg。高齡者應使用較低劑量，並按劑型核對仿單。<a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2022/019908s40s044s047lbl.pdf">Ambien IR 美國仿單</a></li>
+            <li><strong>Eszopiclone</strong>：非 BZD 中半衰期最長（約 6 小時，高齡更長），適用入睡與維持。起始 1 mg，成人上限 3 mg，高齡上限 2 mg。</li>
+            <li><strong>Zaleplon</strong>半衰期約 1 小時，美國仿單適應症為短期治療入睡困難。</li><li><strong>療效證據</strong>：統合分析顯示平均縮短入睡潛伏期 <strong>5–15 分鐘</strong>、增加總睡眠時間 <strong>30–60 分鐘</strong>，顯著改善主觀睡眠品質。</li>
+          </ul>
+        </li>
+        <li><strong>傳統苯二氮平類安眠藥（Estazolam、Flurazepam、Temazepam、Triazolam）</strong>：
+          <ul>
+            <li><strong>為何不建議一線使用</strong>：多數半衰期過長（Estazolam 10–24 hr、Flurazepam 可達 40–114 hr 且高齡達 120–160 hr），依賴與習慣性風險高、具<strong>與鴉片類併用致呼吸抑制／昏迷／死亡之黑框警語</strong>。</li>
+            <li><strong>Temazepam</strong>主要經葡萄醣醛酸化代謝，仍有 BZD 類的依賴、跌倒及呼吸抑制風險。</li></ul>
+        </li>
+      </ul>
+
+      <h3>類別二：雙重食慾素受體拮抗劑（DORAs：Daridorexant、Lemborexant、Suvorexant）</h3>
+      <ul>
+        <li><strong>機轉</strong>：拮抗下視丘至皮質與清醒神經核團的 <strong>OX1R 與 OX2R 受體</strong>，透過「關閉清醒驅動力（wake drive）」促進入睡與維持，而非廣泛抑制中樞神經。美國以外亦有 Vornorexant（日本）與 Fazamorexant（中國）。</li>
+        <li><strong>服藥原則</strong>：睡前服用且須預留<strong>至少 7 小時</strong>睡眠時間；<strong>高脂或近期進食會延遲起效</strong>。三藥皆為 Schedule IV 管制藥，<strong>絕對禁忌症為猝睡症（Narcolepsy）</strong>，且重度肝功能不全應避免使用。</li>
+        <li><strong>三藥關鍵差異</strong>：
+          <ul>
+            <li><strong>Lemborexant</strong>（5–10 mg，高齡 5 mg）：半衰期最長（17–19 hr），SUNRISE 2 與 12 個月試驗證實長期療效維持且停藥後無明顯反彈（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7487867/" target="_blank" rel="noopener noreferrer">Kärppä et al., Sleep 2020</a>）；須避開中／強效 CYP3A4 抑制劑與誘導劑（併用輕度抑制劑上限 5 mg）。</li>
+            <li><strong>Suvorexant</strong>（10–20 mg，高齡 10–15 mg）：半衰期 12 hr；統合分析顯示縮短入睡約 7 分鐘、總睡眠增加約 18 分鐘；亦具輕中度阿茲海默症失眠 RCT 實證。併用中效 CYP3A 抑制劑起始 5 mg（上限 10 mg）。</li>
+            <li><strong>Daridorexant</strong>（25–50 mg）：半衰期最短（8 hr）；兩項第三期 RCT（&gt;1,800 人）證實 <strong>50 mg 療效優於 25 mg 且安全性相當</strong>，連用 12 個月療效維持且高齡耐受佳（<a href="https://pubmed.ncbi.nlm.nih.gov/35065036/" target="_blank" rel="noopener noreferrer">Mignot et al., Lancet Neurol 2022</a>）。併用中效 CYP3A 抑制劑限用 25 mg。</li>
+          </ul>
+        </li>
+        <li><strong>安全性</strong>：注意嗜睡、隔日功能受損、睡眠癱瘓、入睡／醒前幻覺及類猝倒症狀。短期平均結果無法排除具有臨床意義的呼吸影響，合併 OSA、COPD 或中樞抑制劑時須個別評估。<a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/212028s011lbl.pdf">Dayvigo 美國仿單</a></li></ul>
+
+      <h3>類別三：低劑量 Doxepin（組織胺 H1 受體拮抗劑）</h3>
+      <ul>
+        <li><strong>機轉與劑量</strong>：低劑量主要拮抗 H1 受體。美國失眠製劑為 3–6 mg，常用成人 6 mg、高齡以 3 mg 起始。睡前 30 分鐘內服，距進食至少 3 小時。</li><li><strong>適應症與療效</strong>：<strong>僅適用於睡眠維持困難</strong>（對孤立入睡困難無效）。系統性回顧（867 名成人）顯示，65 歲以上高齡者使用 3 mg 與 6 mg 可分別增加客觀總睡眠時間 <strong>30 分鐘與 38 分鐘</strong>，且療效持續至睡眠最後四分之一時段。</li>
+        <li><strong>安全性與禁忌</strong>：<strong>無濫用潛力</strong>、無需管制；高齡試驗未見明顯口乾、視力模糊、譫妄或體重增加，但尚未在失智症族群充分研究。<strong>禁用於單胺氧化酶抑制劑（MAOI）停藥 2 週內</strong>，並應避免用於未治療之隅角閉鎖性青光眼或嚴重尿瀦留患者。</li>
+      </ul>
+
+      <h3>類別四：Ramelteon（褪黑激素 MT1/MT2 受體促效劑）</h3>
+      <ul>
+        <li><strong>機轉與劑量</strong>：作用於下視丘視交叉上核（SCN），抑制夜間清醒訊號（MT1）並穩定晝夜節律（MT2）。單一劑量 <strong>8 mg</strong> 睡前 30 分鐘服用，避免與高脂飲食併用。</li>
+        <li><strong>適應症與療效</strong>：僅於美國與日本核准用於<strong>入睡困難型失眠</strong>（無法改善睡眠維持）。統合分析（11 篇試驗、&gt;5,700 人）顯示主觀入睡潛伏期縮短約 <strong>4.6 分鐘</strong>、總睡眠增加 <strong>7.3 分鐘</strong>，效果量偏小但安全性極高、<strong>無濫用與成癮風險</strong>。</li>
+        <li><strong>重要交互作用</strong>：半衰期 1–2.6 小時，主要經 CYP1A2 代謝，<strong>絕對禁止與強效 CYP1A2 抑制劑 Fluvoxamine 併用</strong>；重度肝功能不全亦應避免。罕見睪固酮下降或泌乳素上升。</li>
+      </ul>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="sec4">
+      <h2>4. 藥物半衰期與完整劑量總表</h2>
+      <p>藥動學上的「排除半衰期（Elimination Half-Life）」有助判讀蓄積與隔日殘餘效應，也須考量劑型、劑量、個人代謝與可用睡眠時間：</p>
+
+      <figure class="clinical-figure"><h3>圖 2｜常見藥物半衰期摘要</h3><div class="table-wrap"><table><thead><tr><th>藥物</th><th>約略排除半衰期</th><th>讀表提示</th></tr></thead><tbody><tr><td>Zaleplon／Ramelteon</td><td>約 1 小時／約 1–2.6 小時</td><td>Ramelteon 另有活性代謝物</td></tr><tr><td>Zolpidem IR／Eszopiclone</td><td>約 1.4–4.5 小時／約 6 小時</td><td>需依處方劑型、年齡及肝功能判讀</td></tr><tr><td>Daridorexant／Suvorexant／Lemborexant</td><td>約 8／12／17–19 小時</td><td>Lemborexant 為有效半衰期</td></tr><tr><td>Doxepin／Temazepam</td><td>約 15 小時／約 8–15 小時</td><td>Doxepin 活性代謝物半衰期較長</td></tr><tr><td>Estazolam／Flurazepam</td><td>約 10–24 小時／活性代謝物可持續數十小時以上</td><td>高齡需留意蓄積及隔日功能受損</td></tr></tbody></table></div><figcaption>保留原圖的藥動學比較，半衰期僅供判讀蓄積和殘餘效應，駕車與服藥時機依個別仿單及實際警覺度。</figcaption></figure><h3>FDA 核准失眠藥物劑量、半衰期與代謝交互作用總表（整合 Tables 2, 3, 7）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>藥品名稱（類別）</th>
+              <th>臨床適用亞型</th>
+              <th>一般成人劑量（起始 → 上限）</th>
+              <th>高齡（≥65歲）建議劑量</th>
+              <th>排除半衰期</th>
+              <th>主要代謝途徑與交互作用警訊</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Zaleplon</strong><br><span class="pill pill-green">nBZRA</span></td>
+              <td>孤立入睡困難</td>
+              <td>一般成人 10 mg，部分患者 5 mg，最高 20 mg</td>
+              <td>5–10 mg</td>
+              <td>極短（~1 hr）</td>
+              <td>交互作用低（少量 CYP3A4）</td>
+            </tr>
+            <tr>
+              <td><strong>Zolpidem IR</strong><br><span class="pill pill-green">nBZRA</span></td>
+              <td>短期入睡困難（美國仿單）</td>
+              <td>男 5–10 mg；<strong>女 5 mg</strong>（上限 10 mg）</td>
+              <td><strong>5 mg</strong></td>
+              <td>短（1.4–4.5 hr）</td>
+              <td>部分經 CYP3A4；女性與高齡清除較慢</td>
+            </tr>
+            <tr>
+              <td><strong>Zolpidem ER</strong><br><span class="pill pill-green">nBZRA</span></td>
+              <td>入睡或睡眠維持</td>
+              <td>男 6.25–12.5 mg；<strong>女 6.25 mg</strong></td>
+              <td><strong>6.25 mg</strong></td>
+              <td>中效（緩釋延長作用）</td>
+              <td>同上；隔日鎮靜風險高於 IR</td>
+            </tr>
+            <tr>
+              <td><strong>Zolpidem MON</strong><br><span class="pill pill-green">nBZRA 舌下</span></td>
+              <td>半夜醒來（須留 ≥4 hr 睡眠）</td>
+              <td>男 3.5 mg；女 1.75 mg</td>
+              <td>1.75 mg</td>
+              <td>短（1.4–4.5 hr）</td>
+              <td>僅適用此特定舌下製劑。服後至少 4 小時且完全清醒前避免駕車。<a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/022328s008lbl.pdf">Intermezzo 美國仿單</a></td>
+            </tr>
+            <tr>
+              <td><strong>Eszopiclone</strong><br><span class="pill pill-green">nBZRA</span></td>
+              <td>入睡或睡眠維持</td>
+              <td>1 mg → 3 mg</td>
+              <td>1–2 mg</td>
+              <td>中（~6 hr，高齡更長）</td>
+              <td>部分經 CYP3A4；併用強效抑制劑須減量</td>
+            </tr>
+            <tr>
+              <td><strong>Daridorexant</strong><br><span class="pill pill-blue">DORA</span></td>
+              <td>入睡或睡眠維持</td>
+              <td>25–50 mg</td>
+              <td>25–50 mg</td>
+              <td>中（~8 hr）</td>
+              <td>CYP3A；中效抑制劑限 25 mg；忌強抑制／中強誘導劑</td>
+            </tr>
+            <tr>
+              <td><strong>Suvorexant</strong><br><span class="pill pill-blue">DORA</span></td>
+              <td>入睡或睡眠維持</td>
+              <td>10 mg → 20 mg</td>
+              <td>10–15 mg</td>
+              <td>中（~12 hr）</td>
+              <td>CYP3A；中效抑制劑起始 5 mg（上限 10 mg）；忌強抑制／誘導劑</td>
+            </tr>
+            <tr>
+              <td><strong>Lemborexant</strong><br><span class="pill pill-blue">DORA</span></td>
+              <td>入睡或睡眠維持</td>
+              <td>5 mg → 10 mg</td>
+              <td>5 mg</td>
+              <td>長（17–19 hr）</td>
+              <td>CYP3A4；輕度抑制劑限 5 mg；忌中／強效抑制與誘導劑</td>
+            </tr>
+            <tr>
+              <td><strong>Doxepin（低劑量）</strong><br><span class="pill pill-green">H1 拮抗劑</span></td>
+              <td><strong>僅睡眠維持</strong></td>
+              <td>3–6 mg</td>
+              <td>3–6 mg</td>
+              <td>長（15 hr；代謝物 31 hr）</td>
+              <td>CYP2C19 / CYP2D6；<strong>忌 MAOI 停藥 2 週內</strong>；勿於飯後 3 hr 內服</td>
+            </tr>
+            <tr>
+              <td><strong>Ramelteon</strong><br><span class="pill pill-green">MT1/MT2</span></td>
+              <td><strong>僅入睡困難</strong></td>
+              <td>8 mg</td>
+              <td>8 mg</td>
+              <td>短（1–2.6 hr；代謝物 2–5 hr）</td>
+              <td>CYP1A2 / CYP2C9；<strong>絕對禁用 Fluvoxamine</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Temazepam</strong><br><span class="pill pill-red">傳統 BZD</span></td>
+              <td>入睡或維持（僅二線）</td>
+              <td>7.5–30 mg</td>
+              <td>7.5–15 mg</td>
+              <td>中（8–15 hr）</td>
+              <td>主要經非 CYP 葡萄醣醛酸化</td>
+            </tr>
+            <tr>
+              <td><strong>Triazolam</strong><br><span class="pill pill-red">傳統 BZD</span></td>
+              <td>入睡困難（僅二線）</td>
+              <td>0.125–0.25 mg</td>
+              <td>0.125–0.25 mg</td>
+              <td>短（2–5 hr）</td>
+              <td>CYP3A4；反彈與複雜睡眠行為風險較高</td>
+            </tr>
+            <tr>
+              <td><strong>Estazolam / Flurazepam</strong><br><span class="pill pill-red">傳統 BZD</span></td>
+              <td>不建議用於一線失眠</td>
+              <td>Estazolam 1–2 mg<br>Flurazepam 15–30 mg</td>
+              <td>0.5 mg / 15 mg<br>（強烈建議避開）</td>
+              <td>10–24 hr /<br><strong>40–160 hr</strong></td>
+              <td>極長半衰期與活性代謝物蓄積，跌倒與認知惡化風險極高</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="sec5">
+      <h2>5. 特殊族群處方與安全矩陣</h2>
+      <p>臨床上最常見的失眠用藥失誤，往往發生在高齡長者、合併認知障礙、併用鴉片類止痛藥或物質使用障礙患者。下表整理處方前需評估的風險。</p>
+
+      <figure class="clinical-figure"><h3>圖 3｜特殊族群的處方前檢核</h3><div class="table-wrap"><table><thead><tr><th>情境</th><th>需核對的風險</th></tr></thead><tbody><tr><td>高齡或認知障礙</td><td>優先非藥物措施，通常避免 BZD 與 Z-drugs。低劑量 doxepin、ramelteon 或 DORA 仍須評估適應症、嗜睡及跌倒。</td></tr><tr><td>使用鴉片類或其他中樞抑制劑</td><td>避免 BZD 與鴉片類併用。DORA 也可能有加成抑制，合併使用須個別評估。</td></tr><tr><td>OSA、COPD 或呼吸功能受損</td><td>先評估並治療呼吸障礙。DORA 短期試驗的平均結果無法排除個別患者有臨床重要的呼吸影響。</td></tr><tr><td>物質使用障礙</td><td>評估鎮靜藥物依賴及濫用風險。Ramelteon 與低劑量 doxepin 為美國非管制藥物，可按適應症評估。</td></tr></tbody></table></div><figcaption>依原圖情境重製，參考 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12448428/">AGS Beers 替代治療建議</a>、<a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/212028s011lbl.pdf">Dayvigo 美國仿單</a>與 <a href="https://www.healthquality.va.gov/guidelines/CD/insomnia/I-OSA-CPG_2025-Guideline_final_20250915.pdf">VA/DoD 2025</a>。</figcaption></figure><ul>
+        <li><strong>高齡（≥65 歲）與認知障礙／失智症</strong>：肝臟代謝減緩導致血中濃度上升，極易發生過度鎮靜、譫妄、平衡失調、跌倒與髖部骨折／顱內出血。依據 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12448428/" target="_blank" rel="noopener noreferrer">AGS Beers Criteria（2023/2025 替代指南）</a>，<strong>所有 BZD 與非 BZD Z-drugs 皆屬高齡潛在不適當用藥（PIM）</strong>，應避開作為一線；改優先考慮 <strong>DORA、低劑量 Doxepin（3–6 mg）或 Ramelteon</strong>。另須警惕標示外 Trazodone 引發姿勢性低血壓與跌倒（2025 年高齡高血壓門診研究亦證實風險），以及 OTC 抗組織胺（Diphenhydramine）之抗膽鹼譫妄風險。</li>
+        <li><strong>肝功能不全</strong>：所有 FDA 核准失眠藥物皆經肝臟代謝（但建議劑量下皆未見明確藥物性肝損傷）。輕中度肝損常需減量；<strong>重度肝損（Child-Pugh C）應避開所有 DORA 與 Ramelteon</strong>。</li>
+        <li><strong>腎功能不全</strong>：依個別藥品仿單、腎功能及共用藥物評估。標示外 gabapentin 需依腎功能調整。</li><li><strong>肺部疾病與 OSA</strong>：先評估呼吸障礙。BZD 與鴉片類併用有嚴重呼吸抑制風險。DORA 的短期資料不足以排除個別患者的風險。<a href="https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/212028s011lbl.pdf">Dayvigo 美國仿單</a></li><li><strong>物質使用障礙</strong>：BZRA 與 DORA 為美國 Schedule IV 管制藥。Ramelteon 與低劑量 doxepin 為非管制選項，依各藥適應症評估。</li><li><strong>輪班工作者（Nonstandard Schedules）</strong>：短效安眠藥可協助夜班間的日間睡眠；傍晚服用 Melatonin 可加速輪班轉換後的生理時鐘重新對齊。</li>
+      </ul>
+    </section>
+
+    <!-- Section 6 -->
+    <section id="sec6">
+      <h2>6. 共同警語、自殺風險與安全處方原則</h2>
+
+      <div class="callout warn">
+        <div class="callout-title">FDA 2019 黑框警語：複雜睡眠相關行為（Complex Sleep Behaviors）</div>
+        美國 FDA 於 2019 年針對 <strong>Zolpidem、Zaleplon、Eszopiclone 所有劑型</strong>新增黑框警語（<a href="https://www.fda.gov/safety/medical-product-safety-information/certain-prescription-insomnia-medicines-new-boxed-warning-due-risk-serious-injuries-caused" target="_blank" rel="noopener noreferrer">美國 FDA 安全公告</a>）：
+        <ul>
+          <li>表現包含未完全清醒下之<strong>夢遊、夢中駕車（Sleep Driving）、打電話、進食或性行為</strong>，曾造成意外過量、車禍與溺水死亡。</li>
+          <li>最低建議劑量、只服用一次、單獨服用時也可能發生。出現複雜睡眠行為時應立即停用並聯絡醫療人員。</li><li><strong>絕對禁忌</strong>：凡曾於服藥後出現任何一次複雜睡眠行為者（即使未受傷），應立即停藥且終生列為該類藥物禁忌。</li>
+        </ul>
+      </div>
+
+      <h3>憂鬱症惡化與自殺意念風險（Suicide Risk）</h3>
+      <p>美國所有核准失眠藥皆載明憂鬱症患者自殺風險警語。須釐清的是，<strong>失眠本身即是自殺的獨立危險因子</strong>。雖然多項觀察性研究顯示處方安眠藥與自殺行為具正相關，但尚未確立因果關係（多受共病憂鬱症干擾）。</p>
+      <ul>
+        <li><strong>REST-IT</strong>：103 名重度憂鬱症合併失眠與自殺意念的成人，在 SSRI 治療期間隨機加用 zolpidem-CR 或安慰劑。主要自殺意念量表 SSI 無顯著組間差異，次要量表 C-SSRS 顯示差異。這項試驗不足以建立自殺預防效益。<a href="https://pubmed.ncbi.nlm.nih.gov/31537089/">REST-IT 原始研究</a></li><li><strong>真實世界資料庫警訊</strong>：一項涵蓋逾 35 萬人的保險資料庫研究發現，使用低劑量 Trazodone（&lt;200 mg）者自殺企圖校正風險比 Zolpidem 高出 61%，且開立超過 120 天者風險低於僅開立 ≤30 天者。因此開立任何助眠藥前皆應常規篩檢自殺意念並密切追蹤。</li>
+      </ul>
+
+      <h3>安全處方 12 項核心守則（Table 4）</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>階段</th>
+              <th>臨床執行要點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>劑量與續藥管控</strong></td>
+              <td>1. 採最低有效劑量起始　2. 避免超過最大建議劑量　3. 確認持續需求、療效與耐受性前，勿預先開立連續處方簽（Refills）</td>
+            </tr>
+            <tr>
+              <td><strong>交互作用與高危篩檢</strong></td>
+              <td>4. 嚴禁併用酒精、鴉片類或其他中樞鎮靜劑　5. 高齡及肝腎功能異常者提高警覺　6. 共病憂鬱症者須於處方前評估自殺意念並密切追蹤</td>
+            </tr>
+            <tr>
+              <td><strong>服藥衛教與風險告知</strong></td>
+              <td>7. 指導正確服藥時機（對應預期入睡時間）　8. 說明藥物半衰期與作用時長　9. 若預計睡眠時間不足以清除藥物則切勿服藥<br>10. 告知隔日警覺度、記憶、協調與駕車受損風險　11. 告知夢遊、夢中進食與夢中駕車等複雜睡眠行為風險</td>
+            </tr>
+            <tr>
+              <td><strong>定期追蹤</strong></td>
+              <td>12. 初始處方後數週內安排門診或電話回診，評估療效、副作用、非藥物進展（CBT-I）與持續用藥必要性</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 7 -->
+    <section id="sec7">
+      <h2>7. 標示外用藥（Off-Label）、OTC、膳食補充劑與大麻素</h2>
+      <p>下列藥物皆<strong>不建議作為一般失眠患者的第一線治療</strong>，因缺乏穩健療效證據且用於失眠的風險效益比與原適應症截然不同；僅於第一線核准藥物無效、需不同機轉或有明確理由避開 BZRA 時審慎評估：</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>藥物／成分</th>
+              <th>常用助眠劑量</th>
+              <th>實證評估與臨床定位</th>
+              <th>關鍵副作用與安全警訊</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Trazodone</strong><br>（最常見標示外）</td>
+              <td>成人 50–100 mg<br>（高齡 12.5–25 mg 起；勿 &gt;150 mg）</td>
+              <td><strong>AASM 2017 指引建議「反對」使用</strong>。最大型 RCT（n=306）顯示第 1 週略優於安慰劑，但第 2 週即無顯著差異；僅於一線無效時偶作二線。</td>
+              <td>姿勢性低血壓與昏厥（α1 阻斷，高齡易跌倒）、QT 延長、出血風險增加（併用抗凝血／NSAID）、異常勃起（Priapism）、血清素症候群。</td>
+            </tr>
+            <tr>
+              <td><strong>Mirtazapine</strong></td>
+              <td>7.5–15 mg<br>（高齡 7.5 mg）</td>
+              <td><strong>2025 DREAMING RCT</strong>（80 名非憂鬱失眠者）：7.5–15 mg 於第 6 週顯著改善失眠嚴重度，但<strong>第 12 週起療效無法維持</strong>（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12199994/" target="_blank" rel="noopener noreferrer">Bakker et al., 2025</a>）。適合合併癌症食慾不振／體重減輕者。</td>
+              <td>半衰期極長（20–40 hr）、體重增加、食慾上升、高血脂、罕見顆粒球缺乏症、低血鈉、不可於 MAOI 停藥 14 天內使用。</td>
+            </tr>
+            <tr>
+              <td><strong>Amitriptyline</strong></td>
+              <td>10–50 mg</td>
+              <td>非憂鬱族群療效微弱且短暫；2025 年多中心 RCT（n=187）顯示 10–20 mg 療效劣於 CBT-I 且副作用顯著較多。</td>
+              <td>強烈抗膽鹼副作用（口乾、便秘、尿瀦留、譫妄）、心律不整／QT 延長、降癲癇閾值；心肌梗塞急性期或心衰竭不建議。</td>
+            </tr>
+            <tr>
+              <td><strong>Quetiapine / Olanzapine</strong><br>（抗精神病藥）</td>
+              <td>Quetiapine 25–100 mg<br>Olanzapine 2.5–5 mg</td>
+              <td><strong>無共病精神疾病者強烈反對使用</strong>。僅限合併重鬱症輔助、雙極性疾患、思覺失調或癌症止吐／增食慾之雙重目的。</td>
+              <td>代謝症候群、體重增加、姿勢性低血壓、QT 延長（Quetiapine 較顯著）、失智長者死亡率上升（應避免）。</td>
+            </tr>
+            <tr>
+              <td><strong>Gabapentin</strong></td>
+              <td>依共病調整</td>
+              <td>有限證據顯示延長睡眠時間，較適合合併<strong>酒精使用障礙</strong>或<strong>慢性神經痛</strong>之患者。</td>
+              <td>頭暈、嗜睡、平衡障礙；併用鴉片類增加呼吸抑制風險。</td>
+            </tr>
+            <tr>
+              <td><strong>OTC 抗組織胺</strong><br>（Diphenhydramine / Doxylamine）</td>
+              <td>Diphenhydramine 25–50 mg<br>Doxylamine 25 mg</td>
+              <td>Diphenhydramine 僅縮短入睡 ~8 分鐘、總睡眠 +12 分鐘，易產生耐受性；Doxylamine 缺乏現代 RCT 證據。</td>
+              <td>半衰期 9–12 hr；顯著抗膽鹼副作用，<strong>高齡者易致混亂與譫妄</strong>；青光眼、攝護腺肥大忌用。</td>
+            </tr>
+            <tr>
+              <td><strong>Melatonin（褪黑激素）</strong></td>
+              <td>1–5 mg（&lt;1 mg 可能同等有效；睡前數小時服）</td>
+              <td>2020 年傘狀回顧（12 篇統合分析）：僅對入睡有微小統計改善，<strong>對睡眠維持無效</strong>，臨床意義未定。美國屬膳食補充劑，實際含量與標示落差大且曾檢出未標示之血清素。</td>
+              <td>生動夢境／惡夢、頭痛、日間嗜睡；<strong>務必上鎖遠離兒童</strong>（美國兒童誤食急診量近年顯著上升）。</td>
+            </tr>
+            <tr>
+              <td><strong>草藥補充劑與大麻素</strong><br>（Valerian, Kava, CBD/THC）</td>
+              <td>不建議常規使用</td>
+              <td>14 篇草藥 RCT 統合分析顯示與安慰劑無差異；<strong>2026 年 Cochrane 回顧（9 篇試驗）</strong>證實醫用大麻對睡眠品質、總睡眠時間與日間功能皆<strong>無臨床顯著改善</strong>（<a href="https://pubmed.ncbi.nlm.nih.gov/42863850/" target="_blank" rel="noopener noreferrer">Varela et al., 2026</a>）。</td>
+              <td><strong>Kava 與 Valerian（纈草）罕見引發嚴重肝損傷</strong>；停用大麻常誘發持續數月的嚴重戒斷性失眠。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 8 -->
+    <section id="sec8">
+      <h2>8. 療效不佳處理、換藥與停藥減量策略</h2>
+
+      <h3>療效不佳或隔日嗜睡時的系統性排查</h3>
+      <ul>
+        <li><strong>檢視服藥時機與劑量</strong>：透過睡眠日誌確認是否過早或過晚服藥、劑量不足，或與高脂餐併服延遲起效（如 DORA、Ramelteon、Doxepin）。</li>
+        <li><strong>同類與跨類轉換</strong>：同類轉換主要用於非 BZD 類（基於半衰期微調，例如 Zolpidem IR 維持不足改 ER/Eszopiclone，或晨間宿醉改 Zaleplon）；若為療效完全不足或無法耐受該類副作用，則應<strong>跨類轉換不同機轉藥物</strong>。</li>
+        <li><strong>服藥頻率與療程</strong>：高度困擾者可先每晚規律服用 1–2 週以評估療效；低度困擾者可按需使用（PRN）。療程原則為「足以改善症狀並建立非藥物治療信心，但不超過必要時間」，長期使用者須定期嘗試減量或停藥。</li>
+      </ul>
+
+      <figure class="clinical-figure"><h3>圖 4｜停藥與換藥策略</h3><div class="table-wrap"><table><thead><tr><th>藥物</th><th>臨床重點</th></tr></thead><tbody><tr><td>長期 BZD</td><td>有生理依賴風險時避免突然停用，逐步減量並監測戒斷。</td></tr><tr><td>Zolpidem／Eszopiclone</td><td>換藥時可考慮先減量，尤其高於建議劑量者。停藥至開始新藥的間隔依原藥、劑量與新藥決定。</td></tr><tr><td>DORA／低劑量 doxepin／Ramelteon</td><td>依處方劑量使用時通常無需漸減，但仍應檢視失眠症狀與其他同時用藥。</td></tr><tr><td>標示外抗憂鬱劑或抗精神病藥</td><td>依原適應症、劑量、使用期間與戒斷風險規劃。</td></tr></tbody></table></div><figcaption>依原圖架構重製，參考 <a href="https://www.asam.org/quality-care/clinical-guidelines/benzodiazepine-tapering">ASAM 2025</a> 與 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10095217/">Alliance for Sleep 2023</a>。</figcaption></figure><h3>四種換藥方法操作定義（Table 5）</h3>
+      <ul>
+        <li><strong>慢速減藥</strong>：BZD 若有生理依賴風險，ASAM 2025 建議起始通常每 2–4 週減 5–10%，原則上每 2 週不超過 25%。依症狀調整、放慢或暫停減量，療程可需數月以上。其他藥物依個別指引與病況規劃。<a href="https://www.asam.org/quality-care/clinical-guidelines/benzodiazepine-tapering">ASAM 2025</a></li><li><strong>交叉減量轉換（Cross Taper）</strong>：原藥物逐步減量之同時，以低劑量導入新藥並漸增（<strong>僅限兩藥無交互作用時</strong>）。</li>
+        <li><strong>減藥後停等 1–2 天（Taper and Wait 1–2 Days）</strong>：適用於 Zolpidem 與 Eszopiclone，減量停藥後保留 1–2 天清除期，再啟動新藥。</li>
+        <li><strong>直接轉換</strong>：依藥物與劑量決定。長期服用 BZD 者須獨立評估劑量等效、戒斷及交互作用，避免自行換藥或停藥。</li></ul>
+    </section>
+
+    <!-- Section 9 -->
+    <section id="sec9">
+      <h2>9. 睡眠衛生實務指引（Table 9：Sleep Hygiene Guidelines）</h2>
+      <p>睡眠衛生可作為 CBT-I 的輔助措施。對慢性失眠，VA/DoD 指引建議優先提供結構化的 CBT-I：</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>實務建議項目</th>
+              <th>具體衛教執行細節</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>固定就寢與起床時間</strong></td>
+              <td>每日維持一致的作息時間，避免睡眠剝奪或夜間長時間清醒。</td>
+            </tr>
+            <tr>
+              <td><strong>避免午睡／小睡</strong></td>
+              <td>特別避免超過 1 小時或傍晚時段的午睡，以累積夜間睡眠驅動力。</td>
+            </tr>
+            <tr>
+              <td><strong>限制咖啡因</strong></td>
+              <td><strong>午餐後避免攝取咖啡因</strong>（午餐至睡前約為咖啡因 2 個半衰期，有助於睡前完成多數代謝）。</td>
+            </tr>
+            <tr>
+              <td><strong>睡前限制酒精</strong></td>
+              <td>酒精雖具初期鎮靜感，但代謝過程具反彈性興奮作用，且嚴重破壞睡眠結構。</td>
+            </tr>
+            <tr>
+              <td><strong>避免尼古丁</strong></td>
+              <td>尼古丁屬中樞興奮劑，睡前與夜間應完全避免。</td>
+            </tr>
+            <tr>
+              <td><strong>規律日間運動</strong></td>
+              <td>鼓勵白天運動（尤以<strong>睡前 4–6 小時</strong>最助入睡）；避免於<strong>睡前 2 小時內</strong>進行劇烈運動。</td>
+            </tr>
+            <tr>
+              <td><strong>安靜、黑暗與遠離螢幕</strong></td>
+              <td>善用遮光窗簾、眼罩、耳塞或白噪音；睡前避免電視與 3C 藍光，以免延遲生理時鐘。</td>
+            </tr>
+            <tr>
+              <td><strong>夜間不看時鐘</strong></td>
+              <td>避免半夜查看鬧鐘、手錶或手機時間，以免引發認知警醒而更難再度入睡。</td>
+            </tr>
+            <tr>
+              <td><strong>晚餐與宵夜原則</strong></td>
+              <td>傍晚攝取均衡且適量的晚餐，避免睡前大餐或宵夜（亦避免干擾 DORA / Doxepin / Ramelteon 吸收）。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 10 -->
+    <section id="sec10">
+      <h2>10. 獨立實證查核與核心文獻對照（Evidence Audit）</h2>
+      <div class="callout audit">
+        <div class="callout-title">證據查核總結（2026-11 獨立核對一級文獻）</div>
+        經交叉比對 PubMed、PMC 與 FDA 官方公告，下表整理原筆記的主要證據及其適用範圍，並附原始文獻供查閱：
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>查核主題</th>
+              <th>UpToDate 主張</th>
+              <th>獨立查核結果與原始文獻連結</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>一線治療與 AASM 指引</strong></td>
+              <td>CBT-I 為第一線；AASM 列 Doxepin 為睡眠維持選項、建議反對 Trazodone。</td>
+              <td><span class="pill pill-green">已核實</span> CBT-I 為第一線。AASM 2017 藥物指引對 doxepin 作弱推薦，對 trazodone 與 diphenhydramine 作不使用的弱建議（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5263087/" target="_blank" rel="noopener noreferrer">Sateia et al., J Clin Sleep Med 2017</a>；<a href="https://pubmed.ncbi.nlm.nih.gov/27998379/" target="_blank" rel="noopener noreferrer">PubMed</a>）。</td>
+            </tr>
+            <tr>
+              <td><strong>跨藥網路統合分析</strong></td>
+              <td>154 篇雙盲 RCT（近 4.5 萬人）顯示 Eszopiclone 與 Lemborexant 綜合表現較佳但各有安全限制。</td>
+              <td><span class="pill pill-green">已核實</span> 精確納入 154 篇雙盲 RCT（30 種介入、44,089 人），結論完全一致（<a href="https://pubmed.ncbi.nlm.nih.gov/35843245/" target="_blank" rel="noopener noreferrer">De Crescenzo et al., Lancet 2022</a>）。</td>
+            </tr>
+            <tr>
+              <td><strong>Z-drugs 黑框警語</strong></td>
+              <td>FDA 於 2019 年為 Zolpidem、Zaleplon、Eszopiclone 新增複雜睡眠行為黑框警語與既往病史禁忌。</td>
+              <td><span class="pill pill-green">已核實</span> 2019/04/30 FDA 正式發布安全警訊，明訂即使單次最低劑量亦可能發生，曾發生者列禁忌（<a href="https://www.fda.gov/safety/medical-product-safety-information/certain-prescription-insomnia-medicines-new-boxed-warning-due-risk-serious-injuries-caused" target="_blank" rel="noopener noreferrer">美國 FDA 安全公告</a>）。</td>
+            </tr>
+            <tr>
+              <td><strong>高齡不適當用藥替代方案</strong></td>
+              <td>Beers Criteria 將所有 BZD 與 Z-drugs 列為高齡 PIM，建議改選非藥物或 DORA / 低劑量 Doxepin / Ramelteon。</td>
+              <td><span class="pill pill-green">已核實</span> 2025 年 AGS Beers Criteria 替代治療專家共識明確重申避開 BZD 與 Z-drugs 並優先非藥物與安全替代（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12448428/" target="_blank" rel="noopener noreferrer">Steinman et al., J Am Geriatr Soc 2025</a>）。</td>
+            </tr>
+            <tr>
+              <td><strong>Lemborexant 長期療效</strong></td>
+              <td>改善主客觀入睡與維持且療效維持至 12 個月，停藥無明顯反彈。</td>
+              <td><span class="pill pill-green">已核實</span> SUNRISE 2（n=949）與 2025 年統合分析證實 5/10 mg 顯著縮短 SOL（-9.2/-12.6 min）與 WASO（-19.9/-22.2 min），嗜睡 RR=4.95（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7487867/" target="_blank" rel="noopener noreferrer">Kärppä et al., 2020</a>；<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12511177/" target="_blank" rel="noopener noreferrer">2025 Meta-Analysis</a>）。</td>
+            </tr>
+            <tr>
+              <td><strong>Daridorexant 50 mg 優勢</strong></td>
+              <td>兩項第三期試驗（&gt;1,800 人）證實 50 mg 療效優於 25 mg 且不顯著增加副作用。</td>
+              <td><span class="pill pill-green">已核實</span> 雙中心第三期試驗及高齡亞組分析證實 50 mg 改善夜間睡眠與日間功能且 ≥65 歲耐受性與年輕族群相當（<a href="https://pubmed.ncbi.nlm.nih.gov/35065036/" target="_blank" rel="noopener noreferrer">Mignot et al., 2022</a>；<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9553778/" target="_blank" rel="noopener noreferrer">Older Subgroup 2022</a>）。</td>
+            </tr>
+            <tr>
+              <td><strong>Mirtazapine / Amitriptyline 最新試驗</strong></td>
+              <td>2025 年 DREAMING 試驗（n=80）顯示 Mirtazapine 7.5–15 mg 第 6 週有效但後續未維持。</td>
+              <td><span class="pill pill-green">已核實</span> 荷蘭基層醫療雙盲安慰劑對照 RCT 結論完全一致，證實長期慢性使用效益未持續（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12199994/" target="_blank" rel="noopener noreferrer">Bakker et al., Br J Gen Pract 2025</a>）。</td>
+            </tr>
+            <tr>
+              <td><strong>安眠藥與自殺意念（REST-IT）</strong></td>
+              <td>REST-IT 評估 zolpidem-CR 加上 SSRI 對自殺意念的影響。</td>
+              <td><span class="pill pill-green">已核實</span> 主要 SSI 終點未達顯著差異。次要 C-SSRS 量表觀察到差異（-0.26, 95% CI -0.50 至 -0.02）（<a href="https://pubmed.ncbi.nlm.nih.gov/31537089/" target="_blank" rel="noopener noreferrer">McCall et al., Am J Psychiatry 2019</a>）。</td>
+            </tr>
+            <tr>
+              <td><strong>換藥減量與醫用大麻實證</strong></td>
+              <td>DORA / Doxepin / Ramelteon 無須減量；2026 Cochrane 顯示醫用大麻對失眠無顯著改善。</td>
+              <td><span class="pill pill-green">已核實</span> Alliance for Sleep 2023 指引確認無須減量（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10095217/" target="_blank" rel="noopener noreferrer">Watson et al., 2023</a>）；Cochrane 2026 年 10 月更新（CD016216）確認醫用大麻無臨床顯著效益（<a href="https://pubmed.ncbi.nlm.nih.gov/42863850/" target="_blank" rel="noopener noreferrer">Varela et al., 2026</a>）。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  <section class="kp-related" id="related-articles" aria-label="相關文章"><h2>相關文章</h2><ul><li><a href="dementia-prevention-and-care.html">超高齡社會下的失智症防治：從早期篩檢、生物標記到全人共同照護</a> · 延伸閱讀失智症的睡眠行為困擾與非藥物照護。</li></ul></section></main>
+<footer>
+  本圖文解說整理自 UpToDate《Pharmacotherapy for insomnia in adults》（Topic 97868 v58.0，最後更新 2026/11/05），並於 2026/11/24 完成一級文獻實證查核。僅供臨床醫療專業進修與參考，實際處方請依個別病人狀況與台灣現行藥品仿單／健保規範調整。
+</footer>
+
+</body>
+</html>
