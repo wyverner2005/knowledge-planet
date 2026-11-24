@@ -102,6 +102,7 @@
     $("#planet-directory").replaceChildren(...data.categories.map(category => {
       const count = planetArticles(category.id).length;
       const item = button("directory-planet" + (count ? "" : " dimmed"), "", () => navigate(category.id));
+      item.dataset.planet = category.id;
       item.style.setProperty("--planet-color", appearance[category.id].color);
       item.setAttribute("aria-pressed", String(state.planet === category.id));
       const dot = element("span", "mini-planet");
@@ -124,9 +125,11 @@
     if (state.planet) {
       const topicNames = topicsFor(state.planet);
       const all = button("topic-filter", "全部主題", () => navigate(state.planet));
+      all.dataset.topic = "";
       all.setAttribute("aria-pressed", String(!state.topic && !state.note));
       topicControls.push(all, ...topicNames.map(topic => {
         const item = button("topic-filter", topic, () => navigate(state.planet, topic));
+        item.dataset.topic = topic;
         item.setAttribute("aria-pressed", String(state.topic === topic));
         return item;
       }));
@@ -316,16 +319,25 @@
     if (mode === "map" && wasHidden) fitCamera();
   }
   function render(resetCamera = false) {
+    const previous = document.activeElement;
+    const directoryFocus = previous?.closest("#planet-directory") ? previous.dataset.planet : null;
+    const topicFocus = previous?.closest("#topic-filters") ? previous.dataset.topic : null;
     renderDirectory(); renderBreadcrumbs(); renderArticles(); renderGrid();
     const focusedLabel = document.activeElement?.closest("#map-nodes") ? document.activeElement.getAttribute("aria-label") : null;
     nodes.replaceChildren(); lines.replaceChildren();
     state.planet ? focusedMap() : overviewMap();
-    lines.hidden = !state.planet && !$("#show-connections").checked;
+    lines.toggleAttribute("hidden", !state.planet && !$("#show-connections").checked);
     setMode(state.mode, false);
     if (resetCamera) fitCamera();
     if (focusedLabel) {
       const next = [...nodes.querySelectorAll("button")].find(node => node.getAttribute("aria-label") === focusedLabel);
       (next || $("#breadcrumbs button:last-child"))?.focus({ preventScroll: true });
+    }
+    if (directoryFocus !== null) {
+      [...$("#planet-directory").children].find(node => node.dataset.planet === directoryFocus)?.focus({ preventScroll: true });
+    }
+    if (topicFocus !== null) {
+      [...$("#topic-filters").children].find(node => node.dataset.topic === topicFocus)?.focus({ preventScroll: true });
     }
   }
 
@@ -334,7 +346,7 @@
   $("#all-planets").addEventListener("click", () => navigate());
   $("#map-view").addEventListener("click", () => setMode("map"));
   $("#list-view").addEventListener("click", () => setMode("list"));
-  $("#show-connections").addEventListener("change", event => { lines.hidden = !event.target.checked; });
+  $("#show-connections").addEventListener("change", event => { lines.toggleAttribute("hidden", !event.target.checked); });
   $("#zoom-in").addEventListener("click", () => zoom(1.3));
   $("#zoom-out").addEventListener("click", () => zoom(1 / 1.3));
   $("#zoom-reset").addEventListener("click", fitCamera);
