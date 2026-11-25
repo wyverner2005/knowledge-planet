@@ -342,7 +342,7 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
   --kp-note-surface: var(--kp-dark-panel);
   --kp-note-inset: var(--kp-dark-raised);
   --kp-note-heading: var(--kp-brass);
-  --kp-note-title: #F4E9D8;
+  --kp-note-title: #BDD7EE;
 }
 
 .kp-note .kp-note-hero {
