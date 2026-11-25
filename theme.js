@@ -138,6 +138,69 @@
   });
   systemTheme.addEventListener("change", applyTheme);
 
+  // Each article can keep its own opening metrics or choose a compact guide layout.
+  const articleGuides = {
+    "adult-insomnia-pharmacotherapy": ["steps", [0, "先確認診斷與第一線治療"], [1, "依失眠型態選藥"], [7, "檢視換藥與減量"]],
+    "baloxavir-vs-oseltamivir": ["compare", [2, "病毒清除"], [3, "症狀緩解"], [7, "重度免疫低下"]],
+    "capvaxive-pcv21": ["cards", [2, "核准適應症"], [3, "台灣公費資格"], [4, "STRIDE 臨床實證"]],
+    "cgvhd-manifestations-and-diagnosis": ["steps", [1, "辨識器官症狀"], [2, "比對 NIH 診斷分類"], [3, "評估嚴重度"]],
+    "cgvhd-treatment-and-targeted-evidence": ["steps", [0, "確認嚴重度"], [2, "評估類固醇與減量"], [3, "查閱後線標靶"]],
+    "hba1c-and-glucose-variability": ["cards", [0, "血糖 CV 門檻"], [2, "飲食、運動與作息"], [3, "門診監測工具"]],
+    "inclisiran-nhi-coverage": ["steps", [0, "核對申請資格"], [1, "安排注射時程"], [2, "確認續用條件"]],
+    "nhi-hepatitis-c-daa-coverage-2026-12": ["steps", [0, "先看新規重點"], [1, "比對修訂條文"], [4, "檢視臨床選藥"]],
+    "nhi-lipid-lowering-coverage-2026-12": ["compare", [0, "異動品項與支付價"], [2, "ASCVD 門檻"], [3, "複方給付"]],
+  };
+
+  function applyArticleDesign(main, headings, hashes) {
+    const title = document.querySelector("h1");
+    const hero = title?.closest("header, .hero");
+    if (hero) {
+      hero.classList.add("kp-note-hero");
+      const ownGuide = hero.querySelector(".dx-quick, .tri-strip, .grid-cols-2");
+      const leadMetrics = hero.nextElementSibling;
+      if (leadMetrics?.matches(".verdict-strip, .kpi-strip, .triad")) {
+        leadMetrics.classList.add("kp-note-metrics");
+        hero.append(leadMetrics);
+      } else if (!ownGuide) {
+        const slug = location.pathname.split("/").pop().replace(/\.html$/, "");
+        const [layout, ...topics] = articleGuides[slug] ?? ["cards",
+          ...headings.slice(0, 3).map((heading, index) => [index, heading.textContent.trim()])];
+        const guide = document.createElement("nav");
+        guide.className = "kp-note-guide";
+        guide.dataset.layout = hero.dataset.guideLayout || layout;
+        guide.setAttribute("aria-label", "文章重點");
+        for (const [index, label] of topics) {
+          if (!hashes[index]) continue;
+          const link = document.createElement("a");
+          link.href = "#" + encodeURIComponent(hashes[index]);
+          link.textContent = label;
+          guide.append(link);
+        }
+        if (guide.childElementCount) hero.append(guide);
+      }
+    }
+
+    for (const heading of headings) {
+      const section = heading.closest("section");
+      if (section && !section.matches(".kp-related, .dx-card")) section.classList.add("kp-note-section");
+    }
+
+    for (const table of main.querySelectorAll("table")) {
+      const next = table.parentElement;
+      const frame = /auto|scroll/.test(getComputedStyle(next).overflowX) ? next : document.createElement("div");
+      if (frame !== next) {
+        table.before(frame);
+        frame.append(table);
+      }
+      frame.classList.add("kp-note-table");
+      if (!frame.hasAttribute("tabindex")) frame.tabIndex = 0;
+      if (!frame.hasAttribute("aria-label")) {
+        frame.setAttribute("aria-label", "臨床資料表，可左右滑動");
+        frame.setAttribute("role", "region");
+      }
+    }
+  }
+
   function addArticleContents() {
     const main = document.querySelector(".kp-note main");
     if (!main) return;
@@ -155,6 +218,7 @@
       assigned.add(id);
       return id;
     });
+    applyArticleDesign(main, headings, hashes);
     const existing = document.querySelector(".kp-note .toc");
     if (existing) {
       existing.setAttribute("aria-label", "文章目錄");
@@ -195,9 +259,11 @@
 
     // Generated anchors are added after parsing. Resolve direct search links now.
     if (location.hash) {
-      const id = location.hash.slice(1);
-      const target = hashes.find(hash => encodeURIComponent(hash) === id);
-      if (target) document.getElementById(target)?.scrollIntoView();
+      try {
+        document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+      } catch {
+        // A malformed URL fragment has no matching section.
+      }
     }
   }
 

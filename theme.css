@@ -331,3 +331,122 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
 .kp-score-panel h3, .kp-score-panel h4 { margin: 0; }
 .kp-score-panel p:empty { display: none; }
 .kp-score-rules summary { cursor: pointer; font-weight: 650; }
+
+/* Article presentation shared by the medical notes. */
+.kp-note {
+  --kp-note-surface: #fffdf5;
+  --kp-note-inset: #faf3de;
+  --kp-note-heading: #294750;
+}
+.kp-note[data-theme="dark"] {
+  --kp-note-surface: var(--kp-dark-panel);
+  --kp-note-inset: var(--kp-dark-raised);
+  --kp-note-heading: var(--kp-brass);
+}
+
+.kp-note .kp-note-hero {
+  box-sizing: border-box;
+  max-width: 82rem;
+  margin-inline: auto;
+  padding: clamp(.95rem, 2.8vw, 1.8rem);
+  border: 1px solid var(--kp-control-border);
+  border-radius: .8rem;
+  background: var(--kp-note-surface);
+  color: var(--kp-control-ink, #2b2a27);
+}
+.kp-note .kp-note-hero h1 {
+  color: var(--kp-note-heading);
+  font-family: var(--kp-heading-font);
+  font-size: clamp(1.6rem, 3.8vw, 2.8rem);
+  line-height: 1.28;
+  overflow-wrap: anywhere;
+}
+.kp-note .kp-note-hero :is(.hero-inner, .source-meta, .hero-meta) { max-width: none; }
+.kp-note .kp-note-hero p { color: inherit; }
+.kp-note .kp-note-hero > * { min-width: 0; }
+.kp-note .kp-note-metrics {
+  margin: .9rem 0 0;
+  min-width: 0;
+  padding: .65rem;
+  border: 1px solid var(--kp-control-border);
+  border-radius: .55rem;
+  background: var(--kp-note-inset);
+}
+.kp-note-guide {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: .55rem;
+  grid-column: 1 / -1;
+  margin-top: .9rem;
+}
+.kp-note .kp-note-guide a {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+  padding: .45rem .65rem;
+  border: 1px solid var(--kp-control-border);
+  border-radius: .5rem;
+  background: var(--kp-note-inset);
+  color: var(--kp-note-heading);
+  font: 700 .92rem/1.4 system-ui, sans-serif;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.kp-note .kp-note-guide a:hover { text-decoration: underline; }
+.kp-note-guide[data-layout="steps"] { counter-reset: guide-step; }
+.kp-note-guide[data-layout="steps"] a::before {
+  counter-increment: guide-step;
+  content: counter(guide-step);
+  display: grid;
+  flex: 0 0 1.5rem;
+  place-items: center;
+  height: 1.5rem;
+  margin-inline-end: .45rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+.kp-note .kp-note-guide[data-layout="compare"] a {
+  border-inline-start: .25rem solid var(--kp-note-heading);
+}
+.kp-note .kp-note-section {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0 0 1.2rem;
+  padding: clamp(.8rem, 2.2vw, 1.45rem);
+  border: 1px solid var(--kp-control-border);
+  border-radius: .72rem;
+  background: var(--kp-note-surface);
+  color: var(--kp-control-ink, #2b2a27);
+}
+.kp-note .kp-note-section h2 {
+  color: var(--kp-note-heading);
+  font-family: var(--kp-heading-font);
+  line-height: 1.35;
+}
+.kp-note .kp-note-section > h2 {
+  padding-bottom: .45rem;
+  border-bottom: 1px solid var(--kp-control-border);
+}
+.kp-note .kp-note-table {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+.kp-note .kp-note-table table { min-width: min(30rem, 100vw); }
+.kp-note .kp-note-table:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.kp-note main :is(figure, .table-wrap, .kp-image-trigger) { min-width: 0; max-width: 100%; }
+.kp-note main figure img { max-width: 100%; height: auto; }
+.kp-note main .kp-image-trigger > svg { display: block; height: auto; }
+.kp-note .kp-note-section :is(p, li, td, figcaption) { overflow-wrap: anywhere; }
+
+@media (max-width: 960px) {
+  .kp-note .kp-note-hero,
+  .kp-note .kp-note-section,
+  .kp-note .kp-note-section figure { min-width: 0; }
+  .kp-note .kp-note-section:is(.band, .full-band) { margin-inline: 0; }
+}
+@media (max-width: 580px) {
+  .kp-note-guide { grid-template-columns: 1fr; }
+}
