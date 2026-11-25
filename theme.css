@@ -452,7 +452,7 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
   .kp-note-guide { grid-template-columns: 1fr; }
 }
 
-/* Solid specialty pills use the same readable palette in both themes. */
+/* Specialty labels use a soft tint and an outlined rounded rectangle. */
 [data-specialty="hematology"] { --kp-specialty-hue: 260; }
 [data-specialty="sleep-medicine"] { --kp-specialty-hue: 234; }
 [data-specialty="neurology"] { --kp-specialty-hue: 216; }
@@ -465,18 +465,28 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
 [data-specialty="rheumatology"] { --kp-specialty-hue: 298; }
 [data-specialty="clinical-pharmacology"] { --kp-specialty-hue: 192; }
 
+.kp-specialty-chip[data-specialty] {
+  --kp-specialty-fill: hsl(var(--kp-specialty-hue, 204) 70% 92%);
+  --kp-specialty-border: hsl(var(--kp-specialty-hue, 204) 38% 72%);
+  --kp-specialty-text: hsl(var(--kp-specialty-hue, 204) 55% 29%);
+}
+[data-theme="dark"] .kp-specialty-chip[data-specialty] {
+  --kp-specialty-fill: hsl(var(--kp-specialty-hue, 204) 23% 24%);
+  --kp-specialty-border: var(--kp-dark-edge);
+  --kp-specialty-text: hsl(var(--kp-specialty-hue, 204) 77% 86%);
+}
 .kp-home .kp-specialty-chip[data-specialty],
 .kp-note .kp-specialty-chip[data-specialty],
 .kp-note[data-theme="dark"] a.kp-specialty-chip[data-specialty],
 .kp-note .kp-note-hero .kp-specialty-chip[data-specialty] {
   display: inline-flex;
   align-items: center;
-  padding: .25rem .8rem;
-  border: 0;
-  border-radius: 100vmax;
-  background: hsl(var(--kp-specialty-hue, 204) 84% 73%);
-  color: #201a20;
-  font-weight: 750;
+  padding: .15rem .55rem;
+  border: 1px solid var(--kp-specialty-border);
+  border-radius: .4rem;
+  background: var(--kp-specialty-fill);
+  color: var(--kp-specialty-text);
+  font-weight: 600;
 }
 .kp-note .kp-note-hero .kp-specialty-chip[data-specialty] a { color: inherit; }
 
