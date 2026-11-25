@@ -8,27 +8,23 @@
 <title>急性骨髓性白血病（AML）：臨床表現、病理特徵與診斷</title>
 <link rel="stylesheet" href="../theme.css">
 <script src="../theme.js" defer></script>
-<style>
-.aml-dx { max-width: 73rem; margin: auto; padding: 1rem clamp(.8rem,3vw,2rem) 2rem; line-height: 1.65; }
-.aml-dx > header { padding-block: 1.7rem; }
-.aml-dx h1 { margin: 0 0 .5rem; font-size: clamp(1.6rem,4vw,2.7rem); line-height: 1.2; }
-.aml-dx section { margin-block: 0 1.6rem; scroll-margin-top: 1rem; }
-.aml-dx section blockquote { margin-inline: 0; padding: .45rem .9rem; border-inline-start: .25rem solid #bc6356; }
-.aml-dx .dx-table, .aml-dx .dx-figure > div { overflow-x: auto; }
-.aml-dx table { width: 100%; min-width: 32rem; border-collapse: collapse; }
-.aml-dx :is(th,td) { text-align: start; vertical-align: top; padding: .55rem .65rem; border: 1px solid var(--kp-control-border); }
-.aml-dx th { background: var(--kp-control-bg); }
-.aml-dx figure { margin: 1rem 0; }
-.aml-dx .kp-image-trigger:has(svg), .aml-dx figure svg { min-width: 43rem; }
-.aml-dx figure svg { display: block; width: 100%; height: auto; background: #fffdf5; }
-</style>
-</head>
+
+<link rel="stylesheet" href="../assets/aml-diagnosis.css"><script src="../assets/aml-diagnosis.js" defer></script></head>
 <body>
 <main class="aml-dx">
 <nav class="kp-controls kp-article-controls" aria-label="文章導覽"><a class="kp-control" href="../">← 返回知識星球</a><button class="kp-control kp-theme-toggle" type="button" hidden>深色模式</button></nav>
-<nav class="kp-categories" aria-label="專科分類"><a class="kp-category" href="../?category=hematology">血液科 · Hematology</a></nav>
-<header><h1>急性骨髓性白血病（AML）：臨床表現、病理特徵與診斷</h1><p>從皮膚和齒齦浸潤、APL 急症，到骨髓形態、流式免疫表型及 WHO5／ICC 診斷門檻。</p></header>
-<section id="overview" class="level2">
+
+<header class="dx-hero">
+  <ul class="dx-hero-meta" aria-label="文章資訊"><li><a href="../?category=hematology">血液腫瘤科 · Hematology</a></li><li>UpToDate · ELN · WHO5 · ICC</li><li>原稿更新 <time datetime="2026-09-22">2026 年 9 月 22 日</time></li></ul>
+  <h1>急性骨髓性白血病（AML）：臨床表現、病理特徵與診斷</h1>
+  <p>AML 的異常髓系前驅細胞在骨髓增生，抑制正常造血，引起貧血、感染與出血，也可能浸潤皮膚、齒齦等組織。本文從初診急症出發，說明如何整合骨髓形態、流式細胞儀與遺傳結果，依 WHO5 或 ICC 完成分類。</p>
+  <dl class="dx-quick">
+    <div><dt>初診急症</dt><dd><a href="#emergencies">疑似 APL，立即處置</a></dd></div>
+    <div><dt>髓外浸潤</dt><dd><a href="#manifestations">皮膚與齒齦</a></dd></div>
+    <div><dt>骨髓檢查</dt><dd><a href="#pathology">形態＋流式＋遺傳</a></dd></div>
+    <div><dt>診斷芽細胞門檻</dt><dd><a href="#classification">依亞型與分類</a></dd></div>
+  </dl>
+</header><section id="overview" class="level2 dx-card">
 <h2>1. 疾病概論與流行病學</h2>
 <p><strong>急性骨髓性白血病（Acute myeloid leukemia, AML）</strong>是一組具高度異質性的侵襲性血液惡性腫瘤，特徵為分化受阻的髓系前驅細胞（granulocytic、monocytic、erythroid 或 megakaryocytic）發生克隆性增生（clonal proliferation），造成白血病芽細胞（leukemic blasts）堆積於骨髓、周邊血或其他組織，並導致正常血球減少。</p>
 <ul>
@@ -40,12 +36,12 @@
 <li><strong>前驅血液狀態</strong>：克隆性造血（CHIP、CCUS）、骨髓增生異常症候群／腫瘤（MDS）、骨髓增生性腫瘤（MPN）、陣發性夜間血紅素尿症（PNH）。</li>
 </ul></li>
 </ul>
-<blockquote>
+<blockquote class="dx-callout dx-info">
 <p>💡 <strong>臨床註記</strong>：急性前骨髓細胞白血病（Acute promyelocytic leukemia, APL）為 AML 中極易併發 DIC 出血的獨特亞型，高度懷疑時應送 <em>PML::RARA</em>，並立即啟動 ATRA 與凝血支持。<a href="https://pubmed.ncbi.nlm.nih.gov/30803991/">ELN APL</a></p>
 </blockquote>
 </section>
 
-<section id="manifestations" class="level2">
+<section id="manifestations" class="level2 dx-card">
 <h2>2. 臨床表現與髓外浸潤</h2>
 <section id="血球低下相關症狀cytopenia-related" class="level3">
 <h3>2.1 血球低下相關症狀（Cytopenia-related）</h3>
@@ -66,14 +62,12 @@
 <li><strong>中樞神經系統（CNS）</strong>：無神經症狀的成人通常不常規做腰椎穿刺。神經症狀或特定高風險特徵須由血液科個別評估。</li>
 <li><strong>器官腫大</strong>：可見肝脾腫大。顯著淋巴結或脾腫大時也須鑑別 ALL、CML 急變等疾病。</li>
 </ul>
-<p><a href="https://dermnetnz.org/imagedetail/10524-leukaemia-cutis">白血病皮膚浸潤圖例</a> <em>圖 1｜白血病皮膚浸潤（Leukemia cutis，讀圖提示）：前臂伸側可見多發性紫紅色／灰藍色結節，常見於單核球系或骨髓單核球系 AML。</em></p>
-<p><a href="https://imagebank.hematology.org/image/65029/gingival-infiltration-by-acute-myeloid-leukemia-in-a-patient-with-a-monocytic-subtype">單核球亞型 AML 齒齦浸潤圖例</a> <em>圖 2｜急性單核母細胞白血病之齒齦浸潤（Gingival infiltration，讀圖提示）：上排（A）與下排（B）齒齦顯著肥厚腫脹，為單核球亞型 AML 典型線索。</em></p>
-</section>
+<div class="dx-figure-grid"><figure class="dx-photo"><img src="../assets/aml-dx-leukemia-cutis.webp" width="840" height="802" loading="lazy" decoding="async" alt="前臂近手腕的紅紫色斑塊，中央可見潰瘍，周圍帶脫屑"><figcaption><strong>圖 1｜白血病皮膚浸潤</strong><p>紅紫色斑塊中央可見潰瘍，邊緣有脫屑。白血病皮膚浸潤也可呈丘疹或結節，必要時以切片鑑別。</p><small><a href="https://doi.org/10.7759/cureus.107112">Saied 等，Cureus（2026），圖 1</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · 裁切與縮圖</small></figcaption></figure><figure class="dx-photo"><img src="../assets/aml-dx-gingival-enlargement.jpg" width="685" height="479" loading="lazy" decoding="async" alt="不同方向的口內照片顯示上下排牙齒周圍瀰漫性牙齦增厚"><figcaption><strong>圖 2｜AML 的齒齦浸潤</strong><p>注意齒間與牙齦邊緣的瀰漫性增厚。結合血球計數與其他臨床線索評估。</p><small><a href="https://doi.org/10.1007/s41894-024-00129-4">Kiramira、Cores 與 Gaida，Periodontal and Implant Research（2024），圖 1</a> · <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></small></figcaption></figure></div></section>
 </section>
 
-<section id="emergencies" class="level2">
+<section id="emergencies" class="level2 dx-card">
 <h2>3. 內科急症與初始處置警語</h2>
-<blockquote>
+<blockquote class="dx-callout dx-warn">
 <p>🚨 <strong>臨床警語</strong>：等待分子分型期間，須優先辨識並處理下列致命急症。</p>
 </blockquote>
 <div class="dx-table" tabindex="0" role="region" aria-label="臨床對照表，可左右滑動"><table>
@@ -110,7 +104,7 @@
 </table>
 </div></section>
 
-<section id="evaluation" class="level2">
+<section id="evaluation" class="level2 dx-card">
 <h2>4. 臨床、檢驗、影像與骨髓病理評估</h2>
 <p>遵循 <a href="https://ashpublications.org/blood/article/140/12/1345/485985">2022 ELN 指引</a> 與 <a href="https://pubmed.ncbi.nlm.nih.gov/28225303/">CAP-ASH 診斷指引</a>。</p>
 <figure class="dx-figure"><div tabindex="0" aria-label="診斷流程圖，手機可左右滑動"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 560" style="font-family:'Noto Sans CJK TC',sans-serif" aria-label="AML 初診急症、病理評估與分類流程" role="img">
@@ -204,7 +198,7 @@
 <h3>4.1 基礎檢驗與高白血球「偽檢驗異常」</h3>
 <ul>
 <li><strong>常規檢驗</strong>：CBC/DC、抹片判讀、PT、PTT、Fibrinogen、CMP、LDH、Uric acid、Phosphorus。</li>
-<li>⚠️ <strong>高白血球造成的偽異常（Spurious Lab Abnormalities）</strong>：
+<li class="dx-callout dx-warn">⚠️ <strong>高白血球造成的偽異常（Spurious Lab Abnormalities）</strong>：
 <ul>
 <li><strong>偽低血糖</strong>：試管內白血球持續代謝消耗葡萄糖。</li>
 <li><strong>偽高血鉀</strong>：凝血破裂、延遲處理或氣送管震盪造成細胞溶血釋出鉀離子，須溫和運送並迅速處理。</li>
@@ -233,7 +227,7 @@
 </section>
 </section>
 
-<section id="pathology" class="level2">
+<section id="pathology" class="level2 dx-card">
 <h2>5. 病理特徵、形態學與表面抗原（Table 1）</h2>
 <section id="周邊血與骨髓形態" class="level3">
 <h3>5.1 周邊血與骨髓形態</h3>
@@ -241,12 +235,11 @@
 <li><strong>周邊血</strong>：白血球可高、低或正常。常伴正球性貧血或血小板低下，沒有周邊血芽細胞也不能排除 AML。</li>
 <li><strong>骨髓形態</strong>：多為高細胞密度，典型髓系芽細胞具大核、明顯核仁、淡藍胞質。<strong>Auer rods（奧爾氏小體）</strong>為粉紅／紅色桿狀胞質結構，支持髓系分化，須結合形態、流式與遺傳結果。</li>
 </ul>
-<p><a href="https://commons.wikimedia.org/wiki/File:Myeloblast_with_Auer_rod.jpg">髓系芽細胞中的 Auer rod 圖例</a> <em>圖 3｜急性骨髓性白血病之髓系芽細胞與奧爾氏小體（Myeloblasts with Auer rods，讀圖提示）：箭頭處為細胞質內粉紅／紅色桿狀結構，是髓系分化的形態線索。</em></p>
-</section>
+<figure class="dx-photo dx-photo-detail"><img src="../assets/aml-dx-auer-rod.webp" width="164" height="133" loading="lazy" decoding="async" alt="髓系芽細胞的紫色細胞核旁可見細長的桿狀胞質結構"><figcaption><strong>圖 3｜髓系芽細胞的 Auer rod</strong><p>觀察細胞核左側的細長桿狀胞質結構。Auer rod 支持髓系分化。</p><small><a href="https://commons.wikimedia.org/wiki/File:Myeloblast_with_Auer_rod.jpg">AFIP Atlas of Tumor Pathology／PEIR，Wikimedia Commons</a> · 公有領域</small></figcaption></figure></section>
 <section id="aml-表面抗原表現頻率calgb-8361" class="level3">
 <h3>5.2 AML 表面抗原表現頻率（CALGB 8361）</h3>
 <p>下表為 CALGB 8361 隊列的標記表現，以當時檢測條件與病例組成為準。流式須綜合多項標記及亞型。APL 常見 HLA-DR、CD34 陰性，部分病例可見 CD2。</p>
-<div class="dx-table" tabindex="0" role="region" aria-label="臨床對照表，可左右滑動"><table>
+<div class="dx-filters" role="group" aria-label="篩選抗原表現表" data-dx-table="antigen-table" hidden><button type="button" aria-pressed="true" data-dx-filter="all">全部（18 項）</button><button type="button" aria-pressed="false" data-dx-filter="high">高頻陽性（初診 ≥50%）</button><button type="button" aria-pressed="false" data-dx-filter="lymphoid">淋巴系共表現</button></div><div class="dx-table" tabindex="0" role="region" aria-label="臨床對照表，可左右滑動"><table id="antigen-table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">表面抗原 (Antigen)</th>
@@ -256,109 +249,109 @@
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr class="odd" data-dx-category="lymphoid">
 <td style="text-align: left;">CD2</td>
 <td style="text-align: center;">11%</td>
 <td style="text-align: center;">22%</td>
 <td style="text-align: left;">常見於 APL 共表現</td>
 </tr>
-<tr class="even">
+<tr class="even" data-dx-category="lymphoid">
 <td style="text-align: left;">CD3</td>
 <td style="text-align: center;">2%</td>
 <td style="text-align: center;">0%</td>
 <td style="text-align: left;">T 細胞特異標記</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-dx-category="high lymphoid">
 <td style="text-align: left;"><strong>CD4<sup>dim</sup></strong></td>
 <td style="text-align: center;"><strong>72%</strong></td>
 <td style="text-align: center;"><strong>78%</strong></td>
 <td style="text-align: left;">多數病例呈弱陽性</td>
 </tr>
-<tr class="even">
+<tr class="even" data-dx-category="lymphoid">
 <td style="text-align: left;">CD7</td>
 <td style="text-align: center;">22%</td>
 <td style="text-align: center;">30%</td>
 <td style="text-align: left;">常見異常共表現之 T 系標記</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-dx-category="lymphoid">
 <td style="text-align: left;">CD8</td>
 <td style="text-align: center;">1%</td>
 <td style="text-align: center;">5%</td>
 <td style="text-align: left;">極少表現</td>
 </tr>
-<tr class="even">
+<tr class="even" data-dx-category="other">
 <td style="text-align: left;">CD11b</td>
 <td style="text-align: center;">41%</td>
 <td style="text-align: center;">37%</td>
 <td style="text-align: left;">髓系／單核球成熟標記</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-dx-category="high">
 <td style="text-align: left;"><strong>CD13</strong></td>
 <td style="text-align: center;"><strong>98%</strong></td>
 <td style="text-align: center;"><strong>97%</strong></td>
 <td style="text-align: left;">最普遍之泛髓系標記</td>
 </tr>
-<tr class="even">
+<tr class="even" data-dx-category="other">
 <td style="text-align: left;">CD14</td>
 <td style="text-align: center;">12%</td>
 <td style="text-align: center;">8%</td>
 <td style="text-align: left;">單核球分化標記</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-dx-category="high">
 <td style="text-align: left;"><strong>CD15</strong></td>
 <td style="text-align: center;"><strong>82%</strong></td>
 <td style="text-align: center;"><strong>78%</strong></td>
 <td style="text-align: left;">顆粒球／單核球高頻標記</td>
 </tr>
-<tr class="even">
+<tr class="even" data-dx-category="other">
 <td style="text-align: left;">CD16</td>
 <td style="text-align: center;">2%</td>
 <td style="text-align: center;">3%</td>
 <td style="text-align: left;">極少表現</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-dx-category="lymphoid">
 <td style="text-align: left;">CD19</td>
 <td style="text-align: center;">5%</td>
 <td style="text-align: center;">8%</td>
 <td style="text-align: left;">特定見於 <em>RUNX1::RUNX1T1</em> AML</td>
 </tr>
-<tr class="even">
+<tr class="even" data-dx-category="high">
 <td style="text-align: left;"><strong>CD32</strong></td>
 <td style="text-align: center;"><strong>76%</strong></td>
 <td style="text-align: center;"><strong>74%</strong></td>
 <td style="text-align: left;">髓系高頻表現</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-dx-category="high">
 <td style="text-align: left;"><strong>CD33</strong></td>
 <td style="text-align: center;"><strong>75%</strong></td>
 <td style="text-align: center;"><strong>78%</strong></td>
 <td style="text-align: left;">核心髓系標記</td>
 </tr>
-<tr class="even">
+<tr class="even" data-dx-category="high">
 <td style="text-align: left;"><strong>CD34</strong></td>
 <td style="text-align: center;"><strong>64%</strong></td>
 <td style="text-align: center;"><strong>74%</strong></td>
 <td style="text-align: left;">造血前驅細胞標記（APL/NPM1 常陰性）</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-dx-category="high">
 <td style="text-align: left;"><strong>CD38</strong></td>
 <td style="text-align: center;"><strong>96%</strong></td>
 <td style="text-align: center;"><strong>94%</strong></td>
 <td style="text-align: left;">高頻表現</td>
 </tr>
-<tr class="even">
+<tr class="even" data-dx-category="other">
 <td style="text-align: left;">CD56</td>
 <td style="text-align: center;">17%</td>
 <td style="text-align: center;">21%</td>
 <td style="text-align: left;">異常標記（須與 BPDCN 鑑別）</td>
 </tr>
-<tr class="odd">
+<tr class="odd" data-dx-category="high">
 <td style="text-align: left;"><strong>CD64</strong></td>
 <td style="text-align: center;"><strong>50%</strong></td>
 <td style="text-align: center;"><strong>45%</strong></td>
 <td style="text-align: left;">單核球／髓系標記</td>
 </tr>
-<tr class="even">
+<tr class="even" data-dx-category="high">
 <td style="text-align: left;"><strong>HLA-DR</strong></td>
 <td style="text-align: center;"><strong>76%</strong></td>
 <td style="text-align: center;"><strong>74%</strong></td>
@@ -372,9 +365,9 @@
 </section>
 </section>
 
-<section id="classification" class="level2">
+<section id="classification" class="level2 dx-card">
 <h2>6. 診斷標準：WHO5 與 ICC 重點對照</h2>
-<div class="dx-table" tabindex="0" role="region" aria-label="臨床對照表，可左右滑動"><table>
+<div class="dx-filters" role="group" aria-label="篩選 WHO5／ICC 對照表" data-dx-table="classification-table" hidden><button type="button" aria-pressed="true" data-dx-filter="all">全部項目</button><button type="button" aria-pressed="false" data-dx-filter="shared">共同標準</button><button type="button" aria-pressed="false" data-dx-filter="diff">分類差異</button></div><div class="dx-table" tabindex="0" role="region" aria-label="臨床對照表，可左右滑動"><table id="classification-table">
 
 <thead>
 <tr class="header">
@@ -384,63 +377,63 @@
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>核心定義性基因融合</strong>，t(15;17)/<em>PML::RARA</em>（及其他 <em>RARA</em>）、t(8;21)/<em>RUNX1::RUNX1T1</em>、inv(16)/t(16;16) <em>CBFB::MYH11</em>、t(9;11)/<em>MLLT3::KMT2A</em>（及其他 <em>KMT2A</em>）、t(6;9)/<em>DEK::NUP214</em>、inv(3)/t(3;3) <em>GATA2;MECOM</em>（及其他 <em>MECOM</em>）</td>
+<tr class="odd" data-dx-category="diff">
+<td style="text-align: left;"><strong>核心定義性基因融合</strong>，t(15;17)/<em>PML::RARA</em>（及其他 <em>RARA</em>）、t(8;21)/<em>RUNX1::RUNX1T1</em>、inv(16)/t(16;16) <em>CBFB::MYH11</em>、t(9;11)/<em>MLLT3::KMT2A</em>（及其他 <em>KMT2A</em>）、t(6;9)/<em>DEK::NUP214</em>、inv(3)/t(3;3) <em>GATA2;MECOM</em>（及其他 <em>MECOM</em>）<span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">多數此類異常無固定最低芽細胞百分比，需符合病理與分子脈絡</td>
 <td style="text-align: left;">具上述定義性基因異常且 <strong>Blasts ≥10%</strong> 即診斷 AML</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><strong>AML with <em>BCR::ABL1</em></strong></td>
+<tr class="even" data-dx-category="shared">
+<td style="text-align: left;"><strong>AML with <em>BCR::ABL1</em></strong><span class="dx-tag dx-tag-shared">共同標準</span></td>
 <td style="text-align: left;">須 <strong>Blasts ≥20%</strong></td>
 <td style="text-align: left;">須 <strong>Blasts ≥20%</strong></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>AML with mutated <em>NPM1</em></strong></td>
+<tr class="odd" data-dx-category="diff">
+<td style="text-align: left;"><strong>AML with mutated <em>NPM1</em></strong><span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">配合適當臨床病理相關性時，<strong>不限芽細胞比例</strong>即可診斷</td>
 <td style="text-align: left;">須 <strong>Blasts ≥10%</strong></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><strong>AML with <em>CEBPA</em> mutation</strong></td>
+<tr class="even" data-dx-category="diff">
+<td style="text-align: left;"><strong>AML with <em>CEBPA</em> mutation</strong><span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">≥20%，符合雙等位突變或單一 bZIP 區域突變定義</td>
 <td style="text-align: left;">≥10%，限 bZIP 區域 in-frame 突變</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>髓系肉瘤（Myeloid sarcoma）</strong></td>
+<tr class="odd" data-dx-category="shared">
+<td style="text-align: left;"><strong>髓系肉瘤（Myeloid sarcoma）</strong><span class="dx-tag dx-tag-shared">共同標準</span></td>
 <td style="text-align: left;">可獨立診斷髓系肉瘤，仍須評估是否合併骨髓 AML</td>
 <td style="text-align: left;">同左</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><strong>無定義性基因異常</strong></td>
+<tr class="even" data-dx-category="diff">
+<td style="text-align: left;"><strong>無定義性基因異常</strong><span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">排除其他定義型實體後，≥20% 可依分化類型分類，10–19% 可依條件歸為 MDS-IB2</td>
 <td style="text-align: left;">排除其他定義型實體後，≥20% 可歸 AML, NOS，10–19% 可依條件歸 MDS/AML</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><strong><em>TP53</em> 突變</strong></td>
+<tr class="odd" data-dx-category="diff">
+<td style="text-align: left;"><strong><em>TP53</em> 突變</strong><span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">Blasts ≥20% 時依其他遺傳特徵分類，必要時加註治療相關或胚系修飾詞</td>
 <td style="text-align: left;">獨立類別（ICC 表 25 以 VAF &gt;10% 為界）：Blasts ≥20% 為 AML with mutated <em>TP53</em>；Blasts 10–19% 為 MDS/AML with mutated <em>TP53</em></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><strong>MDS 相關基因突變</strong>，（<em>ASXL1, BCOR, EZH2, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2</em>）</td>
+<tr class="even" data-dx-category="diff">
+<td style="text-align: left;"><strong>MDS 相關基因突變</strong>，（<em>ASXL1, BCOR, EZH2, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2</em>）<span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">Blasts <strong>≥20%</strong> 併上述 ≥1 項突變（<strong>不含 <em>RUNX1</em></strong>）</td>
 <td style="text-align: left;">納入上述 8 基因<strong>外加 <em>RUNX1</em></strong>；Blasts ≥20% 為 AML，Blasts 10–19% 為 MDS/AML</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>MDS 相關染色體異常</strong></td>
+<tr class="odd" data-dx-category="diff">
+<td style="text-align: left;"><strong>MDS 相關染色體異常</strong><span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">≥20% 芽細胞且符合 WHO5 的核型條件，包括 del(11q)、−13/del(13q)。</td>
 <td style="text-align: left;">依 ICC 核型清單，包含 +8、del(20q)。符合條件時，≥20% 為 AML，10–19% 為 MDS/AML。</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><strong>急性紅血球白血病（AEL）</strong></td>
+<tr class="even" data-dx-category="diff">
+<td style="text-align: left;"><strong>急性紅血球白血病（AEL）</strong><span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">保留 AEL（紅系 ≥80%，其中 proerythroblasts ≥30%）</td>
 <td style="text-align: left;"><strong>廢除 AEL</strong>，多數因帶 <em>TP53</em> 突變改歸類為 AML with mutated <em>TP53</em></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>其他罕見基因重排</strong></td>
+<tr class="odd" data-dx-category="diff">
+<td style="text-align: left;"><strong>其他罕見基因重排</strong><span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">包含 RBM15::MRTFA、NUP98 重排等。依各實體定義及形態與分子脈絡判讀。</td>
 <td style="text-align: left;">依 ICC 的罕見反覆轉位類別及各異常定義判讀。</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><strong>治療相關性與胚系遺傳易感性</strong></td>
+<tr class="even" data-dx-category="diff">
+<td style="text-align: left;"><strong>治療相關性與胚系遺傳易感性</strong><span class="dx-tag dx-tag-diff">分類差異</span></td>
 <td style="text-align: left;">依 WHO5 註記既往細胞毒性治療與胚系易感性。既往 MDS/MDS-MPN 可納入 AML-MR 定義。</td>
 <td style="text-align: left;">依 ICC 註記既往治療、先前髓系腫瘤與胚系易感性；歷史本身無法取代遺傳分類。</td>
 </tr>
@@ -448,7 +441,7 @@
 </table>
 </div></section>
 
-<section id="differential" class="level2">
+<section id="differential" class="level2 dx-card">
 <h2>7. 重要鑑別診斷</h2>
 <div class="dx-table" tabindex="0" role="region" aria-label="臨床對照表，可左右滑動"><table>
 
@@ -507,7 +500,7 @@
 </table>
 </div></section>
 
-<section id="references" class="level2">
+<section id="references" class="level2 dx-card">
 <h2>8. 實證查核與參考文獻</h2>
 <ol type="1">
 <li>Schiffer CA, Gurbuxani S. <em>Acute myeloid leukemia: Clinical manifestations, pathologic features, and diagnosis</em>. UpToDate (Last updated Sep 22, 2026). <a href="https://www.uptodate.com/contents/acute-myeloid-leukemia-clinical-manifestations-pathologic-features-and-diagnosis">UpToDate 連結</a></li>

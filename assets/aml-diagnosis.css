@@ -1,0 +1,174 @@
+.aml-dx {
+  --dx-card: #fffdf5;
+  --dx-soft: #faf5e4;
+  --dx-edge: #dfd6ba;
+  --dx-text: #2b2a27;
+  --dx-muted: #5c584f;
+  --dx-heading: #2c4a52;
+  --dx-accent: #1e5f74;
+  --dx-thead: #2c4a52;
+  --dx-thead-text: #fffdf5;
+  --dx-info: #eff6ff;
+  --dx-info-ink: #1e40af;
+  --dx-warn: #fef2f2;
+  --dx-warn-ink: #991b1b;
+  --dx-green: #e8f6ed;
+  --dx-green-ink: #166534;
+  --dx-amber: #fef3c7;
+  --dx-amber-ink: #92400e;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding: 1rem clamp(.7rem, 2.8vw, 2rem) 3rem;
+  color: var(--dx-text);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  line-height: 1.75;
+}
+html[data-theme="dark"] .aml-dx {
+  --dx-card: var(--kp-dark-panel);
+  --dx-soft: var(--kp-dark-raised);
+  --dx-edge: var(--kp-dark-edge);
+  --dx-text: var(--kp-dark-ink);
+  --dx-muted: var(--kp-dark-muted);
+  --dx-heading: var(--kp-brass);
+  --dx-accent: #b0dbe5;
+  --dx-thead: #304957;
+  --dx-info: #283c55;
+  --dx-info-ink: #d0ddff;
+  --dx-warn: #482e36;
+  --dx-warn-ink: #ffc0ba;
+  --dx-green: #253e33;
+  --dx-green-ink: #abe3c2;
+  --dx-amber: #453722;
+  --dx-amber-ink: #f7c57d;
+}
+.dx-hero, .dx-card {
+  padding: clamp(.9rem, 2.5vw, 1.65rem);
+  margin-block-end: 1.25rem;
+  border: 1px solid var(--dx-edge);
+  border-radius: .8rem;
+  background: var(--dx-card);
+  box-shadow: 0 2px 8px #2424210d;
+}
+.dx-hero { margin-block-start: 1rem; }
+.dx-hero h1 { margin: .55rem 0 .6rem; font-size: clamp(1.55rem, 3.6vw, 2.7rem); line-height: 1.27; }
+.dx-hero p { margin: 0 0 .85rem; color: var(--dx-muted); }
+.dx-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.kp-note .dx-hero-meta li {
+  padding: .05rem .55rem;
+  border: 1px solid var(--dx-edge);
+  border-radius: .4rem;
+  background: var(--dx-soft);
+  color: var(--dx-muted);
+  font-size: .82rem;
+}
+.kp-note .dx-hero-meta li:first-child { background: var(--dx-info); color: var(--dx-info-ink); }
+.kp-note .dx-hero-meta li:nth-child(2) { background: var(--dx-amber); color: var(--dx-amber-ink); }
+.kp-note .dx-hero-meta a { color: inherit; text-decoration: none; }
+.dx-quick {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .55rem;
+  margin: 0;
+}
+.dx-quick > div {
+  padding: .55rem .7rem;
+  border: 1px solid var(--dx-edge);
+  border-radius: .55rem;
+  background: var(--dx-soft);
+}
+.dx-quick dt { font-size: .81rem; color: var(--dx-muted); }
+.dx-quick dd { margin: .15rem 0 0; font-weight: 700; line-height: 1.35; }
+.kp-note .dx-quick a { color: var(--dx-accent); text-decoration: none; }
+.kp-note .dx-quick > div:first-child a { color: var(--dx-warn-ink); }
+.kp-note .dx-quick > div:nth-child(3) a { color: var(--dx-green-ink); }
+.kp-note .dx-quick > div:nth-child(4) a { color: var(--dx-amber-ink); }
+.kp-note .dx-hero a:hover { text-decoration: underline; }
+.aml-dx section { scroll-margin-top: 1rem; }
+.dx-card > h2 {
+  margin: 0 0 .8rem;
+  padding-bottom: .4rem;
+  border-bottom: 2px solid var(--dx-edge);
+  color: var(--dx-heading);
+  font-size: clamp(1.2rem, 3vw, 1.55rem);
+}
+.dx-card h3 { margin: .95rem 0 .45rem; font-size: 1.04rem; color: var(--dx-accent); }
+.dx-card p { margin: 0 0 .65rem; }
+.dx-card :is(ol, ul) { margin-block: 0 .75rem; padding-inline-start: 1.2rem; }
+.dx-card li + li { margin-block-start: .25rem; }
+.dx-card :is(a, a:hover) { text-underline-offset: .16em; }
+.dx-callout {
+  margin: .85rem 0;
+  padding: .7rem .85rem;
+  border-radius: .55rem;
+  border-inline-start: .27rem solid currentColor;
+}
+.dx-callout p:last-child, .dx-callout ul:last-child { margin-bottom: 0; }
+.dx-info { background: var(--dx-info); color: var(--dx-info-ink); }
+.dx-warn { background: var(--dx-warn); color: var(--dx-warn-ink); }
+.dx-table, .dx-figure > div { overflow-x: auto; }
+.dx-table { margin-block: .6rem .9rem; border: 1px solid var(--dx-edge); border-radius: .45rem; }
+.dx-table table { width: 100%; min-width: 31rem; border-collapse: collapse; }
+.dx-table :is(th,td) { text-align: start; vertical-align: top; padding: .55rem .65rem; border-bottom: 1px solid var(--dx-edge); }
+.dx-table tr:last-child td { border-bottom: 0; }
+.dx-table thead th { color: var(--dx-thead-text); background: var(--dx-thead); }
+.dx-table tbody tr:nth-child(even) { background: var(--dx-soft); }
+.dx-filters { display: flex; flex-wrap: wrap; gap: .35rem; margin-block: .5rem; }
+.aml-dx [hidden] { display: none !important; }
+.dx-filters button, .dx-tag {
+  color: var(--dx-heading);
+  background: var(--dx-soft);
+  border: 1px solid var(--dx-edge);
+  border-radius: 1rem;
+  padding: .15rem .7rem;
+  font: inherit;
+  font-size: .82rem;
+}
+.dx-filters button { cursor: pointer; }
+.dx-filters button:is(:hover, [aria-pressed="true"]) { background: var(--dx-thead); color: var(--dx-thead-text); }
+.dx-tag { display: table; margin-top: .3rem; white-space: nowrap; }
+.dx-tag-shared { background: var(--dx-green); color: var(--dx-green-ink); }
+.dx-tag-diff { background: var(--dx-amber); color: var(--dx-amber-ink); }
+.aml-dx figure {
+  margin: .8rem 0;
+  padding: .65rem;
+  background: var(--dx-soft);
+  border: 1px solid var(--dx-edge);
+  border-radius: .55rem;
+}
+.dx-figure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
+.dx-figure-grid figure { margin: 0; }
+.dx-photo img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 22rem;
+  margin-inline: auto;
+  border-radius: .35rem;
+}
+.dx-photo .kp-image-trigger {
+  height: 18rem;
+  display: grid;
+  place-items: center;
+}
+.dx-photo .kp-image-trigger img { max-height: 18rem; }
+.dx-photo-detail { max-width: 27rem; }
+.dx-photo-detail .kp-image-trigger { height: auto; }
+.dx-photo-detail img { width: min(100%, 15rem); }
+.aml-dx figcaption { margin-top: .5rem; color: var(--dx-muted); text-align: start; }
+.dx-photo figcaption p { margin: .15rem 0 .3rem; font-size: .9rem; }
+.dx-photo figcaption small { display: block; line-height: 1.5; }
+.aml-dx .kp-image-trigger:has(svg), .dx-figure svg { min-width: 43rem; }
+.dx-figure svg { display: block; width: 100%; height: auto; background: #fffdf5; }
+@media (max-width: 46rem) {
+  .dx-quick { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dx-figure-grid { grid-template-columns: 1fr; }
+  .dx-photo .kp-image-trigger { height: auto; }
+}
