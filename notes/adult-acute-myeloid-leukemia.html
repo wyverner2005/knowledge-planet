@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="zh-Hant" class="kp-note">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="從疑似 APL 急症、ICC／WHO5 分類與 ELN 風險，到誘導、MRD 追蹤與異體移植。">
+<meta name="keywords" content="AML, 急性骨髓性白血病, APL, ELN, WHO5, ICC, MRD, 白血球鬱滯, CBF-AML, RUNX1::RUNX1T1, 異體造血幹細胞移植, venetoclax, azacitidine">
+<title>成人急性骨髓性白血病（AML）完整臨床指南</title>
+<link rel="stylesheet" href="../theme.css">
+<script src="../theme.js" defer></script>
+<style>
+  .aml-main { max-width: 1200px; margin: 0 auto; padding: 1rem clamp(1rem, 3vw, 2rem) 2rem; }
+  .aml-main > header { padding: 2rem 0; }
+  .aml-main h1 { font-size: clamp(1.8rem, 4vw, 3.1rem); margin: 0 0 .6rem; }
+  .aml-main section { margin-bottom: 1.6rem; }
+  .aml-main figure { margin: 1.2rem 0; }
+  .aml-main figure img { max-width: 100%; height: auto; }
+  .aml-table { overflow-x: auto; margin-block: 1rem; }
+  .aml-table table { width: 100%; min-width: 28rem; border-collapse: collapse; }
+  .aml-table :is(th, td) { text-align: left; vertical-align: top; padding: .65rem .75rem; border: 1px solid currentColor; }
+  .aml-risk-filter { margin-block: .8rem; }
+  .aml-risk-filter select { font: inherit; margin-inline-start: .5rem; }
+  #sec-presentation { border-inline-start: .25rem solid #bd6356; padding-inline-start: 1rem; }
+</style>
+</head>
+<body>
+<main class="aml-main">
+  <nav class="kp-controls kp-article-controls" aria-label="文章導覽">
+    <a class="kp-control" href="../">← 返回知識星球</a>
+    <button class="kp-control kp-theme-toggle" type="button" hidden>深色模式</button>
+  </nav>
+  <nav class="kp-categories" aria-label="專科分類"><a class="kp-category" href="../?category=hematology">血液科 · Hematology</a></nav>
+  <header><h1>成人急性骨髓性白血病（AML）完整臨床指南</h1><p>從疑似 APL 急症、ICC／WHO5 分類與 ELN 風險，到誘導、MRD 追蹤與異體移植。</p></header>
+<section id="sec-intro" class="level2">
+<h2>1. 流行病學與致病機轉</h2>
+<p>急性骨髓性白血病（AML）是成人常見的急性白血病，診斷中位年齡約 68 歲。帶有致病基因異常的造血前驅細胞克隆擴增、分化受阻，使正常造血受抑制。常見表現是貧血、血小板低下與感染。</p>
+<ul>
+<li>危險因子包括吸菸、苯或游離輻射暴露，以及既往細胞毒性治療。部分病例有 MDS、MPN、CHIP 或 CCUS 病史。</li>
+<li>少數患者具有胚系易感變異（如 DDX41、CEBPA、RUNX1、GATA2）。家族史或臨床表現提示遺傳易感性時，可轉介遺傳評估。移植前選擇親屬捐贈者時，應考量家族變異。</li>
+<li>圖 1 閱讀提示：對照正常造血與芽細胞擴增後的三系血球減少。部分病例可見 Auer rods，診斷須整合形態、免疫表型與遺傳結果。</li>
+</ul>
+<figure>
+<img src="../assets/aml-pathogenesis.webp" alt="圖 1｜AML 骨髓病理機轉。異常芽細胞擴增及正常造血受抑制，可出現貧血、出血與感染。" width="1376" height="768" loading="lazy" decoding="async">
+<figcaption aria-hidden="true">圖 1｜AML 骨髓病理機轉。異常芽細胞擴增及正常造血受抑制，可出現貧血、出血與感染。</figcaption>
+</figure>
+</section>
+
+<section id="sec-presentation" class="level2">
+<h2>2. 臨床表現與腫瘤急症</h2>
+<p>貧血可能表現為疲倦、蒼白與喘。血小板低下可見瘀青、黏膜出血。嗜中性球低下可表現為發燒或感染。也可能有肝脾腫大、皮膚白血病或骨髓肉瘤。</p>
+<div class="aml-table"><table>
+
+<thead>
+<tr class="header">
+<th>情境</th>
+<th>優先辨識與處置</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>疑似 APL</td>
+<td>合併出血、低纖維蛋白原或 DIC 時緊急聯絡血液科，送 PML::RARA。高度疑似即啟動 ATRA 與凝血支持，待分子結果確認。</td>
+</tr>
+<tr class="even">
+<td>高白血球血症／白血球鬱滯</td>
+<td>高白血球血症通常指 WBC &gt;100 × 10⁹/L。白血球鬱滯可出現在更低數值。呼吸窘迫、低氧或急性神經症狀須緊急評估與降白血球處置。</td>
+</tr>
+<tr class="odd">
+<td>腫瘤溶解症候群（TLS）</td>
+<td>監測鉀、磷、鈣、尿酸與腎功能。診斷時即可能出現，亦可在治療後發生。</td>
+</tr>
+<tr class="even">
+<td>發燒合併嗜中性球低下</td>
+<td>緊急評估感染並依發燒性嗜中性球低下流程處置。</td>
+</tr>
+<tr class="odd">
+<td>神經學急症</td>
+<td>新發劇烈頭痛、意識改變或局部神經缺損，應緊急評估顱內出血及其他病因。</td>
+</tr>
+</tbody>
+</table>
+</div></section>
+
+<section id="sec-eval" class="level2">
+<h2>3. 治療前評估與體能狀態</h2>
+<ul>
+<li><strong>血液與骨髓</strong>：CBC/DC、血抹片、凝血（含 fibrinogen）、肝腎功能、電解質、LDH、尿酸及適當的感染篩檢。骨髓檢查整合形態、流式細胞儀、核型與分子檢測。及早分流疑似 APL，並取得會影響第一線處方的分子結果。</li>
+<li><strong>器官功能與移植準備</strong>：依病況安排 ECG、心臟超音波等基線檢查。潛在移植候選者及早安排 HLA 檢測與捐贈者搜尋。</li>
+<li><strong>治療強度</strong>：綜合功能狀態、共病、器官功能、老年評估、病人目標與照護支持。HCT-CI 可用於移植風險評估。</li>
+</ul>
+<div class="aml-table"><table>
+<thead>
+<tr class="header">
+<th>ECOG</th>
+<th>臨床定義</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>活動無限制。</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>劇烈活動受限，可走動並從事輕度工作。</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>可自理、無法工作，清醒時間超過一半可離床。</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>僅能部分自理，清醒時間超過一半在床或椅上。</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>完全失能，無法自理。</td>
+</tr>
+</tbody>
+</table>
+</div></section>
+
+<section id="sec-dx" class="level2">
+<h2>4. 診斷與分類（ICC 與 WHO5）</h2>
+<p>以報告採用的分類系統為準。門檻指周邊血或骨髓芽細胞比例，仍須整合形態與基因異常是否屬於同一病理過程。</p>
+<div class="aml-table"><table>
+
+<thead>
+<tr class="header">
+<th>情境</th>
+<th>ICC 2022</th>
+<th>WHO 第 5 版</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PML::RARA、RUNX1::RUNX1T1、CBFB::MYH11、NPM1 突變</td>
+<td>通常須 ≥10% 芽細胞</td>
+<td>無統一的最低百分比，須整合形態與分子證據</td>
+</tr>
+<tr class="even">
+<td>CEBPA 定義型 AML</td>
+<td>≥10%，限 bZIP 區域 in-frame 突變</td>
+<td>≥20%，包含符合定義的雙等位突變或單一 bZIP 區域突變</td>
+</tr>
+<tr class="odd">
+<td>BCR::ABL1</td>
+<td>≥20%</td>
+<td>≥20%。兩系統均須鑑別 CML 急變期。</td>
+</tr>
+<tr class="even">
+<td>無 AML 定義性遺傳異常，芽細胞 10–19%</td>
+<td>符合條件者可歸 MDS/AML</td>
+<td>符合條件者可歸 MDS-IB2 或其他適用實體</td>
+</tr>
+<tr class="odd">
+<td>骨髓肉瘤</td>
+<td>髓外腫瘤可獨立診斷，需做全身血液與骨髓評估</td>
+<td>同左</td>
+</tr>
+</tbody>
+</table>
+</div></section>
+
+<section id="sec-prog" class="level2">
+<h2>5. ELN 遺傳風險分層</h2>
+<p><strong>ELN 2022</strong> 主要用於以高強度治療為基礎的預後分層。下表整理常見類別，完整分層須納入基因共現、細胞遺傳學與各類別的優先規則。選用低強度療法時，可參考 <strong>ELN 2024</strong> 與方案相符的分層。</p>
+<form class="aml-risk-filter" hidden>
+<label for="aml-risk">篩選 ELN 2022 風險</label>
+<select id="aml-risk"><option value="">全部</option><option value="favorable">良好</option><option value="intermediate">中度</option><option value="adverse">不良</option></select>
+</form><div class="aml-table"><table>
+
+<thead>
+<tr class="header">
+<th>ELN 2022</th>
+<th>常見異常</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd" data-aml-risk="favorable">
+<td>良好</td>
+<td>t(8;21)/RUNX1::RUNX1T1、inv(16) 或 t(16;16)/CBFB::MYH11、無 FLT3-ITD 且無不良風險細胞遺傳學的 NPM1 突變、CEBPA bZIP in-frame 突變。</td>
+</tr>
+<tr class="even" data-aml-risk="intermediate">
+<td>中度</td>
+<td>NPM1 突變合併 FLT3-ITD、野生型 NPM1 合併 FLT3-ITD（無不良風險異常）、t(9;11)/MLLT3::KMT2A，及未列入其他兩類的異常。</td>
+</tr>
+<tr class="odd" data-aml-risk="adverse">
+<td>不良</td>
+<td>多數 KMT2A 重排（t(9;11) 為中度）、MECOM 重排、t(6;9)、t(8;16)、BCR::ABL1、−5/del(5q)、−7、−17/abn(17p)、複雜或單體核型、TP53 突變（VAF ≥10%）及特定骨髓增生異常相關基因突變（ASXL1、BCOR、EZH2、RUNX1、SF3B1、SRSF2、STAG2、U2AF1、ZRSR2）。良好風險亞型合併這些基因時須依 ELN 註解判讀。</td>
+</tr>
+</tbody>
+</table>
+</div></section>
+
+<section id="sec-fit" class="level2">
+<h2>6. 具高強度治療適應性的患者</h2>
+<section id="圖解-2成人非-apl-aml-的治療流程" class="level3">
+<h3>圖解 2｜成人非 APL AML 的治療流程</h3>
+<p><strong>確立亞型與遺傳風險 → 評估體能及治療目標 → 選擇誘導或低強度方案 → 依療效與 MRD 規劃後續。</strong> 疑似 APL 先走急症處置流程。治療選擇也受可近性、當地核准適應症與臨床試驗影響。</p>
+<div class="aml-table"><table>
+
+<thead>
+<tr class="header">
+<th>階段</th>
+<th>可接受高強度治療</th>
+<th>選擇低強度治療</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>起始治療</td>
+<td>7+3 等誘導方案，依遺傳亞型及適應症選擇加藥或替代方案</td>
+<td>Azacitidine + venetoclax 為常用方案。部分 IDH1 突變患者可評估 azacitidine + ivosidenib。</td>
+</tr>
+<tr class="even">
+<td>反應評估</td>
+<td>依方案安排骨髓評估，整合血球恢復、形態反應及亞型適用的 MRD。</td>
+<td>早期骨髓檢查有助區分持續白血病與治療相關血球低下。</td>
+</tr>
+<tr class="odd">
+<td>後續治療</td>
+<td>依遺傳風險、MRD、復發風險及移植風險決定 cytarabine 鞏固、異體 HCT 或適用的維持治療。</td>
+<td>持續評估療效、耐受性與移植可能，按方案調整週期或用藥天數。</td>
+</tr>
+</tbody>
+</table>
+</div><ul>
+<li><strong>誘導方案</strong>：7+3 通常為 cytarabine 連續輸注 7 天，加 anthracycline 3 天。FLT3 突變可依適應症評估 midostaurin，quizartinib 的第一線核准適應症為 FLT3-ITD。CD33 陽性的特定亞型（尤其 CBF-AML）可考慮 gemtuzumab ozogamicin。CPX-351 用於符合適應症的治療相關 AML 或 AML-MRC。</li>
+<li><strong>緩解判讀</strong>：ELN 2022 完全緩解（CR）包括骨髓芽細胞 &lt;5%、無周邊血芽細胞與髓外疾病、ANC ≥1.0 × 10⁹/L 及血小板 ≥100 × 10⁹/L。第 14–21 天早期骨髓是否安排及如何判讀，依治療方案與臨床狀況決定。</li>
+<li><strong>異體移植</strong>：ELN 2022 建議在預期無移植的復發風險約 &gt;35–40% 時考量。良好風險通常先鞏固，有異常的 MRD 動態時重新評估。中度及不良風險須個別評估移植效益與非復發死亡風險。</li>
+<li><strong>MRD</strong>：依分子亞型、檢體、方法及治療時間點判讀。CBF-AML 可追蹤 RUNX1::RUNX1T1 或 CBFB::MYH11 轉錄本。單一 10⁻⁴ 數值無法代表所有檢測與移植決策。</li>
+<li><strong>維持</strong>：口服 azacitidine 可用於特定接受高強度誘導後達 CR/CRi、無法完成高強度治癒性療程的患者，依當地仿單與治療計畫評估。</li>
+</ul>
+</section>
+<section id="常見高強度誘導方案" class="level3">
+<h3>常見高強度誘導方案</h3>
+<div class="aml-table"><table>
+
+<thead>
+<tr class="header">
+<th>方案</th>
+<th>典型第一輪框架</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cytarabine + daunorubicin</td>
+<td>Cytarabine 100–200 mg/m²/日連續靜脈輸注 7 天，加 daunorubicin 60–90 mg/m² 靜脈給藥 3 天。</td>
+</tr>
+<tr class="even">
+<td>Cytarabine + idarubicin</td>
+<td>Cytarabine 100–200 mg/m²/日連續靜脈輸注 7 天，加 idarubicin 12 mg/m² 靜脈給藥 3 天。</td>
+</tr>
+<tr class="odd">
+<td>CPX-351</td>
+<td>固定比例脂質體 daunorubicin 44 mg/m² + cytarabine 100 mg/m²，第 1、3、5 天各靜脈輸注 90 分鐘。</td>
+</tr>
+</tbody>
+</table>
+</div><p>表中為方案框架，實際給藥依院內方案、仿單與器官功能。CPX-351 為固定複方製劑，須使用該製劑的劑量及療程。</p>
+</section>
+</section>
+
+<section id="sec-unfit" class="level2">
+<h2>7. 選擇低強度治療的患者</h2>
+<p>Azacitidine + venetoclax 為初診、無法接受高強度誘導患者的主要選項。VIALE-A 中位總存活由 9.6 個月增至 14.7 個月（HR 0.66），此數字適用於試驗所研究族群。Decitabine + venetoclax 為另一選項，須依適應症與可近性選擇。</p>
+<p>開始 venetoclax 前評估 TLS 風險、腎功能及 CYP3A 交互作用（如部分 azole 抗黴菌藥）。依方案安排降白血球、補液、降尿酸、劑量遞增與生化監測。緩解後依血球恢復、感染及骨髓結果調整治療週期。</p>
+</section>
+
+<section id="sec-rr" class="level2">
+<h2>8. 追蹤與復發／難治性 AML</h2>
+<ul>
+<li>依治療方案與亞型追蹤症狀、CBC、血抹片與適用的 MRD，必要時複查骨髓。分子指標上升時，須依指引時點與方法確認。</li>
+<li>復發或難治時重新取樣，評估克隆演變及可標靶變異（如 FLT3、IDH1/2）。綜合既往治療、能否達緩解、移植適應性與試驗機會。對適合的患者，異體 HCT 是具治癒潛力的重要策略。</li>
+</ul>
+</section>
+
+<section id="sec-evidence" class="level2">
+<h2>9. 實證與參考文獻</h2>
+<ul>
+<li>原筆記來源：Kolitz JE、Larson RA、Rosmarin AG，UpToDate《Acute myeloid leukemia in adults: Overview》。</li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/35732831/">WHO 第 5 版髓系腫瘤分類（2022）</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/35767897/">ICC 髓系腫瘤與急性白血病分類（2022）</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/35797463/">ELN 2022 成人 AML 建議</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/39133932/">ELN 2024 低強度治療分層</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/41397238/">ELN-DAVID 2025 MRD 共識更新</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/30803991/">ELN APL 專家指引</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/41321225/">ASH 高齡 AML 指引</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/32786187/">VIALE-A 原始試驗</a></li>
+</ul>
+</section>
+
+  <section class="kp-related" id="related-articles" aria-label="相關文章"><h2>相關文章</h2><ul><li><a href="cgvhd-manifestations-and-diagnosis.html">慢性移植物抗宿主疾病（cGVHD）：臨床表現與診斷</a> · 延伸閱讀 AML 接受異體移植後的慢性 GVHD 辨識。</li><li><a href="cgvhd-treatment-and-targeted-evidence.html">慢性移植物抗宿主疾病（cGVHD）：臨床治療與標靶實證</a> · 延伸閱讀異體移植後慢性 GVHD 的治療和支持照護。</li></ul></section>
+</main>
+<script>
+  const amlRisk = document.querySelector('#aml-risk');
+  const amlRiskRows = [...document.querySelectorAll('[data-aml-risk]')];
+  amlRisk.addEventListener('change', () => {
+    for (const row of amlRiskRows) {
+      row.hidden = amlRisk.value !== '' && row.dataset.amlRisk !== amlRisk.value;
+    }
+  });
+  amlRisk.form.hidden = false;
+</script>
+</body>
+</html>
