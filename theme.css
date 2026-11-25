@@ -335,7 +335,7 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
 /* Article presentation shared by the medical notes. */
 .kp-note {
   --kp-note-surface: #fffdf5;
-  --kp-note-inset: #faf3de;
+  --kp-note-inset: #f0f1f3;
   --kp-note-heading: #294750;
 }
 .kp-note[data-theme="dark"] {
@@ -452,7 +452,7 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
   .kp-note-guide { grid-template-columns: 1fr; }
 }
 
-/* Specialty palettes tint labels and article introductions in both themes. */
+/* Solid specialty pills use the same readable palette in both themes. */
 [data-specialty="hematology"] { --kp-specialty-hue: 260; }
 [data-specialty="sleep-medicine"] { --kp-specialty-hue: 234; }
 [data-specialty="neurology"] { --kp-specialty-hue: 216; }
@@ -465,47 +465,22 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
 [data-specialty="rheumatology"] { --kp-specialty-hue: 298; }
 [data-specialty="clinical-pharmacology"] { --kp-specialty-hue: 192; }
 
-:is(.kp-specialty-chip, .kp-note-hero[data-specialty], .kp-lead-cards > *) {
-  --kp-specialty-base: hsl(var(--kp-specialty-hue, 204) 76% 96%);
-  --kp-specialty-card: hsl(var(--kp-specialty-hue, 204) 70% 92%);
-  --kp-specialty-edge: hsl(var(--kp-specialty-hue, 204) 45% 76%);
-  --kp-specialty-ink: hsl(var(--kp-specialty-hue, 204) 55% 29%);
-}
-[data-theme="dark"] :is(.kp-specialty-chip, .kp-note-hero[data-specialty], .kp-lead-cards > *) {
-  --kp-specialty-base: hsl(var(--kp-specialty-hue, 204) 23% 16%);
-  --kp-specialty-card: hsl(var(--kp-specialty-hue, 204) 27% 21%);
-  --kp-specialty-edge: hsl(var(--kp-specialty-hue, 204) 26% 39%);
-  --kp-specialty-ink: hsl(var(--kp-specialty-hue, 204) 77% 86%);
-}
-
-:is(.kp-home, .kp-note) .kp-specialty-chip[data-specialty],
+.kp-home .kp-specialty-chip[data-specialty],
+.kp-note .kp-specialty-chip[data-specialty],
 .kp-note[data-theme="dark"] a.kp-specialty-chip[data-specialty],
-.kp-note .kp-note-hero .kp-specialty-chip {
-  background: var(--kp-specialty-card);
-  border-color: var(--kp-specialty-edge);
-  color: var(--kp-specialty-ink);
+.kp-note .kp-note-hero .kp-specialty-chip[data-specialty] {
+  display: inline-flex;
+  align-items: center;
+  padding: .25rem .8rem;
+  border: 0;
+  border-radius: 100vmax;
+  background: hsl(var(--kp-specialty-hue, 204) 84% 73%);
+  color: #201a20;
+  font-weight: 750;
 }
-.kp-note .kp-note-hero .kp-specialty-chip a { color: inherit; }
+.kp-note .kp-note-hero .kp-specialty-chip[data-specialty] a { color: inherit; }
 
-.kp-note .kp-note-hero[data-specialty] {
-  background: linear-gradient(135deg, var(--kp-specialty-base), var(--kp-note-surface));
-  border-color: var(--kp-specialty-edge);
-}
-.kp-note .kp-note-hero .kp-note-metrics {
-  background: var(--kp-specialty-base);
-  border-color: var(--kp-specialty-edge);
-}
 .kp-note .kp-note-hero .kp-lead-cards > * {
-  background: var(--kp-specialty-card);
-  border-color: var(--kp-specialty-edge);
+  background: var(--kp-note-inset);
+  border-color: var(--kp-control-border);
 }
-.kp-note .kp-note-hero .kp-note-guide a { color: var(--kp-specialty-ink); }
-.kp-note .kp-note-hero .kp-note-guide[data-layout="compare"] a {
-  border-inline-start-color: var(--kp-specialty-ink);
-}
-/* Keep the four existing AML cues distinct while retaining their original text colors. */
-:is(.aml-note, .aml-dx) .kp-lead-cards > :nth-child(2) { --kp-specialty-hue: 39; }
-:is(.aml-note, .aml-dx) .kp-lead-cards > :nth-child(3) { --kp-specialty-hue: 153; }
-.aml-note .kp-lead-cards > :nth-child(4),
-.aml-dx .kp-lead-cards > :first-child { --kp-specialty-hue: 9; }
-.aml-dx .kp-lead-cards > :nth-child(4) { --kp-specialty-hue: 39; }

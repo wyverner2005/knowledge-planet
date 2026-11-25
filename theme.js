@@ -182,8 +182,6 @@
     const hero = title?.closest("header, .hero");
     if (hero) {
       hero.classList.add("kp-note-hero");
-      const specialty = document.querySelector(".kp-specialty-chip[data-specialty]");
-      hero.dataset.specialty = specialty?.dataset.specialty || "general";
       const ownGuide = hero.querySelector(".dx-quick, .tri-strip, .grid-cols-2");
       ownGuide?.classList.add("kp-lead-cards");
       const leadMetrics = hero.nextElementSibling;
