@@ -5,298 +5,666 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="從疑似 APL 急症、ICC／WHO5 分類與 ELN 風險，到誘導、MRD 追蹤與異體移植。">
 <meta name="keywords" content="AML, 急性骨髓性白血病, APL, ELN, WHO5, ICC, MRD, 白血球鬱滯, CBF-AML, RUNX1::RUNX1T1, 異體造血幹細胞移植, venetoclax, azacitidine">
-<title>成人急性骨髓性白血病（AML）完整臨床指南</title>
+<title>成人急性骨髓性白血病 (AML) 實證醫學筆記 | UpToDate 2026</title>
 <link rel="stylesheet" href="../theme.css">
 <script src="../theme.js" defer></script>
-<style>
-  .aml-main { max-width: 1200px; margin: 0 auto; padding: 1rem clamp(1rem, 3vw, 2rem) 2rem; }
-  .aml-main > header { padding: 2rem 0; }
-  .aml-main h1 { font-size: clamp(1.8rem, 4vw, 3.1rem); margin: 0 0 .6rem; }
-  .aml-main section { margin-bottom: 1.6rem; }
-  .aml-main figure { margin: 1.2rem 0; }
-  .aml-main figure img { max-width: 100%; height: auto; }
-  .aml-table { overflow-x: auto; margin-block: 1rem; }
-  .aml-table table { width: 100%; min-width: 28rem; border-collapse: collapse; }
-  .aml-table :is(th, td) { text-align: left; vertical-align: top; padding: .65rem .75rem; border: 1px solid currentColor; }
-  .aml-risk-filter { margin-block: .8rem; }
-  .aml-risk-filter select { font: inherit; margin-inline-start: .5rem; }
-  #sec-presentation { border-inline-start: .25rem solid #bd6356; padding-inline-start: 1rem; }
-</style>
-</head>
+
+<link rel="stylesheet" href="../assets/aml-note.css"><script src="../assets/aml-note.js" defer></script></head>
 <body>
-<main class="aml-main">
-  <nav class="kp-controls kp-article-controls" aria-label="文章導覽">
+<main class="aml-note"><nav class="kp-controls kp-article-controls" aria-label="文章導覽">
     <a class="kp-control" href="../">← 返回知識星球</a>
     <button class="kp-control kp-theme-toggle" type="button" hidden>深色模式</button>
   </nav>
   <nav class="kp-categories" aria-label="專科分類"><a class="kp-category" href="../?category=hematology">血液科 · Hematology</a></nav>
-  <header><h1>成人急性骨髓性白血病（AML）完整臨床指南</h1><p>從疑似 APL 急症、ICC／WHO5 分類與 ELN 風險，到誘導、MRD 追蹤與異體移植。</p></header>
-<section id="sec-intro" class="level2">
-<h2>1. 流行病學與致病機轉</h2>
-<p>急性骨髓性白血病（AML）是成人常見的急性白血病，診斷中位年齡約 68 歲。帶有致病基因異常的造血前驅細胞克隆擴增、分化受阻，使正常造血受抑制。常見表現是貧血、血小板低下與感染。</p>
-<ul>
-<li>危險因子包括吸菸、苯或游離輻射暴露，以及既往細胞毒性治療。部分病例有 MDS、MPN、CHIP 或 CCUS 病史。</li>
-<li>少數患者具有胚系易感變異（如 DDX41、CEBPA、RUNX1、GATA2）。家族史或臨床表現提示遺傳易感性時，可轉介遺傳評估。移植前選擇親屬捐贈者時，應考量家族變異。</li>
-<li>圖 1 閱讀提示：對照正常造血與芽細胞擴增後的三系血球減少。部分病例可見 Auer rods，診斷須整合形態、免疫表型與遺傳結果。</li>
-</ul>
-<figure>
-<img src="../assets/aml-pathogenesis.webp" alt="圖 1｜AML 骨髓病理機轉。異常芽細胞擴增及正常造血受抑制，可出現貧血、出血與感染。" width="1376" height="768" loading="lazy" decoding="async">
-<figcaption aria-hidden="true">圖 1｜AML 骨髓病理機轉。異常芽細胞擴增及正常造血受抑制，可出現貧血、出血與感染。</figcaption>
-</figure>
-</section>
+  <header class="bg-paper-card rounded-2xl border border-paper-border shadow-sm p-6 sm:p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-40 h-40 bg-amber-100/50 rounded-bl-full -mr-10 -mt-10 pointer-events-none"></div>
+                <div class="relative z-10">
+                    <div class="flex flex-wrap items-center gap-2 text-xs font-medium mb-3">
+                        <span class="px-2.5 py-1 rounded-full bg-indigo-50 text-accent-indigo border border-indigo-200">血液腫瘤科 Hematology</span>
+                        <span class="px-2.5 py-1 rounded-full bg-amber-50 text-accent-amber border border-amber-200">文獻回顧至 2026年10月</span>
+                        <span class="px-2.5 py-1 rounded-full bg-paper-soft text-ink-muted border border-paper-border">主題更新：2026年11月18日</span>
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-ink-main tracking-tight">成人急性骨髓性白血病（Adult AML）實證圖文解說</h1>
+                    <p class="mt-3 text-ink-muted text-sm sm:text-base">
+                        急性骨髓性白血病（Acute Myeloid Leukemia, AML）是一組具高度異質性的侵襲性血液惡性腫瘤，源於骨髓內惡性造血前驅細胞（myeloid precursor cells）的株落性增生（clonal expansion）。白血病細胞干擾正常血球生成，進而導致貧血、感染、出血及致命的腫瘤急症。
+                    </p>
+                    <!-- 核心數據快覽 -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+                        <div class="p-3.5 rounded-xl bg-paper-soft/70 border border-paper-border">
+                            <div class="text-xs text-ink-muted">中位診斷年齡</div>
+                            <div class="text-xl font-bold text-accent-indigo mt-0.5">68 歲</div>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-paper-soft/70 border border-paper-border">
+                            <div class="text-xs text-ink-muted">診斷芽細胞閾值</div>
+                            <div class="text-xl font-bold text-accent-amber mt-0.5">依亞型與分類</div>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-paper-soft/70 border border-paper-border">
+                            <div class="text-xs text-ink-muted">年輕 Fit 族群 CR 率</div>
+                            <div class="text-xl font-bold text-accent-emerald mt-0.5">60–80%</div>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-paper-soft/70 border border-paper-border">
+                            <div class="text-xs text-ink-muted">可評估異體移植的復發風險</div>
+                            <div class="text-xl font-bold text-accent-crimson mt-0.5">約 &gt;35–40%</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-<section id="sec-presentation" class="level2">
-<h2>2. 臨床表現與腫瘤急症</h2>
-<p>貧血可能表現為疲倦、蒼白與喘。血小板低下可見瘀青、黏膜出血。嗜中性球低下可表現為發燒或感染。也可能有肝脾腫大、皮膚白血病或骨髓肉瘤。</p>
-<div class="aml-table"><table>
+            <!-- 頂部標題卡片 -->
+            <!-- 一、流行病學與致病機轉 -->
+            <section id="sec-intro" class="scroll-mt-24 bg-paper-card rounded-2xl border border-paper-border shadow-sm p-6 sm:p-8">
+                <span id="sec-1" aria-hidden="true"></span><div class="flex items-center gap-3 mb-5 pb-3 border-b border-paper-border">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-accent-indigo font-bold text-sm">01</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-ink-main" id="sec-intro-heading">流行病學與致病機轉</h2>
+                </div>
 
-<thead>
-<tr class="header">
-<th>情境</th>
-<th>優先辨識與處置</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>疑似 APL</td>
-<td>合併出血、低纖維蛋白原或 DIC 時緊急聯絡血液科，送 PML::RARA。高度疑似即啟動 ATRA 與凝血支持，待分子結果確認。</td>
-</tr>
-<tr class="even">
-<td>高白血球血症／白血球鬱滯</td>
-<td>高白血球血症通常指 WBC &gt;100 × 10⁹/L。白血球鬱滯可出現在更低數值。呼吸窘迫、低氧或急性神經症狀須緊急評估與降白血球處置。</td>
-</tr>
-<tr class="odd">
-<td>腫瘤溶解症候群（TLS）</td>
-<td>監測鉀、磷、鈣、尿酸與腎功能。診斷時即可能出現，亦可在治療後發生。</td>
-</tr>
-<tr class="even">
-<td>發燒合併嗜中性球低下</td>
-<td>緊急評估感染並依發燒性嗜中性球低下流程處置。</td>
-</tr>
-<tr class="odd">
-<td>神經學急症</td>
-<td>新發劇烈頭痛、意識改變或局部神經缺損，應緊急評估顱內出血及其他病因。</td>
-</tr>
-</tbody>
-</table>
-</div></section>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="space-y-3">
+                        <h3 class="text-base font-bold text-accent-indigo">流行病學與危險因子</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-sm sm:text-base text-ink-main">
+                            <li><strong>盛行率與年齡</strong>：成人最常見的急性白血病，但整體仍屬罕見（約佔美國成人癌症 <strong>1%</strong>，卻佔癌症相關死亡近 <strong>2%</strong>）。中位診斷年齡約 <strong>68 歲</strong>，發生率隨年齡上升，男性略多於女性。</li>
+                            <li><strong>環境因子</strong>：基因毒性化學物質、放射線暴露、菸草、以及曾接受細胞毒性化療（therapy-related AML）。</li>
+                            <li><strong>前置造血病變</strong>：部分病患演變為 AML 前，曾有株落性造血異常，包含：骨髓化生不良症候群（<strong>MDS</strong>）、骨髓增生性腫瘤（<strong>MPN</strong>）、陣發性夜間血紅素尿症（PNH）、再生不良性貧血（AA）、<strong>CHIP</strong>（clonal hematopoiesis of indeterminate prognosis）或 <strong>CCUS</strong>（clonal cytopenia of unknown significance）。</li>
+                        </ul>
+                    </div>
 
-<section id="sec-eval" class="level2">
-<h2>3. 治療前評估與體能狀態</h2>
-<ul>
-<li><strong>血液與骨髓</strong>：CBC/DC、血抹片、凝血（含 fibrinogen）、肝腎功能、電解質、LDH、尿酸及適當的感染篩檢。骨髓檢查整合形態、流式細胞儀、核型與分子檢測。及早分流疑似 APL，並取得會影響第一線處方的分子結果。</li>
-<li><strong>器官功能與移植準備</strong>：依病況安排 ECG、心臟超音波等基線檢查。潛在移植候選者及早安排 HLA 檢測與捐贈者搜尋。</li>
-<li><strong>治療強度</strong>：綜合功能狀態、共病、器官功能、老年評估、病人目標與照護支持。HCT-CI 可用於移植風險評估。</li>
-</ul>
-<div class="aml-table"><table>
-<thead>
-<tr class="header">
-<th>ECOG</th>
-<th>臨床定義</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>活動無限制。</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>劇烈活動受限，可走動並從事輕度工作。</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>可自理、無法工作，清醒時間超過一半可離床。</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>僅能部分自理，清醒時間超過一半在床或椅上。</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>完全失能，無法自理。</td>
-</tr>
-</tbody>
-</table>
-</div></section>
+                    <div class="space-y-3">
+                        <h3 class="text-base font-bold text-accent-amber">家族遺傳傾向與致病機轉</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-sm sm:text-base text-ink-main">
+                            <li><strong>家族遺傳異常（罕見但重要）</strong>：與腫瘤抑制或 DNA 修復基因突變/缺失有關（如 Trisomy 21、Fanconi anemia、Li-Fraumeni、Bloom syndrome），以及家族性基因突變：<strong>CEBPA、DDX41、RUNX1、TP53、GATA2、TERT/TERC、SRP72、ANKRD26、ETV6</strong>。若具家族史或全身性特徵（如早發白髮、聽力喪失、肺纖維化、血小板功能異常），應轉介遺傳風險評估。</li>
+                            <li><strong>白血病幹細胞（LSCs）</strong>：骨髓前驅細胞惡性轉化後，保留增生能力但<strong>分化受阻</strong>且<strong>無法進行細胞凋亡（apoptosis）</strong>。治癒 AML 必須徹底清除具自我更新能力的白血病幹細胞及其子代。</li>
+                            <li><strong>遺傳變異</strong>：超過半數病例可檢出特定染色體異常（轉位、重排、整條或部分增減）；幾乎所有病例皆有常規染色體檢查無法偵測的點突變、基因重複或融合。</li>
+                        </ul>
+                    </div>
+                </div>
 
-<section id="sec-dx" class="level2">
-<h2>4. 診斷與分類（ICC 與 WHO5）</h2>
-<p>以報告採用的分類系統為準。門檻指周邊血或骨髓芽細胞比例，仍須整合形態與基因異常是否屬於同一病理過程。</p>
-<div class="aml-table"><table>
+                <!-- SVG 圖解 1：病理機轉與臨床表現 -->
+                <div class="mt-6 p-4 sm:p-6 rounded-xl bg-paper-soft/60 border border-paper-border">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-sm sm:text-base font-bold text-ink-main">視覺化圖解：AML 骨髓病理機轉、Auer Rods 特徵與三大血球低下表現</h3>
+                        <span class="text-xs px-2 py-0.5 rounded bg-white border border-paper-border text-ink-muted">內嵌 SVG 示意圖</span>
+                    </div>
+                    <div class="w-full overflow-x-auto" tabindex="0" aria-label="AML 骨髓病理機轉圖表，手機可左右滑動">
+                        <svg viewbox="0 0 860 320" class="w-full h-auto min-w-[640px]" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AML 骨髓病理機轉" preserveaspectratio="xMidYMid meet">
+                            <!-- 背景 -->
+                            <rect x="0" y="0" width="860" height="320" rx="12" fill="#FFFFFF" stroke="#E6DEC3" stroke-width="1.5"></rect>
 
-<thead>
-<tr class="header">
-<th>情境</th>
-<th>ICC 2022</th>
-<th>WHO 第 5 版</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>PML::RARA、RUNX1::RUNX1T1、CBFB::MYH11、NPM1 突變</td>
-<td>通常須 ≥10% 芽細胞</td>
-<td>無統一的最低百分比，須整合形態與分子證據</td>
-</tr>
-<tr class="even">
-<td>CEBPA 定義型 AML</td>
-<td>≥10%，限 bZIP 區域 in-frame 突變</td>
-<td>≥20%，包含符合定義的雙等位突變或單一 bZIP 區域突變</td>
-</tr>
-<tr class="odd">
-<td>BCR::ABL1</td>
-<td>≥20%</td>
-<td>≥20%。兩系統均須鑑別 CML 急變期。</td>
-</tr>
-<tr class="even">
-<td>無 AML 定義性遺傳異常，芽細胞 10–19%</td>
-<td>符合條件者可歸 MDS/AML</td>
-<td>符合條件者可歸 MDS-IB2 或其他適用實體</td>
-</tr>
-<tr class="odd">
-<td>骨髓肉瘤</td>
-<td>髓外腫瘤可獨立診斷，需做全身血液與骨髓評估</td>
-<td>同左</td>
-</tr>
-</tbody>
-</table>
-</div></section>
+                            <!-- 左側：惡性骨髓微環境 -->
+                            <rect x="20" y="25" width="240" height="270" rx="10" fill="#FDFBF0" stroke="#D1C59E" stroke-width="1.5"></rect>
+                            <text x="140" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#3730A3">骨髓內惡性芽細胞增生</text>
+                            <text x="140" y="70" text-anchor="middle" font-size="11" fill="#5E594D">分化受阻，存活優勢</text>
 
-<section id="sec-prog" class="level2">
-<h2>5. ELN 遺傳風險分層</h2>
-<p><strong>ELN 2022</strong> 主要用於以高強度治療為基礎的預後分層。下表整理常見類別，完整分層須納入基因共現、細胞遺傳學與各類別的優先規則。選用低強度療法時，可參考 <strong>ELN 2024</strong> 與方案相符的分層。</p>
-<form class="aml-risk-filter" hidden>
-<label for="aml-risk">篩選 ELN 2022 風險</label>
-<select id="aml-risk"><option value="">全部</option><option value="favorable">良好</option><option value="intermediate">中度</option><option value="adverse">不良</option></select>
-</form><div class="aml-table"><table>
+                            <!-- 大型骨髓芽細胞 (Myeloblast with Auer rod) -->
+                            <circle cx="105" cy="145" r="44" fill="#E0E7FF" stroke="#4338CA" stroke-width="2.5"></circle>
+                            <!-- 細胞核 (高核質比) -->
+                            <circle cx="98" cy="142" r="31" fill="#818CF8" stroke="#312E81" stroke-width="1.5"></circle>
+                            <!-- 核仁 (Nucleoli) -->
+                            <circle cx="88" cy="134" r="6" fill="#C7D2FE"></circle>
+                            <circle cx="108" cy="150" r="5" fill="#C7D2FE"></circle>
+                            <!-- Auer Rod (粉紅/紅棒狀結構) -->
+                            <line x1="126" y1="122" x2="140" y2="152" stroke="#DC2626" stroke-width="4" stroke-linecap="round"></line>
+                            <line x1="120" y1="158" x2="136" y2="168" stroke="#DC2626" stroke-width="3.5" stroke-linecap="round"></line>
 
-<thead>
-<tr class="header">
-<th>ELN 2022</th>
-<th>常見異常</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd" data-aml-risk="favorable">
-<td>良好</td>
-<td>t(8;21)/RUNX1::RUNX1T1、inv(16) 或 t(16;16)/CBFB::MYH11、無 FLT3-ITD 且無不良風險細胞遺傳學的 NPM1 突變、CEBPA bZIP in-frame 突變。</td>
-</tr>
-<tr class="even" data-aml-risk="intermediate">
-<td>中度</td>
-<td>NPM1 突變合併 FLT3-ITD、野生型 NPM1 合併 FLT3-ITD（無不良風險異常）、t(9;11)/MLLT3::KMT2A，及未列入其他兩類的異常。</td>
-</tr>
-<tr class="odd" data-aml-risk="adverse">
-<td>不良</td>
-<td>多數 KMT2A 重排（t(9;11) 為中度）、MECOM 重排、t(6;9)、t(8;16)、BCR::ABL1、−5/del(5q)、−7、−17/abn(17p)、複雜或單體核型、TP53 突變（VAF ≥10%）及特定骨髓增生異常相關基因突變（ASXL1、BCOR、EZH2、RUNX1、SF3B1、SRSF2、STAG2、U2AF1、ZRSR2）。良好風險亞型合併這些基因時須依 ELN 註解判讀。</td>
-</tr>
-</tbody>
-</table>
-</div></section>
+                            <!-- 標示 Auer rod -->
+                            <path d="M 142 135 L 175 110" stroke="#991B1B" stroke-width="1.5" stroke-dasharray="3,2"></path>
+                            <rect x="160" y="88" width="88" height="32" rx="6" fill="#FEE2E2" stroke="#EF4444" stroke-width="1"></rect>
+                            <text x="204" y="102" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">Auer Rods</text>
+                            <text x="204" y="114" text-anchor="middle" font-size="9.5" fill="#7F1D1D">細胞質粉紅棒狀物</text>
 
-<section id="sec-fit" class="level2">
-<h2>6. 具高強度治療適應性的患者</h2>
-<section id="圖解-2成人非-apl-aml-的治療流程" class="level3">
-<h3>圖解 2｜成人非 APL AML 的治療流程</h3>
-<p><strong>確立亞型與遺傳風險 → 評估體能及治療目標 → 選擇誘導或低強度方案 → 依療效與 MRD 規劃後續。</strong> 疑似 APL 先走急症處置流程。治療選擇也受可近性、當地核准適應症與臨床試驗影響。</p>
-<div class="aml-table"><table>
+                            <!-- 其他增生的芽細胞 -->
+                            <circle cx="185" cy="195" r="26" fill="#E0E7FF" stroke="#4338CA" stroke-width="1.8"></circle>
+                            <circle cx="182" cy="193" r="18" fill="#818CF8"></circle>
+                            <circle cx="85" cy="230" r="24" fill="#E0E7FF" stroke="#4338CA" stroke-width="1.8"></circle>
+                            <circle cx="83" cy="228" r="16" fill="#818CF8"></circle>
+                            <circle cx="145" cy="245" r="20" fill="#E0E7FF" stroke="#4338CA" stroke-width="1.5"></circle>
+                            <circle cx="143" cy="243" r="13" fill="#818CF8"></circle>
 
-<thead>
-<tr class="header">
-<th>階段</th>
-<th>可接受高強度治療</th>
-<th>選擇低強度治療</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>起始治療</td>
-<td>7+3 等誘導方案，依遺傳亞型及適應症選擇加藥或替代方案</td>
-<td>Azacitidine + venetoclax 為常用方案。部分 IDH1 突變患者可評估 azacitidine + ivosidenib。</td>
-</tr>
-<tr class="even">
-<td>反應評估</td>
-<td>依方案安排骨髓評估，整合血球恢復、形態反應及亞型適用的 MRD。</td>
-<td>早期骨髓檢查有助區分持續白血病與治療相關血球低下。</td>
-</tr>
-<tr class="odd">
-<td>後續治療</td>
-<td>依遺傳風險、MRD、復發風險及移植風險決定 cytarabine 鞏固、異體 HCT 或適用的維持治療。</td>
-<td>持續評估療效、耐受性與移植可能，按方案調整週期或用藥天數。</td>
-</tr>
-</tbody>
-</table>
-</div><ul>
-<li><strong>誘導方案</strong>：7+3 通常為 cytarabine 連續輸注 7 天，加 anthracycline 3 天。FLT3 突變可依適應症評估 midostaurin，quizartinib 的第一線核准適應症為 FLT3-ITD。CD33 陽性的特定亞型（尤其 CBF-AML）可考慮 gemtuzumab ozogamicin。CPX-351 用於符合適應症的治療相關 AML 或 AML-MRC。</li>
-<li><strong>緩解判讀</strong>：ELN 2022 完全緩解（CR）包括骨髓芽細胞 &lt;5%、無周邊血芽細胞與髓外疾病、ANC ≥1.0 × 10⁹/L 及血小板 ≥100 × 10⁹/L。第 14–21 天早期骨髓是否安排及如何判讀，依治療方案與臨床狀況決定。</li>
-<li><strong>異體移植</strong>：ELN 2022 建議在預期無移植的復發風險約 &gt;35–40% 時考量。良好風險通常先鞏固，有異常的 MRD 動態時重新評估。中度及不良風險須個別評估移植效益與非復發死亡風險。</li>
-<li><strong>MRD</strong>：依分子亞型、檢體、方法及治療時間點判讀。CBF-AML 可追蹤 RUNX1::RUNX1T1 或 CBFB::MYH11 轉錄本。單一 10⁻⁴ 數值無法代表所有檢測與移植決策。</li>
-<li><strong>維持</strong>：口服 azacitidine 可用於特定接受高強度誘導後達 CR/CRi、無法完成高強度治癒性療程的患者，依當地仿單與治療計畫評估。</li>
-</ul>
-</section>
-<section id="常見高強度誘導方案" class="level3">
-<h3>常見高強度誘導方案</h3>
-<div class="aml-table"><table>
+                            <text x="140" y="283" text-anchor="middle" font-size="11" font-weight="600" fill="#2C2A25">排擠正常造血幹細胞</text>
 
-<thead>
-<tr class="header">
-<th>方案</th>
-<th>典型第一輪框架</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Cytarabine + daunorubicin</td>
-<td>Cytarabine 100–200 mg/m²/日連續靜脈輸注 7 天，加 daunorubicin 60–90 mg/m² 靜脈給藥 3 天。</td>
-</tr>
-<tr class="even">
-<td>Cytarabine + idarubicin</td>
-<td>Cytarabine 100–200 mg/m²/日連續靜脈輸注 7 天，加 idarubicin 12 mg/m² 靜脈給藥 3 天。</td>
-</tr>
-<tr class="odd">
-<td>CPX-351</td>
-<td>固定比例脂質體 daunorubicin 44 mg/m² + cytarabine 100 mg/m²，第 1、3、5 天各靜脈輸注 90 分鐘。</td>
-</tr>
-</tbody>
-</table>
-</div><p>表中為方案框架，實際給藥依院內方案、仿單與器官功能。CPX-351 為固定複方製劑，須使用該製劑的劑量及療程。</p>
-</section>
-</section>
+                            <!-- 中間箭頭 -->
+                            <g stroke="#B45309" stroke-width="2.5" fill="none">
+                                <path d="M 272 160 L 325 160"></path>
+                                <path d="M 325 70 L 325 250"></path>
+                                <path d="M 325 70 L 365 70" marker-end="url(#arrow-amber)"></path>
+                                <path d="M 325 160 L 365 160" marker-end="url(#arrow-amber)"></path>
+                                <path d="M 325 250 L 365 250" marker-end="url(#arrow-amber)"></path>
+                            </g>
+                            <defs>
+                                <marker id="arrow-amber" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse">
+                                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#B45309"></path>
+                                </marker>
+                                <marker id="arrow-indigo" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="6" markerheight="6" orient="auto-start-reverse">
+                                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#3730A3"></path>
+                                </marker>
+                            </defs>
 
-<section id="sec-unfit" class="level2">
-<h2>7. 選擇低強度治療的患者</h2>
-<p>Azacitidine + venetoclax 為初診、無法接受高強度誘導患者的主要選項。VIALE-A 中位總存活由 9.6 個月增至 14.7 個月（HR 0.66），此數字適用於試驗所研究族群。Decitabine + venetoclax 為另一選項，須依適應症與可近性選擇。</p>
-<p>開始 venetoclax 前評估 TLS 風險、腎功能及 CYP3A 交互作用（如部分 azole 抗黴菌藥）。依方案安排降白血球、補液、降尿酸、劑量遞增與生化監測。緩解後依血球恢復、感染及骨髓結果調整治療週期。</p>
-</section>
+                            <!-- 右側三條路徑：正常血球減少 -> 臨床表現 -->
+                            <!-- 1. 紅血球減少 -->
+                            <rect x="375" y="32" width="185" height="72" rx="8" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.5"></rect>
+                            <circle cx="402" cy="68" r="14" fill="#EF4444" opacity="0.85"></circle>
+                            <circle cx="402" cy="68" r="6" fill="#FCA5A5"></circle>
+                            <text x="425" y="58" font-size="13" font-weight="700" fill="#991B1B">紅血球生成受抑</text>
+                            <text x="425" y="76" font-size="11.5" fill="#5E594D">貧血 (Anemia)</text>
+                            <text x="425" y="92" font-size="10.5" fill="#7F1D1D">Hb 下降</text>
 
-<section id="sec-rr" class="level2">
-<h2>8. 追蹤與復發／難治性 AML</h2>
-<ul>
-<li>依治療方案與亞型追蹤症狀、CBC、血抹片與適用的 MRD，必要時複查骨髓。分子指標上升時，須依指引時點與方法確認。</li>
-<li>復發或難治時重新取樣，評估克隆演變及可標靶變異（如 FLT3、IDH1/2）。綜合既往治療、能否達緩解、移植適應性與試驗機會。對適合的患者，異體 HCT 是具治癒潛力的重要策略。</li>
-</ul>
-</section>
+                            <path d="M 560 68 L 595 68" stroke="#3730A3" stroke-width="2" marker-end="url(#arrow-indigo)"></path>
+                            <rect x="605" y="32" width="235" height="72" rx="8" fill="#FFFFFF" stroke="#E6DEC3" stroke-width="1.5"></rect>
+                            <text x="620" y="56" font-size="13" font-weight="700" fill="#2C2A25">臨床表現：虛弱、蒼白、呼吸困難</text>
+                            <text x="620" y="76" font-size="11.5" fill="#5E594D">• 疲倦無力、活動耐受力下降</text>
+                            <text x="620" y="92" font-size="11.5" fill="#5E594D">• 結膜與皮膚蒼白 (Pallor)</text>
 
-<section id="sec-evidence" class="level2">
-<h2>9. 實證與參考文獻</h2>
-<ul>
-<li>原筆記來源：Kolitz JE、Larson RA、Rosmarin AG，UpToDate《Acute myeloid leukemia in adults: Overview》。</li>
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/35732831/">WHO 第 5 版髓系腫瘤分類（2022）</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/35767897/">ICC 髓系腫瘤與急性白血病分類（2022）</a></li>
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/35797463/">ELN 2022 成人 AML 建議</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/39133932/">ELN 2024 低強度治療分層</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/41397238/">ELN-DAVID 2025 MRD 共識更新</a></li>
-<li><a href="https://pubmed.ncbi.nlm.nih.gov/30803991/">ELN APL 專家指引</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/41321225/">ASH 高齡 AML 指引</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/32786187/">VIALE-A 原始試驗</a></li>
-</ul>
-</section>
+                            <!-- 2. 血小板減少 -->
+                            <rect x="375" y="124" width="185" height="72" rx="8" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5"></rect>
+                            <polygon points="402,148 412,162 400,174 390,160" fill="#D97706"></polygon>
+                            <text x="425" y="150" font-size="13" font-weight="700" fill="#B45309">血小板生成受抑</text>
+                            <text x="425" y="168" font-size="11.5" fill="#5E594D">血小板低下 / 凝血異常</text>
+                            <text x="425" y="184" font-size="10.5" fill="#92400E">特別警惕 APL 併發 DIC</text>
 
-  <section class="kp-related" id="related-articles" aria-label="相關文章"><h2>相關文章</h2><ul><li><a href="cgvhd-manifestations-and-diagnosis.html">慢性移植物抗宿主疾病（cGVHD）：臨床表現與診斷</a> · 延伸閱讀 AML 接受異體移植後的慢性 GVHD 辨識。</li><li><a href="cgvhd-treatment-and-targeted-evidence.html">慢性移植物抗宿主疾病（cGVHD）：臨床治療與標靶實證</a> · 延伸閱讀異體移植後慢性 GVHD 的治療和支持照護。</li></ul></section>
+                            <path d="M 560 160 L 595 160" stroke="#3730A3" stroke-width="2" marker-end="url(#arrow-indigo)"></path>
+                            <rect x="605" y="124" width="235" height="72" rx="8" fill="#FFFFFF" stroke="#E6DEC3" stroke-width="1.5"></rect>
+                            <text x="620" y="148" font-size="13" font-weight="700" fill="#2C2A25">臨床表現：異常出血與瘀青</text>
+                            <text x="620" y="168" font-size="11.5" fill="#5E594D">• 牙齦出血、紫斑、不成比例瘀傷</text>
+                            <text x="620" y="184" font-size="11.5" fill="#991B1B">• 嚴重者可致腦出血 (ICH) 或 DIC</text>
+
+                            <!-- 3. 嗜中性球減少 -->
+                            <rect x="375" y="216" width="185" height="72" rx="8" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.5"></rect>
+                            <circle cx="402" cy="252" r="14" fill="#6366F1" opacity="0.25" stroke="#4F46E5" stroke-width="1.5"></circle>
+                            <circle cx="397" cy="249" r="4" fill="#4338CA"></circle>
+                            <circle cx="407" cy="252" r="4" fill="#4338CA"></circle>
+                            <circle cx="401" cy="258" r="3.5" fill="#4338CA"></circle>
+                            <text x="425" y="242" font-size="13" font-weight="700" fill="#3730A3">嗜中性球生成受抑</text>
+                            <text x="425" y="260" font-size="11.5" fill="#5E594D">嗜中性球低下 (Neutropenia)</text>
+                            <text x="425" y="276" font-size="10.5" fill="#312E81">免疫防禦喪失</text>
+
+                            <path d="M 560 252 L 595 252" stroke="#3730A3" stroke-width="2" marker-end="url(#arrow-indigo)"></path>
+                            <rect x="605" y="216" width="235" height="72" rx="8" fill="#FFFFFF" stroke="#E6DEC3" stroke-width="1.5"></rect>
+                            <text x="620" y="240" font-size="13" font-weight="700" fill="#2C2A25">臨床表現：發燒與嚴重感染</text>
+                            <text x="620" y="260" font-size="11.5" fill="#5E594D">• 反覆細菌/黴菌感染、肺炎</text>
+                            <text x="620" y="276" font-size="11.5" fill="#5E594D">• 嗜中性球低下發燒、敗血症</text>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 二、臨床表現與腫瘤急症 -->
+            <section id="sec-presentation" class="scroll-mt-24 bg-paper-card rounded-2xl border border-paper-border shadow-sm p-6 sm:p-8">
+                <span id="sec-2" aria-hidden="true"></span><div class="flex items-center gap-3 mb-5 pb-3 border-b border-paper-border">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-100 text-accent-crimson font-bold text-sm">02</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-ink-main" id="sec-presentation-heading">臨床表現與腫瘤急症（Oncologic Emergencies）</h2>
+                </div>
+
+                <p class="text-sm sm:text-base text-ink-main mb-5">
+                    多數病患以全血球低下（pancytopenia）或白血球過多（循環芽細胞）相關症狀就醫，偶見肝脾腫大或髓外腫塊／皮膚浸潤（<strong>myeloid sarcoma / leukemia cutis</strong>），但<strong>淋巴結腫大罕見</strong>。以下四大急症需立即辨識與處置：
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <!-- 急症 1 -->
+                    <div class="p-5 rounded-xl bg-red-50/70 border border-red-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold text-accent-crimson text-base">1. 白血球過高與滯留症</h3>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-red-100 text-red-800">Leukostasis</span>
+                        </div>
+                        <p class="text-sm text-ink-main">高白血球血症通常指周邊血 WBC &gt;100 × 10⁹/L。白血球鬱滯可在更低數值發生。合併呼吸窘迫、低氧或急性神經症狀時，須緊急評估與處置。<a href="https://pubmed.ncbi.nlm.nih.gov/35797463/">ELN 2022</a></p>
+                    </div>
+
+                    <!-- 急症 2 -->
+                    <div class="p-5 rounded-xl bg-amber-50/80 border border-amber-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold text-accent-amber text-base">2. 腫瘤溶解症候群</h3>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-100 text-amber-900">TLS</span>
+                        </div>
+                        <p class="text-sm text-ink-main">
+                            大量白血病細胞快速崩解，引發嚴重代謝異常：<strong>高血鉀（hyperkalemia）、高血磷（hyperphosphatemia）、高尿酸（hyperuricemia）</strong>及<strong>急性腎功能損傷</strong>。常見於高腫瘤負荷或 Venetoclax 治療初期。
+                        </p>
+                    </div>
+
+                    <!-- 急症 3 -->
+                    <div class="p-5 rounded-xl bg-red-50/70 border border-red-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold text-accent-crimson text-base">3. DIC 與急性前骨髓細胞白血病</h3>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-red-100 text-red-800">APL 醫療急症</span>
+                        </div>
+                        <p class="text-sm text-ink-main">APL（急性前骨髓細胞白血病）可合併嚴重出血、低纖維蛋白原與 DIC。典型為 t(15;17) 造成 <strong>PML::RARA</strong> 融合。高度疑似時立即聯絡血液科，送 PML::RARA 檢測，同步啟動 <strong>ATRA（全反式維甲酸）與凝血支持</strong>。<a href="https://pubmed.ncbi.nlm.nih.gov/30803991/">ELN APL 指引</a></p>
+                    </div>
+
+                    <!-- 急症 4 -->
+                    <div class="p-5 rounded-xl bg-indigo-50/70 border border-indigo-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-bold text-accent-indigo text-base">4. 中樞神經系統（CNS）侵犯</h3>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">CNS / 出血</span>
+                        </div>
+                        <p class="text-sm text-ink-main">
+                            表現為頭痛、局部神經學缺損、腦神經麻痺或眼部侵犯，可能源於<strong>腦出血（cerebral hemorrhage）</strong>或<strong>白血病性腦膜炎（leukemic meningitis）</strong>，需緊急影像學與專科評估。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 三、治療前評估與身體適能 -->
+            <section id="sec-eval" class="scroll-mt-24 bg-paper-card rounded-2xl border border-paper-border shadow-sm p-6 sm:p-8">
+                <span id="sec-3" aria-hidden="true"></span><div class="flex items-center gap-3 mb-5 pb-3 border-b border-paper-border">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-accent-indigo font-bold text-sm">03</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-ink-main" id="sec-eval-heading">治療前評估、身體適能與照護目標</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="p-4 rounded-xl bg-paper-soft/50 border border-paper-border">
+                        <h3 class="font-bold text-accent-indigo text-sm mb-2">1. 臨床與檢驗評估</h3>
+                        <ul class="text-sm space-y-1.5 text-ink-main list-disc pl-4">
+                            <li><strong>共病盤點</strong>：糖尿病、肥胖、心肺肝腎疾病、牙科感染灶、藥物過敏與交互作用。</li>
+                            <li><strong>血液檢驗</strong>：CBC/DC、凝血功能、血清生化（含尿酸/電解質）、病毒血清學檢查。</li>
+                            <li><strong>骨髓檢查（核心）</strong>：型態學（含芽細胞比例）、流式細胞儀（flow cytometry）、染色體核型（karyotype）與分子基因檢測。</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-paper-soft/50 border border-paper-border">
+                        <h3 class="font-bold text-accent-indigo text-sm mb-2">2. 器官功能與輸血/移植準備</h3>
+                        <ul class="text-sm space-y-1.5 text-ink-main list-disc pl-4">
+                            <li><strong>心肺基準</strong>：胸部 X 光、心電圖（ECG）、<strong>心臟超音波（Echo）</strong>評估左心室射出分率（LVEF，因誘導化療含心毒性 anthracycline）。</li>
+                            <li><strong>HLA 配對</strong>：潛在造血幹細胞移植候選人應做 HLA 分型；另檢驗 <strong>HLA A/B</strong> 以備血小板輸注無效時配對使用。</li>
+                            <li><strong>中心靜脈導管</strong>：標準誘導化療前多需置放 CVC 或 PICC 管路。</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200">
+                        <h3 class="font-bold text-accent-amber text-sm mb-2">3. 身體適能與醫病共享決策</h3>
+                        <ul class="text-sm space-y-1.5 text-ink-main list-disc pl-4">
+                            <li><strong>年齡非絕對排除</strong>：年齡本身不應排除強化治療，但 <strong>≥70 歲</strong>因共病增加須審慎評估。</li>
+                            <li><strong>適能工具</strong>：結合體能狀態（<strong>ECOG</strong>）、共病指數（<strong>CCI / HCT-CI</strong>）與認知功能。</li>
+                            <li><strong>照護目標（SDM）</strong>：多數患者以達成完全緩解（CR）與脫離輸血依賴為目標；高齡衰弱者則優先考量低強度治療、生活品質與症狀緩解。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 互動頁籤：ECOG vs HCT-CI 重點 -->
+                <div class="border border-paper-border rounded-xl overflow-hidden">
+                    <div class="flex bg-paper-soft border-b border-paper-border text-sm font-semibold" role="tablist" aria-label="體能狀態與移植共病評估">
+                        <button type="button" id="tab-ecog" class="flex-1 py-2.5 px-4 text-center bg-white text-accent-indigo border-b-2 border-accent-indigo transition" role="tab" aria-controls="panel-ecog" aria-selected="true" tabindex="0">ECOG 體能狀態量表 (Table 1)</button>
+                        <button type="button" id="tab-hctci" class="flex-1 py-2.5 px-4 text-center text-ink-muted hover:text-ink-main transition" role="tab" aria-controls="panel-hctci" aria-selected="false" tabindex="-1">CCI 與 HCT-CI 共病評分重點 (Table 2)</button>
+                    </div>
+                    <div id="panel-ecog" class="p-4 bg-white overflow-x-auto" role="tabpanel" aria-labelledby="tab-ecog">
+                        <table class="w-full text-sm text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-paper-border text-ink-muted">
+                                    <th class="py-2 px-3 w-20">分數</th>
+                                    <th class="py-2 px-3">臨床定義</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-paper-border/60">
+                                <tr><td class="py-2 px-3 font-bold text-accent-indigo">0</td><td class="py-2 px-3">完全正常活動，無任何體能限制。</td></tr>
+                                <tr><td class="py-2 px-3 font-bold text-accent-indigo">1</td><td class="py-2 px-3">劇烈體力活動受限，但可自由走動並從事輕度工作。</td></tr>
+                                <tr><td class="py-2 px-3 font-bold text-accent-amber">2</td><td class="py-2 px-3">可完全自理，但無法工作；清醒時間 &gt;50% 可下床活動。</td></tr>
+                                <tr><td class="py-2 px-3 font-bold text-accent-crimson">3</td><td class="py-2 px-3">僅能有限度自理；清醒時間 &gt;50% 須臥床或坐輪椅。</td></tr>
+                                <tr><td class="py-2 px-3 font-bold text-accent-crimson">4</td><td class="py-2 px-3">完全失能，無法自理，全日臥床或坐輪椅。</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="panel-hctci" class="p-4 bg-white overflow-x-auto" role="tabpanel" aria-labelledby="tab-hctci" hidden="hidden">
+                        <table class="w-full text-sm text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-paper-border text-ink-muted">
+                                    <th class="py-2 px-3">共病類別</th>
+                                    <th class="py-2 px-3">HCT-CI 關鍵定義</th>
+                                    <th class="py-2 px-3 w-24 text-center">HCT-CI 分數</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-paper-border/60">
+                                <tr><td class="py-2 px-3 font-semibold">肺部疾病</td><td class="py-2 px-3">中度 (DLCO/FEV1 66–80%) / 重度 (靜止呼吸困難、需氧或 ≤65%)</td><td class="py-2 px-3 text-center font-bold text-accent-amber">2 / 3</td></tr>
+                                <tr><td class="py-2 px-3 font-semibold">心臟與瓣膜</td><td class="py-2 px-3">冠心病/心衰/MI/EF≤50% (1分)；心律不整 (1分)；心瓣膜疾病（不含 MVP）(3分)</td><td class="py-2 px-3 text-center font-bold text-accent-amber">1 / 3</td></tr>
+                                <tr><td class="py-2 px-3 font-semibold">肝臟疾病</td><td class="py-2 px-3">輕度：慢性肝炎、膽紅素 &gt;1–1.5× ULN 或 AST/ALT &gt;1–2.5× ULN。中重度：肝硬化、膽紅素 &gt;1.5× ULN 或 AST/ALT &gt;2.5× ULN。</td><td class="py-2 px-3 text-center font-bold text-accent-amber">1 / 3</td></tr>
+                                <tr><td class="py-2 px-3 font-semibold">腎臟疾病</td><td class="py-2 px-3">中重度：Cr &gt;2 mg/dL、透析或腎移植</td><td class="py-2 px-3 text-center font-bold text-accent-amber">2</td></tr>
+                                <tr><td class="py-2 px-3 font-semibold">既往實體癌</td><td class="py-2 px-3">病史中曾治療過任何實體惡性腫瘤（非黑色素瘤皮膚癌除外）</td><td class="py-2 px-3 text-center font-bold text-accent-crimson">3</td></tr>
+                                <tr><td class="py-2 px-3 font-semibold">其他共病</td><td class="py-2 px-3">風濕病/消化性潰瘍 (2分)；糖尿病/腦血管/精神疾病/感染/IBD/BMI&gt;35 (各1分)</td><td class="py-2 px-3 text-center font-bold text-ink-muted">1–2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 四、診斷標準與分類比較表 -->
+            <section id="sec-dx" class="scroll-mt-24 bg-paper-card rounded-2xl border border-paper-border shadow-sm p-6 sm:p-8">
+                <span id="sec-4" aria-hidden="true"></span><div class="flex items-center gap-3 mb-5 pb-3 border-b border-paper-border">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-accent-indigo font-bold text-sm">04</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-ink-main" id="sec-dx-heading">診斷標準與當代分類比較（ICC vs. WHO5）</h2>
+                </div>
+
+                <p class="text-sm sm:text-base text-ink-main mb-4">
+                    當代 AML 診斷應採用 <strong>2022 國際共識分類（ICC）</strong>或 <strong>WHO 第 5 版（WHO5）</strong>，取代舊有的 WHO4 與 FAB 分類。兩者皆強調細胞遺傳與分子基因特徵，但在芽細胞百分比閾值與細部命名上存在關鍵差異：
+                </p>
+
+                <div class="overflow-x-auto rounded-xl border border-paper-border">
+                    <table class="w-full text-sm text-left border-collapse">
+                        <thead>
+                            <tr class="bg-paper-soft text-ink-main border-b border-paper-border">
+                                <th class="py-3 px-4 font-bold w-1/4">比較項目</th>
+                                <th class="py-3 px-4 font-bold w-3/8 text-accent-indigo">ICC (2022)</th>
+                                <th class="py-3 px-4 font-bold w-3/8 text-accent-amber">WHO 第 5 版 (WHO5, 2022)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-paper-border bg-white">
+                            <tr>
+                                <td class="py-3 px-4 font-semibold bg-paper-bg/50">具定義性基因異常<br><span class="text-xs font-normal text-ink-muted">如 t(15;17), t(8;21), inv(16), NPM1</span></td>
+                                <td class="py-3 px-4">通常須周邊血或骨髓芽細胞 ≥10%。</td>
+                            <td class="py-3 px-4">多數此類亞型沒有統一最低芽細胞比例，須整合形態與分子證據。</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-semibold bg-paper-bg/50">t(9;22) / BCR::ABL1</td>
+                                <td class="py-3 px-4">≥20% 芽細胞，須鑑別 CML 急變期。</td>
+                            <td class="py-3 px-4">≥20% 芽細胞，須鑑別 CML 急變期。</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-semibold bg-paper-bg/50">髓外骨髓肉瘤<br><span class="text-xs font-normal text-ink-muted">Myeloid Sarcoma</span></td>
+                                <td class="py-3 px-4">可獨立診斷骨髓肉瘤，並評估是否合併骨髓 AML。</td>
+                            <td class="py-3 px-4">可獨立診斷骨髓肉瘤，並評估是否合併骨髓 AML。</td>
+                            </tr>
+                            <tr class="bg-amber-50/30">
+                                <td class="py-3 px-4 font-semibold bg-paper-bg/50">CEBPA bZIP 突變</td>
+                                <td class="py-3 px-4">≥10%，限 bZIP 區域 in-frame 突變。</td>
+                                <td class="py-3 px-4">≥20%。包含符合定義的雙等位 CEBPA 突變或單一 bZIP 區域突變。</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-semibold bg-paper-bg/50">10–19% 芽細胞<br><span class="text-xs font-normal text-ink-muted">（無定義性基因異常）</span></td>
+                                <td class="py-3 px-4">符合條件者可歸為 MDS/AML。≥20% 時依適用 AML 實體分類。</td>
+                                <td class="py-3 px-4">符合條件者可歸為 MDS-IB2 或其他適用實體。</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-semibold bg-paper-bg/50">缺乏定義性基因異常之分類</td>
+                                <td class="py-3 px-4">依芽細胞比例分級，並將 <strong>TP53 突變</strong>與骨髓化生不良相關細胞遺傳異常列為獨立實體；附加修飾詞（治療相關、MDS/MPN 演變、生殖系遺傳）。</td>
+                                <td class="py-3 px-4">符合 AML 門檻且排除其他 AML 類型後，可依分化分類。符合骨髓增生異常相關條件者另歸 AML-MR。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-3 text-xs text-ink-muted">
+                    <strong>鑑別診斷要點</strong>：須排除 ALL、CML 急性期、BPDCN、混合表現型急性白血病（MPAL）、MDS、再生不良性貧血、營養缺乏（B12/葉酸/銅）、類白血病反應（leukemoid reaction）及骨髓轉移癌所致之白紅血球母細胞血症（leukoerythroblastosis）。
+                </p>
+            </section>
+
+            <!-- 五、預後風險分層 (ELN 2022) -->
+            <section id="sec-prog" class="scroll-mt-24 bg-paper-card rounded-2xl border border-paper-border shadow-sm p-6 sm:p-8">
+                <span id="sec-5" aria-hidden="true"></span><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 pb-3 border-b border-paper-border">
+                    <div class="flex items-center gap-3">
+                        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-accent-indigo font-bold text-sm">05</span>
+                        <h2 class="text-xl sm:text-2xl font-bold text-ink-main" id="sec-prog-heading">預後風險分層（ELN 2022）</h2>
+                    </div>
+                    <!-- 互動式風險篩選標籤 -->
+                    <div class="flex flex-wrap gap-1.5" role="group" aria-label="預後分層篩選">
+                        <button type="button" data-filter="all" class="eln-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-accent-indigo text-white transition" aria-pressed="true">全部顯示</button>
+                        <button type="button" data-filter="favorable" class="eln-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-paper-soft text-accent-emerald hover:bg-emerald-50 transition" aria-pressed="false">良好 (Favorable)</button>
+                        <button type="button" data-filter="intermediate" class="eln-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-paper-soft text-accent-amber hover:bg-amber-50 transition" aria-pressed="false">中度 (Intermediate)</button>
+                        <button type="button" data-filter="adverse" class="eln-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-paper-soft text-accent-crimson hover:bg-red-50 transition" aria-pressed="false">不良 (Adverse)</button>
+                    </div>
+                </div>
+
+                <p class="text-sm text-ink-muted mb-5">ELN 2022 主要供接受高強度治療的非 APL AML 使用。完整判讀須納入共存的細胞遺傳異常及基因優先規則。低強度方案可另參考 ELN 2024。<a href="https://pubmed.ncbi.nlm.nih.gov/35797463/">ELN 2022</a></p>
+
+                <div class="grid md:grid-cols-3 gap-5" id="eln-grid">
+                    <!-- Favorable -->
+                    <div class="eln-card rounded-xl border-2 border-emerald-200 bg-emerald-50/30 p-5" data-risk="favorable">
+                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-emerald-200">
+                            <h3 class="font-bold text-accent-emerald text-base">良好風險 (Favorable)</h3>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-ink-main">
+                            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">•</span><span><code>t(8;21)</code> / <em>RUNX1::RUNX1T1</em></span></li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">•</span><span><code>inv(16)</code> 或 <code>t(16;16)</code> / <em>CBFB::MYH11</em></span></li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">•</span><span>NPM1 突變，無 FLT3-ITD，且無不良風險細胞遺傳學。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-600 font-bold">•</span><span><strong>bZIP in-frame mutated <em>CEBPA</em></strong></span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Intermediate -->
+                    <div class="eln-card rounded-xl border-2 border-amber-200 bg-amber-50/30 p-5" data-risk="intermediate">
+                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-amber-200">
+                            <h3 class="font-bold text-accent-amber text-base">中度風險 (Intermediate)</h3>
+                            <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-ink-main">
+                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">•</span><span>Mutated <em>NPM1</em> <strong>合併 <em>FLT3</em>-ITD</strong></span></li>
+                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">•</span><span>野生型 NPM1 合併 FLT3-ITD，且無不良風險異常。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">•</span><span><code>t(9;11)</code> / <em>MLLT3::KMT2A</em></span></li>
+                            <li class="flex items-start gap-2"><span class="text-amber-600 font-bold">•</span><span>未歸類於良好或不良風險之其他細胞遺傳或分子異常</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Adverse -->
+                    <div class="eln-card rounded-xl border-2 border-red-200 bg-red-50/30 p-5" data-risk="adverse">
+                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-red-200">
+                            <h3 class="font-bold text-accent-crimson text-base">不良風險 (Adverse)</h3>
+                            <span class="w-3 h-3 rounded-full bg-red-600"></span>
+                        </div>
+                        <ul class="space-y-1.5 text-sm text-ink-main">
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span><code>t(6;9)</code> / <em>DEK::NUP214</em></span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span>KMT2A 重排，t(9;11) 除外。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span><code>t(9;22)</code> / <em>BCR::ABL1</em></span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span><code>t(8;16)</code> / <em>KAT6A::CREBBP</em></span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span><code>inv(3)</code> or <code>t(3;3)</code> / <em>GATA2, MECOM (EVI1)</em></span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span><code>t(3q26.2;v)</code> / <em>MECOM</em>-rearranged</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span><code>-5</code> 或 <code>del(5q)</code>、<code>-7</code>、<code>-17/abn(17p)</code></span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span>複雜核型 (Complex) / 單體核型 (Monosomal)</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span>TP53 突變（VAF ≥10%）。</span></li>
+                            <li class="flex items-start gap-2"><span class="text-red-600 font-bold">•</span><span>突變基因：<em>ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2</em></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 六、年輕且體能佳患者之治療 -->
+            <section id="sec-fit" class="scroll-mt-24 bg-paper-card rounded-2xl border border-paper-border shadow-sm p-6 sm:p-8">
+                <span id="sec-6" aria-hidden="true"></span><div class="flex items-center gap-3 mb-5 pb-3 border-b border-paper-border">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-accent-indigo font-bold text-sm">06</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-ink-main" id="sec-fit-heading">年輕且體能佳患者之治療（Fit, Younger Patients）</h2>
+                </div>
+
+                <!-- SVG 圖解 2：AML 治療決策流程圖 -->
+                <div class="mb-7 p-4 sm:p-6 rounded-xl bg-paper-soft/60 border border-paper-border">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-sm sm:text-base font-bold text-ink-main">視覺化圖解：成人 AML 整體治療決策流程（Fit vs. Less-fit）</h3>
+                        <span class="text-xs px-2 py-0.5 rounded bg-white border border-paper-border text-ink-muted">內嵌 SVG 流程圖</span>
+                    </div>
+                    <div class="w-full overflow-x-auto" tabindex="0" aria-label="成人非 APL 的 AML 治療流程圖表，手機可左右滑動">
+                        <svg viewbox="0 0 880 390" class="w-full h-auto min-w-[680px]" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="成人非 APL 的 AML 治療流程" preserveaspectratio="xMidYMid meet">
+                            <rect x="0" y="0" width="880" height="390" rx="12" fill="#FFFFFF" stroke="#E6DEC3" stroke-width="1.5"></rect>
+
+                            <!-- 起點：確診 AML + 身體適能評估 -->
+                            <rect x="20" y="145" width="145" height="90" rx="10" fill="#3730A3"></rect>
+                            <text x="92" y="178" text-anchor="middle" font-size="13.5" font-weight="700" fill="#FFFFFF">確診非 APL 成人 AML</text>
+                            <text x="92" y="198" text-anchor="middle" font-size="11" fill="#E0E7FF">評估體能 (ECOG/HCT-CI)</text>
+                            <text x="92" y="216" text-anchor="middle" font-size="11" fill="#E0E7FF">與基因/染色體分層</text>
+
+                            <!-- 分流線 -->
+                            <path d="M 165 170 L 205 170 L 205 95 L 235 95" stroke="#3730A3" stroke-width="2.2" fill="none" marker-end="url(#arrow-indigo)"></path>
+                            <path d="M 165 210 L 205 210 L 205 315 L 235 315" stroke="#B45309" stroke-width="2.2" fill="none" marker-end="url(#arrow-amber)"></path>
+
+                            <!-- 上路：Fit 年輕族群 -->
+                            <rect x="242" y="30" width="175" height="130" rx="10" fill="#EEF2FF" stroke="#818CF8" stroke-width="1.8"></rect>
+                            <text x="329" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="#3730A3">可接受高強度治療</text>
+                            <text x="329" y="74" text-anchor="middle" font-size="12" font-weight="700" fill="#1E1B4B">強化誘導化療 (7+3)</text>
+                            <text x="329" y="94" text-anchor="middle" font-size="10.5" fill="#4338CA">Cytarabine 7天 + Anthracycline 3天</text>
+                            <text x="329" y="112" text-anchor="middle" font-size="10.5" fill="#5E594D">+ FLT3 抑制劑依突變與適應症選擇</text>
+                            <text x="329" y="128" text-anchor="middle" font-size="10.5" fill="#5E594D">+ CD33(+)：可加 Gemtuzumab</text>
+                            <text x="329" y="144" text-anchor="middle" font-size="10.5" fill="#5E594D">• 次發/治療相關：CPX-351</text>
+
+                            <path d="M 417 95 L 448 95" stroke="#3730A3" stroke-width="2" marker-end="url(#arrow-indigo)"></path>
+
+                            <!-- Day 14-21 Nadir -->
+                            <rect x="455" y="40" width="165" height="110" rx="10" fill="#FDFBF0" stroke="#D1C59E" stroke-width="1.8"></rect>
+                            <text x="537" y="64" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2C2A25">依方案安排骨髓評估</text>
+                            <text x="537" y="82" text-anchor="middle" font-size="11" fill="#5E594D">骨髓抽吸與切片評估</text>
+                            <text x="537" y="103" text-anchor="middle" font-size="11" font-weight="600" fill="#065F46">• 結合細胞密度與芽細胞</text>
+                            <text x="537" y="121" text-anchor="middle" font-size="11" font-weight="600" fill="#991B1B">• 依後續評估決定是否再誘導</text>
+                            <text x="537" y="138" text-anchor="middle" font-size="10" fill="#5E594D">（整合血球、形態與 MRD）</text>
+
+                            <path d="M 620 95 L 650 95" stroke="#3730A3" stroke-width="2" marker-end="url(#arrow-indigo)"></path>
+
+                            <!-- 緩解後治療 (Post-remission) -->
+                            <rect x="658" y="22" width="202" height="175" rx="10" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.8"></rect>
+                            <text x="759" y="45" text-anchor="middle" font-size="12.5" font-weight="700" fill="#065F46">緩解後治療 (CR / CRi)</text>
+
+                            <rect x="670" y="56" width="178" height="58" rx="6" fill="#FFFFFF" stroke="#A7F3D0"></rect>
+                            <text x="759" y="73" text-anchor="middle" font-size="11" font-weight="700" fill="#991B1B">異體造血幹細胞移植 (Allo-HCT)</text>
+                            <text x="759" y="89" text-anchor="middle" font-size="10" fill="#5E594D">依遺傳風險與復發機率</text>
+                            <text x="759" y="103" text-anchor="middle" font-size="10" fill="#5E594D">整合 MRD 動態與移植風險</text>
+
+                            <rect x="670" y="122" width="178" height="62" rx="6" fill="#FFFFFF" stroke="#A7F3D0"></rect>
+                            <text x="759" y="139" text-anchor="middle" font-size="11" font-weight="700" fill="#3730A3">Cytarabine 鞏固治療</text>
+                            <text x="759" y="155" text-anchor="middle" font-size="10" fill="#5E594D">依風險分層與療效選擇</text>
+                            <text x="759" y="171" text-anchor="middle" font-size="9.5" fill="#B45309">符合條件者可考慮口服 azacitidine 維持</text>
+
+                            <!-- 下路：Less-fit / 年長族群 -->
+                            <rect x="242" y="255" width="378" height="112" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.8"></rect>
+                            <text x="431" y="279" text-anchor="middle" font-size="13" font-weight="700" fill="#B45309">適合低強度治療</text>
+                            <text x="431" y="301" text-anchor="middle" font-size="12" font-weight="700" fill="#2C2A25">低強度治療：HMA（Azacitidine / Decitabine）+ Venetoclax</text>
+                            <text x="431" y="321" text-anchor="middle" font-size="10.5" fill="#991B1B">★ 第一週須密切監測腫瘤溶解症候群 (TLS) 與腎功能</text>
+                            <text x="431" y="339" text-anchor="middle" font-size="10.5" fill="#5E594D">• 每月週期持續治療至復發或無法耐受毒性（或併用標靶藥物）</text>
+                            <text x="431" y="355" text-anchor="middle" font-size="10.5" fill="#5E594D">• 部分患者可作為異體移植的橋接治療</text>
+
+                            <path d="M 620 315 L 650 315" stroke="#B45309" stroke-width="2" marker-end="url(#arrow-amber)"></path>
+
+                            <!-- 橋接移植或持續控制 -->
+                            <rect x="658" y="268" width="202" height="86" rx="10" fill="#FDFBF0" stroke="#D1C59E" stroke-width="1.5"></rect>
+                            <text x="759" y="294" text-anchor="middle" font-size="12" font-weight="700" fill="#2C2A25">長期疾病控制與監測</text>
+                            <text x="759" y="314" text-anchor="middle" font-size="10.5" fill="#5E594D">• 監測血球低下、肺炎、敗血症</text>
+                            <text x="759" y="332" text-anchor="middle" font-size="10.5" fill="#5E594D">• 依 ELN 2024 低強度分層評估</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- 誘導化療方案表格 -->
+                <h3 class="text-base font-bold text-accent-indigo mb-3">1. 強化緩解誘導化療（Intensive Remission Induction）</h3>
+                <p class="text-sm text-ink-main mb-3">常見骨架為「7+3」方案（cytarabine 連續輸注 7 天，加 anthracycline 3 天）。FLT3 突變可依適應症加 midostaurin，quizartinib 用於 FLT3-ITD。特定 CD33 陽性亞型（尤其 CBF-AML）可評估 gemtuzumab ozogamicin。</p>
+                <div class="overflow-x-auto rounded-xl border border-paper-border mb-6">
+                    <table class="w-full text-sm text-left border-collapse">
+                        <thead>
+                            <tr class="bg-paper-soft border-b border-paper-border">
+                                <th class="py-2.5 px-3 font-bold">誘導方案 (Table 3)</th>
+                                <th class="py-2.5 px-3 font-bold">劑量與給藥方式</th>
+                                <th class="py-2.5 px-3 font-bold">臨床重點</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-paper-border bg-white">
+                            <tr>
+                                <td class="py-2.5 px-3 font-semibold">Cytarabine + Daunorubicin</td>
+                                <td class="py-2.5 px-3">Cytarabine 100–200 mg/m²/day 連續輸注 7 天；Daunorubicin 60–90 mg/m² IV push 第 1–3 天</td>
+                                <td class="py-2.5 px-3">標準 7+3 方案，&lt;60 歲緩解率約 60–80%，毒性可接受。</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-3 font-semibold">Cytarabine + Idarubicin</td>
+                                <td class="py-2.5 px-3">Cytarabine 100–200 mg/m²/日連續輸注 7 天，加 idarubicin 12 mg/m² 靜脈給藥 3 天。</td>
+                                <td class="py-2.5 px-3">另一種常見的 7+3 誘導方案。依院內方案及器官功能選擇。</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-3 font-semibold">CPX-351 (微脂體複方)</td>
+                                <td class="py-2.5 px-3">固定 5:1 莫耳比（Daunorubicin 44 mg/m² + Cytarabine 100 mg/m²），第 1, 3, 5 天輸注 90 分鐘</td>
+                                <td class="py-2.5 px-3">適用於<strong>治療相關 AML</strong> 或 <strong>MDS 演變之次發性 AML</strong>，年長患者緩解與存活皆優於 7+3。</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-3 font-semibold">HIDAC + Daunorubicin</td>
+                                <td class="py-2.5 px-3">Cytarabine 1–3 g/m² BID 共 12 劑；後續 Daunorubicin 45 mg/m² 3 天</td>
+                                <td class="py-2.5 px-3">緩解率可達 90%，但嚴重毒性常導致後續無法進行緩解後治療。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 療效評估與緩解後治療 -->
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="p-5 rounded-xl bg-paper-soft/50 border border-paper-border">
+                        <h3 class="text-base font-bold text-accent-indigo mb-2">2. Nadir 與療效評估標準</h3>
+                        <ul class="text-sm space-y-2 text-ink-main list-disc pl-4">
+                            <li><strong>第 14–21 天骨髓評估</strong>依方案決定是否安排，判讀須結合細胞密度、芽細胞與後續血球恢復。谷底骨髓結果須與恢復期評估整合，再決定是否追加誘導。</li>
+                            <li><strong>完全緩解（CR）</strong>：骨髓芽細胞 &lt;5%、周邊血無芽細胞且無髓外疾病、ANC ≥1.0 × 10⁹/L、血小板 ≥100 × 10⁹/L。</li>
+                            <li><strong>CRi</strong>：符合 CR 的其他條件，但 ANC 或血小板未達 CR 門檻。</li>
+                            <li><strong>MRD 檢測</strong>依亞型、檢體、方法和時間點判讀。CBF-AML 可追蹤 RUNX1::RUNX1T1 或 CBFB::MYH11 轉錄本。<a href="https://pubmed.ncbi.nlm.nih.gov/41397238/">ELN-DAVID MRD 共識</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="p-5 rounded-xl bg-paper-soft/50 border border-paper-border">
+                        <h3 class="text-base font-bold text-accent-emerald mb-2">3. 緩解後治療（鞏固與維持）</h3>
+                        <ul class="text-sm space-y-2 text-ink-main list-disc pl-4">
+                            <li><strong>必要性</strong>：幾乎所有達 CR 者若未接受緩解後治療皆會復發。</li>
+                            <li><strong>異體造血幹細胞移植（Allo-HCT）</strong>：預期無移植的復發風險約超過 35–40% 時可評估。整合遺傳風險、MRD 動態與非復發死亡風險。<a href="https://pubmed.ncbi.nlm.nih.gov/35797463/">ELN 2022</a></li>
+                            <li><strong>Cytarabine 鞏固</strong>常用於良好風險且反應適當者。中度風險需依 MRD、復發與移植風險個別決策。</li>
+                            <li><strong>維持治療（Maintenance）</strong>：不適合移植之特定患者，可於誘導/鞏固後使用低強度治療，如<strong>口服 Azacitidine</strong> 與/或標靶藥物（持續數月至數年）。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 七、年長或體能較差患者之治療 -->
+            <section id="sec-unfit" class="scroll-mt-24 bg-paper-card rounded-2xl border border-paper-border shadow-sm p-6 sm:p-8">
+                <span id="sec-7" aria-hidden="true"></span><div class="flex items-center gap-3 mb-5 pb-3 border-b border-paper-border">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-amber-100 text-accent-amber font-bold text-sm">07</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-ink-main" id="sec-unfit-heading">年長或體能較差患者之治療（Less-fit / Older Patients）</h2>
+                </div>
+
+                <div class="space-y-4 text-sm sm:text-base text-ink-main">
+                    <p>
+                        無法耐受強化誘導化療者（或 ≥75 歲），低強度治療可有效控制疾病、延長存活並減輕症狀；雖然單靠低強度治療難以達成長期治癒，但對部分不良風險患者可作為<strong>異體造血幹細胞移植（Allo-HCT）的橋接治療</strong>。預後評估可參考 <strong>ELN 2024 低強度治療專屬基因風險分層</strong>。
+                    </p>
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200">
+                            <h3 class="font-bold text-accent-amber text-sm mb-1.5">標準方案</h3>
+                            <p class="text-sm">去甲基化藥物 <strong>HMA（Azacitidine 或 Decitabine）+ Venetoclax（BCL2 抑制劑）</strong>，或搭配特定突變之標靶藥物。門診或住院皆可執行，每月一週期持續至復發或毒性過大。</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-red-50/60 border border-red-200">
+                            <h3 class="font-bold text-accent-crimson text-sm mb-1.5">關鍵毒性與監測</h3>
+                            <p class="text-sm">使用 Venetoclax 方案於<strong>第一週須密切監測腫瘤溶解症候群（TLS）</strong>及腎功能。其餘常見毒性為血球低下、嗜中性球低下發燒、肺炎與敗血症。</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-200">
+                            <h3 class="font-bold text-accent-emerald text-sm mb-1.5">臨床實證療效</h3>
+                            <p class="text-sm">VIALE-A 比較 azacitidine 加 venetoclax 與 azacitidine 加安慰劑。中位總存活為 <strong>14.7 對 9.6 個月</strong>（HR 0.66）。<a href="https://pubmed.ncbi.nlm.nih.gov/32786187/">VIALE-A</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 八、追蹤監測與復發/難治型 (r/r AML) 處置 -->
+            <section id="sec-rr" class="scroll-mt-24 bg-paper-card rounded-2xl border border-paper-border shadow-sm p-6 sm:p-8">
+                <span id="sec-8" aria-hidden="true"></span><div class="flex items-center gap-3 mb-5 pb-3 border-b border-paper-border">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-100 text-accent-indigo font-bold text-sm">08</span>
+                    <h2 class="text-xl sm:text-2xl font-bold text-ink-main" id="sec-rr-heading">追蹤監測與復發／難治型（r/r AML）處置</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 text-sm sm:text-base">
+                    <div>
+                        <h3 class="font-bold text-accent-indigo mb-2">常規追蹤監測</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-ink-main">
+                            <li>定期病史詢問、理學檢查、CBC、周邊血液抹片與血清生化，監測復發徵象與治療相關副作用。</li>
+                            <li>若周邊血敏感度不足以偵測 <strong>MRD</strong>，應定期安排骨髓檢查；追蹤頻率依治療方式與臨床需求個人化調整。</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-accent-crimson mb-2">復發／難治型（r/r AML）策略</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-ink-main">
+                            <li><strong>定義</strong>：達 CR 後再發為復發（relapsed）；經兩次誘導化療未達 CR 為難治（refractory），整體預後極差。</li>
+                            <li><strong>重新檢測突變</strong>：必須重做免疫分型、細胞遺傳與分子檢測，尋找新出現或先前未偵測的可標靶突變（如 <strong>IDH1、IDH2、FLT3</strong>）。</li>
+                            <li><strong>治癒性與救援策略</strong>：依復發時間、既往治療與分子檢測結果選擇救援方案或臨床試驗。異體移植是重要的潛在治癒策略。移植後復發者可由移植團隊評估捐贈者淋巴球輸注（DLI）。</li>
+                            <li><strong>緩和照護</strong>：不適合移植或 DLI 者，以控制症狀與延長存活為主（如 Hydroxyurea 控制高芽細胞、鞘內化療或放療控制 CNS 侵犯、處置 TLS）。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 九、實證來源與參考文獻查核 -->
+            <section id="sec-evidence" class="scroll-mt-24 bg-paper-soft/70 rounded-2xl border border-paper-border p-6 sm:p-8">
+                <span id="sec-9" aria-hidden="true"></span><div class="flex items-center gap-3 mb-4 pb-2 border-b border-paper-border">
+                    <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-white border border-paper-border text-ink-main font-bold text-sm">09</span>
+                    <h2 class="text-lg sm:text-xl font-bold text-ink-main" id="sec-evidence-heading">實證來源與參考文獻查核</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-ink-muted mb-3">原筆記參考 <strong>UpToDate®: Acute myeloid leukemia in adults: Overview</strong>（Jonathan E Kolitz，原筆記標示更新日期為 2026 年 11 月 18 日）。診斷、急症與 MRD 依下列分類及共識校正。</p>
+                <ol class="list-decimal pl-5 space-y-1.5 text-xs sm:text-sm text-ink-muted">
+                    <li>Siegel RL, Kratzer TB, Wagle NS, et al. Cancer statistics, 2026. <em>CA Cancer J Clin</em> 2026; 76:e70043.</li>
+                    <li>Döhner H, Wei AH, Appelbaum FR, et al. Diagnosis and management of AML in adults: 2022 recommendations from an international expert panel on behalf of the ELN. <em>Blood</em> 2022; 140:1345.</li>
+                    <li>Arber DA, Orazi A, Hasserjian RP, et al. International Consensus Classification (ICC) of Myeloid Neoplasms and Acute Leukemias. <em>Blood</em> 2022; 140:1200.</li>
+                    <li>Khoury JD, Solary E, Abla O, et al. The 5th edition of the World Health Organization Classification of Haematolymphoid Tumours (WHO5). <em>Leukemia</em> 2022; 36:1703.</li>
+                    <li>Döhner H, DiNardo CD, Appelbaum FR, et al. Genetic risk classification for adults with AML receiving less-intensive therapies: the 2024 ELN recommendations. <em>Blood</em> 2024; 144:2169.</li>
+                    <li>DiNardo CD, Jonas BA, Pullarkat V, et al. Azacitidine and Venetoclax in Previously Untreated Acute Myeloid Leukemia. <em>N Engl J Med</em> 2020; 383:617.</li>
+                <li><a href="https://pubmed.ncbi.nlm.nih.gov/35732831/">WHO5 髓系腫瘤分類</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/35767897/">ICC 髓系腫瘤與急性白血病分類</a></li><li><a href="https://www.ncbi.nlm.nih.gov/books/NBK577669.5/table/CDR0000805704__8/">HCT-CI 共病定義</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/41397238/">ELN-DAVID MRD 共識</a></li></ol>
+            </section>
+
+        <section class="kp-related" id="related-articles" aria-label="相關文章"><h2>相關文章</h2><ul><li><a href="cgvhd-manifestations-and-diagnosis.html">慢性移植物抗宿主疾病（cGVHD）：臨床表現與診斷</a> · 延伸閱讀 AML 接受異體移植後的慢性 GVHD 辨識。</li><li><a href="cgvhd-treatment-and-targeted-evidence.html">慢性移植物抗宿主疾病（cGVHD）：臨床治療與標靶實證</a> · 延伸閱讀異體移植後慢性 GVHD 的治療和支持照護。</li></ul></section>
 </main>
-<script>
-  const amlRisk = document.querySelector('#aml-risk');
-  const amlRiskRows = [...document.querySelectorAll('[data-aml-risk]')];
-  amlRisk.addEventListener('change', () => {
-    for (const row of amlRiskRows) {
-      row.hidden = amlRisk.value !== '' && row.dataset.amlRisk !== amlRisk.value;
-    }
-  });
-  amlRisk.form.hidden = false;
-</script>
 </body>
 </html>
