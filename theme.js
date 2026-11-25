@@ -151,22 +151,51 @@
     "nhi-lipid-lowering-coverage-2026-12": ["compare", [0, "異動品項與支付價"], [2, "ASCVD 門檻"], [3, "複方給付"]],
   };
 
+  function styleSpecialties() {
+    for (const label of document.querySelectorAll('a[href*="?category="]')) {
+      if (!label.matches(".kp-category, .dx-hero-meta a")) continue;
+      const specialty = new URL(label.href).searchParams.get("category");
+      const chip = label.closest(".dx-hero-meta li") || label;
+      chip.dataset.specialty = specialty;
+      chip.classList.add("kp-specialty-chip");
+    }
+
+    for (const card of document.querySelectorAll("#notes [data-categories]")) {
+      const specialties = card.dataset.categories.trim().split(/\s+/);
+      card.querySelectorAll(".kp-category").forEach((chip, index) => {
+        if (!specialties[index]) return;
+        chip.dataset.specialty = specialties[index];
+        chip.classList.add("kp-specialty-chip");
+      });
+    }
+
+    // The AML overview places its specialty label inside the original header.
+    const amlLabel = document.querySelector(".aml-note header .bg-indigo-50");
+    if (amlLabel) {
+      amlLabel.dataset.specialty = "hematology";
+      amlLabel.classList.add("kp-specialty-chip");
+    }
+  }
+
   function applyArticleDesign(main, headings, hashes) {
     const title = document.querySelector("h1");
     const hero = title?.closest("header, .hero");
     if (hero) {
       hero.classList.add("kp-note-hero");
+      const specialty = document.querySelector(".kp-specialty-chip[data-specialty]");
+      hero.dataset.specialty = specialty?.dataset.specialty || "general";
       const ownGuide = hero.querySelector(".dx-quick, .tri-strip, .grid-cols-2");
+      ownGuide?.classList.add("kp-lead-cards");
       const leadMetrics = hero.nextElementSibling;
       if (leadMetrics?.matches(".verdict-strip, .kpi-strip, .triad")) {
-        leadMetrics.classList.add("kp-note-metrics");
+        leadMetrics.classList.add("kp-note-metrics", "kp-lead-cards");
         hero.append(leadMetrics);
       } else if (!ownGuide) {
         const slug = location.pathname.split("/").pop().replace(/\.html$/, "");
         const [layout, ...topics] = articleGuides[slug] ?? ["cards",
           ...headings.slice(0, 3).map((heading, index) => [index, heading.textContent.trim()])];
         const guide = document.createElement("nav");
-        guide.className = "kp-note-guide";
+        guide.className = "kp-note-guide kp-lead-cards";
         guide.dataset.layout = hero.dataset.guideLayout || layout;
         guide.setAttribute("aria-label", "文章重點");
         for (const [index, label] of topics) {
@@ -279,6 +308,7 @@
         }
       }
     }
+    styleSpecialties();
     addArticleContents();
     enableImageViewer();
     if (!button) return;
