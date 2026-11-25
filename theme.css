@@ -342,6 +342,7 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
   --kp-note-surface: var(--kp-dark-panel);
   --kp-note-inset: var(--kp-dark-raised);
   --kp-note-heading: var(--kp-brass);
+  --kp-note-title: #F4E9D8;
 }
 
 .kp-note .kp-note-hero {
@@ -355,7 +356,7 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
   color: var(--kp-control-ink, #2b2a27);
 }
 .kp-note .kp-note-hero h1 {
-  color: var(--kp-note-heading);
+  color: var(--kp-note-title, var(--kp-note-heading));
   font-family: var(--kp-heading-font);
   font-size: clamp(1.6rem, 3.8vw, 2.8rem);
   line-height: 1.28;
