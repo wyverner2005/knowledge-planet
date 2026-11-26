@@ -21,3 +21,19 @@
   display: block;
   margin-top: 18px;
 }
+
+.cover-title-zh,
+.cover-title-en {
+  display: block;
+}
+.cover-title-zh {
+  font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.cover-title-en {
+  margin-top: .45em;
+  font-size: .56em;
+  line-height: 1.25;
+  letter-spacing: 0;
+}

@@ -1,4 +1,4 @@
-# Trading in the Zone
+# 交易心流｜Trading in the Zone
 
 公開交易文章收藏，部署於 GitHub Pages 的 `/trading-in-the-zone/`。
 
@@ -10,4 +10,8 @@
 - 封面為生成的山湖暮色與聚焦柔光，位於 `assets/quiet-eye-cover.png`。
 - 無建置依賴，直接由既有 main 分支部署。
 
-新增文章時，同步首頁卡片、分類與 `articles.js`。
+## 新文章版式
+
+- 文章沿用 `article.css`。導讀小卡標籤使用 `.kpi-label`，章節內子標題使用 `.chapter h3`。兩者皆用深色模式亮綠、淺色模式深綠。章節大標用主文字色，正文粗體用原本文字色。
+- 提示框使用 `learn-accent` 加上對應類別：`learn-blue` 導讀、概念與數字，`learn-yellow` 重要重點，`learn-green` 執行與試算，`learn-red` 風險與常見誤判，`learn-purple` 心態與復盤。保留文字標題提示用途。
+- 延用桌面側欄目錄與手機可收合目錄。新增文章時同步首頁卡片、分類與 `articles.js` 的段落搜尋索引。
