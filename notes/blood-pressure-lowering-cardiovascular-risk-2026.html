@@ -7,7 +7,14 @@
 <meta name="keywords" content="高血壓, 降壓效益, BPLTTC, NEJM, 心血管風險, ARR, NNT, PREVENT, SCORE2, 722 居家血壓, 共享決策">
 <title>高血壓降壓效益與心血管風險分層｜NEJM 2026</title>
 <style>
-html.kp-note.kp-bp-risk-note[data-theme="dark"] { background: #0b0d10; }
+html.kp-note.kp-bp-risk-note[data-theme="dark"] {
+  --bp-black: #0b0d10;
+  background: var(--bp-black);
+}
+.kp-note.kp-bp-risk-note[data-theme="dark"] .bp-note header,
+.kp-note.kp-bp-risk-note[data-theme="dark"] .bp-note .tri-strip > div {
+  background: var(--bp-black);
+}
 .bp-note { max-width: 77rem; margin: auto; padding: clamp(.75rem, 3vw, 2rem); line-height: 1.65; }
 .bp-note section { scroll-margin-top: .8rem; }
 .bp-note figure { margin: 1rem 0; }
