@@ -54,20 +54,26 @@
     const zoomIn = dialog.querySelector('[data-zoom="in"]');
     const fit = dialog.querySelector('[data-zoom="fit"]');
     const zoomLevels = [1, 1.5, 2, 3, 4, 6, 8];
+    const mobile = window.matchMedia("(max-width: 640px)");
+    const readableDiagramWidth = 640;
     let zoom = 0;
     let trigger;
     let preview;
     let aspectRatio;
+
+    function fittedWidth() {
+      const bounds = getComputedStyle(stage);
+      const width = viewport.clientWidth - parseFloat(bounds.paddingLeft) - parseFloat(bounds.paddingRight);
+      const height = viewport.clientHeight - parseFloat(bounds.paddingTop) - parseFloat(bounds.paddingBottom);
+      return Math.max(1, Math.min(width, height * aspectRatio));
+    }
 
     function renderZoom(nextZoom) {
       const ratio = zoomLevels[nextZoom] / zoomLevels[zoom];
       const centerX = viewport.scrollLeft + viewport.clientWidth / 2;
       const centerY = viewport.scrollTop + viewport.clientHeight / 2;
       zoom = nextZoom;
-      const bounds = getComputedStyle(stage);
-      const width = viewport.clientWidth - parseFloat(bounds.paddingLeft) - parseFloat(bounds.paddingRight);
-      const height = viewport.clientHeight - parseFloat(bounds.paddingTop) - parseFloat(bounds.paddingBottom);
-      preview.style.width = `${Math.min(width, height * aspectRatio) * zoomLevels[zoom]}px`;
+      preview.style.width = `${fittedWidth() * zoomLevels[zoom]}px`;
       zoomOut.disabled = zoom === 0;
       zoomIn.disabled = zoom === zoomLevels.length - 1;
       fit.textContent = zoom === 0 ? "適合畫面" : `${zoomLevels[zoom] * 100}%`;
@@ -75,6 +81,10 @@
         zoom ? centerX * ratio - viewport.clientWidth / 2 : 0,
         zoom ? centerY * ratio - viewport.clientHeight / 2 : 0
       );
+    }
+
+    function isVector(graphic) {
+      return graphic.matches("svg") || /\.svg(?:[?#]|$)/i.test(graphic.getAttribute("src") || "");
     }
 
     function openImage(graphic, clickedButton) {
@@ -100,7 +110,14 @@
 
       dialog.showModal();
       page.classList.add("kp-viewing-image");
-      renderZoom(0);
+      let initialZoom = 0;
+      if (mobile.matches && isVector(graphic)) {
+        let level = zoomLevels.findIndex(scale => scale * fittedWidth() >= readableDiagramWidth);
+        if (level < 0) level = zoomLevels.length - 1;
+        initialZoom = level;
+      }
+      renderZoom(initialZoom);
+      viewport.scrollTo(0, 0);
     }
 
     for (const graphic of graphics) {
@@ -109,7 +126,7 @@
         graphic.querySelector("title")?.textContent || "圖表";
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "kp-image-trigger";
+      button.className = isVector(graphic) ? "kp-image-trigger kp-vector-trigger" : "kp-image-trigger";
       button.title = "點擊放大";
       button.setAttribute("aria-label", `放大圖片：${title}`);
       button.setAttribute("aria-haspopup", "dialog");
@@ -212,6 +229,17 @@
       if (section && !section.matches(".kp-related, .dx-card")) section.classList.add("kp-note-section");
     }
 
+    styleArticleTables(main);
+  }
+
+  function styleArticleTables(main) {
+    const scrollHints = new Map();
+    const observer = typeof ResizeObserver === "function" ? new ResizeObserver(entries => {
+      for (const { target: frame } of entries) {
+        scrollHints.get(frame).hidden = frame.scrollWidth <= frame.clientWidth + 1;
+      }
+    }) : null;
+
     for (const table of main.querySelectorAll("table")) {
       const next = table.parentElement;
       const frame = /auto|scroll/.test(getComputedStyle(next).overflowX) ? next : document.createElement("div");
@@ -225,6 +253,20 @@
         frame.setAttribute("aria-label", "臨床資料表，可左右滑動");
         frame.setAttribute("role", "region");
       }
+
+      const header = table.tHead?.rows;
+      if (header?.length === 1 && header[0].cells.length <= 2 &&
+          [...header[0].cells].every(cell => cell.colSpan === 1)) {
+        table.classList.add("kp-table-compact");
+      }
+      if (!observer || scrollHints.has(frame)) continue;
+      const hint = document.createElement("p");
+      hint.className = "kp-table-hint";
+      hint.textContent = "← 左右滑動看完整表格 →";
+      hint.hidden = true;
+      frame.before(hint);
+      scrollHints.set(frame, hint);
+      observer.observe(frame);
     }
   }
 

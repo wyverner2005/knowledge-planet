@@ -494,3 +494,56 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
   background: var(--kp-note-inset);
   border-color: var(--kp-control-border);
 }
+
+/* Keep wide clinical data inside its own scroll area. */
+.kp-note .kp-note-table {
+  overscroll-behavior-inline: contain;
+  scrollbar-width: auto;
+}
+.kp-note .kp-table-hint {
+  display: none;
+  margin: .55rem 0 .25rem;
+  color: var(--kp-note-heading);
+  font-size: .82rem;
+}
+
+@media (max-width: 640px) {
+  .kp-note .kp-table-hint:not([hidden]) { display: block; }
+  .kp-note .kp-note-table table:not(.kp-table-compact) { min-width: 34rem; }
+  .kp-note .kp-note-table table.kp-table-compact {
+    width: 100%;
+    min-width: 0;
+  }
+  .kp-note .kp-note-table .kp-table-compact :is(th, td) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .kp-note .kp-note-table :is(th, td) {
+    padding-inline: .45rem;
+    font-size: max(.9rem, 16px);
+  }
+  .kp-note main button.kp-vector-trigger,
+  .kp-note main .kp-vector-trigger > svg {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .kp-note main .kp-vector-trigger::after {
+    content: "＋ 放大圖表";
+    padding: .2rem .45rem;
+    border-radius: .35rem;
+    font-size: .78rem;
+  }
+  .kp-image-viewer {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    border-radius: 0;
+  }
+  .kp-image-toolbar {
+    padding-top: max(.5rem, env(safe-area-inset-top));
+    padding-inline: max(.5rem, env(safe-area-inset-left)) max(.5rem, env(safe-area-inset-right));
+  }
+  .kp-image-stage { padding: .5rem .5rem max(.5rem, env(safe-area-inset-bottom)); }
+}
