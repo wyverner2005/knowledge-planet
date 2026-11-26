@@ -1,0 +1,55 @@
+/* Reading scale shared by both trading articles. */
+html {
+  font-size: 112.5%;
+}
+
+body,
+.subcard p,
+.subcard li,
+.chapter-title-wrap p,
+.callout,
+.chart-desc,
+.check-item {
+  font-size: 1.0625rem;
+}
+
+.hero h1,
+.hero-card h1 {
+  font-size: clamp(1.65rem, 3.6vw, 2.6rem);
+  overflow-wrap: anywhere;
+}
+
+.chapter h2 {
+  overflow-wrap: anywhere;
+}
+
+.nav-item,
+.filter-btn,
+.theme-btn,
+.home-link,
+.kpi-sub,
+.chart-caption,
+.svg-caption,
+.svg-caption span,
+.calc-field label,
+.calc-res-card .res-label {
+  font-size: 0.875rem;
+}
+
+.calc-grid input {
+  font-size: 1rem;
+}
+
+@media (max-width: 720px) {
+  table.responsive-table td {
+    display: grid;
+    grid-template-columns: minmax(0, 36%) minmax(0, 1fr);
+    overflow-wrap: anywhere;
+    font-size: 0.9375rem;
+  }
+
+  table.responsive-table td::before {
+    white-space: normal;
+    font-size: 0.875rem;
+  }
+}
