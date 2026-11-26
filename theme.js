@@ -348,18 +348,6 @@
         }
       }
     }
-    // Each knowledge page offers an explicit route back to the story hub.
-    if (!document.querySelector('.kp-story-return')) {
-      const nav = document.createElement('nav');
-      nav.className = 'kp-story-return';
-      nav.setAttribute('aria-label', '故事星球導覽');
-      const home = document.createElement('a');
-      home.className = 'kp-control';
-      home.href = 'https://journeys-on-earth.wyverner.chatgpt.site/';
-      home.textContent = '返回故事星球';
-      nav.append(home);
-      document.body.prepend(nav);
-    }
     styleSpecialties();
     addArticleContents();
     enableImageViewer();
