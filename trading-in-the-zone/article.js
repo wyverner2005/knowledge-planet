@@ -11,3 +11,54 @@ document.querySelectorAll('.chart-frame').forEach(frame=>{frame.tabIndex=0;frame
 const lightbox=document.getElementById('lightbox');lightbox.setAttribute('role','dialog');lightbox.setAttribute('aria-label','實戰圖表放大檢視');lightbox.setAttribute('aria-modal','true');const closeBox=document.querySelector('.lightbox-close');closeBox.setAttribute('aria-label','關閉圖表');
 const observer=new MutationObserver(()=>{const opened=lightbox.classList.contains('open');lightbox.setAttribute('aria-hidden',String(!opened));if(opened){closeBox.focus();}else{lastFrame?.focus();}});observer.observe(lightbox,{attributes:true,attributeFilter:['class']});lightbox.setAttribute('aria-hidden','true');
 lightbox.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();closeBox.focus();}});
+
+function enhanceArticleContents() {
+  const navigation = document.querySelector('.nav-card');
+  const chapters = [...document.querySelectorAll('main > .chapter')];
+  if (!navigation || !chapters.length) return;
+
+  const contents = document.createElement('details');
+  contents.className = 'chapter-contents';
+  const title = document.createElement('summary');
+  title.textContent = '文章目錄';
+  const links = navigation.querySelector('.nav-grid');
+  contents.append(title, links);
+  navigation.replaceChildren(contents);
+
+  const layout = document.createElement('div');
+  layout.className = 'chapter-layout';
+  const body = document.createElement('div');
+  body.className = 'chapter-body';
+  navigation.before(layout);
+  layout.append(navigation, body);
+  body.append(...chapters);
+
+  const desktop = matchMedia('(min-width: 960px)');
+  function setDefaultOpen() {
+    contents.open = desktop.matches;
+  }
+  setDefaultOpen();
+  desktop.addEventListener('change', setDefaultOpen);
+
+  const chapterLinks = [...links.querySelectorAll('a')];
+  function markChapter() {
+    const hash = location.hash || chapterLinks[0].hash;
+    for (const link of chapterLinks) {
+      if (link.hash === hash) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    }
+  }
+  markChapter();
+  window.addEventListener('hashchange', markChapter);
+  for (const link of chapterLinks) {
+    link.addEventListener('click', () => {
+      if (!desktop.matches) contents.open = false;
+    });
+  }
+
+  // The initial anchor can be scrolled to before the layout enhancement runs.
+  const initialChapter = chapters.find(chapter => '#' + chapter.id === location.hash);
+  if (initialChapter) initialChapter.scrollIntoView({ behavior: 'instant' });
+}
+
+enhanceArticleContents();
