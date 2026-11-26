@@ -2,47 +2,28 @@
 <html lang="zh-Hant" data-theme="light">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="靜下雜念，專注當下。Trading in the Zone：交易紀錄、心態復盤與交易底層邏輯。">
-<title>Trading in the Zone｜靜心・紀律・實踐</title>
+<meta name="description" content="Trading in the Zone：交易策略、風險管理與心態文章收藏。靜下雜念，專注當下。">
+<meta property="og:title" content="Trading in the Zone"><meta property="og:description" content="以 Quiet Eye 守住紀律，在每一次等待與執行中，走向理想的生活。"><meta property="og:image" content="https://wyverner2005.github.io/knowledge-planet/trading-in-the-zone/assets/quiet-eye-cover.png">
+<title>Trading in the Zone｜交易文章收藏</title>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('zone-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
-<link rel="stylesheet" href="zone.css"><script src="zone.js" defer></script>
+<link rel="stylesheet" href="zone.css"><script src="articles.js" defer></script><script src="zone.js" defer></script>
 </head>
 <body>
-<a class="skip" href="#main">跳至主要內容</a>
-<aside class="sidebar">
-<a class="brand" href="./" aria-label="Trading in the Zone 首頁"><span class="brand-icon" aria-hidden="true">◎</span><span>THE ZONE<small>你的交易・你的節奏</small></span></a>
-<div class="nav-label">WORKSPACE</div>
-<nav aria-label="主導覽"><a href="#overview" class="nav-link active">專注當下<span>HOME</span></a><a href="#journal" class="nav-link">交易手記<span>JOURNAL</span></a><a href="#library" class="nav-link">底層邏輯<span>LIBRARY</span></a><a href="#ritual" class="nav-link">進場儀式<span>QUIET EYE</span></a></nav>
-<div class="sidebar-bottom"><p>把注意力交還給過程。<br>讓結果，留給市場。</p><button id="theme-toggle" class="button subtle" type="button">切換暗色</button><a class="repo-link" href="https://github.com/wyverner2005/knowledge-planet/tree/main/trading-in-the-zone" target="_blank" rel="noopener">GitHub 原始碼</a></div>
-</aside>
-<div class="workspace">
-<header class="topline"><span>靜心・紀律・實踐</span><span id="today"></span></header>
-<main id="main">
-<section id="overview" class="hero">
-<div class="eyebrow">A CLEAR MIND. A QUIET EYE.</div><h1>Trading<br>in the <em>Zone.</em></h1>
-<p class="subtitle">靜下雜念，專注當下。<br>以 Quiet Eye 守住紀律，<br class="mobile-break">在每一次等待與執行中，走向理想的生活。</p>
-<div class="hero-actions"><button class="button primary" id="new-entry" type="button">寫下這次交易</button><a class="button" href="#ritual">開始專注儀式</a></div>
-<div class="quiet-eye" aria-hidden="true"><div class="eye-ring r1"></div><div class="eye-ring r2"></div><div class="eye-ring r3"></div><div class="eye-core"></div><span>FOCUS ON THE PROCESS</span></div>
-<div class="hero-foot"><span>等待也是執行的一部分</span><span>PLAN · WAIT · EXECUTE · REFLECT</span></div>
+<a class="skip" href="#articles">跳至文章列表</a>
+<main>
+<nav class="top-nav" aria-label="頁面導覽"><a class="brand" href="./"><span aria-hidden="true">◎</span> 交易文章收藏</a><button class="control" id="theme-toggle" type="button">深色模式</button></nav>
+<header class="cover">
+<img src="assets/quiet-eye-cover.png" alt="暮色山湖與一道映在水面的柔光，象徵安靜等待與專注" width="2172" height="724" fetchpriority="high">
+<div class="cover-copy"><p class="cover-label">A CLEAR MIND. A QUIET EYE.</p><h1>Trading in the Zone</h1><p class="cover-lead">靜下雜念，專注當下。</p><p class="cover-subtitle">以 Quiet Eye 守住紀律，<br>在每一次等待與執行中，走向理想的生活。</p></div>
+</header>
+<section id="articles" aria-label="文章收藏">
+<form id="search-form" class="find" role="search"><div><label for="query">搜尋全文</label><input id="query" type="search" placeholder="例如 突兀量、RS、風險管理、交易心態" autocomplete="off"></div><div><label for="category">文章分類</label><select id="category"><option value="">全部文章</option><option value="strategy">交易策略</option><option value="risk">風險管理</option><option value="mindset">交易心態</option></select></div></form>
+<p id="status" role="status">已收錄 1 篇文章</p>
+<ul id="notes" class="notes"><li><a class="card" href="core-logic.html"><span class="tag">策略框架 · 互動圖文</span><h2>交易的核心底層邏輯：順勢操作完整框架</h2><p class="summary">從 RS 強勢標的篩選、均線行情辨識與突兀量關鍵價位，到多時間框架、資金控管與交易心態。把選股、控損與抱單串成完整流程。</p><div class="categories"><span>交易策略</span><span>風險管理</span><span>交易心態</span></div><div class="card-meta"><span>7 個章節</span><span>7 張實戰圖表</span><span>互動試算與檢核</span></div></a></li></ul>
+<div id="empty" class="empty" hidden><h2>沒有符合的文章</h2><p>試試其他關鍵字，或切回全部文章。</p><button id="clear-search" class="control" type="button">清除搜尋與分類</button></div>
+<section id="matches" class="matches" aria-label="命中段落" hidden><h2>找到的段落</h2><ul id="section-results"></ul></section>
+<noscript><p class="no-script">啟用 JavaScript 可使用全文搜尋、分類及亮暗切換；文章仍可直接點選閱讀。</p></noscript>
 </section>
-<section class="metrics" aria-label="紀錄統計"><div><span>累積手記</span><strong id="entry-count">0</strong><small>每一次記錄，都是校準</small></div><div><span>依計畫執行</span><strong id="discipline-rate">—</strong><small>僅計入有評估紀律的手記</small></div><div><span>本週回顧</span><strong id="week-count">0</strong><small>從週一開始累積</small></div><div class="metric-quote"><span>今天的提醒</span><p>「我不需要每一次機會。<br>我只需要屬於自己的機會。」</p></div></section>
-<section id="journal" class="section">
-<div class="section-head"><div><div class="eyebrow">TRADING JOURNAL</div><h2>交易手記</h2><p>留下決策、情緒與學到的事。獲利與否，都值得誠實記錄。</p></div><button class="button" id="add-entry" type="button">新增手記</button></div>
-<div class="journal-toolbar"><label class="search"><span class="sr-only">搜尋手記</span><input id="search" type="search" placeholder="搜尋標的、想法或心得…"></label><label><span class="sr-only">手記分類</span><select id="filter"><option value="all">所有手記</option><option>交易復盤</option><option>盤前計畫</option><option>心態筆記</option><option>等待紀錄</option></select></label><div class="backup-actions"><button class="text-button" id="export" type="button">匯出備份</button><button class="text-button" id="import" type="button">匯入</button><input type="file" id="import-file" accept="application/json,.json" hidden></div></div>
-<div id="journal-list" class="journal-list" aria-live="polite"></div>
-<p class="storage-note">手記與草稿只存於此裝置的目前瀏覽器，不會自動同步或公開到 GitHub。換裝置前請匯出備份。</p>
-</section>
-<section id="library" class="section">
-<div class="section-head"><div><div class="eyebrow">BUILD YOUR EDGE</div><h2>交易的底層邏輯</h2><p>把反覆驗證的原則，變成做決定時的依據。</p></div><span class="section-tag">已收錄 1 篇</span></div>
-<a class="article-card" href="core-logic.html"><div class="article-art" aria-hidden="true"><span>LOGIC<br>BEFORE<br>EMOTION.</span><div class="steps"><i></i><i></i><i></i><i></i><i></i></div></div><div class="article-info"><div class="eyebrow">策略框架 · 互動圖文</div><h3>交易的核心底層邏輯</h3><p>從強勢標的、行情辨識到關鍵價位。用七個核心模組，把「為什麼進場、怎麼控制風險、如何抱住趨勢」串成完整流程。</p><div class="chips"><span>7 個章節</span><span>實戰圖表</span><span>倉位試算</span><span>進場檢核</span></div><span class="article-cta">閱讀互動筆記</span></div></a>
-</section>
-<section id="ritual" class="section ritual">
-<div class="ritual-copy"><div class="eyebrow">QUIET EYE · PRE-TRADE RITUAL</div><h2>先讓心安靜，<br>再讓計畫說話。</h2><p>看見念頭，不急著回應。<br>把注意力放回眼前的結構與事先寫好的計畫。</p><div class="timer-row"><span id="timer" role="timer" aria-label="專注計時">01:00</span><button class="button" id="focus-start" type="button">靜心 60 秒</button><button class="text-button" id="focus-reset" type="button">重設</button></div><p id="focus-message" class="focus-message" aria-live="polite">肩膀放鬆，呼吸自然。看著定點，讓衝動慢慢過去。</p></div>
-<div class="ritual-checks"><label><input type="checkbox">我在安穩的環境中，有足夠注意力。</label><label><input type="checkbox">我知道自己等什麼，沒有因為怕錯過而追價。</label><label><input type="checkbox">我已寫下進場理由、失效位置與本次風險。</label><label><input type="checkbox">我願意接受這筆交易的風險，也接受今天空手。</label><p id="ritual-status" aria-live="polite">先完成自己的準備。</p><button class="text-button" id="ritual-reset" type="button">重新檢核</button></div>
-</section>
-<footer><span>Trading in the Zone</span><p>為理想的生活，做好此刻該做的事。</p><small>公開策略筆記・私人瀏覽器手記</small></footer>
-</main></div>
-<dialog id="entry-dialog" aria-labelledby="dialog-title"><form id="entry-form"><div class="dialog-head"><div><div class="eyebrow">MAKE IT CONSCIOUS</div><h2 id="dialog-title">寫下這次交易</h2></div><button class="icon-button" id="close-dialog" type="button" aria-label="關閉">×</button></div><input id="entry-id" type="hidden"><div class="form-grid"><label>日期<input id="entry-date" type="date" required></label><label>分類<select id="entry-type"><option>交易復盤</option><option>盤前計畫</option><option>心態筆記</option><option>等待紀錄</option></select></label><label>標的（可留空）<input id="entry-symbol" maxlength="40" placeholder="例：BTC / ARIA"></label><label>當下狀態<select id="entry-mood"><option>平靜專注</option><option>擔心錯過</option><option>急躁</option><option>猶豫</option><option>懊惱</option><option>疲倦</option></select></label><label class="full">手記標題<input id="entry-title" maxlength="120" placeholder="這一次，我想記住什麼？" required></label><label class="full">計畫與觀察<textarea id="entry-plan" rows="4" maxlength="12000" placeholder="4H 看到了什麼？30M 是否確認？進場理由與結構失效點在哪裡？"></textarea></label><label>紀律評估<select id="entry-discipline"><option value="">尚未評估</option><option value="yes">依計畫執行</option><option value="partial">部分偏離</option><option value="no">情緒主導</option></select></label><label>結果（R，可留空）<input id="entry-result" type="number" step="0.01" min="-100000" max="100000" placeholder="例：-1、0、2.5"></label><label class="full">復盤與下一步<textarea id="entry-reflection" rows="4" maxlength="12000" placeholder="哪些做對了？哪個念頭影響決策？下一次只改善一件什麼事？"></textarea></label></div><p class="storage-note" id="draft-status">輸入時會自動保留草稿。</p><div class="dialog-actions"><button class="text-button" id="discard" type="button">捨棄草稿</button><button class="button primary" type="submit">儲存手記</button></div></form></dialog>
-<dialog id="delete-dialog" aria-labelledby="delete-title"><h2 id="delete-title">刪除這篇手記？</h2><p>這只會刪除此瀏覽器的紀錄；已匯出的備份不受影響。</p><div class="dialog-actions"><button class="button" id="cancel-delete" type="button">保留</button><button class="button danger" id="confirm-delete" type="button">刪除手記</button></div></dialog>
-<div id="toast" role="status" aria-live="polite"></div>
+<footer><span>Trading in the Zone</span><p>為理想的生活，做好此刻該做的事。</p></footer>
+</main>
 </body></html>
