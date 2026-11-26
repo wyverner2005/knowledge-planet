@@ -3,6 +3,7 @@
   --kp-light-panel: #f3e9cc;
   --kp-light-edge: #c7b78c;
   --kp-dark-paper: #1f242a;
+  --kp-dark-content: #0b0d10;
   --kp-dark-panel: #282e35;
   --kp-dark-raised: #343943;
   --kp-dark-edge: #50565e;
@@ -183,9 +184,14 @@ html[data-theme="dark"] {
   --kp-control-ink: var(--kp-dark-ink);
 }
 
+/* Medical reading and tools use dark gray outside their black panels. */
+html:is(.kp-home, .kp-note)[data-theme="dark"] {
+  --kp-dark-panel: var(--kp-dark-content);
+  --kp-dark-raised: var(--kp-dark-content);
+}
 html.kp-home[data-theme="dark"] { background: var(--kp-dark-paper); color: var(--kp-dark-ink); }
 .kp-home[data-theme="dark"] .card,
-.kp-home[data-theme="dark"] input {
+.kp-home[data-theme="dark"] :is(input, select) {
   background: var(--kp-dark-panel);
   border-color: var(--kp-dark-edge);
   color: var(--kp-dark-ink);
@@ -505,6 +511,17 @@ html[data-theme="dark"] .kp-article-toc { background: var(--kp-dark-panel); bord
   margin: .55rem 0 .25rem;
   color: var(--kp-note-heading);
   font-size: .82rem;
+}
+
+/* Keep tables and the older article layout on the same reading surfaces. */
+.kp-note[data-theme="dark"] main table :is(th, td) {
+  background: var(--kp-dark-content);
+  color: var(--kp-dark-ink);
+  border-color: var(--kp-dark-edge);
+}
+.kp-note[data-theme="dark"] :is(.kp-note-hero, .kp-note-section, .kp-article-toc, .layout .toc) {
+  background: var(--kp-dark-content);
+  border-color: var(--kp-dark-edge);
 }
 
 @media (max-width: 640px) {
