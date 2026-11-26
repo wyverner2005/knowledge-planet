@@ -9,11 +9,15 @@
 <style>
 html.kp-note.kp-bp-risk-note[data-theme="dark"] {
   --bp-black: #0b0d10;
+  --kp-note-surface: var(--bp-black);
+  --kp-note-inset: var(--bp-black);
   background: var(--bp-black);
 }
-.kp-note.kp-bp-risk-note[data-theme="dark"] .bp-note header,
-.kp-note.kp-bp-risk-note[data-theme="dark"] .bp-note .tri-strip > div {
+.kp-note.kp-bp-risk-note[data-theme="dark"] .bp-note .kp-article-toc {
   background: var(--bp-black);
+}
+.kp-note.kp-bp-risk-note[data-theme="dark"] .bp-note .kp-image-trigger > svg {
+  background: transparent;
 }
 .bp-note { max-width: 77rem; margin: auto; padding: clamp(.75rem, 3vw, 2rem); line-height: 1.65; }
 .bp-note section { scroll-margin-top: .8rem; }
