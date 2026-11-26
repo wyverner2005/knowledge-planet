@@ -1,9 +1,6 @@
 (() => {
   const page = document.documentElement;
-  const defaultTheme = page.dataset.themeDefault;
-  const storageKey = defaultTheme
-    ? `knowledge-planet-theme:${location.pathname}`
-    : "knowledge-planet-theme";
+  const storageKey = "knowledge-planet-theme";
   const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
   let preference;
 
@@ -18,7 +15,7 @@
 
   function applyTheme() {
     const dark = preference === "dark" ||
-      (preference !== "light" && (defaultTheme ? defaultTheme === "dark" : systemTheme.matches));
+      (preference !== "light" && systemTheme.matches);
     page.dataset.theme = dark ? "dark" : "light";
     const button = document.querySelector(".kp-theme-toggle");
     if (button) {
