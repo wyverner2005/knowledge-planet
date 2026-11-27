@@ -45,6 +45,45 @@ function renderPeriod(period) {
   }
 }
 
+function renderQuarterComparison(periods) {
+  const quarters = periods
+    .filter(({ period }) => /^\d{4}Q[1-4]$/.test(period))
+    .sort((a, b) => a.period.localeCompare(b.period))
+    .slice(-2);
+  if (quarters.length < 2) return;
+
+  const section = document.createElement('section');
+  section.className = 'quarter-comparison';
+  section.innerHTML = '<h3>季度比較</h3><div class="quarter-charts"></div>';
+  const charts = section.querySelector('.quarter-charts');
+  for (const [key, label, maximum] of [
+    ['winRate', '勝率', 1],
+    ['profitFactor', '總盈虧比', Math.max(1, ...quarters.map(quarter => quarter.profitFactor ?? 0))],
+  ]) {
+    const chart = document.createElement('div');
+    chart.className = 'quarter-chart';
+    chart.dataset.series = key;
+    const title = document.createElement('h4');
+    title.textContent = label;
+    chart.append(title);
+    for (const quarter of quarters) {
+      const row = document.createElement('div');
+      row.className = 'quarter-bar';
+      row.innerHTML = '<span></span><progress></progress><strong></strong>';
+      const [name, bar, amount] = row.children;
+      name.textContent = quarter.period;
+      const value = quarter[key];
+      bar.max = maximum;
+      bar.value = Number.isFinite(value) ? Math.max(0, value) : 0;
+      bar.setAttribute('aria-hidden', 'true');
+      amount.textContent = Number.isFinite(value) ? units[key](value) : '—';
+      chart.append(row);
+    }
+    charts.append(chart);
+  }
+  dashboard.querySelector('.dashboard-performance').after(section);
+}
+
 async function initializeDashboard() {
   try {
     const response = await fetch('dashboard-data.json', { cache: 'no-cache' });
@@ -61,6 +100,7 @@ async function initializeDashboard() {
     ));
     periodSelect.addEventListener('change', () => renderPeriod(periods.get(periodSelect.value)));
     renderPeriod(data.periods[0]);
+    renderQuarterComparison(data.periods);
     dashboardSource.textContent = `試算表快照 · ${data.updated.replaceAll('-', '/')}`;
     dashboardContent.hidden = false;
   } catch (error) {
