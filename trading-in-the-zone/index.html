@@ -7,6 +7,7 @@
 <title>交易心流｜Trading in the Zone｜交易文章收藏</title>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('zone-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
 <link rel="stylesheet" href="zone.css?v=gemini-palette-1"><script src="articles.js?v=trade-04" defer></script><script src="zone.js?v=catalog-1" defer></script>
+<link rel="stylesheet" href="dashboard.css"><script src="dashboard.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#articles">跳至文章列表</a>
@@ -16,6 +17,52 @@
 <img src="assets/quiet-eye-cover.png" alt="暮色山湖與一道映在水面的柔光，象徵安靜等待與專注" width="2172" height="724" fetchpriority="high">
 <div class="cover-copy"><p class="cover-label">A CLEAR MIND. A QUIET EYE.</p><h1><span class="cover-title-zh">交易心流</span><span class="cover-title-en" lang="en">Trading in the Zone</span></h1><p class="cover-lead">靜下雜念，專注當下。</p><p class="cover-subtitle">以 Quiet Eye 守住紀律，<br>在每一次等待與執行中，走向理想的生活。</p></div>
 </header>
+<section class="trade-dashboard" aria-labelledby="trade-dashboard-title">
+  <div class="dashboard-heading">
+    <h2 id="trade-dashboard-title">退休目標與交易表現</h2>
+    <p class="dashboard-source" id="dashboard-source" role="status">讀取交易摘要…</p>
+  </div>
+  <div class="dashboard-content" id="dashboard-content" hidden>
+    <div class="dashboard-goals">
+      <article class="dashboard-goal dashboard-retirement">
+        <h3 id="retirement-label">退休目標</h3>
+        <p class="goal-values"><strong id="retirement-current"></strong><span id="retirement-target"></span></p>
+        <progress id="retirement-progress" aria-labelledby="retirement-label" aria-describedby="retirement-caption"></progress>
+        <p class="goal-caption" id="retirement-caption"></p>
+      </article>
+      <article class="dashboard-goal dashboard-risk">
+        <h3 id="risk-label">1R 資金規模</h3>
+        <p class="goal-values"><strong id="risk-current"></strong><span id="risk-target"></span></p>
+        <progress id="risk-progress" aria-labelledby="risk-label" aria-describedby="risk-caption"></progress>
+        <p class="goal-caption" id="risk-caption"></p>
+      </article>
+    </div>
+    <section class="dashboard-performance" aria-labelledby="performance-title">
+      <div class="performance-heading">
+        <h3 id="performance-title">策略表現</h3>
+        <label class="period-control" for="dashboard-period"><span>統計區間</span><select id="dashboard-period"></select></label>
+      </div>
+      <div aria-live="polite" aria-atomic="true">
+        <dl class="dashboard-metrics">
+          <div><dt>勝率</dt><dd data-metric="winRate"></dd></div>
+          <div><dt>總盈虧比</dt><dd data-metric="profitFactor"></dd></div>
+          <div><dt>平均盈虧比</dt><dd data-metric="payoffRatio"></dd></div>
+          <div><dt>淨盈虧</dt><dd data-metric="net"></dd></div>
+        </dl>
+        <dl class="dashboard-totals">
+          <div><dt>交易次數</dt><dd data-metric="trades"></dd></div>
+          <div><dt>盈利次數</dt><dd data-metric="wins"></dd></div>
+          <div><dt>虧損次數</dt><dd data-metric="losses"></dd></div>
+          <div><dt>總盈利</dt><dd data-metric="profit"></dd></div>
+          <div><dt>總虧損</dt><dd data-metric="loss"></dd></div>
+          <div><dt>總 R 數</dt><dd data-metric="totalR"></dd></div>
+          <div><dt>回吐 R 數</dt><dd data-metric="givebackR"></dd></div>
+        </dl>
+      </div>
+    </section>
+  </div>
+  <noscript><p class="dashboard-source">啟用 JavaScript 可查看策略表現與切換統計區間。</p></noscript>
+</section>
 <section id="articles" aria-labelledby="catalog-title">
 <h2 id="catalog-title" class="catalog-title">文章目錄</h2>
 <div class="catalog-filters" role="group" aria-label="文章分類">

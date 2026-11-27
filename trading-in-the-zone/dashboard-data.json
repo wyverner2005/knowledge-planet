@@ -1,0 +1,83 @@
+{
+  "updated": "2026-11-27",
+  "retirement": {
+    "current": 9.5,
+    "target": 500
+  },
+  "riskUnit": {
+    "current": 1000,
+    "target": 10000
+  },
+  "periods": [
+    {
+      "period": "2026Q4",
+      "winRate": 0.4,
+      "profitFactor": 1.5115312296407053,
+      "payoffRatio": 2.267296844461058,
+      "trades": 15,
+      "wins": 6,
+      "losses": 9,
+      "net": 2119.2048860000004,
+      "profit": 6262.07,
+      "loss": 4142.865113999999,
+      "totalR": 1.7132599999999998,
+      "givebackR": 38.5991711725
+    },
+    {
+      "period": "2026Q3",
+      "winRate": 0.3541666666666667,
+      "profitFactor": 1.1708093650942666,
+      "payoffRatio": 2.1350053128189566,
+      "trades": 48,
+      "wins": 17,
+      "losses": 31,
+      "net": 3705.991373629993,
+      "profit": 25402.64349563,
+      "loss": 21696.652122000007,
+      "totalR": 8.192683214830002,
+      "givebackR": 15.243673858180479
+    },
+    {
+      "period": "2026Q2",
+      "winRate": 0.3137254901960784,
+      "profitFactor": 2.2592102549773037,
+      "payoffRatio": 4.942022432762852,
+      "trades": 51,
+      "wins": 16,
+      "losses": 35,
+      "net": 46956.920000000006,
+      "profit": 84247.69000000002,
+      "loss": 37290.77000000001,
+      "totalR": 513.02363,
+      "givebackR": null
+    },
+    {
+      "period": "2025Q1",
+      "winRate": 0.2641509433962264,
+      "profitFactor": 0.43596059624709044,
+      "payoffRatio": 1.2144616609740377,
+      "trades": 53,
+      "wins": 14,
+      "losses": 39,
+      "net": -625.346524,
+      "profit": 483.34644999999995,
+      "loss": 1108.692974,
+      "totalR": -12.506930480000001,
+      "givebackR": null
+    },
+    {
+      "period": "ALL",
+      "winRate": 0.3389830508474576,
+      "profitFactor": 1.5922812694782258,
+      "payoffRatio": 3.1049484754825403,
+      "trades": 118,
+      "wins": 40,
+      "losses": 78,
+      "net": 43115.96625963005,
+      "profit": 115912.40349563002,
+      "loss": 72796.43723599997,
+      "totalR": 529.1304132148301,
+      "givebackR": 53.28214153978001
+    }
+  ]
+}
