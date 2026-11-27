@@ -36,4 +36,6 @@ for (const button of categoryButtons) {
   button.addEventListener('click', () => selectCategory(button.dataset.category));
 }
 document.getElementById('clear-search').addEventListener('click',()=>{query.value = ''; selectCategory(''); query.focus();});
-search();
+const requestedCategory = new URLSearchParams(location.search).get('category');
+if (categoryButtons.some(button => button.dataset.category === requestedCategory)) selectCategory(requestedCategory);
+else search();

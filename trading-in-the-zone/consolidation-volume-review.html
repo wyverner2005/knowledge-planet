@@ -749,7 +749,7 @@
     }
   }
 </style>
-<link rel="stylesheet" href="article.css"><link rel="stylesheet" href="reading.css"><link rel="stylesheet" href="lessons.css"><style>:root{--bg:#fbf5df;--bg-elevated:#fffbed;--bg-subcard:#f3ecd3}.section-frame h3{color:var(--heading)}.section-frame,.visual-box,.nav-box{min-width:0}.nav-box .toc-grid{display:grid;gap:10px}.nav-box summary{cursor:pointer;font-weight:800}.lesson-layout .section-frame{margin-top:0}.lightbox .lesson-close{position:absolute;right:20px;top:20px}.visual-box img{max-width:100%}@media(min-width:1100px){.lesson-layout .nav-grid{grid-template-columns:1fr}.container{max-width:1400px}}@media(max-width:720px){.section-frame{padding:20px 16px}.section-header h2{overflow-wrap:anywhere}.section-num{flex-shrink:0}.section-frame .grid-2,.section-frame .grid-3{grid-template-columns:1fr}}</style><meta name="keywords" content="盤整段辨識,突兀量,主升段,多週期,進場規劃,停損,交易室教學紀錄"><style>.review-diagram-dialog{max-width:96vw;max-height:94dvh;width:1100px;overflow:auto;background:var(--bg-elevated);color:var(--text);border:1px solid var(--border);border-radius:12px}.review-diagram-dialog::backdrop{background:#000b}.review-diagram-dialog>button{position:sticky;top:0;float:right;padding:10px 16px;background:var(--bg-elevated);color:var(--text);border:1px solid var(--border);cursor:pointer}.review-diagram-dialog svg{display:block;min-width:900px;width:100%;height:auto}.visual-box{max-width:100%;overflow:auto}</style></head>
+<link rel="stylesheet" href="article.css"><link rel="stylesheet" href="reading.css"><link rel="stylesheet" href="lessons.css"><style>:root{--bg:#fbf5df;--bg-elevated:#fffbed;--bg-subcard:#f3ecd3}.section-frame h3{color:var(--heading)}.section-frame,.visual-box,.nav-box{min-width:0}.nav-box .toc-grid{display:grid;gap:10px}.nav-box summary{cursor:pointer;font-weight:800}.lesson-layout .section-frame{margin-top:0}.lightbox .lesson-close{position:absolute;right:20px;top:20px}.visual-box img{max-width:100%}@media(min-width:1100px){.lesson-layout .nav-grid{grid-template-columns:1fr}.container{max-width:1400px}}@media(max-width:720px){.section-frame{padding:20px 16px}.section-header h2{overflow-wrap:anywhere}.section-num{flex-shrink:0}.section-frame .grid-2,.section-frame .grid-3{grid-template-columns:1fr}}</style><meta name="keywords" content="盤整段辨識,突兀量,主升段,多週期,進場規劃,停損,交易室教學紀錄"><style>.review-diagram-dialog{max-width:96vw;max-height:94dvh;width:1100px;overflow:auto;background:var(--bg-elevated);color:var(--text);border:1px solid var(--border);border-radius:12px}.review-diagram-dialog::backdrop{background:#000b}.review-diagram-dialog>button{position:sticky;top:0;float:right;padding:10px 16px;background:var(--bg-elevated);color:var(--text);border:1px solid var(--border);cursor:pointer}.review-diagram-dialog svg{display:block;min-width:900px;width:100%;height:auto}.visual-box{max-width:100%;overflow:auto}</style><link rel="stylesheet" href="consolidation-review.css?v=2"></head>
 <body>
 
 <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
@@ -757,7 +757,7 @@
 <header class="topbar">
   <div class="topbar-inner">
     <div class="brand-tags"><a class="home-link" href="./">← 交易心流</a>
-      <span class="tag-pill">交易心流｜交易室教學紀錄</span>
+      <a class="tag-pill" href="./?category=teaching">交易室教學紀錄</a>
       <span class="tag-source">來源：2025-07-16 語音復盤（1INCH 等案例）</span>
     </div>
     <div class="controls">
@@ -1353,7 +1353,7 @@
   const fontDown = document.getElementById('fontDown');
   const fontUp = document.getElementById('fontUp');
   const fontIndicator = document.getElementById('fontIndicator');
-  let curFont = parseFloat(storage.get('trade_font_0716')) || (window.innerWidth <= 720 ? 17.5 : 19);
+  let curFont = parseFloat(storage.get('trade_font_0716')) || 18;
   function applyFont(sz) {
     curFont = Math.max(15, Math.min(24, sz));
     htmlEl.style.fontSize = curFont + 'px';
