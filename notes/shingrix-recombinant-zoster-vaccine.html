@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="zh-Hant" class="kp-note"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="整理 Shingrix 接種對象、台灣與美國時程、移植後時機、長期保護力與安全性，附第 2 劑日期試算。"><meta name="keywords" content="Shingrix, 欣剋疹, 帶狀疱疹, 帶狀皰疹, RZV, PHN, 疫苗, 移植, HCT, GBS, Zostavax">
+<title>Shingrix（帶狀疱疹重組疫苗，RZV）臨床實證筆記</title>
+<style>
+  :root {
+    --bg: var(--kp-note-page, #f3f6fa);
+    --surface: var(--kp-note-inset, #edf1f5);
+    --card: var(--kp-note-panel, #fff);
+    --border: var(--kp-control-border, #c3cfda);
+    --border-strong: var(--border);
+    --text: var(--kp-note-text, #25374c);
+    --muted: var(--kp-note-muted, #42576e);
+    --primary: var(--kp-note-heading, #355471);
+    --primary-soft: var(--surface);
+    --accent: #9a570e;
+    --accent-soft: #fff3dc;
+    --danger: #991b1b;
+    --danger-soft: #fef2f2;
+    --success: #166534;
+    --success-soft: #edf7ec;
+    --radius: 14px;
+  }
+  [data-theme="dark"] {
+    --bg: #1F242A;
+    --surface: #0B0D10;
+    --card: #0B0D10;
+    --text: #f0eae5;
+    --muted: #c6cdd5;
+    --primary: #b9d4ea;
+    --accent: #fabc70;
+    --accent-soft: #30271a;
+    --danger: #fca5a5;
+    --danger-soft: #301c20;
+    --success: #86efac;
+    --success-soft: #183025;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", -apple-system, sans-serif;
+    font-size: 16.5px;
+    line-height: 1.72;
+    transition: background .25s, color .25s;
+  }
+  .container { max-width: 1040px; margin: 0 auto; padding: 24px 18px 64px; }
+  .hero {
+    background: var(--card); border: 1.5px solid var(--border-strong); border-radius: 18px;
+    padding: 28px 26px; box-shadow: var(--shadow); margin-bottom: 24px;
+  }
+  .hero h1 { margin: 0 0 10px; font-size: 1.9rem; line-height: 1.3; color: var(--primary); }
+  .hero p { margin: 0 0 20px; color: var(--muted); font-size: 1.02rem; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .kpi-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px; text-align: left;
+  }
+  .kpi-val { font-size: 1.45rem; font-weight: 800; color: var(--primary); line-height: 1.2; }
+  .kpi-label { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+  .toc-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    margin-bottom: 26px;
+  }
+  .toc-item {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 10px 14px; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.93rem;
+    transition: transform .15s, border-color .15s;
+  }
+  .toc-item:hover { transform: translateY(-2px); border-color: var(--primary); }
+  .toc-num {
+    background: var(--primary); color: #fff; font-weight: 800; font-size: 0.8rem;
+    padding: 3px 8px; border-radius: 7px; flex-shrink: 0;
+  }
+  [data-theme="dark"] .toc-num { color: #111; }
+  .sec-frame {
+    background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius);
+    padding: 24px 24px 22px; margin-bottom: 24px; box-shadow: var(--shadow);
+  }
+  .sec-head {
+    display: flex; align-items: center; gap: 12px;
+    padding-bottom: 12px; margin-bottom: 18px; border-bottom: 2px solid var(--border);
+  }
+  .sec-num {
+    background: var(--primary); color: #fff; font-weight: 800; font-size: 1rem;
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  [data-theme="dark"] .sec-num { color: #111; }
+  .sec-head h2 { margin: 0; font-size: 1.35rem; color: var(--primary); }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 16px; }
+  .sub-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .sub-card h3 { margin: 0 0 10px; font-size: 1.05rem; color: var(--primary); }
+  .sub-card ul { margin: 0; padding-left: 20px; }
+  .sub-card li { margin-bottom: 6px; }
+  .callout {
+    border-left: 4px solid var(--accent); background: var(--accent-soft);
+    padding: 14px 16px; border-radius: 10px; margin: 14px 0;
+  }
+  .callout-danger {
+    border-left-color: var(--danger); background: var(--danger-soft);
+  }
+  .callout-success {
+    border-left-color: var(--success); background: var(--success-soft);
+  }
+  .redflag-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .redflag-card {
+    background: var(--danger-soft); border: 1.5px solid var(--danger);
+    border-radius: 12px; padding: 15px 16px;
+  }
+  .redflag-card h4 { margin: 0 0 6px; color: var(--danger); font-size: 1rem; }
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .filter-btn {
+    padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border-strong);
+    background: var(--surface); color: var(--text); cursor: pointer; font-size: 0.86rem; font-weight: 600;
+  }
+  .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+  [data-theme="dark"] .filter-btn.active { color: #111; }
+  .table-wrap { overflow-x: auto; margin: 12px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+  th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { background: var(--primary-soft); color: var(--primary); font-weight: 700; }
+  tr:hover td { background: var(--surface); }
+  .fig-box {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px; margin: 16px 0; text-align: center;
+  }
+  .fig-box img {
+    max-width: 100%; height: auto; border-radius: 8px; cursor: zoom-in;
+    border: 1px solid var(--border); background: #fff;
+  }
+  .fig-cap { font-size: 0.86rem; color: var(--muted); margin-top: 8px; text-align: left; }
+  .svg-box {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 16px; margin: 16px 0; overflow-x: auto;
+  }
+  .svg-box svg { width: 100%; height: auto; display: block; }
+  .calc-box {
+    background: var(--primary-soft); border: 1.5px solid var(--primary); border-radius: 12px;
+    padding: 16px 18px; margin: 14px 0;
+  }
+  .calc-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 10px; }
+  .calc-row select, .calc-row input {
+    padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border-strong);
+    background: var(--card); color: var(--text); font-size: 0.95rem;
+  }
+  .calc-res {
+    margin-top: 12px; padding: 12px 14px; background: var(--card); border-radius: 8px;
+    border-left: 4px solid var(--primary); font-weight: 600;
+  }
+  a { color: var(--primary); }
+  .ref-list { padding-left: 20px; font-size: 0.9rem; }
+  .ref-list li { margin-bottom: 7px; }
+  @media (max-width: 720px) {
+    .container { padding: 14px 12px 48px; }
+    .hero { padding: 18px 16px; }
+    .hero h1 { font-size: 1.45rem; }
+    .kpi-grid, .toc-grid, .grid-2, .grid-3, .redflag-grid { grid-template-columns: 1fr; }
+    .sec-frame { padding: 16px 14px; }
+    table.resp thead { display: none; }
+    table.resp tr {
+      display: block; border: 1px solid var(--border); border-radius: 10px;
+      margin-bottom: 12px; padding: 10px; background: var(--surface);
+    }
+    table.resp td {
+      display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px dashed var(--border);
+      padding: 6px 4px; text-align: right;
+    }
+    table.resp td:last-child { border-bottom: none; }
+    table.resp td::before {
+      content: attr(data-label); font-weight: 700; color: var(--primary); text-align: left; flex-shrink: 0;
+    }
+  }
+
+  [hidden] { display: none !important; }
+  .study-figure { text-align: start; }
+  .study-figure ul { list-style: none; padding: 0; }
+  .study-figure li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .15rem .5rem; margin-block: .55rem; }
+  .study-figure progress { grid-column: 1 / -1; width: 100%; accent-color: var(--primary); }
+  .calc-row label { min-width: 0; }
+  .calc-row :is(select,input) { max-width: 100%; font: inherit; }
+  .kp-note .table-wrap { max-width: 100%; }
+  .kp-note .table-wrap #rweTable { min-width: 0; }
+  .svg-box svg text { fill: currentColor; }
+  @media (max-width: 720px) {
+    .kp-note .table-wrap #rweTable { min-width: 0; width: 100%; table-layout: fixed; }
+    #rweTable thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    #rweTable tbody { display: block; }
+    #rweTable td { display: block; text-align: start; overflow-wrap: anywhere; }
+    #rweTable td::before { display: block; }
+  }
+</style><link rel="stylesheet" href="../theme.css?v=63fccc70">
+<script defer src="../theme.js"></script><script defer src="../assets/shingrix.js"></script>
+</head><body><main class="container">
+  <nav class="kp-controls kp-article-controls" aria-label="文章導覽"><a class="kp-control" href="../">← 返回知識星球</a><button class="kp-control kp-theme-toggle" type="button" hidden>深色模式</button></nav><header class="hero kp-note-hero">
+    <span class="kp-categories"><a class="kp-category" href="../?category=infectious-diseases">感染症 · Infectious Diseases</a><a class="kp-category" href="../?category=clinical-pharmacology">臨床藥理 · Clinical Pharmacology</a></span><h1>Shingrix（帶狀疱疹重組疫苗，RZV）臨床實證筆記</h1>
+    <p>Zoster Vaccine Recombinant, Adjuvanted（含 VZV glycoprotein E 與 AS01B 佐劑）是目前臨床預防帶狀疱疹（Herpes Zoster, HZ）與帶狀疱疹後神經痛（Postherpetic Neuralgia, PHN）的標準首選非活性疫苗；美國已停止供應舊型活性減毒疫苗 Zostavax（ZVL）。</p>
+    <div class="kpi-grid kp-lead-cards">
+      <div class="kpi-card">
+        <div class="kpi-val">97.2%</div>
+        <div class="kpi-label">ZOE-50 樞紐試驗效力（≥50 歲，95% CI 93.7–99.0）</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">70–76%</div>
+        <div class="kpi-label">真實世界 2 劑有效性（對 PHN 達 76–87%）</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">82.0%</div>
+        <div class="kpi-label">第 11 年長期保護效力（整體 11 年 87.7%）</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-val">2 劑 IM</div>
+        <div class="kpi-label">0.5 mL 三角肌；一般 2–6 月 / 美國部分免疫低下者可採 1–2 月</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc-grid" aria-label="章節目錄">
+    <a class="toc-item" href="#sec-01"><span class="toc-num">01</span>免疫機轉、適應症與對象</a>
+    <a class="toc-item" href="#sec-02"><span class="toc-num">02</span>劑量、時程與併用決策</a>
+    <a class="toc-item" href="#sec-03"><span class="toc-num">03</span>臨床試驗與 11 年保護力</a>
+    <a class="toc-item" href="#sec-04"><span class="toc-num">04</span>真實世界與特殊族群實證</a>
+    <a class="toc-item" href="#sec-05"><span class="toc-num">05</span>不良反應、GBS 與禁忌紅旗</a>
+    <a class="toc-item" href="#sec-06"><span class="toc-num">06</span>臨床特殊情境與參考文獻</a>
+  </nav>
+
+  <!-- 01 -->
+  <section class="sec-frame" id="sec-01">
+    <div class="sec-head"><div class="sec-num">01</div><h2>免疫機轉、成分特性與適應症</h2></div>
+    <aside class="calc-box"><strong>台灣接種建議</strong><p>依台灣疾管署，50 歲以上成人及 18 歲以上免疫不全或免疫功能低下者，建議接種 2 劑非活性重組疫苗，間隔 2–6 個月。美國 ACIP 對免疫低下成人的建議門檻為 ≥19 歲，可視需要選擇加速時程。<a href="https://www.cdc.gov.tw/Category/Page/WzNj0ONng_AdPtlJc4XDhA">台灣疾管署</a></p></aside><div class="grid-2">
+      <div class="sub-card">
+        <h3>免疫機轉與疫苗組成</h3>
+        <ul>
+          <li><strong>致病核心</strong>：帶狀疱疹源於潛伏在感覺與腦神經節中的 Varicella-Zoster Virus（VZV）再活化；<strong>VZV 特異性細胞免疫（T-cell mediated immunity）隨年齡或免疫抑制衰減</strong>是主要誘因（&gt;55 歲約 30–40% 測不到 VZV 特異性 T 細胞反應）。</li>
+          <li><strong>疫苗結構</strong>：非活性亞單位疫苗，含重組 VZV 醣蛋白 E（glycoprotein E, gE）搭配強效 <strong>AS01B 佐劑</strong>，可強力喚醒 CD4+ T 細胞與抗體反應，即使是高齡、衰弱（frail）或免疫低下族群亦具良好免疫原性。</li>
+          <li><strong>市場現況</strong>：2017 年獲美國 FDA 核准（<a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0280849d-5c78-4a9d-8941-4eab429f6bd8" target="_blank">FDA DailyMed 仿單</a>）；舊型活性減毒疫苗 Zostavax（ZVL）在美國自 2020 年 11 月起已不再供應。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>核准適應症與建議對象（FDA &amp; ACIP）</h3>
+        <ul>
+          <li><strong>一般免疫正常成人 ≥50 歲</strong>：常規建議全面接種 2 劑（UpToDate Grade 1B；<a href="https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html" target="_blank">CDC 建議</a>）。</li>
+          <li><strong>免疫缺陷或免疫抑制成人</strong>：FDA 核准 <strong>≥18 歲</strong>；ACIP 成人建議範圍為 <strong>≥19 歲</strong>（<a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7103a2.htm" target="_blank">Anderson MMWR 2022</a>），包含化療、血液腫瘤、移植、HIV、免疫調節劑／類固醇使用者，或預計接受免疫抑制治療者。</li>
+          <li><strong>不需排除之族群</strong>：曾罹患帶狀疱疹、曾接種水痘疫苗（VAR），或曾接種舊型 Zostavax（ZVL）者，皆仍建議完整接種 2 劑 Shingrix。</li>
+          <li><strong>使用限制</strong>：<strong>不適用於預防原發性水痘</strong>，亦<strong>不可用於治療</strong>急性帶狀疱疹或 PHN。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>臨床實務要點（無須驗抗體）</strong>：接種前<strong>不建議常規檢驗 VZV IgG 抗體或確認水痘病史</strong>，此原則適用於一般免疫正常成人。免疫低下且缺乏水痘、帶狀疱疹病史或接種紀錄者，先依指引確認水痘免疫證據並評估水痘疫苗適用性；RZV 不能取代水痘疫苗（<a href="https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-notes.html" target="_blank">CDC Adult Schedule Notes</a>）。
+    </div>
+
+    <div class="grid-2">
+      <aside class="fig-box"><strong>帶狀疱疹發生率隨年齡增加</strong><p>美國早期流行病學資料顯示，帶狀疱疹與帶狀疱疹後神經痛在高齡族群更常見。<a href="https://www.cdc.gov/mmwr/preview/mmwrhtml/rr5705a1.htm">Harpaz 等，MMWR 原始資料</a></p></aside><aside class="fig-box"><strong>美國成人接種時程速查</strong><p>≥50 歲常規接種 2 劑，免疫低下者由 ≥19 歲開始評估。懷孕期間可考慮延至產後。<a href="https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-notes.html">CDC 成人疫苗時程</a></p></aside></div>
+  </section>
+
+  <!-- 02 -->
+  <section class="sec-frame" id="sec-02">
+    <div class="sec-head"><div class="sec-num">02</div><h2>劑量、接種時程與併用疫苗策略</h2></div>
+    <div class="grid-3">
+      <div class="sub-card">
+        <h3>標準給藥方式</h3>
+        <ul>
+          <li>劑量：每次 <strong>0.5 mL</strong>，採<strong>肌肉注射（IM）</strong>，建議施打於上臂三角肌（deltoid）。</li>
+          <li>療程：所有對象均須完成 <strong>2 劑</strong>（含曾得過 HZ 或曾打過 ZVL 者）。</li>
+          <li>最小間隔：<strong>4 週（28 天）</strong>；若 &lt;4 週內誤打第 2 劑（提早 ≥5 天），該劑無效，須於無效劑次後至少 4 週重打。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>一般 vs. 免疫低下時程</h3>
+        <ul>
+          <li><strong>一般成人（≥50 歲）</strong>：第 2 劑於第 1 劑後 <strong>2–6 個月</strong>接種。</li>
+          <li><strong>免疫低下／計畫性免疫抑制</strong>：為加速建立保護力，第 2 劑可縮短至第 1 劑後 <strong>1–2 個月</strong>接種（<a href="https://www.cdc.gov/shingles/hcp/vaccine-considerations/immunocompromised-adults.html" target="_blank">CDC 免疫低下指引</a>）。</li>
+          <li><strong>延遲補打原則</strong>：若超過 6 個月才接種第 2 劑，<strong>無須重新開始療程</strong>；真實世界研究（Zerbo 2024、Izurieta 2021）未發現延遲接種第 2 劑者的有效性明顯下降。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>與其他成人疫苗同時接種</h3>
+        <ul>
+          <li><strong>可同日不同部位接種</strong>：ACIP 指出 RZV 可與季節性流感疫苗（含佐劑流感疫苗）、肺炎鏈球菌疫苗（PCV / PPSV23）、Tdap 及 COVID-19 疫苗同時施打於不同解剖位置。</li>
+          <li><strong>臨床分開考量</strong>：由於 RZV 與 COVID-19 或佐劑流感疫苗皆具較高反應原性（reactogenicity），臨床上可視病人耐受度評估分開接種，以減少 1–2 天內之疊加不適。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="calc-box">
+      <strong>互動式臨床接種決策與第 2 劑時程試算器</strong>
+      <div class="calc-row">
+        <label>族群分類：
+          <select id="medGroup">
+            <option value="routine">一般免疫正常成人（≥50 歲）</option>
+            <option value="ic">免疫低下 / 計畫性免疫抑制（≥18/19 歲）</option>
+            <option value="zvl">曾接種舊型活性疫苗 Zostavax（ZVL）</option>
+            <option value="prior_hz">近期剛罹患帶狀疱疹（含 HZO）</option>
+          </select>
+        </label>
+        <label><span id="medDoseLabel">第 1 劑接種日</span><input type="date" id="medDose1">
+        </label>
+      </div>
+      <div class="calc-res" id="medCalcOut" role="status">請選擇族群與第 1 劑日期，系統將自動推算建議第 2 劑視窗與臨床注意事項。</div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="sec-frame" id="sec-03">
+    <div class="sec-head"><div class="sec-num">03</div><h2>樞紐臨床試驗（ZOE-50 / ZOE-70）與 11 年長期保護效力</h2></div>
+    <div class="grid-2">
+      <div class="sub-card">
+        <h3>樞紐隨機對照試驗（FDA 仿單核心）</h3>
+        <ul>
+          <li><strong>ZOE-50（Study 1，≥50 歲）</strong>：18 國、n=14,759（UpToDate 評估 15,411 人），中位追蹤 3.1 年。對 HZ 整體保護效力 <strong>97.2%</strong>（95% CI 93.7–99.0；疫苗組 6 例 vs 安慰劑組 210 例），各年齡層皆達 96.6–97.9%。PHN 疫苗組 0 例 vs 安慰劑組 18 例（<a href="https://pubmed.ncbi.nlm.nih.gov/25916341/" target="_blank">Lal NEJM 2015</a>）。</li>
+          <li><strong>ZOE-70（Study 2，≥70 歲）</strong>：主要分析 n=13,163（UpToDate 13,900 人），中位追蹤 3.7–3.9 年。對 HZ 效力 <strong>89.8–90.0%</strong>（95% CI 84.2–93.7；23 例 vs 223 例）；合併 ZOE-50/70 之 ≥70 歲族群對 PHN 效力達 <strong>88.8–89%</strong>（95% CI 68.7–97.1；<a href="https://pubmed.ncbi.nlm.nih.gov/27626517/" target="_blank">Cunningham NEJM 2016</a>）。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>ZOE-LTFU 延伸追蹤（7 年至 11 年持久性）</h3>
+        <ul>
+          <li><strong>第 4 年持續性</strong>：FDA 仿單描述性分析顯示第 4 年效力維持 <strong>93.1%</strong>（95% CI 81.3–98.2）。</li>
+          <li><strong>5.1–7.1 年延伸（Boutry 2022）</strong>：區間保護力 <strong>84.0%</strong>，自第 2 劑後 1 個月至平均 7.1 年整體效力達 <strong>90.9%</strong>；第 4–6 年後年度效力穩定維持 &gt;84%（<a href="https://pubmed.ncbi.nlm.nih.gov/34283213/" target="_blank">Boutry CID 2022</a>）。</li>
+          <li><strong>10–11 年長期追蹤</strong>：第 10 年維持 &gt;72%（<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9588150/" target="_blank">Strezova OFID 2022</a>）；追蹤至 <strong>第 11 年效力仍達 82.0%</strong>（95% CI 63.0–92.2），6–11 年間 ≥50 歲約 79.8%、≥70 歲約 73.2%，整體累積效力 87.7%（採歷史對照，證據確定性較低；70 歲前接種衰退更少）。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="svg-box">
+      <svg viewBox="0 0 820 280" role="img" aria-label="Shingrix 臨床試驗與長期追蹤保護效力柱狀圖">
+        <rect x="0" y="0" width="820" height="280" fill="transparent"></rect>
+        <text x="20" y="26" font-size="16" font-weight="700" fill="currentColor">Shingrix 臨床試驗與長期延伸追蹤保護效力總覽（%）</text>
+        <!-- Grid lines -->
+        <line x1="65" y1="230" x2="795" y2="230" stroke="currentColor" stroke-opacity="0.3"></line>
+        <line x1="65" y1="185" x2="795" y2="185" stroke="currentColor" stroke-opacity="0.15" stroke-dasharray="4 4"></line>
+        <line x1="65" y1="140" x2="795" y2="140" stroke="currentColor" stroke-opacity="0.15" stroke-dasharray="4 4"></line>
+        <line x1="65" y1="95" x2="795" y2="95" stroke="currentColor" stroke-opacity="0.15" stroke-dasharray="4 4"></line>
+        <line x1="65" y1="50" x2="795" y2="50" stroke="currentColor" stroke-opacity="0.15" stroke-dasharray="4 4"></line>
+        <text x="55" y="234" text-anchor="end" font-size="11" fill="currentColor">0%</text>
+        <text x="55" y="189" text-anchor="end" font-size="11" fill="currentColor">25%</text>
+        <text x="55" y="144" text-anchor="end" font-size="11" fill="currentColor">50%</text>
+        <text x="55" y="99" text-anchor="end" font-size="11" fill="currentColor">75%</text>
+        <text x="55" y="54" text-anchor="end" font-size="11" fill="currentColor">100%</text>
+        <!-- Bars: y = 230 - pct*1.8 -->
+        <g transform="translate(88,0)">
+          <rect x="0" y="55" width="76" height="175" rx="6" fill="#1B4965"></rect>
+          <text x="38" y="48" text-anchor="middle" font-size="13" font-weight="800" fill="#1B4965">97.2%</text>
+          <text x="38" y="248" text-anchor="middle" font-size="11.5" fill="currentColor">ZOE-50</text>
+          <text x="38" y="264" text-anchor="middle" font-size="10.5" fill="currentColor">(≥50歲 HZ)</text>
+        </g>
+        <g transform="translate(204,0)">
+          <rect x="0" y="68" width="76" height="162" rx="6" fill="#2A6F97"></rect>
+          <text x="38" y="61" text-anchor="middle" font-size="13" font-weight="800" fill="#2A6F97">90.0%</text>
+          <text x="38" y="248" text-anchor="middle" font-size="11.5" fill="currentColor">ZOE-70</text>
+          <text x="38" y="264" text-anchor="middle" font-size="10.5" fill="currentColor">(≥70歲 HZ)</text>
+        </g>
+        <g transform="translate(320,0)">
+          <rect x="0" y="70" width="76" height="160" rx="6" fill="#2C7A7B"></rect>
+          <text x="38" y="63" text-anchor="middle" font-size="13" font-weight="800" fill="#2C7A7B">89.0%</text>
+          <text x="38" y="248" text-anchor="middle" font-size="11.5" fill="currentColor">PHN 保護</text>
+          <text x="38" y="264" text-anchor="middle" font-size="10.5" fill="currentColor">(≥70歲合併)</text>
+        </g>
+        <g transform="translate(436,0)">
+          <rect x="0" y="66" width="76" height="164" rx="6" fill="#3B82A6"></rect>
+          <text x="38" y="59" text-anchor="middle" font-size="13" font-weight="800" fill="#3B82A6">90.9%</text>
+          <text x="38" y="248" text-anchor="middle" font-size="11.5" fill="currentColor">7.1 年累積</text>
+          <text x="38" y="264" text-anchor="middle" font-size="10.5" fill="currentColor">(Boutry 2022)</text>
+        </g>
+        <g transform="translate(552,0)">
+          <rect x="0" y="82" width="76" height="148" rx="6" fill="#B45309"></rect>
+          <text x="38" y="75" text-anchor="middle" font-size="13" font-weight="800" fill="#B45309">82.0%</text>
+          <text x="38" y="248" text-anchor="middle" font-size="11.5" fill="currentColor">第 11 年</text>
+          <text x="38" y="264" text-anchor="middle" font-size="10.5" fill="currentColor">(年度效力)</text>
+        </g>
+        <g transform="translate(668,0)">
+          <rect x="0" y="93" width="76" height="137" rx="6" fill="#D97706"></rect>
+          <text x="38" y="86" text-anchor="middle" font-size="13" font-weight="800" fill="#D97706">76.0%</text>
+          <text x="38" y="248" text-anchor="middle" font-size="11.5" fill="currentColor">真實世界</text>
+          <text x="38" y="264" text-anchor="middle" font-size="10.5" fill="currentColor">(Zerbo 2劑)</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="sec-frame" id="sec-04">
+    <div class="sec-head"><div class="sec-num">04</div><h2>真實世界有效性（RWE）與特殊族群統合分析</h2></div>
+    <p>真實世界 2 劑有效性（約 70–76%）略低於隨機試驗（97.2%），差異部分可能來自觀察性研究依臨床診斷／抗病毒開立界定個案（較不具特異性），而非試驗以 PCR 或專家判定確認病例；若試驗改以臨床疑似個案估算，效力亦約 76%（<a href="https://pubmed.ncbi.nlm.nih.gov/38190712/" target="_blank">Zerbo 2024</a>）。</p>
+
+    <div class="filter-bar" role="group" aria-label="篩選研究類別">
+      <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">全部研究</button>
+      <button class="filter-btn" type="button" data-filter="rwe" aria-pressed="false">大型真實世界世代</button>
+      <button class="filter-btn" type="button" data-filter="special" aria-pressed="false">特殊／免疫低下族群</button>
+      <button class="filter-btn" type="button" data-filter="extra" aria-pressed="false">單劑與額外潛在效益</button>
+    </div>
+
+    <div class="table-wrap">
+      <table class="resp" id="rweTable" role="table">
+        <thead role="rowgroup">
+          <tr role="row">
+            <th role="columnheader">研究 / 統合分析</th>
+            <th role="columnheader">對象與規模</th>
+            <th role="columnheader">主要保護效力 / 有效性</th>
+            <th role="columnheader">關鍵臨床解讀</th>
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          <tr data-cat="rwe" role="row">
+            <td data-label="研究" role="cell"><strong>Kaiser Permanente (Zerbo 2024)</strong><br><a href="https://pubmed.ncbi.nlm.nih.gov/38190712/" target="_blank">Ann Intern Med</a></td>
+            <td data-label="對象與規模" role="cell">4 大醫療系統、約 200 萬人（760 萬人年，≥50 歲）</td>
+            <td data-label="主要保護力" role="cell">2 劑 HZ：<strong>76%</strong>（第 1 年 79%、第 3–4 年仍 73%）；PHN：<strong>87%</strong></td>
+            <td data-label="臨床解讀" role="cell">4 年內幾乎無衰退；即使突破感染，PHN 風險仍再降 47%。</td>
+          </tr>
+          <tr data-cat="rwe" role="row">
+            <td data-label="研究" role="cell"><strong>KPSC (Tseng 2026)</strong><br>Clin Infect Dis</td>
+            <td data-label="對象與規模" role="cell">美國南加州 ≥50 歲成人</td>
+            <td data-label="主要保護力" role="cell">2 劑 HZ：<strong>73.9%</strong>；PHN：<strong>83.7%</strong></td>
+            <td data-label="臨床解讀" role="cell">4 年內保護力維持穩定，確認對長期神經痛之高防禦效益。</td>
+          </tr>
+          <tr data-cat="rwe" role="row">
+            <td data-label="研究" role="cell"><strong>Medicare (Izurieta 2021)</strong><br>Clin Infect Dis</td>
+            <td data-label="對象與規模" role="cell">美國 &gt;65 歲 Medicare 族群</td>
+            <td data-label="主要保護力" role="cell">2 劑 HZ：<strong>70.1%</strong>；PHN：<strong>76.0%</strong></td>
+            <td data-label="臨床解讀" role="cell">高齡族群仍具穩健保護；第 2 劑延遲超過 6 個月不影響效力。</td>
+          </tr>
+          <tr data-cat="rwe" role="row">
+            <td data-label="研究" role="cell"><strong>OptumLabs (Sun 2021)</strong><br>Clin Infect Dis</td>
+            <td data-label="對象與規模" role="cell">≥50 歲免疫正常申報資料</td>
+            <td data-label="主要保護力" role="cell">2 劑 HZ：<strong>85.5%</strong>（≥80 歲仍達 <strong>80.3%</strong>）</td>
+            <td data-label="臨床解讀" role="cell">80 歲以上超高齡長者保護力不墜。</td>
+          </tr>
+          <tr data-cat="rwe" role="row">
+            <td data-label="研究" role="cell"><strong>Medicare 模擬試驗 (Vielot 2025)</strong><br><a href="https://www.acpjournals.org/doi/abs/10.7326/ANNALS-24-02409" target="_blank">Ann Intern Med</a></td>
+            <td data-label="對象與規模" role="cell">納入免疫功能與曾打 ZVL 校正（≥1 劑分析）</td>
+            <td data-label="主要保護力" role="cell">1 年 VE：HZ <strong>56.1%</strong>、HZO <strong>55.2%</strong>、PHN <strong>72.0%</strong></td>
+            <td data-label="臨床解讀" role="cell">即使曾打過 ZVL，補打 RZV 仍可顯著減少 HZ、眼部帶狀疱疹與 PHN。</td>
+          </tr>
+          <tr data-cat="special" role="row">
+            <td data-label="研究" role="cell"><strong>上市後統合分析 (Mbinta 2026)</strong><br>Vaccine</td>
+            <td data-label="對象與規模" role="cell">免疫正常 vs 免疫低下 / 自體免疫族群</td>
+            <td data-label="主要保護力" role="cell">免疫正常 <strong>80.0%</strong>；免疫低下 <strong>64.3%</strong>；自體免疫 <strong>66.2%</strong>；≥80 歲 <strong>75.1%</strong></td>
+            <td data-label="臨床解讀" role="cell">免疫低下者 PHN 保護力 38.7%（研究數少屬探索性）；使用皮質類固醇者 VE 65%（未用者 77%）。</td>
+          </tr>
+          <tr data-cat="special" role="row">
+            <td data-label="研究" role="cell"><strong>移植與血液腫瘤 RCT</strong><br>JAMA 2019 / Lancet ID 2019</td>
+            <td data-label="對象與規模" role="cell">自體幹細胞移植（n=1,846）；血液惡性腫瘤（n=562）</td>
+            <td data-label="主要保護力" role="cell">自體 HCT：<strong>68%</strong>；血液腫瘤：<strong>87%</strong>；未用免疫抑制之自體免疫病 <strong>90.5%</strong></td>
+            <td data-label="臨床解讀" role="cell">非活性疫苗在嚴重免疫低下族群安全且具實質防護力，不增加自體免疫疾病惡化風險。</td>
+          </tr>
+          <tr data-cat="extra" role="row">
+            <td data-label="研究" role="cell"><strong>僅接種 1 劑之衰減</strong><br><a href="https://pubmed.ncbi.nlm.nih.gov/38190712/" target="_blank">Zerbo 2024</a> / Tseng 2026</td>
+            <td data-label="對象與規模" role="cell">未完成第 2 劑族群</td>
+            <td data-label="主要保護力" role="cell">整體 <strong>60–64%</strong>；第 1 年 70% → 第 2–4 年驟降至 <strong>45–52%</strong></td>
+            <td data-label="臨床解讀" role="cell">強烈支持臨床衛教務必追蹤病人完成第 2 劑接種。</td>
+          </tr>
+          <tr data-cat="extra" role="row">
+            <td data-label="研究" role="cell"><strong>潛在額外效益（心血管／失智）</strong><br>UpToDate 2026 / Nat Med 2024–2026</td>
+            <td data-label="對象與規模" role="cell">多項觀察性世代與統合分析</td>
+            <td data-label="主要保護力" role="cell">心血管事件（MI／中風）<strong>RR 0.79</strong>（住院 aHR 0.72 / 0.58）；失智風險下降關聯</td>
+            <td data-label="臨床解讀" role="cell">失智症關聯證據確定性偏低（須留意健康接種者偏差），屬輔助加分訊息而非主要適應症。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <figure class="fig-box study-figure"><h3>Zerbo 2024｜接種劑次與帶狀疱疹保護力</h3><ul><li><span>1 劑，第 1 年</span><b>70%</b><progress max="100" value="70" aria-label="1 劑，第 1 年 70%"></progress></li><li><span>1 劑，第 2 年</span><b>45%</b><progress max="100" value="45" aria-label="1 劑，第 2 年 45%"></progress></li><li><span>1 劑，第 3 年</span><b>48%</b><progress max="100" value="48" aria-label="1 劑，第 3 年 48%"></progress></li><li><span>1 劑，第 3 年後</span><b>52%</b><progress max="100" value="52" aria-label="1 劑，第 3 年後 52%"></progress></li><li><span>2 劑，第 3–4 年</span><b>73%</b><progress max="100" value="73" aria-label="2 劑，第 3–4 年 73%"></progress></li></ul><figcaption>調整後疫苗有效性。<a href="https://pubmed.ncbi.nlm.nih.gov/38190712/">原始研究及圖表</a></figcaption></figure><figure class="fig-box study-figure"><h3>Vielot 2025｜Medicare 的 1 年有效性</h3><ul><li><span>帶狀疱疹（HZ）</span><b>56.1%</b><progress max="100" value="56.1" aria-label="帶狀疱疹（HZ） 56.1%"></progress></li><li><span>眼部帶狀疱疹（HZO）</span><b>55.2%</b><progress max="100" value="55.2" aria-label="眼部帶狀疱疹（HZO） 55.2%"></progress></li><li><span>帶狀疱疹後神經痛（PHN）</span><b>72%</b><progress max="100" value="72" aria-label="帶狀疱疹後神經痛（PHN） 72%"></progress></li></ul><figcaption>比較接種至少 1 劑與未接種者。<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12614106/">原始研究及累積發生率曲線</a></figcaption></figure></div>
+  </section>
+
+  <!-- 05 -->
+  <section class="sec-frame" id="sec-05">
+    <div class="sec-head"><div class="sec-num">05</div><h2>安全性、常見反應與臨床紅旗禁忌</h2></div>
+    <div class="grid-2">
+      <div class="sub-card">
+        <h3>局部與全身反應（多於 1–3 天緩解）</h3>
+        <ul>
+          <li><strong>局部反應</strong>：注射部位疼痛最常見（臨床試驗達 <strong>78%</strong>）；影響日常活動之 Grade 3 局部反應（痛／紅／腫）約 <strong>8.5–9.5%</strong>（ZOE 合併 9.4%）。</li>
+          <li><strong>全身反應</strong>：肌痛 44.7%、疲倦 44.5%、頭痛 37.7%、畏寒 26.8%、發燒 20.5%、腸胃症狀 17.3%；Grade 3 全身反應約 <strong>6–11%</strong>（合併 10.8% vs 安慰劑 2.4%）。</li>
+          <li><strong>臨床衛教重點</strong>：約 <strong>1/6（16.5%）</strong> 接種者會出現短暫影響日常活動之 Grade 3 反應（多在 1–2 天內恢復），建議施打後 1–2 天避免劇烈活動；<strong>≥70 歲長者反應發生率反而低於 50–69 歲者</strong>。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>罕見神經安全性：Guillain-Barré 症候群（GBS）</h3>
+        <ul>
+          <li>美國 Medicare 上市後觀察研究（373 萬劑）顯示：≥65 歲族群接種後 42 天內 GBS 風險略增，估計約<strong>每百萬劑增加 3 例</strong>（次分析第 1 劑後約每百萬劑增加 6 例，第 2 劑後未見風險上升）。</li>
+          <li>FDA 已要求於 Shingrix 仿單加註 GBS 警語（<a href="https://www.fda.gov/vaccines-blood-biologics/safety-availability-biologics/fda-requires-warning-about-guillain-barre-syndrome-gbs-be-included-prescribing-information-shingrix" target="_blank">FDA 安全通告</a>）。</li>
+          <li><strong>處置原則</strong>：UpToDate 建議<strong>有 GBS 病史者避免接種 RZV</strong>；一般無病史者其預防 HZ/PHN 效益遠大於極低絕對風險。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="redflag-grid">
+      <div class="redflag-card">
+        <h4>紅旗 1：絕對禁忌（嚴重過敏 Anaphylaxis）</h4>
+        <p style="margin:0;">曾對 Shingrix 任何成分（含 AS01B 佐劑）或前一劑 Shingrix 發生嚴重過敏反應者，嚴禁再次施打。</p>
+      </div>
+      <div class="redflag-card">
+        <h4>紅旗 2：活動性 VZV 感染不應接種</h4>
+        <p style="margin:0;">正處於急性帶狀疱疹發作期（皮疹未癒、急性症狀持續）時不得接種；待急性期完全痊癒後再安排。</p>
+      </div>
+      <div class="redflag-card">
+        <h4>紅旗 3：眼部帶狀疱疹（HZO）病史應評估時機並追蹤</h4>
+        <p style="margin:0;">近期發作過 HZO 者，UpToDate 通常建議<strong>延後約 1 年</strong>再接種（回溯研究曾提示短期復發 aHR 1.64），接種後須留意眼部復發徵象。</p>
+      </div>
+      <div class="redflag-card">
+        <h4>紅旗 4：懷孕期間暫緩與 GBS 病史評估</h4>
+        <p style="margin:0;">懷孕期無 ACIP 建議且缺乏臨床研究，通常<strong>延至產後再接種</strong>；哺乳期則不具已知風險，可直接接種。既往 GBS 病史者宜個別評估接種效益與風險。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 -->
+  <section class="sec-frame" id="sec-06">
+    <div class="sec-head"><div class="sec-num">06</div><h2>特殊臨床情境速查與實證參考文獻</h2></div>
+    <div class="grid-3">
+      <div class="sub-card">
+        <h3>曾罹患帶狀疱疹（非 HZO）</h3>
+        <p style="margin:0;">自然感染本身可提升數年細胞免疫。CDC 建議至少等<strong>急性期與皮疹完全消退後</strong>接種；UpToDate 臨床實務常建議<strong>延後約 1 年</strong>再施打 2 劑。</p>
+      </div>
+      <div class="sub-card">
+        <h3>曾打舊型疫苗 Zostavax（ZVL）</h3>
+        <p style="margin:0;">因 ZVL 保護力較低且 5–8 年內衰減，ACIP 建議至少於接種 ZVL <strong>8 週後</strong>，重新接種完整的 <strong>2 劑 Shingrix</strong>。</p>
+      </div>
+      <div class="sub-card">
+        <h3>計畫接受免疫抑制治療</h3>
+        <p style="margin:0;">化療、器官移植或高劑量類固醇前，應<strong>盡可能於免疫抑制前完成</strong>（可採 1–2 個月加速時程）；若已處免疫低下狀態，選在疾病穩定、免疫抑制劑量較低時接種。</p>
+      </div>
+    </div>
+
+    <aside class="calc-box"><strong>造血細胞移植後</strong><p>依美國 CDC，自體 HCT 後約 3–12 個月、異體 HCT 後約 6–12 個月安排接種，視抗病毒預防療程及免疫狀況調整。若仍在使用預防性抗病毒藥物，建議約於停藥前 2 個月開始疫苗療程，並與移植團隊確認接種與停藥時點。<a href="https://www.cdc.gov/shingles/hcp/vaccine-considerations/immunocompromised-adults.html">CDC 移植後接種指引</a></p></aside><h3 style="color:var(--primary); margin-top:20px;">主要實證參考文獻（可點擊查閱）</h3>
+    <ol class="ref-list">
+      <li>UpToDate (Albrecht MA, Levin MJ). <em>Vaccination for the prevention of shingles (herpes zoster) in adults</em>. Literature review current through Oct 2026; last updated Sep 14, 2026.</li>
+      <li>U.S. FDA DailyMed. <a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0280849d-5c78-4a9d-8941-4eab429f6bd8" target="_blank">SHINGRIX (Zoster Vaccine Recombinant, Adjuvanted) Prescribing Information</a>.</li>
+      <li>U.S. CDC. <a href="https://www.cdc.gov/shingles/hcp/vaccine-considerations/index.html" target="_blank">Shingles Vaccine Recommendations for Healthcare Providers</a> &amp; <a href="https://www.cdc.gov/shingles/hcp/vaccine-considerations/immunocompromised-adults.html" target="_blank">Clinical Considerations for Immunocompromised Adults ≥19 Years</a>.</li>
+      <li>Anderson TC, Masters NB, Guo A, et al. <a href="https://www.cdc.gov/mmwr/volumes/71/wr/mm7103a2.htm" target="_blank">Use of Recombinant Zoster Vaccine in Immunocompromised Adults Aged ≥19 Years: ACIP Recommendations</a>. <em>MMWR</em> 2022;71(3):80–84.</li>
+      <li>Lal H, Cunningham AL, Godeaux O, et al. <a href="https://pubmed.ncbi.nlm.nih.gov/25916341/" target="_blank">Efficacy of an Adjuvanted Herpes Zoster Subunit Vaccine in Older Adults (ZOE-50)</a>. <em>N Engl J Med</em> 2015;372:2087–2096.</li>
+      <li>Cunningham AL, Lal H, Kovac M, et al. <a href="https://pubmed.ncbi.nlm.nih.gov/27626517/" target="_blank">Efficacy of the Herpes Zoster Subunit Vaccine in Adults 70 Years of Age or Older (ZOE-70)</a>. <em>N Engl J Med</em> 2016;375:1019–1032.</li>
+      <li>Boutry C, Hastie A, Diez-Domingo J, et al. <a href="https://pubmed.ncbi.nlm.nih.gov/34283213/" target="_blank">Long-Term Protection Against Herpes Zoster: Extension Study of ZOE-50 and ZOE-70</a>. <em>Clin Infect Dis</em> 2022;74(8):1459–1467.</li>
+      <li>Strezova A, Diez-Domingo J, Al Shawafi K, et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9588150/" target="_blank">Long-term Protection Against Herpes Zoster up to 10 Years After Initial Vaccination</a>. <em>Open Forum Infect Dis</em> 2022;9:ofac485.</li>
+      <li>Zerbo O, Bartlett J, Fireman B, et al. <a href="https://pubmed.ncbi.nlm.nih.gov/38190712/" target="_blank">Effectiveness of Recombinant Zoster Vaccine Against Herpes Zoster in a Real-World Setting</a>. <em>Ann Intern Med</em> 2024;177(2):189–195.</li>
+      <li>Vielot NA, Jonsson Funk M, Stürmer T, et al. <a href="https://www.acpjournals.org/doi/abs/10.7326/ANNALS-24-02409" target="_blank">Effectiveness of Recombinant Herpes Zoster Vaccine in the U.S. Medicare Population by Immunocompetence and Prior ZVL</a>. <em>Ann Intern Med</em> 2025;178:1728.</li>
+      <li>U.S. FDA Safety Communication. <a href="https://www.fda.gov/vaccines-blood-biologics/safety-availability-biologics/fda-requires-warning-about-guillain-barre-syndrome-gbs-be-included-prescribing-information-shingrix" target="_blank">FDA Requires Warning About Guillain-Barré Syndrome (GBS) in Shingrix Prescribing Information</a>.</li>
+      <li>衛生福利部疾病管制署（台灣 CDC）。<a href="https://www.cdc.gov.tw/Category/Page/WzNj0ONng_AdPtlJc4XDhA" target="_blank">帶狀疱疹疫苗（Zoster Vaccine）介紹</a>。</li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/40630610/">Strezova 等，ZOE-LTFU 第 11 年最終分析</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/40581370/">Tseng 等，KPSC 真實世界保護力</a></li><li><a href="https://pubmed.ncbi.nlm.nih.gov/42308980/">Mbinta 等，上市後觀察性研究統合分析</a></li></ol>
+  </section>
+<section class="kp-related" id="related-articles"><h2>相關文章</h2><ul><li><a href="capvaxive-pcv21.html">肺普息 CAPVAXIVE｜成人 21 價肺炎鏈球菌結合型疫苗</a></li></ul></section></main>
+
+</body></html>
