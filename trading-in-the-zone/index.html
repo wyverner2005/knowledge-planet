@@ -6,8 +6,8 @@
 <meta property="og:title" content="交易心流｜Trading in the Zone"><meta property="og:description" content="以 Quiet Eye 守住紀律，在每一次等待與執行中，走向理想的生活。"><meta property="og:image" content="https://wyverner2005.github.io/knowledge-planet/trading-in-the-zone/assets/quiet-eye-cover.png">
 <title>交易心流｜Trading in the Zone｜交易文章收藏</title>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('zone-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
-<link rel="stylesheet" href="zone.css?v=gemini-palette-1"><script src="articles.js?v=trade-06" defer></script><script src="zone.js?v=catalog-1" defer></script>
-<link rel="stylesheet" href="dashboard.css"><script src="dashboard.js" defer></script>
+<link rel="stylesheet" href="zone.css?v=gemini-palette-1"><script src="articles.js?v=trade-07" defer></script><script src="zone.js?v=catalog-1" defer></script>
+<link rel="stylesheet" href="dashboard.css?v=goals-2"><script src="dashboard.js?v=goals-2" defer></script>
 </head>
 <body>
 <a class="skip" href="#articles">跳至文章列表</a>
@@ -29,14 +29,19 @@
         <p class="goal-values"><strong id="retirement-current"></strong><span id="retirement-target"></span></p>
         <progress id="retirement-progress" aria-labelledby="retirement-label" aria-describedby="retirement-caption"></progress>
         <p class="goal-caption" id="retirement-caption"></p>
+        <p class="goal-caption" id="retirement-conversion"></p>
+        <div class="goal-control"><label for="goal-retirement-target">退休目標</label><div class="goal-input-row"><input id="goal-retirement-target" type="number" min="0.000001" max="1000000000000" step="any" inputmode="decimal"><select id="goal-retirement-unit" aria-label="退休目標單位"><option value="R">R</option><option value="U">U</option></select></div></div>
       </article>
       <article class="dashboard-goal dashboard-risk">
         <h3 id="risk-label">1R 資金規模</h3>
         <p class="goal-values"><strong id="risk-current"></strong><span id="risk-target"></span></p>
         <progress id="risk-progress" aria-labelledby="risk-label" aria-describedby="risk-caption"></progress>
         <p class="goal-caption" id="risk-caption"></p>
+        <div class="goal-control-grid"><div class="goal-control"><label for="goal-current-risk">目前 1R（U）</label><input id="goal-current-risk" type="number" min="0.000001" max="1000000000000" step="any" inputmode="decimal"></div><div class="goal-control"><label for="goal-target-risk">目標 1R（U）</label><input id="goal-target-risk" type="number" min="0.000001" max="1000000000000" step="any" inputmode="decimal"></div></div>
       </article>
     </div>
+    <div class="goal-settings-footer"><p>設定會記在此瀏覽器；退休金額為目前 1R 的情境換算。</p><button id="goal-reset" type="button" class="control">恢復預設</button></div>
+    <p id="goal-settings-status" class="goal-caption" role="status" aria-live="polite"></p>
     <section class="dashboard-performance" aria-labelledby="performance-title">
       <div class="performance-heading">
         <h3 id="performance-title">策略表現</h3>
@@ -75,11 +80,12 @@
   <label for="query">搜尋全文</label>
   <input id="query" type="search" placeholder="例如 突兀量、RS、風險管理、交易心態" autocomplete="off">
 </form>
-<p id="status" role="status">已收錄 4 篇文章</p>
+<p id="status" role="status">已收錄 5 篇文章</p>
 <ul id="notes" class="notes"><li data-article="core-logic.html"><a class="card" href="core-logic.html"><span class="tag">策略框架 · 互動圖文</span><h2>交易的核心底層邏輯：順勢操作完整框架</h2><p class="summary">從 RS 強勢標的篩選、均線行情辨識與突兀量關鍵價位，到多時間框架、資金控管與交易心態。把選股、控損與抱單串成完整流程。</p><div class="categories"><span>交易策略</span><span>風險管理</span><span>交易心態</span></div><div class="card-meta"><span>7 個章節</span><span>7 張實戰圖表</span><span>互動試算與檢核</span></div></a></li>
   <li data-article="multi-timeframe-momentum.html"><a class="card" href="multi-timeframe-momentum.html"><span class="tag">核心策略 · 互動圖文</span><h2>核心交易策略：多週期動能共振系統</h2><p class="summary">從 1D 日線定調、4H 動能與支撐，到 30M 進場確認。收錄三種走勢、六張案例圖、五步進場檢核與倉位試算。</p><div class="categories"><span>交易策略</span><span>風險管理</span><span>交易心態</span></div><div class="card-meta"><span>6 個章節</span><span>6 張實戰圖表</span><span>互動試算與檢核</span></div></a></li>
 <li data-article="ma-expansion-entry.html"><a class="card" href="ma-expansion-entry.html"><span class="tag">交易室教學 · 互動圖文</span><h2>2025-05-09｜均線擴散與進場優化</h2><p class="summary">從疊圖練習、突兀量佐證與三段行情，到已做交易的框選覆盤；比較進場時機與停損寬度。</p><div class="categories"><span>交易策略</span><span>風險管理</span></div><div class="card-meta"><span>6 個章節</span><span>5 張圖解</span><span>互動試算與檢核</span></div></a></li>
 <li data-article="monthly-review-baseline.html"><a class="card" href="monthly-review-baseline.html"><span class="tag">交易室教學 · 互動圖文</span><h2>2025-04-30｜月總結檢討與最佳獲利數據</h2><p class="summary">控制變因、區分違規單與有效交易，以一致執行的基準檢視月度調整，理解提早平倉的代價。</p><div class="categories"><span>風險管理</span><span>交易心態</span></div><div class="card-meta"><span>6 個章節</span><span>4 張圖解</span><span>互動試算與檢核</span></div></a></li>
+<li data-article="consolidation-volume-review.html"><a class="card" href="consolidation-volume-review.html"><span class="tag">交易室教學 · 互動圖文</span><h2>2025-07-16｜盤整段辨識、突兀量訊號與主升段規劃</h2><p class="summary">從兩階段走勢辨識、盤整壓縮與突兀量確認，到多週期切換、三種進場風格及停損邊界。</p><div class="categories"><span>交易策略</span><span>風險管理</span></div><div class="card-meta"><span>7 個章節</span><span>2 張概念圖與互動圖解</span><span>R 數試算與檢核</span></div></a></li>
 </ul>
 <div id="empty" class="empty" hidden><h2>沒有符合的文章</h2><p>試試其他關鍵字，或切回全部文章。</p><button id="clear-search" class="control" type="button">清除搜尋與分類</button></div>
 <section id="matches" class="matches" aria-label="命中段落" hidden><h2>找到的段落</h2><ul id="section-results"></ul></section>

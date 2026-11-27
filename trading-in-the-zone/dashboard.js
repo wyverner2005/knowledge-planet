@@ -35,6 +35,62 @@ function renderGoal(prefix, goal, unit) {
     : `已達 ${percent.format(current / target)}`;
 }
 
+function initializeGoalControls(data) {
+  const defaults = { currentRisk: data.riskUnit.current, targetRisk: data.riskUnit.target, retirementTarget: data.retirement.target, retirementUnit: 'R' };
+  const controls = {
+    currentRisk: dashboard.querySelector('#goal-current-risk'),
+    targetRisk: dashboard.querySelector('#goal-target-risk'),
+    retirementTarget: dashboard.querySelector('#goal-retirement-target'),
+    retirementUnit: dashboard.querySelector('#goal-retirement-unit'),
+  };
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem('zone-goals-v1')) || {}; } catch (error) {}
+  const settings = { ...defaults };
+  for (const key of ['currentRisk', 'targetRisk', 'retirementTarget']) {
+    if (Number.isFinite(saved[key]) && saved[key] > 0 && saved[key] <= 1e12) settings[key] = saved[key];
+  }
+  if (saved.retirementUnit === 'U') settings.retirementUnit = 'U';
+  for (const [key, input] of Object.entries(controls)) input.value = settings[key];
+
+  function render() {
+    const retirementR = settings.retirementUnit === 'R' ? settings.retirementTarget : settings.retirementTarget / settings.currentRisk;
+    renderGoal('retirement', { current: data.retirement.current, target: retirementR }, 'R');
+    renderGoal('risk', { current: settings.currentRisk, target: settings.targetRisk }, ' U');
+    dashboard.querySelector('#retirement-conversion').textContent = `以目前 1R 換算：${number.format(data.retirement.current * settings.currentRisk)} U ／ ${number.format(retirementR * settings.currentRisk)} U`;
+  }
+  function update(event) {
+    const input = event.target;
+    const key = Object.keys(controls).find(key => controls[key] === input);
+    if (key === 'retirementUnit') {
+      const next = input.value;
+      settings.retirementTarget = next === 'U' ? settings.retirementTarget * settings.currentRisk : settings.retirementTarget / settings.currentRisk;
+      settings.retirementUnit = next;
+      controls.retirementTarget.value = Number(settings.retirementTarget.toFixed(6));
+    } else {
+      const value = input.valueAsNumber;
+      const valid = Number.isFinite(value) && value > 0 && value <= 1e12;
+      input.setCustomValidity(valid ? '' : '請輸入大於 0 的金額（上限 1 兆）。');
+      input.setAttribute('aria-invalid', String(!valid));
+      dashboard.querySelector('#goal-settings-status').textContent = valid ? '' : '請輸入大於 0 的數字；進度暫時保留上次設定。';
+      if (!valid) return;
+      settings[key] = value;
+    }
+    render();
+    try { localStorage.setItem('zone-goals-v1', JSON.stringify(settings)); } catch (error) {}
+  }
+  for (const input of Object.values(controls)) input.addEventListener(input.tagName === 'SELECT' ? 'change' : 'input', update);
+  dashboard.querySelector('#goal-reset').addEventListener('click', () => {
+    Object.assign(settings, defaults);
+    for (const [key, input] of Object.entries(controls)) {
+      input.value = settings[key]; input.setCustomValidity(''); input.removeAttribute('aria-invalid');
+    }
+    dashboard.querySelector('#goal-settings-status').textContent = '';
+    try { localStorage.removeItem('zone-goals-v1'); } catch (error) {}
+    render();
+  });
+  render();
+}
+
 function renderPeriod(period) {
   for (const metric of metrics) {
     const key = metric.dataset.metric;
@@ -92,8 +148,7 @@ async function initializeDashboard() {
     if (!data.periods.length || !/^\d{4}-\d{2}-\d{2}$/.test(data.updated)) {
       throw new Error('Invalid dashboard data');
     }
-    renderGoal('retirement', data.retirement, 'R');
-    renderGoal('risk', data.riskUnit, ' U');
+    initializeGoalControls(data);
     const periods = new Map(data.periods.map(period => [period.period, period]));
     periodSelect.replaceChildren(...data.periods.map(({ period }) =>
       new Option(period === 'ALL' ? '全部紀錄' : period, period),
@@ -101,9 +156,11 @@ async function initializeDashboard() {
     periodSelect.addEventListener('change', () => renderPeriod(periods.get(periodSelect.value)));
     renderPeriod(data.periods[0]);
     renderQuarterComparison(data.periods);
-    dashboardSource.textContent = `試算表快照 · ${data.updated.replaceAll('-', '/')}`;
+    dashboardSource.textContent = '';
+    dashboardSource.hidden = true;
     dashboardContent.hidden = false;
   } catch (error) {
+    dashboardSource.hidden = false;
     dashboardSource.textContent = '暫時無法讀取交易摘要，重新整理後再試。';
   }
 }
