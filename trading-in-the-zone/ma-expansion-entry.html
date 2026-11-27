@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025-05-09｜均線擴散與進場優化｜交易心流</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('zone-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+<style>
+    :root {
+      --bg-page: #FDF9E7;
+      --bg-surface: #FFFFFF;
+      --bg-subcard: #FAF6E8;
+      --bg-topbar: rgba(253, 249, 231, 0.94);
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --text-subtle: #64748B;
+      --border: #E5DEC6;
+      --border-strong: #CBD5E1;
+      --accent: #0F766E;
+      --accent-soft: #ECFDF5;
+      --accent-2: #B45309;
+      --accent-2-soft: #FFFBEB;
+      --danger: #B91C1C;
+      --danger-soft: #FEF2F2;
+      --info: #1D4ED8;
+      --info-soft: #EFF6FF;
+      --shadow: 0 6px 22px rgba(30, 41, 59, 0.06);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #0F172A;
+      --bg-surface: #1E293B;
+      --bg-subcard: #162033;
+      --bg-topbar: rgba(15, 23, 42, 0.94);
+      --text-main: #F1F5F9;
+      --text-muted: #CBD5E1;
+      --text-subtle: #94A3B8;
+      --border: #334155;
+      --border-strong: #475569;
+      --accent: #2DD4BF;
+      --accent-soft: rgba(45, 212, 191, 0.12);
+      --accent-2: #FBBF24;
+      --accent-2-soft: rgba(251, 191, 36, 0.12);
+      --danger: #F87171;
+      --danger-soft: rgba(248, 113, 113, 0.12);
+      --info: #60A5FA;
+      --info-soft: rgba(96, 165, 250, 0.12);
+      --shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+    }
+
+    html {
+      font-size: 19px;
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-page);
+      color: var(--text-main);
+      font-family: "Noto Sans CJK TC", "PingFang TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.78;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    /* Reading Progress Bar */
+    .progress-track {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: transparent;
+      z-index: 120;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #0F766E, #D97706);
+      transition: width 0.08s linear;
+    }
+
+    /* Sticky Top Toolbar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-topbar);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 1.2rem;
+    }
+    .topbar-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .topbar-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.18rem 0.62rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(15, 118, 110, 0.22);
+    }
+    .badge-amber {
+      background: var(--accent-2-soft);
+      color: var(--accent-2);
+      border-color: rgba(180, 83, 9, 0.25);
+    }
+    .topbar-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .ctrl-btn {
+      appearance: none;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      padding: 0.34rem 0.72rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .ctrl-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 1.5rem 1.2rem 4rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.8rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #0F766E, #D97706, #1E3A5F);
+    }
+    .hero-kicker {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+    .hero h1 {
+      margin: 0 0 0.75rem;
+      font-size: 1.85rem;
+      line-height: 1.3;
+      color: var(--text-main);
+    }
+    .hero-lead {
+      margin: 0 0 1.4rem;
+      font-size: 1.02rem;
+      color: var(--text-muted);
+    }
+
+    /* 4 KPI Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.9rem;
+    }
+    .kpi-card {
+      background: var(--bg-subcard);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1rem;
+    }
+    .kpi-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-subtle);
+      margin-bottom: 0.25rem;
+    }
+    .kpi-value {
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.3;
+    }
+    .kpi-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    /* TOC Navigation Card */
+    .toc-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1.8rem;
+      box-shadow: var(--shadow);
+    }
+    .toc-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 0 0 0.85rem;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+    }
+    .toc-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text-main);
+      background: var(--bg-subcard);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.62rem 0.8rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: all 0.18s ease;
+    }
+    .toc-link:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .toc-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.65rem;
+      height: 1.65rem;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 0.78rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .toc-num {
+      color: #0F172A;
+    }
+
+    /* Numbered Chapter Frame */
+    .chapter {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.7rem 1.65rem;
+      margin-bottom: 1.75rem;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 4.5rem;
+    }
+    .chapter-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-bottom: 0.9rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--border);
+    }
+    .chapter-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .chapter-num {
+      color: #0F172A;
+    }
+    .chapter-title-wrap h2 {
+      margin: 0;
+      font-size: 1.32rem;
+      line-height: 1.35;
+    }
+    .chapter-sub {
+      margin: 0.15rem 0 0;
+      font-size: 0.86rem;
+      color: var(--text-subtle);
+    }
+
+    /* Subcards Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .subcard {
+      background: var(--bg-subcard);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.15rem;
+    }
+    .subcard h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.04rem;
+      color: var(--accent);
+    }
+    .subcard p {
+      margin: 0.35rem 0;
+      font-size: 0.96rem;
+    }
+    .subcard ul {
+      margin: 0.45rem 0 0;
+      padding-left: 1.2rem;
+    }
+    .subcard li {
+      margin-bottom: 0.38rem;
+      font-size: 0.95rem;
+    }
+
+    /* Callouts */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 1rem 1.2rem;
+      margin: 1.1rem 0;
+      border-left: 5px solid var(--accent);
+      background: var(--accent-soft);
+    }
+    .callout-amber {
+      border-left-color: var(--accent-2);
+      background: var(--accent-2-soft);
+    }
+    .callout-danger {
+      border-left-color: var(--danger);
+      background: var(--danger-soft);
+    }
+    .callout-info {
+      border-left-color: var(--info);
+      background: var(--info-soft);
+    }
+    .callout-title {
+      font-weight: 800;
+      font-size: 0.98rem;
+      margin-bottom: 0.3rem;
+      color: var(--text-main);
+    }
+    .callout p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* Visual Figures (SVG & Images) */
+    .figure-box {
+      background: var(--bg-subcard);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin: 1.25rem 0;
+    }
+    .figure-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .figure-box svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      cursor: zoom-in;
+    }
+    .figure-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      cursor: zoom-in;
+    }
+    .figure-caption {
+      margin-top: 0.65rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .zoom-hint {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Tabs */
+    .tabs-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .tab-btn {
+      appearance: none;
+      border: 1.5px solid var(--border-strong);
+      background: var(--bg-subcard);
+      color: var(--text-main);
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .tab-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+    [data-theme="dark"] .tab-btn.active {
+      color: #0F172A;
+    }
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Interactive R-Multiple Simulator */
+    .sim-box {
+      background: var(--bg-subcard);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin: 1.2rem 0;
+    }
+    .sim-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .sim-field label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    .sim-field input {
+      width: 100%;
+      padding: 0.45rem 0.65rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-strong);
+      background: var(--bg-surface);
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .sim-results {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.9rem;
+    }
+    .sim-res-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1rem;
+    }
+    .sim-res-title {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--text-subtle);
+    }
+    .sim-res-val {
+      font-size: 1.38rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin: 0.2rem 0;
+    }
+    .sim-res-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Filterable Table */
+    .filter-bar {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.9rem;
+    }
+    .filter-btn {
+      appearance: none;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-subcard);
+      color: var(--text-main);
+      padding: 0.34rem 0.78rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .filter-btn.active {
+      background: var(--accent);
+      color: #FFFFFF;
+      border-color: var(--accent);
+    }
+    [data-theme="dark"] .filter-btn.active {
+      color: #0F172A;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+    }
+    th, td {
+      padding: 0.78rem 0.85rem;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--bg-subcard);
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    tr.hidden-row {
+      display: none;
+    }
+
+    /* Interactive Checklist */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0.8rem 0 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      background: var(--bg-subcard);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 0.95rem;
+      margin-bottom: 0.6rem;
+      cursor: pointer;
+      transition: border-color 0.15s ease;
+    }
+    .checklist li:hover {
+      border-color: var(--accent);
+    }
+    .checklist input[type="checkbox"] {
+      width: 1.15rem;
+      height: 1.15rem;
+      margin-top: 0.25rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+    }
+    .checklist li.checked span {
+      text-decoration: line-through;
+      color: var(--text-subtle);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.88);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+      z-index: 200;
+      cursor: zoom-out;
+    }
+    .lightbox.open {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 96vw;
+      max-height: 92vh;
+      overflow: auto;
+      background: var(--bg-surface);
+      padding: 0.8rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .lightbox-content img, .lightbox-content svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      padding: 1.2rem 0 2rem;
+    }
+
+    /* Mobile Responsive <= 720px */
+    @media (max-width: 720px) {
+      html {
+        font-size: 17.5px;
+      }
+      .container {
+        padding: 1rem 0.85rem 3rem;
+      }
+      .hero, .chapter {
+        padding: 1.25rem 1.05rem;
+      }
+      .hero h1 {
+        font-size: 1.48rem;
+      }
+      .kpi-grid, .toc-grid, .grid-2, .grid-3, .sim-grid, .sim-results {
+        grid-template-columns: 1fr;
+      }
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead {
+        display: none;
+      }
+      tr {
+        background: var(--bg-subcard);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        margin-bottom: 0.75rem;
+        padding: 0.65rem 0.8rem;
+      }
+      td {
+        border: none;
+        padding: 0.3rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+      td::before {
+        content: attr(data-label);
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: var(--accent);
+      }
+    }
+  </style>
+<link rel="stylesheet" href="article.css"><link rel="stylesheet" href="reading.css"><link rel="stylesheet" href="lessons.css"><meta name="keywords" content="均線擴散與進場優化,交易室教學紀錄,覆盤,strategy,risk"></head>
+<body>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-meta"><a class="home-link" href="./">← 交易心流</a>
+        <span class="badge" style="background:var(--info-soft);color:var(--info);border-color:rgba(29,78,216,0.28);">交易室教學紀錄</span>
+        <span class="badge">交易策略與覆盤</span>
+        <span class="badge badge-amber">2025-05-09 語音整理</span>
+        <span>來源：均線擴散錄音檔 &amp; 逐字稿</span>
+      </div>
+      <div class="topbar-controls">
+        <button class="ctrl-btn" id="fontDec" type="button" aria-label="縮小字體">A-</button>
+        <button class="ctrl-btn" id="fontInc" type="button" aria-label="放大字體">A+</button>
+        <button class="ctrl-btn" id="themeToggle" type="button">深色模式</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-kicker">交易室教學紀錄 · TRADING STUDY NOTE · MOVING AVERAGE EXPANSION</div>
+      <h1>2025-05-09｜均線擴散與進場優化</h1>
+      <p class="hero-lead">
+        整理自 2025/05/09 交易群組語音討論（MOG 實戰案例）。核心聚焦在如何從前期的「靜態疊圖」進階到觀察「價格變化對均線擴散的動態反應」，並透過「已做過交易的框選覆盤法」，用數據客觀驗證進場點後移與寬窄停損的權衡。
+      </p>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">實戰核心案例</div>
+          <div class="kpi-value">MOG (1H)</div>
+          <div class="kpi-sub">5/7 06:00 &amp; 19:00 兩次突兀量</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">行情三段結構</div>
+          <div class="kpi-value">盤整 → 緩漲 → 噴發</div>
+          <div class="kpi-sub">對應位階 0 / 1 / 2 取捨邏輯</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">覆盤驗證鐵律</div>
+          <div class="kpi-value">只看已做過的單</div>
+          <div class="kpi-sub">框出獲利段，對比原單 R 數變化</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">逆向情緒實例</div>
+          <div class="kpi-value">BTC 4/7 低點</div>
+          <div class="kpi-sub">74,000+ 恐慌見底後反彈 30–40%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOC -->
+    <nav class="toc-card" aria-label="章節導覽">
+      <div class="toc-title">章節快速導覽</div>
+      <div class="toc-grid">
+        <a class="toc-link" href="#ch1"><span class="toc-num">01</span>疊圖練習與均線擴散</a>
+        <a class="toc-link" href="#ch2"><span class="toc-num">02</span>MOG 實戰與突兀量佐證</a>
+        <a class="toc-link" href="#ch3"><span class="toc-num">03</span>三段行情與寬窄停損權衡</a>
+        <a class="toc-link" href="#ch4"><span class="toc-num">04</span>已做交易框選覆盤四步驟</a>
+        <a class="toc-link" href="#ch5"><span class="toc-num">05</span>過度縮放迷思與核心 Q&amp;A</a>
+        <a class="toc-link" href="#ch6"><span class="toc-num">06</span>自主修煉與市場逆向思考</a>
+      </div>
+    </nav>
+
+    <!-- Chapter 01 -->
+    <section class="chapter" id="ch1">
+      <div class="chapter-head">
+        <div class="chapter-num">01</div>
+        <div class="chapter-title-wrap">
+          <h2>從「疊圖練習」到「均線擴散」的思維演進</h2>
+          <p class="chapter-sub">釐清 Henry 與 BOMI 的提問：前面 Setup 與後面均線發散是兩件不同的事</p>
+        </div>
+      </div>
+
+      <p>
+        討論起點來自講者對 <strong>MOG 中間逐步爬升段</strong> 的觀察：這段價格走勢會讓均線呈現非常漂亮的發散。許多成員第一時間會把焦點放回「那前面是不是要先拿反轉圖或標準圖去疊圖？」，但講者指出，這其實混同了兩個不同層次的議題。
+      </p>
+
+      <div class="grid-2">
+        <div class="subcard">
+          <h3>議題 A｜前期 Setup 與疊圖（靜態篩選）</h3>
+          <ul>
+            <li><strong>SOP 第一步</strong>：先確認強勢標的夠強，再判斷「這是不是我們想要打的球」。</li>
+            <li><strong>為何要關 K 線疊圖</strong>：K 線雜訊多，只留均線疊圖最直觀，能快速比對當前走勢與預想標準圖是否接近。</li>
+            <li><strong>常見困擾</strong>：開始糾結「要滿足到 100 分還是 70 分才能做？」或「開 K 線很漂亮、關 K 線卻不像標準圖」，容易踏入<strong>過度標準化</strong>的陷阱。</li>
+          </ul>
+        </div>
+        <div class="subcard">
+          <h3>議題 B｜價格變化與均線擴散（動態敏感度）</h3>
+          <ul>
+            <li><strong>核心提問</strong>：不論前面的 Setup 長什麼樣，當價格開始怎麼走時，你能察覺「接下來均線會變成我想要的漂亮擴散」？</li>
+            <li><strong>兩種逐步擴散型態</strong>：
+              <br>① 很短的 K 線持續往上、每次漲幅多一點點；
+              <br>② 短 K 線逐漸放大、越走越大根。</li>
+            <li><strong>終極目的</strong>：重點從來不是疊圖形式本身，而是<strong>提高辨識走勢的能力，確保不亂揮棒</strong>。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="figure-box">
+        <div class="figure-scroll">
+          <svg viewbox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="從疊圖練習到均線擴散敏感度的思維演進圖">
+  <defs>
+    <lineargradient id="g1a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E3A5F"></stop>
+      <stop offset="100%" stop-color="#2B5278"></stop>
+    </lineargradient>
+    <lineargradient id="g1b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0F766E"></stop>
+      <stop offset="100%" stop-color="#0D9488"></stop>
+    </lineargradient>
+    <lineargradient id="g1c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B45309"></stop>
+      <stop offset="100%" stop-color="#D97706"></stop>
+    </lineargradient>
+    <marker id="arr1" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="8" markerheight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748B"></path>
+    </marker>
+  </defs>
+  <rect width="920" height="420" rx="18" fill="#FAF6E8" stroke="#E2D9BE" stroke-width="1.5"></rect>
+  <text x="460" y="38" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="18.5" font-weight="800" fill="#1E293B">走勢辨識演進：從「靜態疊圖」到「動態均線擴散敏感度」</text>
+  <text x="460" y="62" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#64748B">核心本質：透過排除雜訊掌握熟悉走勢，確保不亂揮棒</text>
+
+  <!-- Stage 1 -->
+  <rect x="30" y="88" width="250" height="218" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"></rect>
+  <rect x="30" y="88" width="250" height="46" rx="14" fill="url(#g1a)"></rect>
+  <rect x="30" y="120" width="250" height="14" fill="url(#g1a)"></rect>
+  <text x="155" y="117" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">階段一｜前期疊圖練習</text>
+  <text x="48" y="160" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#1E3A5F">• 關掉 K 線，單看均線輪廓</text>
+  <text x="48" y="186" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">最直觀、雜訊最少的入門工具</text>
+  <text x="48" y="214" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#1E3A5F">• 嚴禁過度縮放樣本圖</text>
+  <text x="48" y="240" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">避免「先射箭，再畫靶」</text>
+  <rect x="46" y="258" width="218" height="34" rx="8" fill="#FEF2F2" stroke="#FECACA"></rect>
+  <text x="155" y="280" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" font-weight="700" fill="#B91C1C">瓶頸：易陷入「過度標準化」</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="286" y1="196" x2="328" y2="196" stroke="#64748B" stroke-width="2.5" marker-end="url(#arr1)"></line>
+
+  <!-- Stage 2 -->
+  <rect x="335" y="88" width="250" height="218" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"></rect>
+  <rect x="335" y="88" width="250" height="46" rx="14" fill="url(#g1b)"></rect>
+  <rect x="335" y="120" width="250" height="14" fill="url(#g1b)"></rect>
+  <text x="460" y="117" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">階段二｜觀察價格與均線連動</text>
+  <text x="353" y="160" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#0F766E">• 拆解兩種核心問題</text>
+  <text x="353" y="186" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">1. 前面 Setup 如何長成標準圖</text>
+  <text x="353" y="210" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">2. 何種價格變化會讓均線擴散</text>
+  <text x="353" y="238" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#0F766E">• 兩種逐步擴散型態</text>
+  <rect x="351" y="254" width="218" height="38" rx="8" fill="#F0FDFA" stroke="#99F6E4"></rect>
+  <text x="460" y="278" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" font-weight="700" fill="#0F766E">短K遞增緩漲 或 短K轉大K噴發</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="591" y1="196" x2="633" y2="196" stroke="#64748B" stroke-width="2.5" marker-end="url(#arr1)"></line>
+
+  <!-- Stage 3 -->
+  <rect x="640" y="88" width="250" height="218" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"></rect>
+  <rect x="640" y="88" width="250" height="46" rx="14" fill="url(#g1c)"></rect>
+  <rect x="640" y="120" width="250" height="14" fill="url(#g1c)"></rect>
+  <text x="765" y="117" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">階段三｜進階發動段進場</text>
+  <text x="658" y="160" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#B45309">• 不必強求前面整套 Setup</text>
+  <text x="658" y="186" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">對均線反應夠敏感，可延後規劃</text>
+  <text x="658" y="214" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#B45309">• 搭配突兀量作為發動佐證</text>
+  <text x="658" y="240" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">漂亮均線排列 + 接續突兀量</text>
+  <rect x="656" y="258" width="218" height="34" rx="8" fill="#FFFBEB" stroke="#FDE68A"></rect>
+  <text x="765" y="280" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" font-weight="700" fill="#92400E">效果：停損更窄、進場即發動</text>
+
+  <!-- Bottom Principle Banner -->
+  <rect x="30" y="330" width="860" height="68" rx="12" fill="#1E293B"></rect>
+  <text x="460" y="358" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15" font-weight="700" fill="#FDE68A">工具背後的核心邏輯：先搞清楚「為什麼做這個訓練」</text>
+  <text x="460" y="382" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#E2E8F0">若你能直接從 K 線與價格結構穩定辨識出「想打的球」，就不必拘泥於 70 分還是 100 分的疊圖形式</text>
+</svg>
+        </div>
+        <div class="figure-caption">
+          <span>圖 1｜走勢辨識三階段演進：從靜態疊圖工具走向價格與均線聯動的動態敏感度</span>
+          <span class="zoom-hint">點擊圖表可放大檢視</span>
+        </div>
+      </div>
+
+      <div class="callout learn-accent learn-green">
+        <div class="callout-title">白話總結：先能「重現發散」，再談「規劃進場」</div>
+        <p>
+          如果你喜歡後面均線漂亮發散的那一段，第一步不是急著問前面要怎麼畫圖，而是先知道「下一次看到什麼價格變化，能認出它就是我要的發散」。若無法重現辨識標準，你在不確定後續發展的情況下做規劃，實際做的往往是別的走勢。
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter 02 -->
+    <section class="chapter" id="ch2">
+      <div class="chapter-head">
+        <div class="chapter-num">02</div>
+        <div class="chapter-title-wrap">
+          <h2>MOG 實戰圖解與「突兀量」佐證邏輯</h2>
+          <p class="chapter-sub">1000000MOGUSDT.P (1H) 實戰圖表與 5/7 兩次突兀量解析</p>
+        </div>
+      </div>
+
+      <p>
+        當你對價格與均線擴散的連動越來越敏感時，過去請大家統計的<strong>「突兀量」</strong>其實就是這件事的佐證：在均線排列已經開始變漂亮的情境底下，往往會連續或接續出現有效的突兀量，成為行情發動的訊號。
+      </p>
+
+      <div class="figure-box">
+        <img src="assets/lesson-5/01_MOG_1H_%E5%9D%87%E7%B7%9A%E6%93%B4%E6%95%A3%E5%AF%A6%E6%88%B0%E5%9C%96.png" alt="1000000MOGUSDT.P 1H 均線擴散與黃色框選區實戰圖">
+        <div class="figure-caption">
+          <span>圖 2｜原檔實戰截圖：1000000MOGUSDT.P（1H, BINANCE），黃色框選區呈現均線逐步發散與拉開獲利主段</span>
+          <span class="zoom-hint">點擊圖片可放大檢視</span>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="subcard">
+          <h3>MOG 兩次關鍵突兀量時點（1H 級別）</h3>
+          <ul>
+            <li><strong>第一次突兀量</strong>：5 月 7 日 早上 06:00–07:00，價格開始脫離糾結區，均線初步展開。</li>
+            <li><strong>第二次突兀量</strong>：5 月 7 日 晚上 19:00–20:00，突破橫向小平台（圖中灰線約 0.68 附近），隨後均線呈現流暢擴散並一路推升至 1.00 以上。</li>
+          </ul>
+        </div>
+        <div class="subcard">
+          <h3>為什麼「情境」比單看量能更重要？</h3>
+          <ul>
+            <li>過去統計發現突兀量效果很好，前提是<strong>「均線排列漂亮」</strong>。</li>
+            <li>真正要掌握的不是盲目追每根爆量，而是透過觀察價格對均線擴散的影響，判斷<strong>「哪一個情境下的突兀量才有效」</strong>。</li>
+            <li>掌握這點後，就不必非得做完整套前期 Setup，可以等發動位置不錯時再進場，做到「停損窄、一進場就發動」。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 03 -->
+    <section class="chapter" id="ch3">
+      <div class="chapter-head">
+        <div class="chapter-num">03</div>
+        <div class="chapter-title-wrap">
+          <h2>三段行情結構、位階概念與寬窄停損權衡</h2>
+          <p class="chapter-sub">「划算」不一定是成本最低，而是停損空間與行情發動節奏的匹配</p>
+        </div>
+      </div>
+
+      <p>
+        講者將一段完整趨勢拆解為三個階段：<strong>① 盤整段 → ② 開始慢慢上漲的段 → ③ 後面噴發的段</strong>。不同交易者對進場點與停損寬度的選擇，本質上跟「位階 0、1、2」一樣，都是一體兩面的權衡。
+      </p>
+
+      <div class="figure-box">
+        <div class="figure-scroll">
+          <svg viewbox="0 0 920 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三段行情結構與寬窄停損權衡圖">
+  <rect width="920" height="450" rx="18" fill="#FAF6E8" stroke="#E2D9BE" stroke-width="1.5"></rect>
+  <text x="460" y="38" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="18.5" font-weight="800" fill="#1E293B">三段行情結構、位階（0 / 1 / 2）與寬窄停損權衡</text>
+  <text x="460" y="62" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#64748B">沒有絕對完美的方法，只有「勝率／洗盤空間」與「風險報酬比（R-Multiple）」的取捨</text>
+
+  <!-- 3 Phase Background Zones -->
+  <rect x="36" y="84" width="260" height="220" rx="12" fill="#F1F5F9" stroke="#CBD5E1" stroke-dasharray="5,4"></rect>
+  <rect x="306" y="84" width="270" height="220" rx="12" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.8"></rect>
+  <rect x="586" y="84" width="298" height="220" rx="12" fill="#ECFDF5" stroke="#10B981" stroke-width="1.8"></rect>
+
+  <!-- Zone Labels -->
+  <rect x="52" y="96" width="126" height="28" rx="6" fill="#475569"></rect>
+  <text x="115" y="115" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">1. 盤整段</text>
+  <text x="190" y="115" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#475569">位階 0 早期</text>
+
+  <rect x="322" y="96" width="144" height="28" rx="6" fill="#D97706"></rect>
+  <text x="394" y="115" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">2. 開始緩漲段</text>
+  <text x="476" y="115" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#92400E">均線開始發散</text>
+
+  <rect x="602" y="96" width="136" height="28" rx="6" fill="#059669"></rect>
+  <text x="670" y="115" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#FFFFFF">3. 後面噴發段</text>
+  <text x="748" y="115" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#065F46">拉開獲利主段</text>
+
+  <!-- Stylized Moving Averages (3 lines fanning out) -->
+  <!-- Slow MA -->
+  <path d="M 55 262 Q 170 258, 290 255 T 550 236 T 860 175" fill="none" stroke="#94A3B8" stroke-width="2.5"></path>
+  <!-- Mid MA -->
+  <path d="M 55 254 Q 170 250, 290 245 T 550 212 T 860 142" fill="none" stroke="#3B82F6" stroke-width="2.8"></path>
+  <!-- Fast MA -->
+  <path d="M 55 246 Q 170 244, 290 234 T 550 192 T 860 144" fill="none" stroke="#0F766E" stroke-width="3.2"></path>
+
+  <!-- Price Action Path -->
+  <path d="M 55 250 L 90 242 L 125 256 L 160 238 L 195 252 L 230 240 L 265 248 L 305 232 L 340 222 L 375 228 L 415 212 L 455 202 L 495 206 L 535 190 L 585 178 L 630 166 L 670 172 L 725 152 L 785 140 L 850 130" fill="none" stroke="#1E293B" stroke-width="3" stroke-linejoin="round"></path>
+
+  <!-- Entry Point A (Wide Stop) -->
+  <circle cx="195" cy="252" r="7" fill="#2563EB" stroke="#FFFFFF" stroke-width="2"></circle>
+  <line x1="160" y1="286" x2="255" y2="286" stroke="#2563EB" stroke-width="2" stroke-dasharray="4,3"></line>
+  <text x="195" y="277" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" font-weight="700" fill="#1D4ED8">早進場（寬停損）</text>
+
+  <!-- Entry Point B (Narrow Stop / Breakout) -->
+  <circle cx="455" cy="202" r="7" fill="#D97706" stroke="#FFFFFF" stroke-width="2"></circle>
+  <line x1="425" y1="224" x2="500" y2="224" stroke="#DC2626" stroke-width="2.2" stroke-dasharray="4,3"></line>
+  <text x="455" y="188" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" font-weight="700" fill="#B45309">發動進場（窄停損）</text>
+  <text x="462" y="242" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#DC2626">碰停損＝回盤整</text>
+
+  <!-- Volume Spike Annotation -->
+  <rect x="330" y="264" width="12" height="28" rx="2" fill="#10B981"></rect>
+  <rect x="448" y="256" width="12" height="36" rx="2" fill="#059669"></rect>
+  <text x="395" y="295" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#065F46">接續突兀量佐證</text>
+
+  <!-- Bottom Comparison Cards -->
+  <rect x="36" y="322" width="414" height="106" rx="12" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"></rect>
+  <text x="56" y="348" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="800" fill="#1E40AF">策略 A｜盤整段進場・停損抓得寬</text>
+  <text x="56" y="374" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#1E3A8A">• 優勢：吃掉盤整洗盤空間、較不易被掃、確保在車上</text>
+  <text x="56" y="398" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#1E3A8A">• 代價：持倉時間較長、風險報酬比（R 數）相對較低</text>
+
+  <rect x="470" y="322" width="414" height="106" rx="12" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1.5"></rect>
+  <text x="490" y="348" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="800" fill="#9A3412">策略 B｜緩漲／噴發進場・停損抓得窄</text>
+  <text x="490" y="374" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#7C2D12">• 優勢：進場即拉開獲利、持倉短、R 數放大空間極佳</text>
+  <text x="490" y="398" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#7C2D12">• 代價：被掃掉或錯過上車的機率較高，需高敏感度</text>
+</svg>
+        </div>
+        <div class="figure-caption">
+          <span>圖 3｜三段行情結構與寬停損（早期佈局）vs 窄停損（發動切入）視覺對照</span>
+          <span class="zoom-hint">點擊圖表可放大檢視</span>
+        </div>
+      </div>
+
+      <!-- Interactive Tabs -->
+      <div class="tabs-bar" role="tablist">
+        <button class="tab-btn active" type="button" data-tab="tab-wide">策略 A｜盤整段進場（寬停損）</button>
+        <button class="tab-btn" type="button" data-tab="tab-narrow">策略 B｜緩漲／噴發段進場（窄停損）</button>
+        <button class="tab-btn" type="button" data-tab="tab-tier">對照｜位階 0 / 1 / 2 權衡</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-wide">
+        <div class="subcard">
+          <h3>寬停損視角：用空間換取「留在車上」</h3>
+          <ul>
+            <li><strong>運作邏輯</strong>：從盤整段就開始規劃，把停損抓寬以吸收洗盤震盪，認為震盪只是「行情還沒走出來」。</li>
+            <li><strong>優勢</strong>：被掃出場的機率較低，只要趨勢最終發動，至少人已經在車上，執行難度相對親民。</li>
+            <li><strong>代價</strong>：必須忍受不確定多久的盤整與緩漲等待期，且因停損距離大，同樣漲幅下換算出的風險報酬比（R 數）較低。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-narrow">
+        <div class="subcard">
+          <h3>窄停損視角：看起來像追高，實則高 R 數精準切入</h3>
+          <ul>
+            <li><strong>運作邏輯</strong>：等價格進入緩漲或剛開始噴發時才進場。對發動掌握度高的人敢把停損抓極窄，因為他清楚「一旦碰到這個停損，行情就會回去重新盤整，代表發動失敗」。</li>
+            <li><strong>優勢</strong>：持倉時間短、進場後很快拉開獲利、風險報酬比（R 數）可以放得非常大。</li>
+            <li><strong>代價</strong>：不可能每次都抓準發動時機，被掃掉或直接踏空的機率相對較高，且極易陷入「過度糾結最完美發動點」的心魔。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-tier">
+        <div class="subcard">
+          <h3>位階 0、1、2 的一體兩面思維</h3>
+          <ul>
+            <li><strong>較早進場（如位階 0）</strong>：失敗機率較高，但停損成本若控制得宜，潛在空間較大；或如盤整段提早卡位，確保不漏單。</li>
+            <li><strong>較晚進場（後段確認）</strong>：方向確認度較高、失敗機率較低，但可能要承擔「抓不到發動點」或「成本變高」的代價。</li>
+            <li><strong>選擇標準</strong>：沒有絕對誰比較好，取決於<strong>① 自己想做什麼、② 做起來舒不舒服、③ 對均線反映走勢的掌握度</strong>。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Interactive R-Multiple Simulator -->
+      <div class="sim-box">
+        <div class="callout-title" style="margin-bottom:0.6rem;">互動試算：為何「較晚進場、窄停損」反而可能拉高 R 數？（以 MOG 走勢為例）</div>
+        <div class="sim-grid">
+          <div class="sim-field">
+            <label for="simTarget">目標出場價位（USDT）</label>
+            <input type="number" id="simTarget" value="1.00" step="0.01">
+          </div>
+          <div class="sim-field">
+            <label for="simEarlyEntry">早進場價格 / 寬停損價</label>
+            <div style="display:flex;gap:0.4rem;">
+              <input type="number" id="simEarlyEntry" value="0.62" step="0.01" aria-label="早進場價格">
+              <input type="number" id="simEarlySL" value="0.54" step="0.01" aria-label="寬停損價">
+            </div>
+          </div>
+          <div class="sim-field">
+            <label for="simLateEntry">發動進場價格 / 窄停損價</label>
+            <div style="display:flex;gap:0.4rem;">
+              <input type="number" id="simLateEntry" value="0.68" step="0.01" aria-label="發動進場價格">
+              <input type="number" id="simLateSL" value="0.64" step="0.01" aria-label="窄停損價">
+            </div>
+          </div>
+        </div>
+        <div class="sim-results">
+          <div class="sim-res-card">
+            <div class="sim-res-title">盤整段早進場（寬停損）</div>
+            <div class="sim-res-val" id="resEarlyR">4.75 R</div>
+            <div class="sim-res-note" id="resEarlyNote">風險距離：0.08｜潛在漲幅：0.38（較抗洗盤）</div>
+          </div>
+          <div class="sim-res-card">
+            <div class="sim-res-title">均線發散進場（窄停損）</div>
+            <div class="sim-res-val" id="resLateR" style="color:var(--accent-2);">8.00 R</div>
+            <div class="sim-res-note" id="resLateNote">風險距離：0.04｜潛在漲幅：0.32（持倉更短、R 數放大）</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 04 -->
+    <section class="chapter" id="ch4">
+      <div class="chapter-head">
+        <div class="chapter-num">04</div>
+        <div class="chapter-title-wrap">
+          <h2>「已做過交易」框選覆盤四步驟</h2>
+          <p class="chapter-sub">用自己的歷史交易數據驗證，而非事後看圖說故事</p>
+        </div>
+      </div>
+
+      <p>
+        如何知道自己該不該把進場點往後移、改抓均線擴散那一段？講者給了一套非常具體、可直接落地的覆盤驗證法，核心前提是<strong>「只從自己已經做過的交易下手」</strong>。
+      </p>
+
+      <div class="figure-box">
+        <div class="figure-scroll">
+          <svg viewbox="0 0 920 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="已做交易框選覆盤四步流程圖">
+  <defs>
+    <marker id="arr3" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="8" markerheight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0F766E"></path>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="18" fill="#FAF6E8" stroke="#E2D9BE" stroke-width="1.5"></rect>
+  <text x="460" y="38" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="18.5" font-weight="800" fill="#1E293B">「已做過交易」框選覆盤四步驟（驗證進場點是否該後移）</text>
+  <text x="460" y="62" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#64748B">用數據驗證微調方向：不靠感覺，也不檢討「事後看起來很美但當下沒做到」的交易</text>
+
+  <!-- Step 1 -->
+  <rect x="30" y="88" width="195" height="190" rx="14" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.8"></rect>
+  <circle cx="62" cy="118" r="16" fill="#0F766E"></circle>
+  <text x="62" y="124" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">1</text>
+  <text x="88" y="124" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="800" fill="#0F766E">撈出已做單</text>
+  <text x="46" y="160" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">只檢視自己「做過」</text>
+  <text x="46" y="184" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">的兩類歷史交易：</text>
+  <text x="46" y="214" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#1E293B">• 原本獲利的單</text>
+  <text x="46" y="238" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#1E293B">• 曾獲利但被掃保本</text>
+
+  <line x1="230" y1="183" x2="256" y2="183" stroke="#0F766E" stroke-width="2.5" marker-end="url(#arr3)"></line>
+
+  <!-- Step 2 -->
+  <rect x="262" y="88" width="195" height="190" rx="14" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.8"></rect>
+  <circle cx="294" cy="118" r="16" fill="#0F766E"></circle>
+  <text x="294" y="124" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">2</text>
+  <text x="320" y="124" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="800" fill="#0F766E">框出獲利段</text>
+  <text x="278" y="160" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">把「均線漂亮擴散、</text>
+  <text x="278" y="184" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">拉開獲利」的區間</text>
+  <text x="278" y="208" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">用框線標記出來，</text>
+  <text x="278" y="232" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#B45309">記錄幅度與持續時間</text>
+
+  <line x1="462" y1="183" x2="488" y2="183" stroke="#0F766E" stroke-width="2.5" marker-end="url(#arr3)"></line>
+
+  <!-- Step 3 -->
+  <rect x="494" y="88" width="195" height="190" rx="14" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.8"></rect>
+  <circle cx="526" cy="118" r="16" fill="#0F766E"></circle>
+  <text x="526" y="124" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">3</text>
+  <text x="552" y="124" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="800" fill="#0F766E">重劃並比對</text>
+  <text x="510" y="160" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">假設「只能在框內」</text>
+  <text x="510" y="184" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">規劃進場，重新跑</text>
+  <text x="510" y="208" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#334155">交易數據，比較：</text>
+  <text x="510" y="238" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#059669">R 數有沒有變多？</text>
+
+  <line x1="694" y1="183" x2="720" y2="183" stroke="#0F766E" stroke-width="2.5" marker-end="url(#arr3)"></line>
+
+  <!-- Step 4 -->
+  <rect x="726" y="88" width="164" height="190" rx="14" fill="#FFFFFF" stroke="#D97706" stroke-width="1.8"></rect>
+  <circle cx="756" cy="118" r="16" fill="#D97706"></circle>
+  <text x="756" y="124" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">4</text>
+  <text x="780" y="124" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="800" fill="#B45309">三問把關</text>
+  <text x="742" y="160" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#1E293B">1. 當下規劃得到嗎？</text>
+  <text x="742" y="190" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#1E293B">2. 做起來舒服嗎？</text>
+  <text x="742" y="220" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#1E293B">3. 數據確實變好？</text>
+  <text x="742" y="252" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#B45309">皆為「是」才調整！</text>
+
+  <!-- Warning Box -->
+  <rect x="30" y="302" width="860" height="104" rx="14" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.8"></rect>
+  <text x="52" y="332" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="800" fill="#991B1B">⚠ 覆盤紅線：為何不要先回頭檢討「以前沒做到的漂亮交易」？</text>
+  <text x="52" y="360" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#7F1D1D">1. 行情已經走完，事後看當然覺得很準，但以當下能力其實還是規劃不出來，容易產生「漏掉一堆大單」的錯覺。</text>
+  <text x="52" y="386" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#7F1D1D">2. 若把新方法套回「已做過的單」都沒比較好，硬去做那些沒做到的交易，實際上「應該要做但失敗的單」只會更多。</text>
+</svg>
+        </div>
+        <div class="figure-caption">
+          <span>圖 4｜已做過交易的框選覆盤 4 步驟與覆盤紅線</span>
+          <span class="zoom-hint">點擊圖表可放大檢視</span>
+        </div>
+      </div>
+
+      <div class="callout callout-amber learn-accent learn-yellow">
+        <div class="callout-title">關鍵檢核：事後看得出來 ≠ 當下規劃得出來</div>
+        <p>
+          如果原本的做法雖然風險報酬比沒那麼極致，但<strong>至少你當下規劃得出來</strong>；反過來若強迫自己只做框起來的擴散段，卻在實戰當下根本規劃不到，那就不要硬改，因為沒有意義。
+        </p>
+      </div>
+
+      <div class="subcard">
+        <h3>覆盤自我檢核清單（點擊勾選）</h3>
+        <ul class="checklist" id="reviewChecklist">
+          <li><input type="checkbox"><span>我已篩選出自己過去「有獲利」或「曾獲利但被掃保本」的歷史交易（排除沒做到的單）。</span></li>
+          <li><input type="checkbox"><span>我已將這筆交易中「均線漂亮擴散、拉開獲利」的區間框起來，並記錄其幅度與持續時間。</span></li>
+          <li><input type="checkbox"><span>我已假設「只能在框內規劃進場」，並重新計算對比原單與新單的 R 數數據。</span></li>
+          <li><input type="checkbox"><span>我已確認這個延後進場的位置「在當下真的規劃得出來」，且實際執行起來心態舒服。</span></li>
+          <li><input type="checkbox"><span>我提醒自己任何交易都不可能 100% 準確，願意承擔窄停損可能被掃掉或錯過的代價。</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Chapter 05 -->
+    <section class="chapter" id="ch5">
+      <div class="chapter-head">
+        <div class="chapter-num">05</div>
+        <div class="chapter-title-wrap">
+          <h2>疊圖縮放迷思與核心實戰 Q&amp;A 對照表</h2>
+          <p class="chapter-sub">彙整語音中 Henry、BOMI、大樹等成員的關鍵提問與講者解答</p>
+        </div>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="篩選 Q&amp;A 類別">
+        <button class="filter-btn active" type="button" data-filter="all">全部主題</button>
+        <button class="filter-btn" type="button" data-filter="overlay">疊圖與縮放</button>
+        <button class="filter-btn" type="button" data-filter="entry">進場與停損</button>
+        <button class="filter-btn" type="button" data-filter="review">覆盤與心態</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:16%;">類別</th>
+            <th style="width:32%;">常見疑問／迷思</th>
+            <th style="width:52%;">講者核心解答與背後邏輯</th>
+          </tr>
+        </thead>
+        <tbody id="qaTableBody">
+          <tr data-cat="overlay">
+            <td data-label="類別"><span class="badge">疊圖與縮放</span></td>
+            <td data-label="常見疑問／迷思">這是要拿反轉圖或標準圖當第一步的疊圖嗎？</td>
+            <td data-label="講者核心解答與背後邏輯">不管是反轉還是延續，討論重點在「均線擴散的那一段」。前期 Setup 與後期均線發散是兩個獨立議題，重點是辨識什麼價格走勢會引發想要的發散。</td>
+          </tr>
+          <tr data-cat="overlay">
+            <td data-label="類別"><span class="badge">疊圖與縮放</span></td>
+            <td data-label="常見疑問／迷思">大樹提問：只抓均線發散時，還會有「過度縮放樣本圖」的問題嗎？</td>
+            <td data-label="講者核心解答與背後邏輯">前期禁過度縮放是為了避免「先射箭再畫靶」（硬湊長得像的圖）。當你已完成前期訓練、進階到抓均線發散段時，過度縮放已是上階段的煩惱，此時不再構成主要困擾。</td>
+          </tr>
+          <tr data-cat="overlay">
+            <td data-label="類別"><span class="badge">疊圖與縮放</span></td>
+            <td data-label="常見疑問／迷思">為何有些高手或大單群友，疊圖看起來沒那麼精確？</td>
+            <td data-label="講者核心解答與背後邏輯">疊圖做得太精確容易掉入「過度標準化」陷阱。當你對走勢的辨識能力已經內化，能直接判斷這是想打的球，就不必死守表層工具形式。</td>
+          </tr>
+          <tr data-cat="entry">
+            <td data-label="類別"><span class="badge badge-amber">進場與停損</span></td>
+            <td data-label="常見疑問／迷思">把進場往後移，就是把「發動點」抓更準的意思嗎？</td>
+            <td data-label="講者核心解答與背後邏輯">不完全是，但可這樣解讀。更精確地說，是把原本從盤整段就進場承受等待的做法，微調到剛進入緩漲或剛開始噴發時切入，縮短持倉並放大 R 數。</td>
+          </tr>
+          <tr data-cat="entry">
+            <td data-label="類別"><span class="badge badge-amber">進場與停損</span></td>
+            <td data-label="常見疑問／迷思">別人看起來像追高的點位，為何停損反而可以抓很窄？</td>
+            <td data-label="講者核心解答與背後邏輯">因為他判斷接下來行情就是要噴出，一旦跌破那個極窄停損，整段行情就會回到重新盤整；停損窄代表「錯了立刻承認」，而非硬扛盤整。</td>
+          </tr>
+          <tr data-cat="review">
+            <td data-label="類別"><span class="badge">覆盤與心態</span></td>
+            <td data-label="常見疑問／迷思">學會均線擴散後，該回頭檢討以前「沒做到的漂亮大單」嗎？</td>
+            <td data-label="講者核心解答與背後邏輯">沒意義！走完的圖看來都很美，但套用新方法若連自己「已做過的單」都沒變好，去檢討沒做到的單只會讓你以為漏單，實際執行反而會多出一堆失敗單。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Chapter 06 -->
+    <section class="chapter" id="ch6">
+      <div class="chapter-head">
+        <div class="chapter-num">06</div>
+        <div class="chapter-title-wrap">
+          <h2>自主修煉轉型與市場極端情緒逆向觀察</h2>
+          <p class="chapter-sub">停發定期「關鍵價格帶」的背後用心，以及比特幣 4/7 低點後的市場風向反思</p>
+        </div>
+      </div>
+
+      <div class="figure-box">
+        <div class="figure-scroll">
+          <svg viewbox="0 0 920 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="交易修煉獨立化與市場極端情緒逆向觀察圖">
+  <rect width="920" height="380" rx="18" fill="#FAF6E8" stroke="#E2D9BE" stroke-width="1.5"></rect>
+  <text x="460" y="38" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="18.5" font-weight="800" fill="#1E293B">自主修煉轉型與市場極端共識的逆向觀察</text>
+  <text x="460" y="62" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#64748B">從「被動接收關鍵價位」走向「主動獨立規劃」，並以逆向思維檢視市場風向</text>
+
+  <!-- Left Panel: Key Level Evolution -->
+  <rect x="32" y="88" width="415" height="264" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"></rect>
+  <rect x="32" y="88" width="415" height="44" rx="14" fill="#1E3A5F"></rect>
+  <rect x="32" y="118" width="415" height="14" fill="#1E3A5F"></rect>
+  <text x="240" y="116" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">關鍵價格帶：從「定期發佈」轉「主動討論」</text>
+
+  <rect x="52" y="148" width="375" height="62" rx="10" fill="#F8FAFC" stroke="#E2E8F0"></rect>
+  <text x="68" y="172" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#334155">過去 2 年累積樣本已充足</text>
+  <text x="68" y="196" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#475569">約 600–700 天 × 平均 7 筆 ≈ 4,000+ 張參考圖表</text>
+
+  <rect x="52" y="222" width="375" height="54" rx="10" fill="#FEF3C7" stroke="#FDE68A"></rect>
+  <text x="68" y="246" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#92400E">停止定期發佈的原因</text>
+  <text x="68" y="266" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#78350F">避免成員仰賴現成價位直接下單，失去自主判讀能力</text>
+
+  <rect x="52" y="288" width="375" height="48" rx="10" fill="#ECFDF5" stroke="#A7F3D0"></rect>
+  <text x="68" y="317" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#065F46">新模式：自行找標的畫線 → 丟圖 Tag 討論回饋</text>
+
+  <!-- Right Panel: Contrarian Sentiment & BTC Case -->
+  <rect x="473" y="88" width="415" height="264" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"></rect>
+  <rect x="473" y="88" width="415" height="44" rx="14" fill="#0F766E"></rect>
+  <rect x="473" y="118" width="415" height="14" fill="#0F766E"></rect>
+  <text x="680" y="116" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">市場極端共識逆向觀察（比特幣實例）</text>
+
+  <!-- Simple Rebound Curve -->
+  <rect x="493" y="148" width="375" height="118" rx="10" fill="#0F172A"></rect>
+  <path d="M 518 182 Q 565 215, 610 242 Q 665 220, 725 192 T 842 166" fill="none" stroke="#34D399" stroke-width="3.2"></path>
+  <circle cx="610" cy="242" r="6" fill="#F87171" stroke="#FFFFFF" stroke-width="2"></circle>
+  <text x="626" y="205" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#FCA5A5">4/7 低點 74,000+</text>
+  <text x="520" y="256" font-family="'Noto Sans CJK TC', sans-serif" font-size="12" fill="#94A3B8">清明連假後／關稅首個開盤日</text>
+  <rect x="720" y="196" width="134" height="32" rx="6" fill="#065F46"></rect>
+  <text x="787" y="217" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" font-weight="700" fill="#A7F3D0">反彈近 30%–40%</text>
+
+  <rect x="493" y="278" width="375" height="58" rx="10" fill="#F0FDFA" stroke="#99F6E4"></rect>
+  <text x="509" y="302" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#0F766E">逆向思考提問公式：</text>
+  <text x="509" y="324" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#134E4A">身邊喊「要崩盤」時 → 假如他們錯了，誰對的機率高？</text>
+</svg>
+        </div>
+        <div class="figure-caption">
+          <span>圖 5｜從被動參考關鍵價位轉向自主修煉，並搭配市場極端共識進行逆向思考</span>
+          <span class="zoom-hint">點擊圖表可放大檢視</span>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="subcard">
+          <h3>關鍵價格帶調整</h3>
+          <p>
+            過去兩年已累積約 600–700 天、逾 <strong>4,000 張</strong>關鍵價位參考圖。為避免大家養成依賴、直接照單規劃，後續將停止定期發佈；改為成員<strong>自行選標的畫線後丟出來 Tag 討論</strong>，由講者給予針對性回饋。
+          </p>
+        </div>
+        <div class="subcard">
+          <h3>交易如同競技運動</h3>
+          <p>
+            講者強調做交易與<strong>競技運動訓練</strong>高度相似，每個階段都有對應的訓練工具與目的。除了技術面，後續也會持續分享運動訓練法與心理調適素材，協助大家建立穩定的執行紀律。
+          </p>
+        </div>
+        <div class="subcard">
+          <h3>逆向情緒與盤勢觀察</h3>
+          <p>
+            回顧 4/7（清明連假後、關稅首個開盤日）比特幣跌至 <strong>74,000 多</strong>時，市場充斥「又要崩盤、死掉了」的言論，結果隨即反彈近 <strong>30%–40%</strong>。當身邊高度一致看空或看多時，不妨反問：「假如他們錯了，我看到的是對的嗎？」
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-info learn-accent learn-blue">
+        <div class="callout-title">操作心法結語</div>
+        <p>
+          不論行情好不好做，維持平常心、事前做好準備，有機會出現就設法把握。記住每一次訓練背後的「目的」——工具是為了幫助你篩出自己熟悉的球，而不是把自己困在標準化的框架裡。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    整理自 2025-05-09 交易語音《均線擴散》與逐字稿｜僅供交易策略研究與學習覆盤參考，非投資建議。
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="圖片放大檢視">
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
+
+  <script>
+    // 1. Reading progress bar
+    const progressFill = document.getElementById("progressFill");
+    window.addEventListener("scroll", () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100)) : 0;
+      progressFill.style.width = pct + "%";
+    });
+
+    // 2. Theme toggle (default warm eye-care light)
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+      themeToggle.textContent = isDark ? "深色模式" : "護眼淺黃"; try {localStorage.setItem("zone-theme",isDark ? "light" : "dark");} catch(e) {}
+    });
+
+    // 3. Font size adjuster (15px - 24px)
+    let currentFont = window.innerWidth <= 720 ? 17.5 : 19;
+    const applyFont = () => {
+      document.documentElement.style.fontSize = currentFont + "px";
+    };
+    document.getElementById("fontDec").addEventListener("click", () => {
+      currentFont = Math.max(15, +(currentFont - 1).toFixed(1));
+      applyFont();
+    });
+    document.getElementById("fontInc").addEventListener("click", () => {
+      currentFont = Math.min(24, +(currentFont + 1).toFixed(1));
+      applyFont();
+    });
+
+    // 4. Tabs switching
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    // 5. Q&A table filter
+    document.querySelectorAll(".filter-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const cat = btn.dataset.filter;
+        document.querySelectorAll("#qaTableBody tr").forEach((row) => {
+          if (cat === "all" || row.dataset.cat === cat) {
+            row.classList.remove("hidden-row");
+          } else {
+            row.classList.add("hidden-row");
+          }
+        });
+      });
+    });
+
+    // 6. Interactive R-Multiple simulator
+    const ids = ["simTarget", "simEarlyEntry", "simEarlySL", "simLateEntry", "simLateSL"];
+    function updateSim() {
+      const target = parseFloat(document.getElementById("simTarget").value) || 0;
+      const eIn = parseFloat(document.getElementById("simEarlyEntry").value) || 0;
+      const eSL = parseFloat(document.getElementById("simEarlySL").value) || 0;
+      const lIn = parseFloat(document.getElementById("simLateEntry").value) || 0;
+      const lSL = parseFloat(document.getElementById("simLateSL").value) || 0;
+
+      const eRisk = eIn - eSL;
+      const eReward = target - eIn;
+      const lRisk = lIn - lSL;
+      const lReward = target - lIn;
+
+      const elEarlyR = document.getElementById("resEarlyR");
+      const elEarlyNote = document.getElementById("resEarlyNote");
+      if (eRisk > 0) {
+        elEarlyR.textContent = (eReward / eRisk).toFixed(2) + " R";
+        elEarlyNote.textContent = `風險距離：${eRisk.toFixed(2)}｜潛在漲幅：${eReward.toFixed(2)}（較抗洗盤）`;
+      } else {
+        elEarlyR.textContent = "請確認停損 < 進場";
+        elEarlyNote.textContent = "做多情境下，停損價須低於進場價";
+      }
+
+      const elLateR = document.getElementById("resLateR");
+      const elLateNote = document.getElementById("resLateNote");
+      if (lRisk > 0) {
+        elLateR.textContent = (lReward / lRisk).toFixed(2) + " R";
+        elLateNote.textContent = `風險距離：${lRisk.toFixed(2)}｜潛在漲幅：${lReward.toFixed(2)}（持倉更短、R 數放大）`;
+      } else {
+        elLateR.textContent = "請確認停損 < 進場";
+        elLateNote.textContent = "做多情境下，停損價須低於進場價";
+      }
+    }
+    ids.forEach((id) => document.getElementById(id).addEventListener("input", updateSim));
+    updateSim();
+
+    // 7. Checklist toggle
+    document.querySelectorAll("#reviewChecklist li").forEach((li) => {
+      li.addEventListener("click", (e) => {
+        const cb = li.querySelector("input[type='checkbox']");
+        if (e.target !== cb) cb.checked = !cb.checked;
+        li.classList.toggle("checked", cb.checked);
+      });
+    });
+
+    // 8. Lightbox zoom for images and SVGs
+    const lightbox = document.getElementById("lightbox");
+    const lightboxContent = document.getElementById("lightboxContent");
+    document.querySelectorAll(".figure-box img, .figure-box svg").forEach((el) => {
+      el.addEventListener("click", () => {
+        lightboxContent.innerHTML = "";
+        const clone = el.cloneNode(true);
+        clone.style.cursor = "zoom-out";
+        if (clone.tagName.toLowerCase() === "svg") {
+          clone.style.width = "min(1100px, 90vw)";
+        }
+        lightboxContent.appendChild(clone);
+        lightbox.classList.add("open");
+      });
+    });
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("open");
+    });
+  </script>
+<script src="lessons.js"></script></body>
+</html>

@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025-04-30｜月總結檢討與最佳獲利數據｜交易心流</title>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('zone-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
+<style>
+    :root {
+      --bg-page: #FDF9E7;
+      --bg-surface: #FFFFFF;
+      --bg-subcard: #FAF6E8;
+      --bg-topbar: rgba(253, 249, 231, 0.94);
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --text-subtle: #64748B;
+      --border: #E5DEC6;
+      --border-strong: #CBD5E1;
+      --accent: #0F766E;
+      --accent-soft: #ECFDF5;
+      --accent-2: #B45309;
+      --accent-2-soft: #FFFBEB;
+      --danger: #B91C1C;
+      --danger-soft: #FEF2F2;
+      --info: #1D4ED8;
+      --info-soft: #EFF6FF;
+      --shadow: 0 6px 22px rgba(30, 41, 59, 0.06);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #0F172A;
+      --bg-surface: #1E293B;
+      --bg-subcard: #162033;
+      --bg-topbar: rgba(15, 23, 42, 0.94);
+      --text-main: #F1F5F9;
+      --text-muted: #CBD5E1;
+      --text-subtle: #94A3B8;
+      --border: #334155;
+      --border-strong: #475569;
+      --accent: #2DD4BF;
+      --accent-soft: rgba(45, 212, 191, 0.12);
+      --accent-2: #FBBF24;
+      --accent-2-soft: rgba(251, 191, 36, 0.12);
+      --danger: #F87171;
+      --danger-soft: rgba(248, 113, 113, 0.12);
+      --info: #60A5FA;
+      --info-soft: rgba(96, 165, 250, 0.12);
+      --shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+    }
+
+    html {
+      font-size: 19px;
+      scroll-behavior: smooth;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-page);
+      color: var(--text-main);
+      font-family: "Noto Sans CJK TC", "PingFang TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.78;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .progress-track {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 4px;
+      background: transparent; z-index: 120;
+    }
+    .progress-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, #0F766E, #D97706);
+      transition: width 0.08s linear;
+    }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--bg-topbar);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 1.2rem;
+    }
+    .topbar-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0.75rem; flex-wrap: wrap;
+    }
+    .topbar-meta {
+      display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap;
+      font-size: 0.84rem; color: var(--text-muted);
+    }
+    .badge {
+      display: inline-flex; align-items: center;
+      padding: 0.18rem 0.62rem; border-radius: 999px;
+      font-size: 0.78rem; font-weight: 700;
+      background: var(--accent-soft); color: var(--accent);
+      border: 1px solid rgba(15, 118, 110, 0.22);
+    }
+    .badge-info {
+      background: var(--info-soft); color: var(--info);
+      border-color: rgba(29, 78, 216, 0.28);
+    }
+    .badge-amber {
+      background: var(--accent-2-soft); color: var(--accent-2);
+      border-color: rgba(180, 83, 9, 0.25);
+    }
+    .topbar-controls { display: flex; align-items: center; gap: 0.45rem; }
+    .ctrl-btn {
+      appearance: none; border: 1px solid var(--border-strong);
+      background: var(--bg-surface); color: var(--text-main);
+      padding: 0.34rem 0.72rem; border-radius: var(--radius-sm);
+      font-size: 0.84rem; font-weight: 700; cursor: pointer;
+    }
+    .ctrl-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    .container { max-width: 1080px; margin: 0 auto; padding: 1.5rem 1.2rem 4rem; }
+
+    .hero {
+      background: var(--bg-surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 2rem 1.8rem;
+      box-shadow: var(--shadow); margin-bottom: 1.6rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+      background: linear-gradient(90deg, #1D4ED8, #0F766E, #D97706);
+    }
+    .hero-kicker {
+      font-size: 0.85rem; font-weight: 700; color: var(--info);
+      letter-spacing: 0.04em; margin-bottom: 0.4rem;
+    }
+    .hero h1 { margin: 0 0 0.75rem; font-size: 1.85rem; line-height: 1.3; }
+    .hero-lead { margin: 0 0 1.4rem; font-size: 1.02rem; color: var(--text-muted); }
+
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.9rem; }
+    .kpi-card {
+      background: var(--bg-subcard); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 0.95rem 1rem;
+    }
+    .kpi-label { font-size: 0.78rem; font-weight: 700; color: var(--text-subtle); margin-bottom: 0.25rem; }
+    .kpi-value { font-size: 1.18rem; font-weight: 800; color: var(--accent); line-height: 1.3; }
+    .kpi-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+    .toc-card {
+      background: var(--bg-surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1.25rem 1.4rem;
+      margin-bottom: 1.8rem; box-shadow: var(--shadow);
+    }
+    .toc-title { font-size: 0.95rem; font-weight: 800; margin: 0 0 0.85rem; }
+    .toc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; }
+    .toc-link {
+      display: flex; align-items: center; gap: 0.6rem; text-decoration: none;
+      color: var(--text-main); background: var(--bg-subcard);
+      border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 0.62rem 0.8rem; font-size: 0.88rem; font-weight: 700;
+    }
+    .toc-link:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .toc-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1.65rem; height: 1.65rem; border-radius: 6px;
+      background: var(--accent); color: #FFFFFF; font-size: 0.78rem; font-weight: 800; flex-shrink: 0;
+    }
+    [data-theme="dark"] .toc-num { color: #0F172A; }
+
+    .chapter {
+      background: var(--bg-surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1.7rem 1.65rem;
+      margin-bottom: 1.75rem; box-shadow: var(--shadow); scroll-margin-top: 4.5rem;
+    }
+    .chapter-head {
+      display: flex; align-items: center; gap: 0.85rem;
+      padding-bottom: 0.9rem; margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--border);
+    }
+    .chapter-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 2.4rem; height: 2.4rem; border-radius: 10px;
+      background: var(--accent); color: #FFFFFF; font-size: 1.05rem; font-weight: 800; flex-shrink: 0;
+    }
+    [data-theme="dark"] .chapter-num { color: #0F172A; }
+    .chapter-title-wrap h2 { margin: 0; font-size: 1.32rem; line-height: 1.35; }
+    .chapter-sub { margin: 0.15rem 0 0; font-size: 0.86rem; color: var(--text-subtle); }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1rem 0; }
+    .subcard {
+      background: var(--bg-subcard); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 1.1rem 1.15rem;
+    }
+    .subcard h3 { margin: 0 0 0.5rem; font-size: 1.04rem; color: var(--accent); }
+    .subcard p { margin: 0.35rem 0; font-size: 0.96rem; }
+    .subcard ul { margin: 0.45rem 0 0; padding-left: 1.2rem; }
+    .subcard li { margin-bottom: 0.38rem; font-size: 0.95rem; }
+
+    .callout {
+      border-radius: var(--radius-md); padding: 1rem 1.2rem; margin: 1.1rem 0;
+      border-left: 5px solid var(--accent); background: var(--accent-soft);
+    }
+    .callout-amber { border-left-color: var(--accent-2); background: var(--accent-2-soft); }
+    .callout-danger { border-left-color: var(--danger); background: var(--danger-soft); }
+    .callout-info { border-left-color: var(--info); background: var(--info-soft); }
+    .callout-title { font-weight: 800; font-size: 0.98rem; margin-bottom: 0.3rem; }
+    .callout p { margin: 0.25rem 0; font-size: 0.95rem; }
+
+    .figure-box {
+      background: var(--bg-subcard); border: 1.5px solid var(--border);
+      border-radius: var(--radius-md); padding: 1rem; margin: 1.25rem 0;
+    }
+    .figure-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .figure-box svg { width: 100%; height: auto; display: block; border-radius: 10px; cursor: zoom-in; }
+    .figure-caption {
+      margin-top: 0.65rem; font-size: 0.85rem; color: var(--text-muted);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem;
+    }
+    .zoom-hint { font-size: 0.78rem; color: var(--accent); font-weight: 700; }
+
+    .tabs-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .tab-btn {
+      appearance: none; border: 1.5px solid var(--border-strong);
+      background: var(--bg-subcard); color: var(--text-main);
+      padding: 0.45rem 0.95rem; border-radius: 999px; font-size: 0.88rem; font-weight: 700; cursor: pointer;
+    }
+    .tab-btn.active { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
+    [data-theme="dark"] .tab-btn.active { color: #0F172A; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .sim-box {
+      background: var(--bg-subcard); border: 1.5px solid var(--border);
+      border-radius: var(--radius-md); padding: 1.25rem; margin: 1.2rem 0;
+    }
+    .sim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; margin-bottom: 1rem; }
+    .sim-field label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .sim-field input {
+      width: 100%; padding: 0.45rem 0.65rem; border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-strong); background: var(--bg-surface);
+      color: var(--text-main); font-size: 0.95rem; font-weight: 700;
+    }
+    .sim-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; }
+    .sim-res-card {
+      background: var(--bg-surface); border: 1.5px solid var(--border);
+      border-radius: var(--radius-md); padding: 0.9rem 1rem;
+    }
+    .sim-res-title { font-size: 0.82rem; font-weight: 800; color: var(--text-subtle); }
+    .sim-res-val { font-size: 1.32rem; font-weight: 800; color: var(--accent); margin: 0.2rem 0; }
+    .sim-res-note { font-size: 0.8rem; color: var(--text-muted); }
+
+    .filter-bar { display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 0.9rem; }
+    .filter-btn {
+      appearance: none; border: 1px solid var(--border-strong);
+      background: var(--bg-subcard); color: var(--text-main);
+      padding: 0.34rem 0.78rem; border-radius: 999px; font-size: 0.82rem; font-weight: 700; cursor: pointer;
+    }
+    .filter-btn.active { background: var(--accent); color: #FFFFFF; border-color: var(--accent); }
+    [data-theme="dark"] .filter-btn.active { color: #0F172A; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+    th, td { padding: 0.78rem 0.85rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+    th { background: var(--bg-subcard); font-weight: 800; }
+    tr.hidden-row { display: none; }
+
+    .checklist { list-style: none; padding: 0; margin: 0.8rem 0 0; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 0.7rem;
+      background: var(--bg-subcard); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 0.75rem 0.95rem;
+      margin-bottom: 0.6rem; cursor: pointer;
+    }
+    .checklist li:hover { border-color: var(--accent); }
+    .checklist input[type="checkbox"] { width: 1.15rem; height: 1.15rem; margin-top: 0.25rem; accent-color: var(--accent); flex-shrink: 0; }
+    .checklist li.checked span { text-decoration: line-through; color: var(--text-subtle); }
+
+    .lightbox {
+      position: fixed; inset: 0; background: rgba(15, 23, 42, 0.88);
+      display: none; align-items: center; justify-content: center; padding: 1.2rem; z-index: 200; cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-content {
+      max-width: 96vw; max-height: 92vh; overflow: auto;
+      background: var(--bg-surface); padding: 0.8rem; border-radius: var(--radius-md);
+    }
+
+    footer { text-align: center; font-size: 0.82rem; color: var(--text-subtle); padding: 1.2rem 0 2rem; }
+
+    @media (max-width: 720px) {
+      html { font-size: 17.5px; }
+      .container { padding: 1rem 0.85rem 3rem; }
+      .hero, .chapter { padding: 1.25rem 1.05rem; }
+      .hero h1 { font-size: 1.48rem; }
+      .kpi-grid, .toc-grid, .grid-2, .grid-3, .sim-grid, .sim-results { grid-template-columns: 1fr; }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tr { background: var(--bg-subcard); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 0.75rem; padding: 0.65rem 0.8rem; }
+      td { border: none; padding: 0.3rem 0; display: flex; flex-direction: column; gap: 0.15rem; }
+      td::before { content: attr(data-label); font-size: 0.78rem; font-weight: 800; color: var(--accent); }
+    }
+  </style>
+<link rel="stylesheet" href="article.css"><link rel="stylesheet" href="reading.css"><link rel="stylesheet" href="lessons.css"><meta name="keywords" content="月總結檢討與最佳獲利數據,交易室教學紀錄,覆盤,risk,mindset"></head>
+<body>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-meta"><a class="home-link" href="./">← 交易心流</a>
+        <span class="badge badge-info">交易室教學紀錄</span>
+        <span class="badge">月總結與覆盤</span>
+        <span class="badge badge-amber">2025-04-30 語音整理</span>
+      </div>
+      <div class="topbar-controls">
+        <button class="ctrl-btn" id="fontDec" type="button" aria-label="縮小字體">A-</button>
+        <button class="ctrl-btn" id="fontInc" type="button" aria-label="放大字體">A+</button>
+        <button class="ctrl-btn" id="themeToggle" type="button">深色模式</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-kicker">交易室教學紀錄 · TRADING REVIEW &amp; PERFORMANCE BASELINE</div>
+      <h1>2025-04-30｜月總結檢討與最佳獲利數據</h1>
+      <p class="hero-lead">
+        整理自 2025/04/30 交易室語音。針對許多交易者「每個月都在檢討、問題卻每月不同、績效始終沒起色」的痛點，講者從<strong>獨立變因</strong>切入，完整拆解如何剔除雜訊單並算出<strong>「最佳獲利交易數據」</strong>，讓每一次系統微調都能用乾淨數據驗證成效。
+      </p>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">核心診斷原因</div>
+          <div class="kpi-value">未控制變因</div>
+          <div class="kpi-sub">調整項目與其他失誤交叉干擾</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">50 筆範例還原</div>
+          <div class="kpi-value">2.2R → 2.7R</div>
+          <div class="kpi-sub">剔除 15 筆違規單後的最佳基準</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">提早平倉代價</div>
+          <div class="kpi-value">3.7R vs 7.0R</div>
+          <div class="kpi-sub">6R 回吐 2.3R 先跑錯失 10R 主段</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">成長曲線本質</div>
+          <div class="kpi-value">非線性突破</div>
+          <div class="kpi-sub">跨過前 2–4 年門檻後指數成長</div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="toc-card" aria-label="章節導覽">
+      <div class="toc-title">章節快速導覽</div>
+      <div class="toc-grid">
+        <a class="toc-link" href="#ch1"><span class="toc-num">01</span>為何月檢討總在繞迴圈？</a>
+        <a class="toc-link" href="#ch2"><span class="toc-num">02</span>50 筆範例：算出最佳基準線</a>
+        <a class="toc-link" href="#ch3"><span class="toc-num">03</span>回吐心理落差與移動出場</a>
+        <a class="toc-link" href="#ch4"><span class="toc-num">04</span>剔除腦衝單與行為一致性</a>
+        <a class="toc-link" href="#ch5"><span class="toc-num">05</span>月檢討三步驟與實戰對照</a>
+        <a class="toc-link" href="#ch6"><span class="toc-num">06</span>非線性成長、制度調整與提醒</a>
+      </div>
+    </nav>
+
+    <!-- Chapter 01 -->
+    <section class="chapter" id="ch1">
+      <div class="chapter-head">
+        <div class="chapter-num">01</div>
+        <div class="chapter-title-wrap">
+          <h2>為何每個月都在檢討，績效卻原地打轉？</h2>
+          <p class="chapter-sub">核心病灶：沒有做好「獨立變因」，拿「髒數據」改來改去</p>
+        </div>
+      </div>
+
+      <p>
+        有群友反映：每個月都會認真寫月總結，但這個月出現的問題和下個月長得不一樣；這個月好不容易改了 A 問題，下個月又冒出 B 問題，結果連改了好幾個月，整體績效幾乎沒有改善，讓人非常挫折。
+      </p>
+
+      <div class="grid-2">
+        <div class="subcard">
+          <h3>失真根源｜缺乏獨立變因</h3>
+          <ul>
+            <li>假設 4/30 檢討發現「風險報酬比不夠好」，決定 5 月開始不要躁進、等更理想的進場位置。</li>
+            <li>但同時間你的<strong>其他交易行為沒有固定</strong>（例如還是會腦衝下單、或獲利回吐時提早平倉）。</li>
+            <li>當你試圖做好 A 項目時，它會與其他未控管的失誤產生<strong>交互作用</strong>，導致 5 月跑出來的結果看起來毫無進步。</li>
+          </ul>
+        </div>
+        <div class="subcard">
+          <h3>後果｜對著「髒數據」穿鑿附會</h3>
+          <ul>
+            <li>你以為自己針對問題做了調整卻沒效，其實是因為檢視的標的本身就是<strong>混雜各種犯錯的髒數據</strong>。</li>
+            <li>對著髒數據下結論、改規則，很容易只是「穿鑿附會」，最後把原本沒問題的策略改壞，卻沒解決真正該處理的執行紀律。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="figure-box">
+        <div class="figure-scroll"><svg viewbox="0 0 920 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="月總結無效迴圈與髒數據陷阱圖">
+  <defs>
+    <marker id="a1" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="8" markerheight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#DC2626"></path>
+    </marker>
+    <marker id="a2" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="8" markerheight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#0F766E"></path>
+    </marker>
+  </defs>
+  <rect width="920" height="410" rx="18" fill="#FAF6E8" stroke="#E2D9BE" stroke-width="1.5"></rect>
+  <text x="460" y="38" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="18.5" font-weight="800" fill="#1E293B">為何每個月都在檢討，績效卻原地打轉？「髒數據」陷阱</text>
+  <text x="460" y="62" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#64748B">沒有做好獨立變因，調整項目與其他執行失誤交叉干擾，導致檢討淪為穿鑿附會</text>
+
+  <!-- Left: Dirty Data Loop -->
+  <rect x="30" y="86" width="415" height="296" rx="14" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1.8"></rect>
+  <rect x="30" y="86" width="415" height="42" rx="14" fill="#B91C1C"></rect>
+  <rect x="30" y="114" width="415" height="14" fill="#B91C1C"></rect>
+  <text x="237" y="113" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">常見陷阱｜用「髒數據」跨月檢討</text>
+
+  <rect x="52" y="144" width="371" height="46" rx="10" fill="#FEF2F2" stroke="#FECACA"></rect>
+  <text x="237" y="172" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#991B1B">4 月檢討：進場太急 → 5 月嘗試改善 A 項目</text>
+
+  <line x1="237" y1="194" x2="237" y2="216" stroke="#DC2626" stroke-width="2.2" marker-end="url(#a1)"></line>
+
+  <rect x="52" y="220" width="371" height="62" rx="10" fill="#FFF7ED" stroke="#FED7AA"></rect>
+  <text x="237" y="246" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#9A3412">但其他行為未固定（腦衝單、提早平倉同時發生）</text>
+  <text x="237" y="268" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#7C2D12">A 項目與其他失誤產生「交互作用」→ 數據失真</text>
+
+  <line x1="237" y1="286" x2="237" y2="308" stroke="#DC2626" stroke-width="2.2" marker-end="url(#a1)"></line>
+
+  <rect x="52" y="312" width="371" height="54" rx="10" fill="#1E293B"></rect>
+  <text x="237" y="336" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#FCA5A5">結果：連 3 個月績效沒變好，每月問題都不同</text>
+  <text x="237" y="356" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#CBD5E1">陷入無止盡檢討迴圈，越改越挫折</text>
+
+  <!-- Right: Clean Baseline Comparison -->
+  <rect x="475" y="86" width="415" height="296" rx="14" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="1.8"></rect>
+  <rect x="475" y="86" width="415" height="42" rx="14" fill="#0F766E"></rect>
+  <rect x="475" y="114" width="415" height="14" fill="#0F766E"></rect>
+  <text x="682" y="113" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">正確解方｜建立「最佳獲利交易數據」</text>
+
+  <rect x="497" y="144" width="371" height="46" rx="10" fill="#F0FDFA" stroke="#99F6E4"></rect>
+  <text x="682" y="172" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="700" fill="#0F766E">步驟 1：剔除所有不該做／腦衝交易</text>
+
+  <line x1="682" y1="194" x2="682" y2="216" stroke="#0F766E" stroke-width="2.2" marker-end="url(#a2)"></line>
+
+  <rect x="497" y="220" width="371" height="62" rx="10" fill="#ECFDF5" stroke="#A7F3D0"></rect>
+  <text x="682" y="246" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#065F46">步驟 2：還原「完全不犯錯」的最佳數據</text>
+  <text x="682" y="268" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#065F46">照原定規則推算理想進場與完整移動出場結果</text>
+
+  <line x1="682" y1="286" x2="682" y2="308" stroke="#0F766E" stroke-width="2.2" marker-end="url(#a2)"></line>
+
+  <rect x="497" y="312" width="371" height="54" rx="10" fill="#064E3B"></rect>
+  <text x="682" y="336" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#A7F3D0">步驟 3：拿「本期最佳」vs「上期最佳」對比</text>
+  <text x="682" y="356" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#E2E8F0">清楚看出系統調整是否真的朝目標方向進步</text>
+</svg></div>
+        <div class="figure-caption">
+          <span>圖 1｜為何用「原始髒數據」跨月檢討會陷入無效迴圈，以及建立「最佳獲利基準線」的解方</span>
+          <span class="zoom-hint">點擊圖表可放大檢視</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 02 -->
+    <section class="chapter" id="ch2">
+      <div class="chapter-head">
+        <div class="chapter-num">02</div>
+        <div class="chapter-title-wrap">
+          <h2>50 筆交易拆解：算出你的「最佳獲利交易數據」</h2>
+          <p class="chapter-sub">在不改進場邏輯的前提下，先看清「完全不犯錯」能達到的天花板</p>
+        </div>
+      </div>
+
+      <p>
+        講者提出一個關鍵解法：在決定下個月要改什麼之前，先把過去做過的交易還原出<strong>「最佳獲利交易數據」</strong>——也就是假設你的進場依據、走勢篩選、移動出場與停損停利規則全部不變，只把「不該做的單」剔除、把「犯錯沒照做好的單」還原成照原規劃執行，看看數字會長什麼樣。
+      </p>
+
+      <div class="figure-box">
+        <div class="figure-scroll"><svg viewbox="0 0 920 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="50筆交易拆解與最佳獲利基準線範例圖">
+  <defs>
+    <marker id="b1" viewbox="0 0 10 10" refx="8" refy="5" markerwidth="8" markerheight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"></path>
+    </marker>
+  </defs>
+  <rect width="920" height="430" rx="18" fill="#FAF6E8" stroke="#E2D9BE" stroke-width="1.5"></rect>
+  <text x="460" y="38" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="18.5" font-weight="800" fill="#1E293B">講者實戰拆解範例：從 50 筆原始交易算出「最佳獲利基準線」</text>
+  <text x="460" y="62" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#64748B">維持原本進出場邏輯不變，計算「完全不犯錯」時現階段能力的天花板數字</text>
+
+  <!-- Top Bar: Total 50 trades -->
+  <rect x="34" y="86" width="852" height="56" rx="12" fill="#1E3A5F"></rect>
+  <text x="460" y="112" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">原始總交易：50 筆（原始勝率 30% ｜ 平均風險報酬比 2.2R）</text>
+  <text x="460" y="132" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#BFDBFE">混雜了腦衝單、追價單與提早平倉單的「原始數據」</text>
+
+  <!-- Split Arrows -->
+  <line x1="210" y1="142" x2="155" y2="174" stroke="#475569" stroke-width="2.2" marker-end="url(#b1)"></line>
+  <line x1="560" y1="142" x2="560" y2="174" stroke="#475569" stroke-width="2.2" marker-end="url(#b1)"></line>
+
+  <!-- Left: 15 Removed -->
+  <rect x="34" y="180" width="242" height="122" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.8"></rect>
+  <text x="155" y="208" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="800" fill="#B91C1C">剔除：15 筆</text>
+  <text x="155" y="232" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="700" fill="#991B1B">不該做的交易</text>
+  <text x="155" y="256" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#7F1D1D">停損後腦衝、不在規劃內</text>
+  <text x="155" y="278" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#B91C1C">→ 直接抽出，不納入策略檢討</text>
+
+  <!-- Right: 35 Valid Container -->
+  <rect x="294" y="180" width="592" height="122" rx="12" fill="#FFFFFF" stroke="#0F766E" stroke-width="1.8"></rect>
+  <text x="590" y="204" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="14.5" font-weight="800" fill="#0F766E">留下：35 筆原本該做的有效交易（細分三類）</text>
+
+  <!-- 3 Sub-boxes inside 35 -->
+  <rect x="308" y="216" width="180" height="74" rx="8" fill="#FFFBEB" stroke="#FCD34D"></rect>
+  <text x="398" y="238" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="800" fill="#B45309">15 筆｜進場太急</text>
+  <text x="398" y="258" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12" fill="#78350F">原可做 2.5R–3R</text>
+  <text x="398" y="276" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12" fill="#78350F">追進只剩 2.2–2.35R</text>
+
+  <rect x="500" y="216" width="180" height="74" rx="8" fill="#EFF6FF" stroke="#93C5FD"></rect>
+  <text x="590" y="238" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="800" fill="#1D4ED8">10 筆｜提早平倉</text>
+  <text x="590" y="258" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12" fill="#1E3A8A">怕獲利回吐先跑</text>
+  <text x="590" y="276" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12" fill="#1E3A8A">未照原移動出場邏輯</text>
+
+  <rect x="692" y="216" width="180" height="74" rx="8" fill="#ECFDF5" stroke="#6EE7B7"></rect>
+  <text x="782" y="238" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" font-weight="800" fill="#065F46">10 筆｜照計畫執行</text>
+  <text x="782" y="258" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12" fill="#065F46">完整遵守進出場規則</text>
+  <text x="782" y="276" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12" fill="#065F46">維持原數據</text>
+
+  <!-- Arrow Down to Result -->
+  <line x1="590" y1="302" x2="590" y2="328" stroke="#0F766E" stroke-width="2.5" marker-end="url(#b1)"></line>
+
+  <!-- Bottom Result Box -->
+  <rect x="34" y="334" width="852" height="72" rx="12" fill="#064E3B"></rect>
+  <text x="460" y="362" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="16" font-weight="800" fill="#A7F3D0">推算結果：最佳獲利交易數據 ≈ 勝率 33% ｜ 風險報酬比 2.7R</text>
+  <text x="460" y="388" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#E2E8F0">意義：在不改進場策略的前提下，這就是你「現階段能力完全不犯錯」能達到的最佳水準</text>
+</svg></div>
+        <div class="figure-caption">
+          <span>圖 2｜講者 50 筆交易完整拆解：剔除 15 筆違規單並還原 25 筆執行偏差單後，基準從 30%/2.2R 升至 33%/2.7R</span>
+          <span class="zoom-hint">點擊圖表可放大檢視</span>
+        </div>
+      </div>
+
+      <div class="callout learn-accent learn-green">
+        <div class="callout-title">這組數字的真正意義：校準你的合理期待</div>
+        <p>
+          如果還原後的「最佳獲利交易數據」是勝率 33%、風險報酬比 2.7R，代表這就是你<strong>現階段能力下完全不犯錯的天花板</strong>。跨月檢討時，應該拿<strong>「下個月的最佳獲利數據」vs「上個月的最佳獲利數據」</strong>來比對，才能真正看出你的調整有沒有往想要的方向進步！
+        </p>
+      </div>
+
+      <!-- Interactive Monthly Review Baseline Calculator -->
+      <div class="sim-box">
+        <div class="callout-title" style="margin-bottom:0.6rem;">互動試算：檢視你的「雜訊單占比」與「最佳基準線」差距</div>
+        <div class="sim-grid">
+          <div class="sim-field">
+            <label for="mTotal">本月總交易筆數</label>
+            <input type="number" id="mTotal" value="50" min="1">
+          </div>
+          <div class="sim-field">
+            <label for="mBad">不該做／腦衝筆數</label>
+            <input type="number" id="mBad" value="15" min="0">
+          </div>
+          <div class="sim-field">
+            <label for="mOrigR">原始平均 R 數</label>
+            <input type="number" id="mOrigR" value="2.2" step="0.1">
+          </div>
+          <div class="sim-field">
+            <label for="mBestR">還原最佳平均 R 數</label>
+            <input type="number" id="mBestR" value="2.7" step="0.1">
+          </div>
+        </div>
+        <div class="sim-results">
+          <div class="sim-res-card">
+            <div class="sim-res-title">雜訊單占比（數據汙染度）</div>
+            <div class="sim-res-val" id="outBadPct" style="color:var(--danger);">30.0%</div>
+            <div class="sim-res-note" id="outValidCnt">有效規劃筆數：35 筆</div>
+          </div>
+          <div class="sim-res-card">
+            <div class="sim-res-title">執行落差（可回收潛力）</div>
+            <div class="sim-res-val" id="outRGap">+0.50 R</div>
+            <div class="sim-res-note">靠減少追價與遵守移動出場即可回收</div>
+          </div>
+          <div class="sim-res-card">
+            <div class="sim-res-title">檢討優先順序建議</div>
+            <div class="sim-res-val" id="outAdvice" style="font-size:1.05rem;color:var(--accent-2);">先戒掉違規腦衝單</div>
+            <div class="sim-res-note" id="outAdviceSub">雜訊單超過 20% 時，原始數據參考價值極低</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 03 -->
+    <section class="chapter" id="ch3">
+      <div class="chapter-head">
+        <div class="chapter-num">03</div>
+        <div class="chapter-title-wrap">
+          <h2>兩種最常見的執行耗損：進場太急 &amp; 怕回吐提早平倉</h2>
+          <p class="chapter-sub">用 6R 回吐案例看懂「心理承受度」如何吃掉一半利潤</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="subcard">
+          <h3>耗損一｜進場太急（偏離理想價位）</h3>
+          <p>
+            原本設定的進場條件要求至少做到 <strong>2.5R 以上</strong>；但看到行情覺得不錯、已經偏離理想進場價一小段，只剩 <strong>2.35R</strong> 時還是忍不住追進去。累積 15 筆下來，整體平均風險報酬比就被明顯拉低。
+          </p>
+        </div>
+        <div class="subcard">
+          <h3>耗損二｜受不了回吐提早出場</h3>
+          <p>
+            行情走到 <strong>6R</strong>，原定移動出場條件是「吐回 <strong>3R</strong> 才出場」；但當行情吐回 <strong>2.3R</strong>（剩 3.7R）時心裡扛不住先平掉。結果實際只吐回 2.7–2.8R 就續漲到 <strong>10R</strong>，照原規則其實會穩穩賺到 <strong>7R</strong>。
+          </p>
+        </div>
+      </div>
+
+      <div class="figure-box">
+        <div class="figure-scroll"><svg viewbox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="移動出場回吐心理落差實例圖">
+  <rect width="920" height="420" rx="18" fill="#FAF6E8" stroke="#E2D9BE" stroke-width="1.5"></rect>
+  <text x="460" y="38" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="18.5" font-weight="800" fill="#1E293B">提早平倉的真實代價：6R 回吐案例（3.7R vs 7.0R）</text>
+  <text x="460" y="62" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#64748B">原定移動出場規則「從高點回吐 3R 才出場」，心理扛不住回吐 2.3R 提早平倉的落差</text>
+
+  <!-- Chart Area -->
+  <rect x="44" y="84" width="832" height="230" rx="12" fill="#0F172A"></rect>
+
+  <!-- Horizontal Grid Lines & R Labels -->
+  <line x1="96" y1="114" x2="848" y2="114" stroke="#334155" stroke-dasharray="4,4"></line>
+  <text x="84" y="119" text-anchor="end" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#94A3B8">10R</text>
+
+  <line x1="96" y1="162" x2="848" y2="162" stroke="#334155" stroke-dasharray="4,4"></line>
+  <text x="84" y="167" text-anchor="end" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#34D399">7R</text>
+
+  <line x1="96" y1="184" x2="848" y2="184" stroke="#334155" stroke-dasharray="4,4"></line>
+  <text x="84" y="189" text-anchor="end" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#FBBF24">6R</text>
+
+  <line x1="96" y1="242" x2="848" y2="242" stroke="#475569" stroke-dasharray="4,4"></line>
+  <text x="84" y="247" text-anchor="end" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#F87171">3R</text>
+
+  <line x1="96" y1="292" x2="848" y2="292" stroke="#475569"></line>
+  <text x="84" y="297" text-anchor="end" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#94A3B8">0R</text>
+
+  <!-- Price / R Trajectory -->
+  <path d="M 110 292 L 210 236 L 295 184 L 385 224 L 440 235 L 555 170 L 665 114 L 775 162 L 835 190" fill="none" stroke="#38BDF8" stroke-width="3.5" stroke-linejoin="round"></path>
+
+  <!-- Peak 1: 6R -->
+  <circle cx="295" cy="184" r="6" fill="#FBBF24" stroke="#FFFFFF" stroke-width="2"></circle>
+  <text x="295" y="168" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" font-weight="700" fill="#FDE68A">高點 6R</text>
+
+  <!-- Early Exit at 3.7R (pullback 2.3R) -->
+  <circle cx="385" cy="224" r="7" fill="#EF4444" stroke="#FFFFFF" stroke-width="2"></circle>
+  <text x="396" y="200" text-anchor="start" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#FCA5A5">吐回 2.3R → 受不了先平 (3.7R)</text>
+
+  <!-- Actual Low of pullback: ~3.2R (pullback 2.8R, above 3R stop) -->
+  <circle cx="440" cy="235" r="5" fill="#94A3B8"></circle>
+  <line x1="330" y1="242" x2="495" y2="242" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,3"></line>
+  <text x="452" y="262" font-family="'Noto Sans CJK TC', sans-serif" font-size="12" fill="#CBD5E1">實際回吐 2.8R（未碰 3R 出場線）</text>
+
+  <!-- Peak 2: 10R -->
+  <circle cx="665" cy="114" r="6" fill="#34D399" stroke="#FFFFFF" stroke-width="2"></circle>
+  <text x="665" y="102" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" font-weight="700" fill="#A7F3D0">續漲至 10R</text>
+
+  <!-- Planned Trailing Exit: 7R (pullback 3R) -->
+  <circle cx="775" cy="162" r="7" fill="#10B981" stroke="#FFFFFF" stroke-width="2"></circle>
+  <text x="782" y="136" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" font-weight="700" fill="#6EE7B7">吐回 3R 出場 → 實拿 7.0R</text>
+
+  <!-- Bottom Comparison Strip -->
+  <rect x="44" y="330" width="406" height="68" rx="10" fill="#FEF2F2" stroke="#FECACA"></rect>
+  <text x="64" y="356" font-family="'Noto Sans CJK TC', sans-serif" font-size="14.5" font-weight="800" fill="#B91C1C">提早平倉實拿：3.7 R</text>
+  <text x="64" y="380" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#7F1D1D">心理無法承受回吐，直接少賺 3.3 R 主升段</text>
+
+  <rect x="470" y="330" width="406" height="68" rx="10" fill="#ECFDF5" stroke="#A7F3D0"></rect>
+  <text x="490" y="356" font-family="'Noto Sans CJK TC', sans-serif" font-size="14.5" font-weight="800" fill="#065F46">照原規則執行：7.0 R（近兩倍）</text>
+  <text x="490" y="380" font-family="'Noto Sans CJK TC', sans-serif" font-size="13" fill="#065F46">覆盤時須還原此類交易，才看得出系統真實潛力</text>
+</svg></div>
+        <div class="figure-caption">
+          <span>圖 3｜6R 回吐 2.3R 提早出場（實拿 3.7R）vs 嚴守回吐 3R 移動出場規則（實拿 7.0R）視覺對照</span>
+          <span class="zoom-hint">點擊圖表可放大檢視</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 04 -->
+    <section class="chapter" id="ch4">
+      <div class="chapter-head">
+        <div class="chapter-num">04</div>
+        <div class="chapter-title-wrap">
+          <h2>為何要先剔除「不該做的單」？談獲利交易的「一致性」</h2>
+          <p class="chapter-sub">別把停損後的腦衝單，誤判成策略或走勢辨識失效</p>
+        </div>
+      </div>
+
+      <div class="tabs-bar" role="tablist">
+        <button class="tab-btn active" type="button" data-tab="t1">盲點一｜違規單混進失敗樣本</button>
+        <button class="tab-btn" type="button" data-tab="t2">盲點二｜「獲利夠穩定」的真義</button>
+        <button class="tab-btn" type="button" data-tab="t3">盲點三｜如何驗證行為一致？</button>
+      </div>
+
+      <div class="tab-panel active" id="t1">
+        <div class="subcard">
+          <h3>把「不該進場的樣本」當成「策略失敗樣本」，前提就錯了</h3>
+          <p>
+            當某個月總交易數少，或停損後腦衝多打了一堆單（例如第一週賺錢後後面開始不同週期亂打），這些不該做的單占比過高，會讓你的勝率瞬間腰斬。如果沒把它抽離，你會誤以為「我都有照 SOP 篩選走勢，怎麼勝率還這麼差？」——其實問題根本不是策略，而是你做了太多規劃外的交易。
+          </p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="t2">
+        <div class="subcard">
+          <h3>獲利交易「夠穩定」≠ 獲利金額穩定</h3>
+          <p>
+            講者特別澄清：這裡說的「穩定」，是指<strong>你賺錢的交易做出來的樣子一致、沒有太大偏差</strong>。假如 10 筆賺錢的單裡，3 筆用 A 方法、6 筆用 B 方法、1 筆亂做，那算出來的數據落差極大，根本無法判斷是因為市場剛好給運氣，還是你的行為真的變得可控。
+          </p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="t3">
+        <div class="subcard">
+          <h3>用大樣本的「數據接近度」反推行為一致性</h3>
+          <p>
+            過程中有時很難主觀確認自己每次照檢核清單做的行為是否完全一樣；但只要你的獲利交易樣本累積得夠多，如果不同階段得出來的數據（勝率、R 數）相當接近，就能合理推論你的行為已趨於一致。
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-danger learn-accent learn-red">
+        <div class="callout-title">檢討優先順序紅線</div>
+        <p>
+          如果不先把「不在原本規劃內」的交易抽離討論，你寫出三項、四項策略調整方向，都遠不如<strong>「先不要去做那些不該做的交易」</strong>來得有效。
+        </p>
+      </div>
+    </section>
+
+    <!-- Chapter 05 -->
+    <section class="chapter" id="ch5">
+      <div class="chapter-head">
+        <div class="chapter-num">05</div>
+        <div class="chapter-title-wrap">
+          <h2>有效月檢討三步驟與核心迷思對照表</h2>
+          <p class="chapter-sub">建立乾淨的檢討 SOP，並用勾選清單落地執行</p>
+        </div>
+      </div>
+
+      <div class="figure-box">
+        <div class="figure-scroll"><svg viewbox="0 0 920 390" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="月檢討三步驟與非線性交易成長曲線圖">
+  <rect width="920" height="390" rx="18" fill="#FAF6E8" stroke="#E2D9BE" stroke-width="1.5"></rect>
+  <text x="460" y="38" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="18.5" font-weight="800" fill="#1E293B">有效月檢討三步驟 × 交易訓練的非線性成長曲線</text>
+  <text x="460" y="62" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="13.5" fill="#64748B">用正確方法持續累積，跨過臨界門檻後將迎來指數級成長</text>
+
+  <!-- Left: 3 Steps -->
+  <rect x="30" y="88" width="420" height="274" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"></rect>
+  <rect x="30" y="88" width="420" height="42" rx="14" fill="#1E3A5F"></rect>
+  <rect x="30" y="116" width="420" height="14" fill="#1E3A5F"></rect>
+  <text x="240" y="115" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">月檢討必做三步驟（由淺入深）</text>
+
+  <rect x="48" y="144" width="384" height="58" rx="10" fill="#FEF2F2" stroke="#FECACA"></rect>
+  <text x="64" y="168" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="800" fill="#B91C1C">1. 先排除「不該做的交易」</text>
+  <text x="64" y="190" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#7F1D1D">避免腦衝單稀釋勝率，切勿把違規單當成策略失敗樣本</text>
+
+  <rect x="48" y="214" width="384" height="58" rx="10" fill="#FFFBEB" stroke="#FDE68A"></rect>
+  <text x="64" y="238" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="800" fill="#B45309">2. 檢驗獲利交易的「行為一致性」</text>
+  <text x="64" y="260" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#78350F">賺錢的單是否用同一套做法？大樣本數據接近＝行為可控</text>
+
+  <rect x="48" y="284" width="384" height="62" rx="10" fill="#ECFDF5" stroke="#A7F3D0"></rect>
+  <text x="64" y="308" font-family="'Noto Sans CJK TC', sans-serif" font-size="14" font-weight="800" fill="#065F46">3. 計算並跨月對比「最佳獲利數據」</text>
+  <text x="64" y="330" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#065F46">比較本期最佳 vs 上期最佳，確認調整確實往目標前進</text>
+
+  <!-- Right: Non-linear Growth Curve -->
+  <rect x="470" y="88" width="420" height="274" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"></rect>
+  <rect x="470" y="88" width="420" height="42" rx="14" fill="#0F766E"></rect>
+  <rect x="470" y="116" width="420" height="14" fill="#0F766E"></rect>
+  <text x="680" y="115" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="15.5" font-weight="700" fill="#FFFFFF">交易訓練的非線性成長曲線</text>
+
+  <rect x="490" y="144" width="380" height="142" rx="10" fill="#0F172A"></rect>
+  <!-- Axes -->
+  <line x1="516" y1="264" x2="850" y2="264" stroke="#64748B" stroke-width="1.5"></line>
+  <line x1="516" y1="264" x2="516" y2="160" stroke="#64748B" stroke-width="1.5"></line>
+  <!-- Linear expectation (dashed) -->
+  <line x1="516" y1="264" x2="840" y2="175" stroke="#64748B" stroke-width="1.8" stroke-dasharray="5,4"></line>
+  <text x="605" y="216" font-family="'Noto Sans CJK TC', sans-serif" font-size="11.5" fill="#94A3B8">以為的線性進步</text>
+  <!-- Exponential reality -->
+  <path d="M 516 264 Q 640 260, 700 240 T 840 162" fill="none" stroke="#34D399" stroke-width="3.5"></path>
+  <!-- Threshold Point -->
+  <circle cx="700" cy="240" r="6" fill="#FBBF24" stroke="#FFFFFF" stroke-width="2"></circle>
+  <line x1="700" y1="240" x2="700" y2="264" stroke="#FBBF24" stroke-dasharray="3,3"></line>
+  <text x="700" y="279" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="11.5" font-weight="700" fill="#FDE68A">跨過臨界門檻</text>
+  <text x="785" y="224" font-family="'Noto Sans CJK TC', sans-serif" font-size="12" font-weight="700" fill="#6EE7B7">指數型成長</text>
+
+  <rect x="490" y="298" width="380" height="48" rx="10" fill="#F0FDFA" stroke="#99F6E4"></rect>
+  <text x="680" y="319" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" font-weight="700" fill="#0F766E">挫折想休息時往往正值累積期；跨過前 2–4 年門檻，</text>
+  <text x="680" y="338" text-anchor="middle" font-family="'Noto Sans CJK TC', sans-serif" font-size="12.5" fill="#134E4A">後面還有十年累積財富的時間（極端空頭言論＝風向球）</text>
+</svg></div>
+        <div class="figure-caption">
+          <span>圖 4｜有效月檢討三步驟流程與交易訓練的非線性成長曲線</span>
+          <span class="zoom-hint">點擊圖表可放大檢視</span>
+        </div>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="篩選檢討主題">
+        <button class="filter-btn active" type="button" data-filter="all">全部重點</button>
+        <button class="filter-btn" type="button" data-filter="data">數據清洗</button>
+        <button class="filter-btn" type="button" data-filter="exec">執行與心態</button>
+        <button class="filter-btn" type="button" data-filter="growth">長期成長</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:16%;">面向</th>
+            <th style="width:32%;">常見錯誤做法</th>
+            <th style="width:52%;">講者建議的正確檢討方式</th>
+          </tr>
+        </thead>
+        <tbody id="qaTableBody">
+          <tr data-cat="data">
+            <td data-label="面向"><span class="badge">數據清洗</span></td>
+            <td data-label="常見錯誤做法">把全部交易（含腦衝單）混在一起算月勝率與 R 數</td>
+            <td data-label="講者建議的正確檢討方式">先剔除所有不在規劃內的違規單，只針對「該做的交易」評估策略好壞；違規單單獨列為紀律改善項目。</td>
+          </tr>
+          <tr data-cat="data">
+            <td data-label="面向"><span class="badge">數據清洗</span></td>
+            <td data-label="常見錯誤做法">直接拿「上月原始數據」跟「本月原始數據」比較</td>
+            <td data-label="講者建議的正確檢討方式">算出每期的「最佳獲利交易數據」（完全不犯錯基準線），拿「本期最佳」與「上期最佳」對比，排除交互干擾。</td>
+          </tr>
+          <tr data-cat="exec">
+            <td data-label="面向"><span class="badge badge-amber">執行與心態</span></td>
+            <td data-label="常見錯誤做法">期待這個月改完馬上就能零失誤、績效暴衝</td>
+            <td data-label="講者建議的正確檢討方式">先看清現階段能力的最佳天花板，確認調整方向正確後，把心力放在逐步減少追價、提早平倉與亂做單。</td>
+          </tr>
+          <tr data-cat="exec">
+            <td data-label="面向"><span class="badge badge-amber">執行與心態</span></td>
+            <td data-label="常見錯誤做法">用 A、B、亂做等多套方法混打，再一起寫月檢討</td>
+            <td data-label="講者建議的正確檢討方式">確保獲利交易的做法一致、沒有太大偏差，大樣本下數據才能反映真實可控的交易能力而非運氣。</td>
+          </tr>
+          <tr data-cat="growth">
+            <td data-label="面向"><span class="badge badge-info">長期成長</span></td>
+            <td data-label="常見錯誤做法">訓練 1–2 年覺得挫折沒進展就中斷休息</td>
+            <td data-label="講者建議的正確檢討方式">交易成長是非線性的，累積跨過門檻後才會指數起飛；前 2–4 年打好底，後面還有十年累積財富。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="subcard" style="margin-top:1.1rem;">
+        <h3>月總結檢討執行清單（點擊勾選）</h3>
+        <ul class="checklist" id="reviewChecklist">
+          <li><input type="checkbox"><span>我已先把本月所有「停損後腦衝、亂做、不在規劃內」的違規交易單獨抽離。</span></li>
+          <li><input type="checkbox"><span>我已確認剩下的獲利交易都是用「同一套核心做法」執行，而非多種做法混雜。</span></li>
+          <li><input type="checkbox"><span>我已把「追價進場」與「怕回吐提早出場」的單，照原訂規則還原推算。</span></li>
+          <li><input type="checkbox"><span>我已將本期的「最佳獲利交易數據」與上一期對照，確認調整方向確實有效。</span></li>
+          <li><input type="checkbox"><span>我已寫下下個月唯一要專注改善的紀律重點（而非一次亂改三、四個規則）。</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Chapter 06 -->
+    <section class="chapter" id="ch6">
+      <div class="chapter-head">
+        <div class="chapter-num">06</div>
+        <div class="chapter-title-wrap">
+          <h2>非線性成長、群組制度調整與市場／資安提醒</h2>
+          <p class="chapter-sub">語音後半段（32:00–48:00）重要公告與盤勢觀察彙整</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="subcard">
+          <h3>群組兩週年與付費上限（Cap）</h3>
+          <p>
+            講者認為長期訂閱的邊際效益會遞減，因此規劃針對不同時期訂閱級距設定<strong>付費上限（例如初略構想累計滿 3 年後不再收費）</strong>，讓群組永續經營，並將請小編聯繫近期離開的資深群友，細節待正式公告。
+          </p>
+        </div>
+        <div class="subcard">
+          <h3>市場機會與空頭風向球</h3>
+          <p>
+            川普公布關稅後，股票尚未漲回但 Crypto 已率先創前段新高。講者分享自身觀察：當身邊充斥<strong>「幣圈要死了」</strong>等一致性的極端空頭言論時，往往屢試不爽地代表機會即將浮現。
+          </p>
+        </div>
+        <div class="subcard">
+          <h3>非線性突破與資安提醒</h3>
+          <p>
+            交易訓練不是線性進步，挫折想放棄時往往正好在門檻前。此外也特別提醒群友提高<strong>資安意識</strong>：若看到群內帳號張貼異常或不像本人風格的外部連結，極可能是帳號被盜發出的釣魚網站，切勿點擊。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    交易室教學紀錄｜整理自 2025-04-30 語音《0430》｜僅供交易覆盤與策略學習參考，非投資建議。
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="圖表放大檢視">
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
+
+  <script>
+    const progressFill = document.getElementById("progressFill");
+    window.addEventListener("scroll", () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100)) : 0;
+      progressFill.style.width = pct + "%";
+    });
+
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      document.documentElement.setAttribute("data-theme", isDark ? "light" : "dark");
+      themeToggle.textContent = isDark ? "深色模式" : "護眼淺黃"; try {localStorage.setItem("zone-theme",isDark ? "light" : "dark");} catch(e) {}
+    });
+
+    let currentFont = window.innerWidth <= 720 ? 17.5 : 19;
+    const applyFont = () => { document.documentElement.style.fontSize = currentFont + "px"; };
+    document.getElementById("fontDec").addEventListener("click", () => {
+      currentFont = Math.max(15, +(currentFont - 1).toFixed(1)); applyFont();
+    });
+    document.getElementById("fontInc").addEventListener("click", () => {
+      currentFont = Math.min(24, +(currentFont + 1).toFixed(1)); applyFont();
+    });
+
+    document.querySelectorAll(".tab-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".tab-panel").forEach((p) => p.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    document.querySelectorAll(".filter-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const cat = btn.dataset.filter;
+        document.querySelectorAll("#qaTableBody tr").forEach((row) => {
+          row.classList.toggle("hidden-row", cat !== "all" && row.dataset.cat !== cat);
+        });
+      });
+    });
+
+    const simIds = ["mTotal", "mBad", "mOrigR", "mBestR"];
+    function updateMonthlySim() {
+      const total = Math.max(1, parseInt(document.getElementById("mTotal").value, 10) || 1);
+      const bad = Math.min(total, Math.max(0, parseInt(document.getElementById("mBad").value, 10) || 0));
+      const origR = parseFloat(document.getElementById("mOrigR").value) || 0;
+      const bestR = parseFloat(document.getElementById("mBestR").value) || 0;
+      const valid = total - bad;
+      const badPct = (bad / total) * 100;
+      const gap = bestR - origR;
+
+      document.getElementById("outBadPct").textContent = badPct.toFixed(1) + "%";
+      document.getElementById("outValidCnt").textContent = `有效規劃筆數：${valid} 筆`;
+      document.getElementById("outRGap").textContent = (gap >= 0 ? "+" : "") + gap.toFixed(2) + " R";
+
+      const adv = document.getElementById("outAdvice");
+      const sub = document.getElementById("outAdviceSub");
+      if (badPct >= 20) {
+        adv.textContent = "先戒掉違規腦衝單";
+        adv.style.color = "var(--danger)";
+        sub.textContent = "雜訊單占比偏高，先抽離違規單再談策略微調";
+      } else if (gap >= 0.4) {
+        adv.textContent = "專注改善進出場執行";
+        adv.style.color = "var(--accent-2)";
+        sub.textContent = "系統潛力佳，減少追價與提早平倉即可明顯提升績效";
+      } else {
+        adv.textContent = "行為已接近最佳基準";
+        adv.style.color = "var(--accent)";
+        sub.textContent = "可拿本期與上期最佳基準比對，驗證下一步優化";
+      }
+    }
+    simIds.forEach((id) => document.getElementById(id).addEventListener("input", updateMonthlySim));
+    updateMonthlySim();
+
+    document.querySelectorAll("#reviewChecklist li").forEach((li) => {
+      li.addEventListener("click", (e) => {
+        const cb = li.querySelector("input[type='checkbox']");
+        if (e.target !== cb) cb.checked = !cb.checked;
+        li.classList.toggle("checked", cb.checked);
+      });
+    });
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxContent = document.getElementById("lightboxContent");
+    document.querySelectorAll(".figure-box svg").forEach((el) => {
+      el.addEventListener("click", () => {
+        lightboxContent.innerHTML = "";
+        const clone = el.cloneNode(true);
+        clone.style.cursor = "zoom-out";
+        clone.style.width = "min(1100px, 90vw)";
+        lightboxContent.appendChild(clone);
+        lightbox.classList.add("open");
+      });
+    });
+    lightbox.addEventListener("click", () => lightbox.classList.remove("open"));
+  </script>
+<script src="lessons.js"></script></body>
+</html>
