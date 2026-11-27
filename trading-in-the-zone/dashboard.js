@@ -36,49 +36,38 @@ function renderGoal(prefix, goal, unit) {
 }
 
 function initializeGoalControls(data) {
-  const defaults = { currentRisk: data.riskUnit.current, targetRisk: data.riskUnit.target, retirementTarget: data.retirement.target, retirementUnit: 'R' };
+  const defaults = { currentRisk: data.riskUnit.current, targetRisk: data.riskUnit.target, accumulatedR: data.retirement.current };
   const controls = {
     currentRisk: dashboard.querySelector('#goal-current-risk'),
     targetRisk: dashboard.querySelector('#goal-target-risk'),
-    retirementTarget: dashboard.querySelector('#goal-retirement-target'),
-    retirementUnit: dashboard.querySelector('#goal-retirement-unit'),
+    accumulatedR: dashboard.querySelector('#goal-accumulated-r'),
   };
   let saved = {};
   try { saved = JSON.parse(localStorage.getItem('zone-goals-v1')) || {}; } catch (error) {}
   const settings = { ...defaults };
-  for (const key of ['currentRisk', 'targetRisk', 'retirementTarget']) {
-    if (Number.isFinite(saved[key]) && saved[key] > 0 && saved[key] <= 1e12) settings[key] = saved[key];
+  for (const key of Object.keys(defaults)) {
+    if (Number.isFinite(saved[key]) && Math.abs(saved[key]) <= 1e12 && (key === 'accumulatedR' || saved[key] > 0)) settings[key] = saved[key];
   }
-  if (saved.retirementUnit === 'U') settings.retirementUnit = 'U';
   for (const [key, input] of Object.entries(controls)) input.value = settings[key];
 
   function render() {
-    const retirementR = settings.retirementUnit === 'R' ? settings.retirementTarget : settings.retirementTarget / settings.currentRisk;
-    renderGoal('retirement', { current: data.retirement.current, target: retirementR }, 'R');
+    renderGoal('retirement', { current: settings.accumulatedR, target: data.retirement.target }, 'R');
     renderGoal('risk', { current: settings.currentRisk, target: settings.targetRisk }, ' U');
-    dashboard.querySelector('#retirement-conversion').textContent = `以目前 1R 換算：${number.format(data.retirement.current * settings.currentRisk)} U ／ ${number.format(retirementR * settings.currentRisk)} U`;
   }
   function update(event) {
     const input = event.target;
     const key = Object.keys(controls).find(key => controls[key] === input);
-    if (key === 'retirementUnit') {
-      const next = input.value;
-      settings.retirementTarget = next === 'U' ? settings.retirementTarget * settings.currentRisk : settings.retirementTarget / settings.currentRisk;
-      settings.retirementUnit = next;
-      controls.retirementTarget.value = Number(settings.retirementTarget.toFixed(6));
-    } else {
-      const value = input.valueAsNumber;
-      const valid = Number.isFinite(value) && value > 0 && value <= 1e12;
-      input.setCustomValidity(valid ? '' : '請輸入大於 0 的金額（上限 1 兆）。');
-      input.setAttribute('aria-invalid', String(!valid));
-      dashboard.querySelector('#goal-settings-status').textContent = valid ? '' : '請輸入大於 0 的數字；進度暫時保留上次設定。';
-      if (!valid) return;
-      settings[key] = value;
-    }
+    const value = input.valueAsNumber;
+    const valid = Number.isFinite(value) && Math.abs(value) <= 1e12 && (key === 'accumulatedR' || value > 0);
+    input.setCustomValidity(valid ? '' : key === 'accumulatedR' ? '請輸入有效的 R 數。' : '請輸入大於 0 的金額。');
+    input.setAttribute('aria-invalid', String(!valid));
+    dashboard.querySelector('#goal-settings-status').textContent = valid ? '' : '請輸入有效數字；進度暫時保留上次設定。';
+    if (!valid) return;
+    settings[key] = value;
     render();
     try { localStorage.setItem('zone-goals-v1', JSON.stringify(settings)); } catch (error) {}
   }
-  for (const input of Object.values(controls)) input.addEventListener(input.tagName === 'SELECT' ? 'change' : 'input', update);
+  for (const input of Object.values(controls)) input.addEventListener('input', update);
   dashboard.querySelector('#goal-reset').addEventListener('click', () => {
     Object.assign(settings, defaults);
     for (const [key, input] of Object.entries(controls)) {

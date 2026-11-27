@@ -7,7 +7,7 @@
 <title>交易心流｜Trading in the Zone｜交易文章收藏</title>
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('zone-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){}</script>
 <link rel="stylesheet" href="zone.css?v=gemini-palette-1"><script src="articles.js?v=trade-07" defer></script><script src="zone.js?v=catalog-1" defer></script>
-<link rel="stylesheet" href="dashboard.css?v=goals-2"><script src="dashboard.js?v=goals-2" defer></script>
+<link rel="stylesheet" href="dashboard.css?v=goals-3"><script src="dashboard.js?v=goals-3" defer></script>
 </head>
 <body>
 <a class="skip" href="#articles">跳至文章列表</a>
@@ -29,8 +29,7 @@
         <p class="goal-values"><strong id="retirement-current"></strong><span id="retirement-target"></span></p>
         <progress id="retirement-progress" aria-labelledby="retirement-label" aria-describedby="retirement-caption"></progress>
         <p class="goal-caption" id="retirement-caption"></p>
-        <p class="goal-caption" id="retirement-conversion"></p>
-        <div class="goal-control"><label for="goal-retirement-target">退休目標</label><div class="goal-input-row"><input id="goal-retirement-target" type="number" min="0.000001" max="1000000000000" step="any" inputmode="decimal"><select id="goal-retirement-unit" aria-label="退休目標單位"><option value="R">R</option><option value="U">U</option></select></div></div>
+        <div class="goal-control"><label for="goal-accumulated-r">目前累積 R 數</label><input id="goal-accumulated-r" type="number" min="-1000000000000" max="1000000000000" step="any" inputmode="decimal"></div>
       </article>
       <article class="dashboard-goal dashboard-risk">
         <h3 id="risk-label">1R 資金規模</h3>
@@ -40,7 +39,7 @@
         <div class="goal-control-grid"><div class="goal-control"><label for="goal-current-risk">目前 1R（U）</label><input id="goal-current-risk" type="number" min="0.000001" max="1000000000000" step="any" inputmode="decimal"></div><div class="goal-control"><label for="goal-target-risk">目標 1R（U）</label><input id="goal-target-risk" type="number" min="0.000001" max="1000000000000" step="any" inputmode="decimal"></div></div>
       </article>
     </div>
-    <div class="goal-settings-footer"><p>設定會記在此瀏覽器；退休金額為目前 1R 的情境換算。</p><button id="goal-reset" type="button" class="control">恢復預設</button></div>
+    <div class="goal-settings-footer"><p>設定會記在此瀏覽器。</p><button id="goal-reset" type="button" class="control">恢復預設</button></div>
     <p id="goal-settings-status" class="goal-caption" role="status" aria-live="polite"></p>
     <section class="dashboard-performance" aria-labelledby="performance-title">
       <div class="performance-heading">
