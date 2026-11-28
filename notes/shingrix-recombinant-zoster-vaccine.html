@@ -636,18 +636,23 @@
 
     const d1 = document.getElementById('medDose1');
     const today = new Date();
-    d1.value = today.toISOString().slice(0, 10);
+    d1.value = [today.getFullYear(), today.getMonth() + 1, today.getDate()]
+      .map(part => String(part).padStart(2, '0')).join('-');
     calcMedSchedule();
   })();
 
+  // Date-only values use UTC arithmetic so formatting cannot shift the calendar day.
   function addMonths(dateStr, months) {
-    const d = new Date(dateStr + 'T00:00:00');
-    d.setMonth(d.getMonth() + months);
+    const d = new Date(dateStr + 'T00:00:00Z');
+    const day = d.getUTCDate();
+    d.setUTCDate(1);
+    d.setUTCMonth(d.getUTCMonth() + months + 1, 0);
+    d.setUTCDate(Math.min(day, d.getUTCDate()));
     return d.toISOString().slice(0, 10);
   }
   function addDays(dateStr, days) {
-    const d = new Date(dateStr + 'T00:00:00');
-    d.setDate(d.getDate() + days);
+    const d = new Date(dateStr + 'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate() + days);
     return d.toISOString().slice(0, 10);
   }
   function calcMedSchedule() {
